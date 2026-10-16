@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang mẫu — Chưa đăng nhập | NomNom</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- Khi làm trang riêng: thay demo.css bằng CSS của trang đó. -->
+    <link rel="stylesheet" href="demo.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body class="template-page">
+    <a class="skip-link" href="#main-content">Bỏ qua menu, tới nội dung</a>
+
+    <!-- HEADER CHUNG: HTML thuần, không tải bằng JavaScript. -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-logo" href="#pending-dialog" data-pending="Trang chủ"><span class="site-logo__crop"><img src="../assets/images/logo.png" alt="NomNom"></span></a>
+            <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+            <nav class="site-nav" id="site-navigation" aria-label="Điều hướng chính">
+                <details class="site-dropdown">
+                    <summary>Công thức</summary>
+                    <div class="site-dropdown__panel">
+                        <a href="#pending-dialog" data-pending="Tất cả công thức">Tất cả công thức</a><a href="#pending-dialog" data-pending="So sánh nguyên liệu">So sánh nguyên liệu</a><a href="#pending-dialog" data-pending="So sánh giá">So sánh giá</a>
+                    </div>
+                </details><details class="site-dropdown">
+                    <summary>Về chúng tôi</summary>
+                    <div class="site-dropdown__panel">
+                        <a href="#pending-dialog" data-pending="Về NomNom">Về NomNom</a><a href="#pending-dialog" data-pending="Hướng dẫn sử dụng">Hướng dẫn sử dụng</a><a href="#pending-dialog" data-pending="Liên hệ">Liên hệ</a>
+                    </div>
+                </details>
+                <a class="site-nav__link" href="#pending-dialog" data-pending="Danh mục">Danh mục</a>
+                <div class="site-auth">
+                    <a class="button button--primary site-auth__signup" href="#pending-dialog" data-pending="Đăng ký">Đăng ký</a>
+                    <a class="button site-auth__login" href="#pending-dialog" data-pending="Đăng nhập">Đăng nhập</a>
+                </div>
+                <button class="site-search-button" type="button" aria-label="Tìm kiếm công thức" data-pending="Tìm kiếm công thức">
+                    <img src="../assets/icons/search.svg" alt="">
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BẮT ĐẦU NỘI DUNG RIÊNG: thay nội dung main khi tạo trang mới. -->
+    <main id="main-content" class="container template-demo" tabindex="-1">
+        <p class="template-demo__eyebrow">NOMNOM / BỘ KHUNG FRONTEND</p>
+        <h1>Mỗi trang một nội dung.<br>Cùng một giao diện chung.</h1>
+        <p class="template-demo__intro">Đây là vùng nội dung để nhóm phát triển từng trang. Header, footer và font Inter đã được nối sẵn.</p>
+        <div class="template-demo__actions">
+            <a class="button " href="page.html" >Mẫu đã đăng nhập</a>
+            <a class="button button--primary" href="guest.html" aria-current="page">Mẫu chưa đăng nhập</a>
+        </div>
+        <p class="template-demo__note">Trạng thái mẫu: <strong>Chưa đăng nhập</strong>. Các liên kết tính năng đang là điểm nối để nhóm bổ sung trang; đây chưa phải hệ thống tài khoản hoặc tìm kiếm.</p>
+    </main>
+    <!-- KẾT THÚC NỘI DUNG RIÊNG -->
+
+    <!-- FOOTER CHUNG: đồng bộ từ trang mẫu nếu đổi nội dung. -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="site-footer__columns">
+                <section class="site-footer__brand" aria-label="Giới thiệu NomNom">
+                    <a class="site-logo" href="#pending-dialog" data-pending="Trang chủ"><span class="site-logo__crop"><img src="../assets/images/logo.png" alt="NomNom"></span></a>
+                    <p class="site-footer__tagline">Ăn ngon trọn vị, chi tiêu hợp lý.</p>
+                    <p class="site-footer__description">Bữa ngon bắt đầu từ những nguyên liệu bạn có. Cùng NomNom khám phá công thức hấp dẫn, so sánh giá nguyên liệu và tận hưởng mỗi bữa ăn ngon trong tầm ngân sách</p>
+                </section>
+                <section>
+                    <h2 class="site-footer__heading">CÔNG THỨC</h2>
+                    <ul class="site-footer__links">
+                        <li><a href="#pending-dialog" data-pending="Tất cả công thức">Tất cả công thức</a></li><li><a href="#pending-dialog" data-pending="Danh mục">Danh mục</a></li><li><a href="#pending-dialog" data-pending="So sánh nguyên liệu">So sánh nguyên liệu</a></li><li><a href="#pending-dialog" data-pending="So sánh giá">So sánh giá</a></li><li><a href="#pending-dialog" data-pending="Đánh giá của tôi">Đánh giá của tôi</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="site-footer__heading">GIỚI THIỆU</h2>
+                    <ul class="site-footer__links">
+                        <li><a href="#pending-dialog" data-pending="Về NomNom">Về NomNom</a></li><li><a href="#pending-dialog" data-pending="Hướng dẫn sử dụng">Hướng dẫn sử dụng</a></li><li><a href="#pending-dialog" data-pending="CÂU HỎI THƯỜNG GẶP">CÂU HỎI THƯỜNG GẶP</a></li><li><a href="#pending-dialog" data-pending="Liên hệ">Liên hệ</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="site-footer__heading">LIÊN HỆ</h2>
+                    <ul class="site-footer__links"><li><a href="#pending-dialog" data-pending="Facebook"><span class="social-icon"><img src="../assets/icons/facebook.svg" alt=""></span>Facebook</a></li><li><a href="#pending-dialog" data-pending="Instagram"><span class="social-icon"><img src="../assets/icons/instagram.svg" alt=""></span>Instagram</a></li><li><a href="#pending-dialog" data-pending="YouTube"><span class="social-icon"><img src="../assets/icons/youtube.svg" alt=""></span>YouTube</a></li><li><a href="#pending-dialog" data-pending="TikTok"><span class="social-icon"><img src="../assets/icons/tiktok.svg" alt=""></span>TikTok</a></li></ul>
+                </section>
+            </div>
+            <div class="site-footer__legal">
+                <p>© 2026 NomNom. All rights reserved.</p>
+                <a href="#pending-dialog" data-pending="Chính sách bảo mật">Chính sách bảo mật</a>
+                <a href="#pending-dialog" data-pending="Điều khoản sử dụng">Điều khoản sử dụng</a>
+                <a href="#pending-dialog" data-pending="Hỗ trợ tiếp cận">Hỗ trợ tiếp cận</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Xóa hộp này khi tất cả data-pending đã được thay bằng chức năng thật. -->
+    <dialog class="site-dialog" id="pending-dialog" aria-labelledby="pending-title" aria-describedby="pending-description">
+        <h2 id="pending-title" data-pending-title>Trang đang chờ tích hợp</h2>
+        <p id="pending-description">Phần này chưa được ghép vào bộ khung. Nhóm sẽ nối đường dẫn hoặc chức năng khi hoàn thành trang phụ trách.</p>
+        <form method="dialog"><button class="button button--primary">Đóng</button></form>
+    </dialog>
+</body>
+</html>

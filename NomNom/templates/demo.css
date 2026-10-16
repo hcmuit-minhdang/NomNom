@@ -1,0 +1,7 @@
+/* Chỉ để xem phần chung. Không cần chép file này sang trang sản phẩm. */
+.template-demo { min-height: 450px; padding-block: 64px 80px; }
+.template-demo__eyebrow { color: #776016; font-size: 13px; font-weight: 700; letter-spacing: 2px; }
+.template-demo h1 { font-size: clamp(30px, 4vw, 52px); line-height: 1.15; max-width: 800px; margin: 16px 0; }
+.template-demo__intro { color: var(--color-muted); max-width: 640px; font-size: 18px; }
+.template-demo__actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+.template-demo__note { margin-top: 36px; padding: 16px 20px; border-left: 4px solid var(--color-primary); background: #fffaf0; max-width: 720px; }
