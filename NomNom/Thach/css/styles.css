@@ -1,0 +1,1511 @@
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+main::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url(../assets/Untitled\ design.png);
+    display: block;
+    height: 100%;
+    filter: opacity(0.5);
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+/* ---------- Hero ---------- */
+
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(24px, 4vw, 60px);
+    padding: 50px clamp(20px, 5vw, 80px);
+    min-height: 470px;
+}
+
+.banner-container {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 689px;
+    min-height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-track {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.slide-1 {
+    background-image: url(../assets/banner1.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide-2 {
+    background-image: url(../assets/banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide-3 {
+    background-image: url(../assets/banner3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.controls {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    inset: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 280px;
+}
+
+.controls button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  width: fit-content;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.controls #upBtn:hover, .controls #downBtn:hover {
+    background-color:rgba(0, 0, 0, 0.40);
+    opacity: 1;
+    filter:brightness(1.2);
+}
+
+.controls #upBtn:hover {
+    transform: translateY(-4%);
+}
+
+.controls #downBtn:hover {
+    transform: translateY(4%);
+}
+
+.fridge-filter-container {
+    container-type: inline-size;
+    flex: 0 0 clamp(300px, 38%, 540px);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2cqw;
+    margin: 0;
+}
+
+#fridge-filter-description {
+    font-size: clamp(1.5rem, 10.5cqw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.fridge-filter-link {
+    font-size: clamp(1.4rem, 10.5cqw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    line-height: 1.45;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke: 0.1em #000000;
+    paint-order: stroke fill;
+    text-shadow: 0.1em 0.08em 0 #292929;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 3.2em;
+    padding: 0.5em 1em;
+    overflow-wrap: anywhere;
+
+    background-color: #FBC41B;
+    border: 2.5px solid black;
+    box-shadow: 0.2em 0.2em 0 #292929;
+    transition: all 0.3s ease;
+}
+
+.fridge-filter-link::after {
+    content: "";
+    position: absolute;
+    top: 0.35em;
+    right: 0.45em;
+    width: 1em;
+    height: 1em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.fridge-filter-link:hover {
+  transform: translate(0.06em, -0.06em);
+}
+
+.fridge-filter-link:active {
+    transform: scale(0.98);
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    background-color: #292929;
+    padding: 18px clamp(20px, 5vw, 184px);
+}
+
+#search-label {
+    flex: 0 0 auto;
+    background-color: #FBC41B;
+    color: #292929;
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 12px 20px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#search-form {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 1000px;
+}
+
+#search-form > input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    color: #1e293b;
+    padding: 8px 6px 8px 15px;
+    margin: 0;
+}
+
+#search-form > input::placeholder {
+    color: #94a3b8;
+}
+
+#search-form button {
+    background-color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #FBC41B;
+}
+
+#search-form button:active {
+    img {transform: scale(0.9);};
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        min-height: 0;
+    }
+
+    .hero-banner {
+        width: 100%;
+        flex: none;
+        max-width: 689px;
+        aspect-ratio: 689 / 440;
+        min-height: 0;
+        order: 1;
+    }
+
+    .fridge-filter-container {
+        flex: none;
+        width: min(100%, 540px);
+        order: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-label {
+        text-align: center;
+    }
+
+    #search-form {
+        max-width: none;
+    }
+}
+
+.category-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px clamp(20px, 55vw, 80px);
+  gap: clamp(20px, 4vw, 40px);
+}
+
+#category-label {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: clamp(1.2rem, 2.4vw, 2rem);
+    font-weight: 900;
+    padding: 0.8em 1.6em;
+    background-color: #FBC41B;
+    color: white;
+    -webkit-text-stroke: 0.1em #000000;
+    paint-order: stroke fill;
+    text-shadow: 0.12em 0.08em 0 #292929;
+    border: 2px solid #000000;
+    box-shadow: 0.24em 0.24em 0 #292929;
+}
+
+.category-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 0.09fr); 
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 0.8vw, 40px);
+}
+
+.category-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6em;
+    font-size: clamp(0.8rem, 1.2vw, 1.4rem);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    color: #292929;
+}
+
+.category-card img {
+    display: block;
+    box-sizing: border-box;
+    width: 90%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+    transform: scale(0.95);
+}
+
+.category-more img {
+    background-color: #FBC41B;
+    padding: 22%;
+    border: 5px solid #292929;
+    border-radius: 0px;
+}
+
+.category-more img:active {
+    background-color: #dfa904;
+    transform: scale(0.9);
+}
+
+@media (max-width: 1100px) {
+    .category-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .category-card {
+        font-size: clamp(0.9rem, 2vw, 1.3rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.combinator {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) auto minmax(0, 1fr);   /* left | divider | right */
+    padding: 0px 12vw;
+    align-items: stretch;
+}
+
+.popular-recipes-section {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    display: flex;
+    flex: 2.2 1 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 0;
+    container-type: inline-size;
+}
+
+.popular-recipes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 45px;
+}
+
+.popular-recipes-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2vw;
+    margin-bottom: 2vw;
+    margin-top: 0.5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#popular-recipes-label {
+    font-size: 3em;
+    font-weight: 800;
+    display: inline-block;
+    width: fit-content;
+    white-space: nowrap;
+    margin: 0
+}
+
+.line {
+    display: inline;
+    background-color: #FBC41B;
+    width: 100%;
+}
+
+.popular-recipes-line {
+    height: 0.4em;
+}
+
+.recipe-card-compressed {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 4/3.2;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.recipe-card-compressed .recipe-info {
+    font-size: clamp(0.6rem, 1.5cqw, 1.5rem);
+    text-decoration: none;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card-compressed .recipe-info span {
+    display: inline-block;  
+    width: fit-content;
+    background-color: white;
+    color: black;
+    margin-bottom: 0.18em;
+    text-align: left;
+    padding: 0.1em 0.5em;
+}
+
+.recipe-card-compressed .recipe-name {
+    font-size: 1.9em;
+    font-weight: 700;
+}
+
+.recipe-card-compressed .recipe-price {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.recipe-card-compressed .recipe-time {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.recipe-card-compressed .recipe-time::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("../assets/clock.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    margin: 2px 8px 2px 2px;
+}
+
+.recipe-card-compressed img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+}
+
+.recipe-card-compressed:hover {
+    transform: scale(1.02);
+}
+
+.recipe-card-compressed:active {
+    transform: scale(1);
+}
+
+.view-more-button {
+    text-decoration: none;
+    color: #292929;
+    text-transform: uppercase;
+}
+
+.popular-more-button {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0.45em 1.6em;
+    border: 0.12em solid #292929;
+    font-size: clamp(1.2rem, 2.6em, 3.4rem);
+    font-weight: 700;
+    margin-top: 1.2em;
+    justify-self: start;
+    background-color: rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.popular-more-button:hover {
+    transform: translateY(-8%);
+    color: black;
+    box-shadow: 0.2em 0.2em 0 #FBC41B;
+    border-color: black;
+    background-color: rgba(255,255,255,1);
+}
+
+.section-divider {
+    grid-column: 2;
+    grid-row: 1;
+    width: 4px;
+    background-color: black;
+    margin: 0 55px;
+    flex: 0 0 4px;
+}
+
+.side-column {
+    grid-column: 3;
+    grid-row: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    container-type: inline-size;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    height: 100%;
+}
+
+.leaderboard-section {
+    width: 100%;
+    font-size: clamp(0.6rem, 3cqw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 0.375em solid black;
+    background-color: rgba(255,255,255,0.7);
+    padding: 0;
+}
+
+.leaderboard-card {
+    --avatar: 100px;
+    display: block;
+    position: relative;
+    margin-left: calc(var(--avatar) / 3.4);
+}
+
+.image-container, .star-icon, .heart-icon {
+    position: relative;
+    flex: 0 0 50px;
+    width: 80px;
+    height: 55px;
+}
+
+.word-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background-color: #FBC41B;
+    border: 3px solid black;
+    transform: scale(0.8);
+    text-decoration: none;
+    padding: 15px 15px 15px calc(var(--avatar) / 2.8 + 50px);
+    margin: 0;
+    box-shadow: 0.5em 0.5em 0 #292929;
+}
+
+.user-name, .most-recipes-description a, .most-reviews-description a, .most-liked-recipe-description a {
+    color: black;
+    text-decoration: none;
+}
+
+.most-recipes-description a, .most-reviews-description a, .most-liked-recipe-description a {
+    font-weight: 300;
+    padding: 0.15em;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    margin: 0;
+    display: inline;
+}
+
+.user-name:hover {
+    color: white;
+}
+
+.most-recipes-description a:hover, .most-reviews-description a:hover, .most-liked-recipe-description a:hover {
+    color:#FBC41B;
+}
+
+.user-name {
+    display: block;
+    font-size: 1.6em;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 0;
+    border-bottom: 2px solid black;
+    width: fit-content;
+    text-align: left;
+    margin: 8px;
+}
+
+.most-recipes-description, .most-reviews-description, .most-liked-recipe-description {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 15px;
+    font-size: 1.15em;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 3px 5px;
+    overflow-wrap: break-word;
+    flex: 1 1 0;
+}
+
+.lower-card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cookbook-icon-bg {
+    z-index: 1;
+}
+
+.cookbook-icon {
+    z-index: 2;
+}
+
+.user-image-leaderboard {
+    width: var(--avatar);
+    height: var(--avatar);
+    
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 calc(var(--avatar) * 0.04) #fff;
+}
+
+#leaderboard-label {
+    margin: 0.5em auto 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 2.6em;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    border-bottom: 4px solid black;
+}
+
+.leader-more-button {
+    margin: 0.5vw 2.2vw 1.5vw auto;
+    font-size: 1.15em;
+    width: fit-content;
+    text-transform: uppercase;
+    padding: 0.5em 1.6em;
+    border: 3px solid black;
+    font-size: 1.25em;
+    font-weight: 700;
+    display: block;
+    text-align: right;
+    transition: all 0.3s ease;
+}
+
+.leader-more-button:hover {
+    transform: translate(-2%, -2%);
+    box-shadow: 0.26em 0.26em 0 #292929;
+}
+
+.star-icon, .heart-icon {
+    left: 1%;
+    width: 90px;
+    height: 60px;
+}
+
+.heart-icon {
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-top: 2px;
+}
+
+.cta-sign-up {
+    background-image: url(../assets/camo-black.svg);
+    background-color: #292929;
+    container-type: size;
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+}
+
+.cta-sign-up > * {
+    --u: min(3cqw, 7cqh);
+}
+ 
+.cta-sign-up p:not(.support-log-in-text) {
+    font-size: calc(var(--u) * 1.9);
+    line-height: calc(var(--u) * 2.6);
+    color: white;
+    font-weight: 800;
+    margin: 0.6em 1em 0 1em;
+    padding: 0 2.4em;
+}
+ 
+.cta-sign-up-button {
+    border-radius: 0;
+    background-color: #FBC41B;
+    color: black;
+    padding: 0.8em 1.4em;
+    border: none;
+    font-size: calc(var(--u) * 1.2);
+    font-weight: 800;
+    margin: 0.6em 0 0.2em 0;
+    transition: all 0.3s ease;
+}
+
+.cta-sign-up-button:hover {
+    box-shadow: 0 0.36em 0 black;
+    transform: translateY(-5%);
+    background-color: #dfa904;
+}
+
+ 
+.support-log-in-text {
+    color: #cccccc;
+    margin: 0;
+    font-size: calc(var(--u) * 0.88);
+    line-height: calc(var(--u) * 2.6);
+}
+ 
+.support-log-in-text a {
+    color: #cccccc;
+    font-size: 0.88em;
+}
+ 
+
+.support-log-in-text a:hover {
+    color: white;
+}
+
+.price-comparison-section {
+    width:100%;
+    display: flex;
+    height: auto;
+    container-type: inline-size;
+    margin: 10em 0 6em 0;
+}
+
+#price-comparison-label {
+    float: left;
+    position: absolute;
+    z-index: 3;
+    font-size: 3.2em;
+    font-weight: 800;
+    padding: 30px 70px;
+    background-color: #FBC41B;
+    border: 5px solid black;
+    box-shadow: 0.25em 0.25em 0 #191919;
+    left: 6%;
+    transform: translateY(-90%);
+}
+
+.price-comparison-banner {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+.price-comparison-banner-left {
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 1.4 1 0;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+}
+
+.price-comparison-banner-left::before {
+    position: absolute;
+    z-index: -2;
+    content: "";
+    background-image: url(../assets/market.png);
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.price-comparison-banner-left::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.80) 40%, transparent 80%);
+    backdrop-filter: blur(30px);
+    mask-image: linear-gradient(to top right, black 10%, transparent 100%);
+}
+
+#pcb-question, #pcb-text {
+    color: white;
+}
+
+#pcb-question {
+    font-size: 3.8em;
+    font-weight: 800;
+    margin: 0 0 0.4em 4vw;
+}
+
+#pcb-text {
+    margin: 0 0 1.8em 4vw;
+    font-size: 2.5em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.3em;
+    padding-right: 40px;
+    width: 70%;
+}
+
+.price-comparison-banner-right {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/yellow-camo.svg);
+}
+
+.pcb-description-container {
+    text-align: center;
+    margin: 100px 100px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#pcb-description-large {
+    font-size: 4em;
+    font-weight: 800;
+    line-height: 1.5em;
+    margin: 0;
+    width: fit-content;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+#pcb-description-small {
+    font-size: 1.9em;
+    font-weight: 700;
+    margin: 10px 0;
+    padding: 0;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+    width: fit-content;
+    text-align: center;
+}
+
+.pcb-description-container #pcb-line-break {
+    height: 8px;
+    width: 96%;
+    background-color: black;
+    margin: 30px 0;
+}
+
+.price-comparison-link {
+    text-decoration: none;
+    color: black;
+    font-size: 3.1em;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-indent: 0.1em;
+    background-color: rgba(255,255,255,0.9);
+    border: 5px solid black;
+    padding: 30px 40px 25px;
+    margin: 10px 0 100px;
+    transition: all 0.3s ease;
+}
+
+.price-comparison-link:hover {
+    transform: translate(-1.5%, -2.5%);
+    box-shadow: 0.2em 0.2em 0 #292929;
+}
+
+.price-comparison-link:active {
+    transition: none;
+    color: white;
+    background-color: #FBC41B;
+}
+
+.new-community-recipe {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10vw;
+}
+
+.new-community-recipe-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+}
+
+.recipe-card {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255,255,255,0.4);
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.recipe-card img {
+    width: 100%;
+    padding: 0 1em;
+}
+
+.recipe-card .recipe-info{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 100%;
+    padding: 1em;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 400;
+    gap: 0.8em;
+}
+
+a.recipe-card {
+    text-decoration: none;
+}
+
+.recipe-card .recipe-name {
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 4px;
+}
+
+.recipe-card .recipe-time, .recipe-card .recipe-price {
+    font-size: 1em;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.recipe-card .recipe-time::before {
+    content: "";
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url("../assets/clock.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    margin: 2px 8px 2px 2px;
+}
+
+.new-community-recipe-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2vw;
+    margin-bottom: 2vw;
+    margin-top: 0.5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-community-recipe-label {
+    font-size: 3.8em;
+    font-weight: 800;
+    display: inline-block;
+    width: fit-content;
+    white-space: nowrap;
+    margin: 0
+}
+
+.new-community-recipe-line {
+    height: 0.5em;
+}
+
+.recipe-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.5em 0 #FBC41B;
+    background-color: rgba(255,255,255,1);
+    border: 4px solid #FBC41B;
+}
+
+.recipe-card:active {
+    transform: scale(0.98);
+}
+
+.recipe-more-button {
+    display: flex;
+    width: fit-content;
+    padding: 0.45em 1.6em;
+    border: 0.12em solid #292929;
+    font-size: clamp(1.2rem, 2.6em, 3.4rem);
+    font-weight: 700;
+    margin-top: 1.2em;
+    justify-self: start;
+    background-color: rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.recipe-more-button:hover {
+    transform: translateY(-8%);
+    color: black;
+    box-shadow: 0.2em 0.2em 0 #FBC41B;
+    border-color: black;
+    background-color: rgba(255,255,255,1);
+}
+
+
+.recipe-more-button:active, .popular-more-button:active {
+    transform: scale(1);
+    border-color: #FBC41B;
+    color: #FBC41B;
+}
+
+.leader-more-button:active, .cta-sign-up-button:active {
+    transform: scale(1);
+}
+
+.about-us-banner {
+    display: flex;
+    background-color: black;
+    margin: 4em 0;
+    padding: 3.2em 10vw;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../assets/camo-black.svg);
+}
+
+.about-us-description {
+    margin: 0;
+    color: white;
+    font-size: 3.4em;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.about-us-button {
+    text-decoration: none;
+    color: white;
+    font-size: 3.2em;
+    font-weight: 900;
+    -webkit-text-stroke: 0.1em black;
+    paint-order: stroke fill;
+    text-shadow: 0.1em 0.1em 0 #292929;
+    background-color: #FBC41B;
+    padding: 20px 50px;
+    letter-spacing: 0.1em;
+    border: 3px solid black;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.about-us-button:hover {
+    box-shadow: 0.2em 0.2em 0 black;
+    transform: translate(-0.12em, -0.12em);
+    background-color: #dfa904;
+}
+
+.about-us-button:active {
+    transform: scale(1);
+    box-shadow: 0.24em 0.24em 0 #292929;
+}
+
+/* =========================================================
+   RESPONSIVE LAYER (desktop-first, appended after existing rules)
+   ========================================================= */
+
+/* ---------- ≤ 1024px : tablet landscape / small laptop ---------- */
+@media (max-width: 1024px) {
+
+    /* Categories: stop the 80px side padding, cap the grid width */
+    .category-section {
+        padding: 30px clamp(16px, 5vw, 48px);
+    }
+    .category-container {
+        max-width: 720px;
+    }
+
+    /* Popular recipes + sidebar: 3-track grid -> single column */
+    .combinator {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 0 clamp(16px, 6vw, 64px);
+    }
+    .popular-recipes-container {
+        width: 100%;
+        gap: clamp(20px, 3vw, 45px);
+    }
+    .section-divider {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        height: 4px;
+        margin: 2.5rem 0;
+    }
+    .side-column {
+        grid-column: 1;
+        grid-row: 4;
+        width: 100%;
+        max-width: 560px;
+        justify-self: center;
+    }
+    aside {
+        height: auto;
+    }
+    .leaderboard-section {
+        font-size: clamp(0.7rem, 2.4cqw, 1rem);
+    }
+    .cta-sign-up {
+        flex: none;
+        height: clamp(240px, 45vw, 320px);
+    }
+
+    /* Section headings and "view more" buttons */
+    #popular-recipes-label {
+        font-size: clamp(1.75rem, 5vw, 3rem);
+    }
+    #new-community-recipe-label {
+        font-size: clamp(1.75rem, 5vw, 3.8rem);
+    }
+    .popular-more-button,
+    .recipe-more-button {
+        font-size: clamp(1.1rem, 2.6vw, 2rem);
+    }
+
+    /* Price comparison banner: still two columns, scaled by section width */
+    .price-comparison-section {
+        margin: 7rem 0 4rem;
+    }
+    #price-comparison-label {
+        font-size: clamp(1.5rem, 4.4cqw, 3.2rem);
+        padding: 0.6em 1.4em;
+    }
+    #pcb-question {
+        font-size: clamp(1.75rem, 4.2cqw, 3.8rem);
+    }
+    #pcb-text {
+        font-size: clamp(1.1rem, 2.6cqw, 2.5rem);
+        width: 80%;
+    }
+    .pcb-description-container {
+        margin: 3rem 1.5rem 0;
+    }
+    #pcb-description-large {
+        font-size: clamp(1.5rem, 3.6cqw, 4rem);
+    }
+    #pcb-description-small {
+        font-size: clamp(0.9rem, 1.7cqw, 1.9rem);
+    }
+    .price-comparison-link {
+        font-size: clamp(1.1rem, 3cqw, 3.1rem);
+        margin: 0.5rem 0 3rem;
+    }
+
+    /* New community recipes: 4 across -> 2x2 */
+    .new-community-recipe {
+        padding: 0 clamp(16px, 6vw, 64px);
+    }
+    .new-community-recipe-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1rem, 3vw, 2rem);
+    }
+    .recipe-card {
+        width: auto;
+    }
+
+    /* About-us banner */
+    .about-us-banner {
+        padding: 2.5rem clamp(16px, 6vw, 64px);
+        gap: 2rem;
+    }
+    .about-us-description {
+        font-size: clamp(1.4rem, 3.4vw, 3.4rem);
+    }
+    .about-us-button {
+        font-size: clamp(1.2rem, 3vw, 3.2rem);
+        padding: 0.4em 1.2em;
+    }
+}
+
+/* ---------- ≤ 900px : patch for the existing 900px hero rules ---------- */
+@media (max-width: 900px) {
+    .banner-container {
+        order: 1;
+        flex: none;
+        width: 100%;
+        max-width: 689px;
+        min-height: 0;
+        height: clamp(220px, 58vw, 440px);
+    }
+    .controls {
+        justify-content: space-between;
+        gap: 0;
+        padding: 0.5rem 0;
+    }
+}
+
+/* ---------- ≤ 768px : tablet portrait ---------- */
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 32px clamp(16px, 5vw, 40px);
+    }
+
+    /* Beats the older ≤600px 2-column rule because it comes later */
+    .category-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem clamp(8px, 2vw, 16px);
+    }
+
+    .combinator {
+        padding: 0 clamp(16px, 5vw, 40px);
+    }
+    .popular-recipes-container {
+        gap: 24px;
+    }
+    .recipe-card-compressed .recipe-info {
+        font-size: clamp(0.6rem, 1.8cqw, 1.1rem);
+    }
+    .popular-more-button {
+        justify-self: center;
+    }
+    .recipe-more-button {
+        align-self: center;
+    }
+
+    /* Price comparison: two columns -> stacked */
+    .price-comparison-section {
+        margin: 6.5rem 0 3rem;
+    }
+    #price-comparison-label {
+        font-size: clamp(1.4rem, 5vw, 2.4rem);
+        left: 5%;
+    }
+    .price-comparison-banner {
+        flex-direction: column;
+    }
+    .price-comparison-banner-left,
+    .price-comparison-banner-right {
+        flex: none;
+    }
+    .price-comparison-banner-left {
+        min-height: clamp(260px, 60vw, 380px);
+    }
+    #pcb-question {
+        font-size: clamp(1.6rem, 6cqw, 3rem);
+        margin: 0 1.25rem 0.5rem;
+    }
+    #pcb-text {
+        font-size: clamp(0.95rem, 3cqw, 1.5rem);
+        width: auto;
+        padding-right: 0;
+        margin: 0 1.25rem 1.5rem;
+    }
+    .pcb-description-container {
+        margin: 2.5rem 1.25rem 0;
+    }
+    #pcb-description-large {
+        font-size: clamp(1.5rem, 6cqw, 3rem);
+        line-height: 1.35;
+    }
+    #pcb-description-small {
+        font-size: clamp(0.85rem, 2.4cqw, 1.5rem);
+    }
+    .pcb-description-container #pcb-line-break {
+        height: 6px;
+        margin: 1.25rem 0;
+    }
+    .price-comparison-link {
+        font-size: clamp(1.1rem, 4.4cqw, 2rem);
+        padding: 0.6em 1em;
+        margin: 0.5rem 0 2.5rem;
+        border-width: 4px;
+    }
+
+    /* Community recipe cards: tighter text */
+    .recipe-card .recipe-info {
+        font-size: clamp(0.85rem, 2.2vw, 1.2rem);
+        padding: 0.75em;
+        gap: 0.6em;
+    }
+    .recipe-card .recipe-name {
+        font-size: 1.5em;
+        text-decoration-thickness: 3px;
+    }
+
+    /* About-us banner: row -> column */
+    .about-us-banner {
+        flex-direction: column;
+        text-align: center;
+        margin: 2.5rem 0;
+    }
+    .about-us-description {
+        font-size: clamp(1.25rem, 5vw, 2.2rem);
+    }
+    .about-us-button {
+        font-size: clamp(1.1rem, 4.4vw, 2rem);
+    }
+}
+
+/* ---------- ≤ 480px : phones ---------- */
+@media (max-width: 480px) {
+
+    /* Hero */
+    .hero-section {
+        padding: 24px 16px;
+    }
+    #fridge-filter-description {
+        font-size: clamp(1.2rem, 8cqw, 2.4rem);
+    }
+    .fridge-filter-link {
+        font-size: clamp(1.1rem, 7cqw, 2.2rem);
+        min-height: 2.8em;
+    }
+    .controls button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Search (the existing ≤600px rule already stacks label above input) */
+    .search-container {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+    #search-label {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+    #search-form > input {
+        font-size: 1rem;
+    }
+
+    /* Categories */
+    .category-section {
+        padding: 24px 16px;
+        gap: 1.25rem;
+    }
+    #category-label {
+        font-size: 1.1rem;
+    }
+    .category-container {
+        gap: 0.9rem 0.5rem;
+    }
+    .category-card {
+        font-size: 0.72rem;
+        gap: 0.4em;
+    }
+    .category-more img {
+        border-width: 3px;
+    }
+
+    /* Popular recipes */
+    .combinator {
+        padding: 0 16px;
+    }
+    .popular-recipes-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .recipe-card-compressed .recipe-info {
+        font-size: clamp(0.7rem, 3cqw, 1rem);
+    }
+    .popular-recipes-title,
+    .new-community-recipe-title {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    #popular-recipes-label,
+    #new-community-recipe-label {
+        font-size: clamp(1.4rem, 7vw, 2rem);
+        white-space: normal;
+        width: auto;
+        text-align: center;
+    }
+    .section-divider {
+        margin: 1.75rem 0;
+    }
+
+    /* Leaderboard: shrink avatar and re-derive the left padding that clears it */
+    .leaderboard-card {
+        --avatar: 68px;
+    }
+    .word-container {
+        padding: 10px 10px 10px calc(var(--avatar) / 2.8 + 28px);
+    }
+
+    /* Sign-up CTA */
+    .cta-sign-up {
+        height: 280px;
+    }
+    .cta-sign-up > * {
+        --u: min(4.4cqw, 7cqh);
+    }
+    .cta-sign-up p:not(.support-log-in-text) {
+        padding: 0 0.5em;
+        margin: 0.6em 0.75em 0;
+    }
+
+    /* Price comparison */
+    .price-comparison-section {
+        margin: 4.5rem 0 2.5rem;
+    }
+    #price-comparison-label {
+        border-width: 3px;
+        left: 4%;
+    }
+
+    /* Community recipes: single column */
+    .new-community-recipe {
+        padding: 0 16px;
+    }
+    .new-community-recipe-container {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    /* About us */
+    .about-us-banner {
+        padding: 2rem 16px;
+    }
+}
