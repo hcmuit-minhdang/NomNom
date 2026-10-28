@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="Logo-box"><a href="#"><img class="logo" src="../assets/images/logo.png" alt="Logo Web"></div>
+            </a>
+            <div class="Control">
+                <div class="three-button">
+                    <div class="box-button">
+                        <details>
+
+                            <summary>Công thức <img class="arrow-list" src="../assets/SVG/keyboard_arrow_up.svg"
+                                    alt="Arrow List">
+                            </summary>
+
+                            <ul>
+                                <li>Tìm công thức</li>
+                                <li>Danh mục nguyên liệu</li>
+                                <li>Gợi ý bất ngờ</li>
+                                <li>Tuyển tập công thức</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="box-button">
+                        <details>
+
+                            <summary>Về chúng tôi <img class="arrow-list" src="../assets/SVG/keyboard_arrow_up.svg"
+                                    alt="Arrow List">
+                            </summary>
+
+                            <ul>
+                                <li>Về NomNom</li>
+                                <li><b>Hướng dẫn</b></li>
+                                <li><b>Câu hỏi thường gặp</b></li>
+                                <li><a href="#contact"></a>Liên hệ</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="box-button" id="DanhMuc"> <a href="#">Danh mục</a></div>
+                </div>
+                <div class="two-three-button">
+                    <div class="two-button">
+                        <a href="#"><button id="sign-butt" type="button">Đăng ký</button></a>
+                        <a href="#"><button id="log-butt" type="button">Đăng nhập</button></a>
+                    </div>
+                    <details class="search-bar-butt">
+                        <summary aria-controls="search-bar">
+                            <img class="Search-icon search-open-icon" src="../assets/SVG/Search_Com.svg"
+                                alt="Mở thanh tìm kiếm">
+                            <img class="search-close-icon" src="../assets/SVG/X.svg" alt="Đóng thanh tìm kiếm">
+                        </summary>
+
+                        <div id="search-bar">
+                            <div class="search-field" role="search" aria-label="Tìm công thức">
+                                <input type="search" name="q" placeholder="Tìm kiếm ..."
+                                    aria-label="Từ khóa tìm kiếm">
+                                <button class="search-submit" type="button" aria-label="Tìm kiếm">
+                                    <img src="../assets/SVG/Search_input.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
