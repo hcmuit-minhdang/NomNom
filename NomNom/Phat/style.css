@@ -1,0 +1,550 @@
+/* =========================================================
+   BIẾN CSS & ĐƯỜNG DẪN ASSETS
+   ========================================================= */
+:root {
+  --bg-banner-image: url('./assets/banner-bg.png');
+  --color-yellow: #FFC72C;
+  --color-yellow-btn: #F5C431;
+  --color-border: #1E1E1E;
+  --color-text: #111111;
+  --color-muted: #555555;
+  --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   1. VÙNG TRỐNG CHỜ HEADER (Đúng tỉ lệ ảnh mẫu)
+   ========================================================= */
+.header-placeholder {
+  width: 100%;
+  height: 68px; /* Tỉ lệ chuẩn với chiều cao phần header trong ảnh gốc */
+  background-color: #FFFFFF;
+}
+
+/* =========================================================
+   2. HERO BANNER
+   ========================================================= */
+.backgroundtitle {
+  width: 100%;
+  height: 192px;
+  background-color: var(--color-yellow);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.backgroundtitle__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  display: block;
+}
+
+.backgroundtitle__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 16px;
+}
+
+.backgroundtitle__title {
+  font-size: 38px;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  -webkit-text-stroke: 2px #1B1B1B;
+  text-shadow: 
+    0px 3px 0px #1B1B1B,
+    0px 5px 8px rgba(0, 0, 0, 0.22);
+  margin-bottom: 10px;
+}
+
+.backgroundtitle__subtitle {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #4A3B13;
+}
+
+/* =========================================================
+   3. BỐ CỤC CHÍNH (SIDEBAR TRÁI + CONTENT PHẢI)
+   ========================================================= */
+.page-container {
+  width: 77%;
+  max-width: 960px;
+  margin: 34px auto 70px auto;
+  display: grid;
+  grid-template-columns: 205px 1fr;
+  column-gap: 54px;
+  align-items: start;
+}
+
+/* =========================================================
+   4. SIDEBAR: Ô TÌM KIẾM & BỘ LỌC
+   ========================================================= */
+.sidebar {
+  width: 100%;
+}
+
+/* Ô tìm kiếm có viền đen & đổ bóng vàng lệch góc phải dưới */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  background-color: #FFFFFF;
+  border: 1.6px solid var(--color-border);
+  box-shadow: 4px 4px 0px var(--color-yellow-btn);
+  padding: 0 10px 0 14px;
+  margin-bottom: 24px;
+}
+
+.search-box__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+  background: transparent;
+}
+
+.search-box__input::placeholder {
+  color: #B6B6B6;
+  font-weight: 500;
+}
+
+.search-box__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.search-box__icon,
+.search-box__icon-fallback {
+  width: 22px;
+  height: 22px;
+}
+
+.search-box__icon-fallback {
+  display: none;
+}
+
+/* Tiêu đề BỘ LỌC */
+.sidebar__title {
+  font-size: 21px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  letter-spacing: 0.2px;
+}
+
+/* Danh sách nút lọc */
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filter-item {
+  width: 100%;
+}
+
+.filter-btn {
+  width: 100%;
+  height: 44px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #2B2B2B;
+  box-shadow: 2px 3px 0px #DFDFDF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  padding: 0 28px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+}
+
+.filter-btn:hover {
+  background-color: #FFFDF7;
+}
+
+.filter-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 2px 0px #DFDFDF;
+}
+
+.filter-btn__text {
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--color-text);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.filter-btn__arrow {
+  position: absolute;
+  right: 11px;
+  font-size: 10px;
+  color: #111111;
+  transition: transform 0.2s ease;
+}
+
+.filter-item.open .filter-btn__arrow {
+  transform: rotate(180deg);
+}
+
+/* Menu con xổ xuống khi bấm vào từng bộ lọc */
+.filter-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1.5px solid #2B2B2B;
+  border-top: none;
+  background-color: #FAFAFA;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.filter-item.open .filter-dropdown {
+  display: flex;
+}
+
+.filter-dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   5. KHU VỰC HIỂN THỊ MÓN ĂN BÊN PHẢI
+   ========================================================= */
+.content-area {
+  width: 100%;
+}
+
+.recipe-section {
+  margin-bottom: 48px;
+}
+
+.recipe-section--beef {
+  margin-bottom: 38px;
+}
+
+/* Tiêu đề từng phần + đường kẻ ngang màu vàng */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.section-header__title {
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000000;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.section-header__line {
+  flex: 1;
+  height: 2.5px;
+  background-color: var(--color-yellow-btn);
+}
+
+/* =========================================================
+   6. LƯỚI "MÓN ĂN ĐƯỢC YÊU THÍCH" (Đúng tỉ lệ ảnh gốc)
+   ========================================================= */
+.favorite-grid {
+  display: grid;
+  /* Cột 1 rộng hơn một chút (1.17fr) so với 2 cột nhỏ (1fr 1fr) đúng như ảnh mẫu */
+  grid-template-columns: 1.17fr 1fr 1fr;
+  column-gap: 26px;
+  row-gap: 22px;
+  align-items: stretch;
+}
+
+/* Thẻ lớn dọc bên trái (chiếm trọn 2 hàng) */
+.recipe-card--featured {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 375px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #222;
+}
+
+.recipe-card--featured .recipe-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card--featured:hover .recipe-card__img {
+  transform: scale(1.03);
+}
+
+/* Phần chữ nổi trên nền hộp trắng ở góc dưới bên trái của thẻ dọc */
+.recipe-card--featured .recipe-card__overlay {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  z-index: 2;
+}
+
+.overlay-tag {
+  background-color: #FFFFFF;
+  color: #111111;
+  padding: 2px 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.25;
+}
+
+.overlay-tag--title {
+  font-size: 16.5px;
+  font-weight: 800;
+}
+
+.overlay-tag--price {
+  font-size: 9.5px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.overlay-tag--time {
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   7. THẺ MÓN ĂN TIÊU CHUẨN & LƯỚI "CÁC MÓN BÒ"
+   ========================================================= */
+.beef-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 34px;
+  row-gap: 26px;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.recipe-card__thumb {
+  width: 100%;
+  /* Tỉ lệ khung ảnh 111:84 chuẩn theo ảnh thiết kế */
+  aspect-ratio: 111 / 84;
+  overflow: hidden;
+  background-color: #222;
+  margin-bottom: 7px;
+}
+
+.recipe-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover .recipe-card__img {
+  transform: scale(1.04);
+}
+
+.recipe-card__title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #111111;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-bottom: 4px;
+}
+
+.recipe-card__price {
+  font-size: 9px;
+  font-weight: 600;
+  color: #222222;
+  text-decoration: underline;
+  margin-bottom: 4px;
+}
+
+.recipe-card__time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.clock-icon {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   8. NÚT "XEM THÊM CÁC MÓN BÒ" & PHÂN TRANG
+   ========================================================= */
+.more-btn-wrapper {
+  margin-top: 22px;
+}
+
+.btn-more {
+  background-color: var(--color-yellow-btn);
+  color: #000000;
+  border: 1.6px solid #111111;
+  box-shadow: 3px 4px 0px #111111;
+  padding: 9px 15px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn-more:hover {
+  background-color: #ffd043;
+}
+
+.btn-more:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 2px 0px #111111;
+}
+
+.btn-more__arrow {
+  font-size: 12px;
+}
+
+/* Phân trang (Pagination) */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+  padding-right: 12%; /* Căn giữa tương ứng trục nhìn trong thiết kế */
+}
+
+.page-item {
+  background: transparent;
+  border: none;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 800;
+  color: #111111;
+  cursor: pointer;
+  padding: 3px 7px;
+}
+
+.page-item.active {
+  background-color: var(--color-yellow-btn);
+  border: 1.5px solid #111111;
+  box-shadow: 2px 3px 0px #111111;
+}
+
+.page-dots {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111111;
+}
+
+.page-next {
+  background: transparent;
+  border: none;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 800;
+  color: #111111;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page-next:hover,
+.page-item:hover:not(.active) {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE CHO MÀN HÌNH NHỎ / TABLET
+   ========================================================= */
+@media (max-width: 900px) {
+  .page-container {
+    width: 92%;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-banner__title {
+    font-size: 26px;
+  }
+
+  .favorite-grid,
+  .beef-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-card--featured {
+    min-height: 280px;
+  }
+
+  .filter-list {
+    grid-template-columns: 1fr;
+  }
+}
