@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+        <title>NomNom</title>
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section class="hero-section">
+                <div class="fridge-filter-container">
+                    <p id="fridge-filter-description">CÔNG THỨC THEO NGUYÊN LIỆU TỪ TỦ LẠNH CỦA BẠN</p>
+                    <a href="" class="fridge-filter-link">BỘ LỌC NGUYÊN LIỆU</a>
+                </div>
+                <div class="banner-container">
+                    <div class="banner-track" id="track">
+                        <div class="slide slide-1"></div>
+                        <div class="slide slide-2"></div>
+                        <div class="slide slide-3"></div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="upBtn"><img src="../assets/up-arrow-white.svg"></button>
+                        <button id="downBtn"><img src="../assets/down-arrow-white.svg"></button>
+                    </div>
+                </div>
+            </section>
+            <div class="search-container">
+                <p id="search-label">TÌM KIẾM</p>
+                <form id="search-form">
+                    <input type="text" placeholder="Tìm kiếm công thức..." />
+                    <button type="submit"><img src="../assets/search-icon-thick.svg" alt="Search"></button>
+                </form>
+            </div>
+            <section class="category-section">
+                <p id="category-label">PHÂN LOẠI PHỔ BIẾN</p>
+                <div class="category-container">
+                    <a href="" class="category-card category-nau-nhanh">
+                        <img src="../assets/food.png" alt="Nấu nhanh" class="category-image" />
+                        <span class="category-name">Nấu nhanh</span>
+                    </a>
+                    <a href="" class="category-card category-mon-ga">
+                        <img src="../assets/food.png" alt="Món gà" class="category-image" />
+                        <span class="category-name">Món gà</span>
+                    </a>
+                    <a href="" class="category-card category-mon-xao">
+                        <img src="../assets/food.png" alt="Món xào" class="category-image" />
+                        <span class="category-name">Món xào</span>
+                    </a>
+                    <a href="" class="category-card category-mon-nuoc">
+                        <img src="../assets/food.png" alt="Món nước" class="category-image" />
+                        <span class="category-name">Món nước</span>
+                    </a>
+                    <a href="" class="category-card category-trang-mieng">
+                        <img src="../assets/food.png" alt="Tráng miệng" class="category-image" />
+                        <span class="category-name">Tráng miệng</span>
+                    </a>
+                    <a href="" class="category-card category-tiet-kiem">
+                        <img src="../assets/food.png" alt="Tiết kiệm" class="category-image" />
+                        <span class="category-name">Tiết kiệm</span>
+                    </a>
+                    <a href="" class="category-card category-mon-chay">
+                        <img src="../assets/food.png" alt="Món chay" class="category-image" />
+                        <span class="category-name">Món chay</span>
+                    </a>
+                    <a href="" class="category-card category-more">
+                        <img src="../assets/right-arrow-black.svg" alt="Xem Thêm" class="category-image-more" />
+                        <span class="category-name">Xem Thêm</span>
+                    </a>
+                </div>
+            </section>
+            <section class="combinator">
+                <div class="popular-recipes-section">
+                    <div class="title popular-recipes-title">
+                        <p id="popular-recipes-label">CÔNG THỨC THỊNH HÀNH</p>
+                        <div class="line popular-recipes-line"></div>
+                    </div>
+                    <div class="popular-recipes-container">
+                        <a href="" class="recipe-card-compressed">
+                            <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 1" class="recipe-image-medium" />
+                            <div class="recipe-info">
+                                <span class="recipe-name">BLACK BEAN CHILI</span>
+                                <span class="recipe-price">$ price / servings</span>
+                                <span class="recipe-time">Cook Time: 30 mins</span>
+                            </div>
+                        </a>
+                        <a href="" class="recipe-card-compressed">
+                            <img src="../assets/food1.png" alt="Recipe 2" class="recipe-image-medium" />
+                            <div class="recipe-info">
+                                <span class="recipe-name">Công thức 2</span>
+                                <span class="recipe-price">$ price / servings</span>
+                                <span class="recipe-time">Cook Time: 45 mins</span>
+                            </div> 
+                        </a>
+                        <a href="" class="recipe-card-compressed">
+                            <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 3" class="recipe-image-medium" />
+                            <div class="recipe-info">
+                                <span class="recipe-name">Công thức 3</span>
+                                <span class="recipe-price">$ price / servings</span>
+                                <span class="recipe-time">Cook Time: 60 mins</span>
+                            </div>
+                        </a>
+                        <a href="" class="recipe-card-compressed">
+                            <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 4" class="recipe-image-medium" />
+                            <div class="recipe-info">
+                                <span class="recipe-name">Công thức 4</span>
+                                <span class="recipe-price">$ price / servings</span>
+                                <span class="recipe-time">Cook Time: 75 mins</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                <a href="" class="view-more-button popular-more-button">XEM THÊM</a>
+                <div class="section-divider"></div>
+                <div class="side-column">
+                <aside class="side-bar">
+                    <section class="leaderboard-section">
+                        <p id="leaderboard-label">BẢNG VINH DANH</p>
+                        <div class="leaderboard-container">
+                            <div class="leaderboard-card most-recipes">
+                                <img src="../assets/avatar.jpg" alt="User 1" class="user-image-leaderboard" />
+                                
+                                <div class="word-container">
+                                    <a href="" class="user-name">Người dùng 1</a>
+                                    <div class="lower-card"><div class="image-container">
+                                        <img src="../assets/cookbook-white.png" alt="Cookbook-bg" class="cookbook-icon-bg" />
+                                        <img src="../assets/cookbook.png" alt="Cookbook" class="cookbook-icon" /></div>
+                                        <span class="most-recipes-description">#1 Đóng góp nhiều công thức nhất (<a href="">53 recipes</a>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leaderboard-card most-reviews">
+                                <img src="../assets/avatar.jpg" alt="User 2" class="user-image-leaderboard" />
+                                
+                                <div class="word-container">
+                                    <a href="" class="user-name">Người dùng 2</a>
+                                    <div class="lower-card">
+                                        <img src="../assets/star-white.png" alt="Star" class="star-icon" />
+                                        <span class="most-reviews-description">#1 Đóng góp nhiều đánh giá nhất (<a href="">42 reviews</a>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leaderboard-card most-liked-recipe">
+                                <img src="../assets/avatar.jpg" alt="User 3" class="user-image-leaderboard" />
+                                
+                                <div class="word-container">
+                                    <a href="" class="user-name">Người dùng 3</a>
+                                    <div class="lower-card">
+                                        <img src="../assets/heart-yellowbg.png" alt="Heart" class="heart-icon" />
+                                        <span class="most-liked-recipe-description">#1 Công thức được yêu thích nhất (<a href="">Spaghetti Carbonara</a>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="" class="view-more-button leader-more-button">Xem Thêm</a>
+                        </div>
+                    </section>
+                    <section class="cta-sign-up">
+                        <p>BẠN MUỐN ĐĂNG TẢI CÔNG THỨC?</p>
+                        <button class="cta-sign-up-button">ĐĂNG KÝ NGAY!</button>
+                        <p class="support-log-in-text">Đã có tài khoản? <a href="">Đăng nhập ngay!</a></p>
+                    </section>
+                </aside>
+                </div>
+            </section>
+            <section class="price-comparison-section">
+                <p id="price-comparison-label">SO SÁNH GIÁ CẢ</p>
+                <div class="price-comparison-banner">
+                    <div class="price-comparison-banner-left">
+                        <p id="pcb-question">THIẾU NGUYÊN LIỆU?</p>
+                        <p id="pcb-text">So sánh giá cả ngay giữa các đại lý, cửa hàng quen thuộc như Co.op Food, Bách Hóa Xanh,.. tại đây</p>
+                    </div>
+                    <div class="price-comparison-banner-right">
+                        <div class="pcb-description-container">
+                            <p id="pcb-description-large">TIẾT KIỆM HƠN NGAY VỚI TỪNG NGUYÊN LIỆU</p>
+                            <p id="pcb-description-small">ĐỐI TÁC UY TÍN, SIÊU THỊ THÂN QUEN</p>
+                            <div id="pcb-line-break"></div>
+                        </div>
+                        <a href="" class="price-comparison-link">TIẾT KIỆM NGAY</a>
+                    </div>
+                </div>
+            </section>
+            <section class="new-community-recipe">
+                <div class="title new-community-recipe-title">
+                    <p id="new-community-recipe-label">CÔNG THỨC MỚI TỪ CỘNG ĐỒNG!</p>
+                    <div class="line class new-community-recipe-line"></div>
+                </div>
+                <div class="new-community-recipe-container">
+                    <a href="" class="recipe-card">
+                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">Công thức 1</span>
+                            <span class="recipe-price">$ price / servings</span>
+                            <span class="recipe-time">Cook Time: 30 mins</span>
+                        </div>
+                    </a>
+                    <a href="" class="recipe-card">
+                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">Công thức 1</span>
+                            <span class="recipe-price">$ price / servings</span>
+                            <span class="recipe-time">Cook Time: 30 mins</span>
+                        </div>
+                    </a>
+                    <a href="" class="recipe-card">
+                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">Công thức 1</span>
+                            <span class="recipe-price">$ price / servings</span>
+                            <span class="recipe-time">Cook Time: 30 mins</span>
+                        </div>
+                    </a>
+                    <a href="" class="recipe-card">
+                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">Công thức 1</span>
+                            <span class="recipe-price">$ price / servings</span>
+                            <span class="recipe-time">Cook Time: 30 mins</span>
+                        </div>
+                    </a>
+                </div>
+                <a href="" class="recipe-more-button view-more-button">Xem Thêm</a>
+            </section>
+            <div class="about-us-banner">
+                <p class="about-us-description">BẠN MỚI ĐẾN? TÌM HIỂU VỀ BỌN MÌNH TẠI ĐÂY!</p>
+                <a href="" class="about-us-button">ABOUT US</a>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>
