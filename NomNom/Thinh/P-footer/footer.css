@@ -1,0 +1,28 @@
+/* 4. Footer nền trắng theo component Footer Full. */
+.site-footer { padding: 30px 0 28px; background: white; }
+.site-footer__inner { border-top: 1px solid var(--color-border); padding-top: 32px; }
+.site-footer__columns { display: grid; grid-template-columns: minmax(0, 492px) repeat(3, auto); justify-content: space-between; gap: 32px; min-height: 284px; }
+.site-footer .site-logo { width: 210px; margin: 6px 0 22px; }
+.site-footer__tagline { margin: 0 0 16px; font-size: 21px; font-weight: 700; }
+.site-footer__description { max-width: 450px; margin: 0; font-size: 18px; text-align: justify; }
+.site-footer__heading { margin: 0 0 12px; font-size: 20px; }
+.site-footer__heading::after { content: ""; display: block; width: 32px; height: 3px; background: var(--color-primary); margin-top: 12px; }
+.site-footer__links { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.site-footer__links a { display: inline-flex; align-items: center; gap: 10px; font-size: 17px; text-decoration: none; }
+.site-footer__links a:hover { text-decoration: underline; }
+.social-icon { display: inline-flex; width: 20px; height: 20px; align-items: center; justify-content: center; }
+.social-icon img { max-width: none; }
+.site-footer__legal { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 24px; margin-top: 32px; color: var(--color-muted); font-size: 13px; }
+.site-footer__legal p { margin: 0; }
+
+@media (max-width: 1250px) {
+    .site-footer__columns { grid-template-columns: 2fr 1fr 1fr; }
+    .site-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+    .site-footer__columns { grid-template-columns: 1fr; gap: 28px; }
+    .site-footer__brand { grid-column: auto; }
+    .site-footer__description { text-align: left; font-size: 16px; }
+    .site-footer__legal { justify-content: flex-start; }
+}
