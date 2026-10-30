@@ -66,7 +66,8 @@ a {
     padding: 40px 56px 56px;
 }
 
-.recipe-article section {
+.recipe-article section,
+.step {
     scroll-margin-top: 24px;
 }
 
@@ -78,6 +79,10 @@ a {
     line-height: 1;
     letter-spacing: 0.12em;
     white-space: nowrap;
+}
+
+.star-off {
+    color: #d9d9d9;
 }
 
 .title {
@@ -1277,12 +1282,14 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 2px 8px 2px 12px;
+    border-left: 3px solid transparent;
     color: #555555;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
     list-style: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .toc-group summary::-webkit-details-marker {
@@ -1307,7 +1314,7 @@ a {
 
 .toc-active summary {
     color: #000000;
-    border-left: 3px solid #FBC41B;
+    border-left-color: #FBC41B;
 }
 
 .toc-sublist {
@@ -1323,6 +1330,7 @@ a {
     color: #555555;
     font-size: 0.78rem;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .toc-sublist a:hover {
@@ -1335,34 +1343,47 @@ a {
     position: relative;
 }
 
-.toc-current a {
-    color: #000000;
-    font-weight: 700;
-}
-
-.toc-current::before {
+/* Ô vuông vàng báo mục đang xem: luôn có sẵn, ẩn bằng scale(0) rồi bung ra khi .toc-current */
+.toc-sublist li::before {
     content: "";
     position: absolute;
     top: 50%;
     left: -16px;
     width: 8px;
     height: 8px;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0);
     background-color: #FBC41B;
+    transition: transform 0.3s ease;
+}
+
+.toc-sublist .toc-current::before {
+    transform: translateY(-50%) scale(1);
+}
+
+.toc-current a {
+    color: #000000;
+    font-weight: 700;
 }
 
 .toc-single {
     display: block;
     padding: 2px 8px 2px 12px;
+    border-left: 3px solid transparent;
     color: #555555;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .toc-single:hover {
     color: #000000;
+}
+
+.toc-single.toc-current {
+    color: #000000;
+    border-left-color: #FBC41B;
 }
 
 /* ---------- Responsive ---------- */

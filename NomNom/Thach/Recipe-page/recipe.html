@@ -10,6 +10,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <script src="./recipes.js" defer></script>
+        <script src="./recipe.js" defer></script>
     </head>
     <body>
         <header></header>
@@ -48,7 +50,7 @@
                                 <p class="meta-line">
                                     <span><strong>CHUẨN BỊ</strong> 30 phút</span>
                                     <span><strong>NẤU</strong> 30 phút</span>
-                                    <span><strong>KHẨU PHẦN</strong> 3</span>
+                                    <span><strong>KHẨU PHẦN</strong> <span id="meta-servings">3</span></span>
                                 </p>
                                 <p class="meta-line">
                                     <span><strong>CHI PHÍ</strong> <em>60.000đ | 20.000đ / phần</em></span>
@@ -86,7 +88,7 @@
                     <!-- ---------- Thẻ công thức ---------- -->
                     <section class="recipe-card-full" id="cong-thuc">
                         <h2 class="card-title-tag">CƠM TẤM LONG XUYÊN</h2>
-                        <img src="./assets/com-tam-main.jpg" alt="Cơm tấm Long Xuyên" class="card-image" />
+                        <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Cơm tấm Long Xuyên" class="card-image" />
 
                         <div class="card-body">
                             <p class="card-cost"><strong>CHI PHÍ</strong> <em>60.000đ | 20.000đ / phần</em></p>
@@ -136,17 +138,17 @@
                                     <div class="line"></div>
                                 </div>
                                 <ul class="ingredient-list">
-                                    <li><label><input type="checkbox" /><span>500g gạo tấm</span></label></li>
-                                    <li><label><input type="checkbox" /><span>300g thịt heo (có thể chọn sườn, cốt lết hoặc ba rọi tùy thích)</span></label></li>
-                                    <li><label><input type="checkbox" /><span>30ml nước cốt dừa</span></label></li>
-                                    <li><label><input type="checkbox" /><span>10ml nước cốt chanh</span></label></li>
-                                    <li><label><input type="checkbox" /><span>30g lá dứa</span></label></li>
-                                    <li><label><input type="checkbox" /><span>5 quả trứng vịt</span></label></li>
-                                    <li><label><input type="checkbox" /><span>5g tỏi băm</span></label></li>
-                                    <li><label><input type="checkbox" /><span>10 hành tím</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="500" data-unit="g" data-name="gạo tấm">500g gạo tấm</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="300" data-unit="g" data-name="thịt heo (có thể chọn sườn, cốt lết hoặc ba rọi tùy thích)">300g thịt heo (có thể chọn sườn, cốt lết hoặc ba rọi tùy thích)</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="30" data-unit="ml" data-name="nước cốt dừa">30ml nước cốt dừa</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="10" data-unit="ml" data-name="nước cốt chanh">10ml nước cốt chanh</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="30" data-unit="g" data-name="lá dứa">30g lá dứa</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="5" data-unit="quả" data-name="trứng vịt">5 quả trứng vịt</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="5" data-unit="g" data-name="tỏi băm">5g tỏi băm</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="10" data-unit="củ" data-name="hành tím">10 củ hành tím</span></label></li>
                                     <li><label><input type="checkbox" /><span>Hành lá</span></label></li>
-                                    <li><label><input type="checkbox" /><span>10 món dưa chua tùy chọn</span></label></li>
-                                    <li><label><input type="checkbox" /><span>3 - 4 nhánh hoa hồi</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-qty="10" data-unit="món" data-name="dưa chua tùy chọn">10 món dưa chua tùy chọn</span></label></li>
+                                    <li><label><input type="checkbox" /><span data-min="3" data-max="4" data-unit="nhánh" data-name="hoa hồi">3 - 4 nhánh hoa hồi</span></label></li>
                                     <li><label><input type="checkbox" /><span>Gia vị: Dầu hào, dầu ăn, muối, nước mắm, nước tương, bột ngọt, đường cát</span></label></li>
                                 </ul>
                             </section>
@@ -444,5 +446,62 @@
             </div>
         </main>
         <footer></footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const DEFAULT_SERVINGS = 3;
+                const COMPACT_UNITS = ['g', 'kg', 'ml', 'lít'];
+                const COUNT_UNITS = ['quả', 'trái', 'củ', 'nhánh', 'tép', 'bó', 'món'];
+
+                const servingsInput = document.getElementById('servings-input');
+                const metaServings = document.getElementById('meta-servings');
+                const scalableItems = document.querySelectorAll('.ingredient-list span[data-qty], .ingredient-list span[data-min]');
+
+                function roundQty(qty, unit) {
+                    if (COUNT_UNITS.includes(unit)) return Math.max(1, Math.round(qty));
+                    if (qty >= 10) return Math.round(qty);
+                    return Math.round(qty * 10) / 10;
+                }
+
+                function formatAmount(qty, unit) {
+                    const value = roundQty(qty, unit);
+                    return COMPACT_UNITS.includes(unit) ? `${value}${unit}` : `${value} ${unit}`;
+                }
+
+                function updateIngredients() {
+                    const servings = Math.max(1, parseInt(servingsInput.value, 10) || DEFAULT_SERVINGS);
+                    const factor = servings / DEFAULT_SERVINGS;
+
+                    if (metaServings) metaServings.textContent = servings;
+
+                    scalableItems.forEach((span) => {
+                        const unit = span.dataset.unit;
+                        const name = span.dataset.name;
+                        if (span.dataset.min) {
+                            const min = roundQty(parseFloat(span.dataset.min) * factor, unit);
+                            const max = roundQty(parseFloat(span.dataset.max) * factor, unit);
+                            span.textContent = `${min} - ${max} ${unit} ${name}`;
+                        } else {
+                            span.textContent = `${formatAmount(parseFloat(span.dataset.qty) * factor, unit)} ${name}`;
+                        }
+                    });
+                }
+
+                document.querySelector('.servings-up').addEventListener('click', () => {
+                    servingsInput.value = (parseInt(servingsInput.value, 10) || DEFAULT_SERVINGS) + 1;
+                    updateIngredients();
+                });
+
+                document.querySelector('.servings-down').addEventListener('click', () => {
+                    const current = parseInt(servingsInput.value, 10) || DEFAULT_SERVINGS;
+                    servingsInput.value = Math.max(1, current - 1);
+                    updateIngredients();
+                });
+
+                servingsInput.addEventListener('input', updateIngredients);
+
+                updateIngredients();
+            });
+        </script>
     </body>
 </html>

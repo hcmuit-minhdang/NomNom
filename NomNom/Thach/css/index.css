@@ -97,11 +97,10 @@ button {
 .controls {
     position: absolute;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     inset: 0%;
     display: flex;
     flex-direction: column;
-    gap: 280px;
 }
 
 .controls button {
@@ -1118,7 +1117,7 @@ a.recipe-card {
 .about-us-description {
     margin: 0;
     color: white;
-    font-size: 3.4em;
+    font-size: 2.8em;
     font-weight: 800;
     letter-spacing: 0.05em;
 }
@@ -1126,7 +1125,7 @@ a.recipe-card {
 .about-us-button {
     text-decoration: none;
     color: white;
-    font-size: 3.2em;
+    font-size: 2.8em;
     font-weight: 900;
     -webkit-text-stroke: 0.1em black;
     paint-order: stroke fill;
@@ -1259,10 +1258,10 @@ a.recipe-card {
         gap: 2rem;
     }
     .about-us-description {
-        font-size: clamp(1.4rem, 3.4vw, 3.4rem);
+        font-size: clamp(1.4rem, 3.4vw, 2.8rem);
     }
     .about-us-button {
-        font-size: clamp(1.2rem, 3vw, 3.2rem);
+        font-size: clamp(1.2rem, 3vw, 2.8rem);
         padding: 0.4em 1.2em;
     }
 }
@@ -1280,7 +1279,8 @@ a.recipe-card {
     .controls {
         justify-content: space-between;
         gap: 0;
-        padding: 0.5rem 0;
+        padding: 0;
+
     }
 }
 
@@ -1401,9 +1401,17 @@ a.recipe-card {
         font-size: clamp(1.1rem, 7cqw, 2.2rem);
         min-height: 2.8em;
     }
+
+    .controls {
+        justify-content: space-between;
+        padding: 0;
+    }
     .controls button {
         min-width: 44px;
         min-height: 44px;
+    }
+    .controls button img {
+        height: 55px;
     }
 
     /* Search (the existing ≤600px rule already stacks label above input) */
