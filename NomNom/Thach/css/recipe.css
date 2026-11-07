@@ -23,7 +23,7 @@ html {
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background-color: #FBC41B;
+    background-image: url(../assets/bg-pattern-yellow.png);
     color: #000000;
 }
 
@@ -295,7 +295,6 @@ a {
     font-size: 0.8rem;
     font-weight: 800;
     text-decoration: underline;
-    text-underline-offset: 3px;
     transition: all 0.3s ease;
 }
 
@@ -331,25 +330,11 @@ a {
     background-color: #ffffff;
     border: 1.5px solid #292929;
     color: #000000;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 800;
+    text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.save-button::before {
-    content: "LƯU";
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.save-button {
-    font-size: 0;
-}
-
-.save-button::before,
-.save-button::after {
-    font-size: 0.8rem;
 }
 
 .save-button::after {
@@ -357,6 +342,7 @@ a {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1;
+    transform: translateY(-2px);
 }
 
 .save-button:hover {
@@ -1202,6 +1188,7 @@ a {
 .thread {
     grid-column: 1;
     position: relative;
+    left: 9px;
     justify-self: center;
     align-self: start;
     width: 100%;
@@ -1214,7 +1201,7 @@ a {
 
 .thread::before {
     content: "−";
-    position: absolute;
+    position: relative;
     top: 0;
     left: -11px;
     transform: translateY(-50%);
@@ -1344,7 +1331,7 @@ a {
 }
 
 /* Ô vuông vàng báo mục đang xem: luôn có sẵn, ẩn bằng scale(0) rồi bung ra khi .toc-current */
-.toc-sublist li::before {
+.toc-sublist .toc-current::before {
     content: "";
     position: absolute;
     top: 50%;

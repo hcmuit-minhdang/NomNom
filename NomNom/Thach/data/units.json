@@ -1,0 +1,15 @@
+{
+  "g": { "label": "g", "dimension": "mass", "toBase": 1, "compact": true },
+  "kg": { "label": "kg", "dimension": "mass", "toBase": 1000, "compact": true },
+  "ml": { "label": "ml", "dimension": "volume", "toBase": 1, "compact": true },
+  "lít": { "label": "lít", "dimension": "volume", "toBase": 1000, "compact": true },
+  "muỗng cà phê": { "label": "muỗng cà phê", "dimension": "volume", "toBase": 5 },
+  "muỗng canh": { "label": "muỗng canh", "dimension": "volume", "toBase": 15 },
+  "quả": { "label": "quả", "dimension": "count", "toBase": 1 },
+  "trái": { "label": "trái", "dimension": "count", "toBase": 1 },
+  "củ": { "label": "củ", "dimension": "count", "toBase": 1 },
+  "nhánh": { "label": "nhánh", "dimension": "count", "toBase": 1 },
+  "tép": { "label": "tép", "dimension": "count", "toBase": 1 },
+  "bó": { "label": "bó", "dimension": "count", "toBase": 1 },
+  "món": { "label": "món", "dimension": "count", "toBase": 1 }
+}

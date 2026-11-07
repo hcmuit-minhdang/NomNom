@@ -1,0 +1,250 @@
+/* ------------------------------------------------------------------ */
+/* Ingredient picker — component styles                                */
+/*   Mọi selector nằm trong .ip để không đụng CSS của trang.            */
+/* ------------------------------------------------------------------ */
+
+.ip {
+    --ip-ink: #1a1a1a;
+    --ip-yellow: #FBC41B;
+    --ip-soft: #fffdf5;
+    --ip-muted: #6b6558;
+    --ip-line: #d8d1c0;
+
+    font-family: "Inter", sans-serif;
+    color: var(--ip-ink);
+}
+
+.ip *,
+.ip *::before,
+.ip *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Ô tìm kiếm + pills ---------- */
+
+.ip .ip-combobox {
+    position: relative;
+}
+
+.ip .ip-search {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    padding: 7px 10px;
+    background: #ffffff;
+    border: 3px solid var(--ip-ink);
+    border-radius: 12px;
+    transition: box-shadow 0.15s ease;
+}
+
+.ip .ip-search:focus-within {
+    box-shadow: 0 6px 0 rgba(26, 26, 26, 0.12);
+}
+
+.ip .ip-pills {
+    display: contents;
+}
+
+.ip .ip-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 5px 4px 12px;
+    background: var(--ip-yellow);
+    border: 2px solid var(--ip-ink);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.ip .ip-pill-remove {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--ip-ink);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.ip .ip-pill-remove:hover {
+    transform: scale(1.08);
+}
+
+.ip .ip-input {
+    flex: 1 1 200px;
+    min-width: 140px;
+    padding: 8px 4px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-size: 1rem;
+}
+
+.ip .ip-input::placeholder {
+    color: var(--ip-muted);
+}
+
+/* ---------- Danh sách gợi ý ---------- */
+
+.ip .ip-suggestions,
+.ip .ip-no-match {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 30;
+    margin: 0;
+    background: #ffffff;
+    border: 3px solid var(--ip-ink);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ip .ip-suggestions {
+    max-height: 284px;
+    padding: 4px;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.ip .ip-no-match {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+}
+
+.ip .ip-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ip .ip-option.is-active,
+.ip .ip-option:hover {
+    background: var(--ip-yellow);
+}
+
+.ip .ip-option-name {
+    font-weight: 600;
+}
+
+.ip .ip-option-unit {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ip-muted);
+}
+
+.ip .ip-option.is-active .ip-option-unit {
+    color: var(--ip-ink);
+}
+
+/* ---------- Bảng nguyên liệu đã chọn ---------- */
+
+.ip .ip-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.ip .ip-sheet-empty {
+    margin: 0;
+    padding: 16px;
+    border: 2px dashed #c9bfa6;
+    border-radius: 12px;
+    color: var(--ip-muted);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.ip .ip-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 92px 150px 36px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #ffffff;
+    border: 2px solid var(--ip-ink);
+    border-radius: 12px;
+}
+
+.ip .ip-name {
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.ip .ip-qty,
+.ip .ip-unit {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid var(--ip-line);
+    border-radius: 8px;
+    background: var(--ip-soft);
+    color: inherit;
+    font-size: 0.95rem;
+}
+
+.ip .ip-qty:focus,
+.ip .ip-unit:focus {
+    outline: none;
+    border-color: var(--ip-ink);
+    box-shadow: 0 0 0 3px rgba(251, 196, 27, 0.5);
+}
+
+.ip .ip-remove {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 2px solid var(--ip-ink);
+    border-radius: 50%;
+    background: var(--ip-yellow);
+    color: var(--ip-ink);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.ip .ip-remove:hover {
+    background: var(--ip-ink);
+    color: #ffffff;
+}
+
+.ip button:focus-visible {
+    outline: 3px solid var(--ip-ink);
+    outline-offset: 2px;
+}
+
+.ip .ip-error {
+    margin: 0;
+    padding: 14px 16px;
+    border: 3px solid #b3261e;
+    border-radius: 12px;
+    background: #fdecea;
+    color: #8c1d18;
+    font-weight: 600;
+}
+
+@media (max-width: 620px) {
+    .ip .ip-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 36px;
+    }
+
+    .ip .ip-name {
+        grid-column: 1 / -1;
+    }
+}
