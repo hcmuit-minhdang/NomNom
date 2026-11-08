@@ -1,0 +1,124 @@
+{
+  "id": "banh-mi-thit-nuong",
+  "title": "BÁNH MÌ THỊT NƯỚNG",
+  "category": "Món ăn đường phố",
+  "subcategory": "Bánh mì",
+
+  "author": "Quốc Thịnh",
+  "uploaded": "8/11/2026",
+
+  "ratingScore": 4.8,
+  "reviewCount": 5,
+
+  "prepTime": 25,
+  "cookTime": 20,
+  "baseServings": 4,
+  "costTotal": "80.000đ",
+  "costPerServing": "20.000đ",
+
+  "description": "Bánh mì thịt nướng là món ăn đường phố quen thuộc của người Việt: vỏ bánh mì giòn rụm, bên trong là thịt heo ướp mật ong, nước mắm và ngũ vị hương nướng trên than hồng thơm lừng. Kẹp thêm đồ chua, dưa leo, rau thơm và tương ớt là đã có một bữa ăn nhanh gọn mà đầy đủ vị chua, cay, mặn, ngọt.",
+  "summary": "A crispy Vietnamese baguette stuffed with smoky grilled pork, pickled vegetables, cucumber and fresh herbs. Quick to make, big on flavor, and perfect for breakfast or a street-food style dinner.",
+
+  "gallery": [
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg",
+    "images/image4.jpg"
+  ],
+
+  "featuredReview": {
+    "rating": 5,
+    "text": "“Mình làm món này cho cả nhà vào cuối tuần, thịt nướng thơm và đậm vị, ăn kèm đồ chua rất cân bằng. Bánh mì nướng lại cho giòn nên ai cũng khen.”",
+    "author": "TẤN PHÁT"
+  },
+
+  "ingredients": [
+    { "ingredientId": "banh-mi", "qty": 4, "unit": "ổ" },
+    { "ingredientId": "thit-heo", "qty": 400, "unit": "g", "note": "nên chọn thịt vai hoặc nạc dăm" },
+    { "ingredientId": "toi-bam", "qty": 10, "unit": "g" },
+    { "ingredientId": "hanh-tim", "qty": 3, "unit": "củ" },
+    { "ingredientId": "mat-ong", "qty": 20, "unit": "g" },
+    { "ingredientId": "nuoc-mam", "qty": 30, "unit": "ml" },
+    { "ingredientId": "nuoc-tuong", "qty": 15, "unit": "ml" },
+    { "ingredientId": "dau-hao", "qty": 15, "unit": "ml" },
+    { "ingredientId": "duong-cat", "qty": 10, "unit": "g" },
+    { "ingredientId": "ngu-vi-huong", "qty": 2, "unit": "g" },
+    { "ingredientId": "dau-an", "qty": 20, "unit": "ml" },
+    { "ingredientId": "nuoc-cot-chanh", "qty": 20, "unit": "ml" },
+    { "ingredientId": "ot", "qty": 2, "unit": "trái" },
+    { "ingredientId": "dua-chua", "qty": 4, "unit": "món" },
+    { "ingredientId": "dua-leo", "qty": 1, "unit": "quả" },
+    { "ingredientId": "rau-thom", "qty": 30, "unit": "g" },
+    { "ingredientId": "pa-te", "qty": 50, "unit": "g" },
+    { "ingredientId": "tuong-ot", "qty": 30, "unit": "ml" },
+    { "ingredientId": "muoi", "qty": null, "unit": "g", "group": "Gia vị" },
+    { "ingredientId": "bot-ngot", "qty": null, "unit": "g", "group": "Gia vị" }
+  ],
+
+  "quickSteps": [
+    "Ướp thịt: Thái thịt heo thành lát mỏng, trộn đều với tỏi băm, hành tím, mật ong, nước mắm, nước tương, dầu hào, đường, ngũ vị hương và dầu ăn. Để ướp khoảng 30 phút cho thịt thấm vị.",
+    "Làm nước chấm: Giã tỏi ớt, pha với nước mắm, nước cốt chanh và đường cho vừa chua ngọt.",
+    "Nướng thịt: Xiên thịt vào que, nướng trên than hồng khoảng 15-20 phút, trở đều hai mặt cho thịt chín vàng và bén cạnh.",
+    "Sơ chế rau: Rửa sạch rau thơm, cắt dưa leo thành lát mỏng. Đồ chua để ráo nước.",
+    "Lên món: Phết pa-tê vào bánh mì, nướng sơ cho giòn. Kẹp thịt nướng, đồ chua, dưa leo, rau thơm và rưới tương ớt là xong."
+  ],
+
+  "nutrition": {
+    "servings": 1,
+    "calories": "520 kcal",
+    "carbs": "58g",
+    "protein": "27g",
+    "fat": "19g",
+    "sodium": "1,200 - 1,600 mg",
+    "fiber": "2 - 3g"
+  },
+
+  "steps": [
+    {
+      "text": [
+        "Thịt heo rửa sạch với nước muối, để ráo rồi thái thành những lát mỏng vừa ăn. Hành tím bóc vỏ, băm nhỏ cùng tỏi.",
+        "Cho thịt vào tô lớn, thêm tỏi băm, hành tím, mật ong, nước mắm, nước tương, dầu hào, đường, ngũ vị hương và dầu ăn. Trộn đều bằng tay hoặc đũa rồi để ướp khoảng 30 phút cho gia vị thấm sâu."
+      ],
+      "images": [
+        "images/step11.jpg"
+      ]
+    },
+    {
+      "text": [
+        "Trong lúc chờ thịt ướp, pha nước chấm: giã nhuyễn tỏi và ớt, thêm nước mắm, nước cốt chanh và đường, khuấy đều cho tan.",
+        "Rửa sạch rau thơm, để ráo. Dưa leo rửa sạch, cắt thành lát mỏng. Đồ chua (cà rốt, củ cải) vắt nhẹ cho bớt nước."
+      ],
+      "images": [
+        "images/image2.jpg",
+        "images/step22.jpg"
+      ]
+    },
+    {
+      "text": [
+        "Xiên từng miếng thịt vào que tre, xếp lên vỉ nướng đặt trên bếp than hồng.",
+        "Nướng khoảng 15-20 phút, trở thường xuyên và phết thêm nước ướp để thịt không bị khô. Khi thịt chín vàng, bén cạnh là được."
+      ],
+      "images": [
+        "images/image3.jpg",
+        "images/step32.jpg"
+      ]
+    },
+    {
+      "text": [
+        "Bánh mì rạch dọc thân, phết một lớp pa-tê mỏng bên trong rồi nướng sơ trên bếp hoặc nồi chiên không dầu khoảng 3 phút cho vỏ giòn.",
+        "Xếp thịt nướng, đồ chua, dưa leo, rau thơm vào bánh, rưới tương ớt và nước chấm lên trên. Bánh mì thịt nướng ngon nhất khi ăn ngay lúc còn nóng."
+      ],
+      "images": [
+        "images/step41.jpg",
+        "images/image4.jpg"
+      ]
+    }
+  ],
+
+  "similar": [
+    { "id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "60.000đ / phần", "time": "50 phút", "image": "images/image1.jpg" },
+    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
+    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
+    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" }
+  ]
+}

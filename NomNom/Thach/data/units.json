@@ -11,5 +11,6 @@
   "nhánh": { "label": "nhánh", "dimension": "count", "toBase": 1 },
   "tép": { "label": "tép", "dimension": "count", "toBase": 1 },
   "bó": { "label": "bó", "dimension": "count", "toBase": 1 },
-  "món": { "label": "món", "dimension": "count", "toBase": 1 }
+  "món": { "label": "món", "dimension": "count", "toBase": 1 },
+  "ổ": { "label": "ổ", "dimension": "count", "toBase": 1 }
 }
