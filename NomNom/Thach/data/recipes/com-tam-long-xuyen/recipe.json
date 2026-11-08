@@ -19,13 +19,11 @@
   "description": "Cơm tấm Long Xuyên hay còn được người dân ở đây gọi bằng một cái tên thân thuộc là cơm tấm nhuyễn, bởi vì cơm được nấu từ những hạt tấm chính hiệu, còn nguyên vẹn những dưỡng chất. Khác với cơm tấm Sài Gòn, dĩa cơm tấm Long Xuyên đúng điệu sẽ có những miếng thịt sườn, trứng kho và bì được cắt thành những sợi nhỏ rất vừa miệng, đồ chua thường là củ cải cà rốt hoặc rau muống chua ngọt, tất cả cùng có hình dáng sợi, rưới thêm ít mỡ hành và nước mắm tỏi ớt kẹo lên trên, nghe thôi đã thấy thèm rồi đúng không?",
   "summary": "This easy and comforting black bean chili is rich, full of warm chili spices, and fast enough to pull together on a busy weeknight.",
 
-  "mainImage": "images/placeholder.svg",
-  "cardImage": "images/placeholder.svg",
   "gallery": [
-    "images/placeholder.svg",
-    "images/placeholder.svg",
-    "images/placeholder.svg",
-    "images/placeholder.svg"
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg",
+    "images/image4.jpg"
   ],
 
   "featuredReview": {
@@ -80,10 +78,10 @@
         "Đặt nồi hấp lên bếp, cho gạo tấm vào xửng, thêm ½ muỗng cà phê muối, 1 muỗng canh dầu ăn rồi trộn đều. Cắt lá dứa thành khúc nhỏ và cho vào cùng. Đậy nắp và hấp trong 30 phút cho đến khi gạo chín, sau đó mở nắp và xới đều."
       ],
       "images": [
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg"
+        "images/step11.png",
+        "images/step12.png",
+        "images/step13.png",
+        "images/step14.png"
       ]
     },
     {
@@ -93,10 +91,10 @@
         "Sau 30 phút, bạn xiên từng miếng thịt vào que rồi đặt lên bếp than nướng trong khoảng 20 phút cho thịt chín vàng, thơm ngon."
       ],
       "images": [
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg"
+        "images/step21.png",
+        "images/step22.png",
+        "images/step23.png",
+        "images/step24.png"
       ]
     },
     {
@@ -106,10 +104,10 @@
         "Tiếp tục đun hỗn hợp cho đến khi sôi thì thả 5 quả trứng vịt vào, kho trong 30-40 phút. Khi trứng chuyển màu cánh gián, bạn có thể tắt bếp."
       ],
       "images": [
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg"
+        "images/step31.png",
+        "images/step32.png",
+        "images/step33.png",
+        "images/step34.png"
       ]
     },
     {
@@ -119,10 +117,10 @@
         "Cho vào chén 3 tép tỏi, 2 trái ớt rồi dùng chày giã nhuyễn. Tiếp theo, thêm 2 muỗng canh đường, 10ml nước cốt chanh, 2 muỗng canh nước mắm, khuấy đều cho các nguyên liệu hòa quyện với nhau."
       ],
       "images": [
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg"
+        "images/step41.png",
+        "images/step42.png",
+        "images/step43.png",
+        "images/step44.png"
       ]
     },
     {
@@ -130,12 +128,12 @@
         "Múc cơm tấm ra dĩa, cắt thịt nướng và trứng vịt thành miếng vừa ăn, bày xung quanh cơm. Rưới lên mỡ hành, thêm ít đồ chua, bì và nước mắm chua ngọt, vậy là bạn đã sẵn sàng thưởng thức món cơm tấm tuyệt vời này."
       ],
       "images": [
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        "images/placeholder.svg",
-        { "src": "images/placeholder.svg", "tall": true },
-        { "src": "images/placeholder.svg", "tall": true }
+        "images/step51.png",
+        "images/step52.png",
+        "images/step53.png",
+        "images/step54.png",
+        { "src": "images/tall1.png", "tall": true },
+        { "src": "images/tall2.png", "tall": true }
       ]
     }
   ],

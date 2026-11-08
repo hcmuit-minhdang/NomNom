@@ -108,8 +108,8 @@
                                 <span class="recipe-time">Cook Time: 60 mins</span>
                             </div>
                         </a>
-                        <a href="" class="recipe-card-compressed">
-                            <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 4" class="recipe-image-medium" />
+                        <a class="recipe-card-compressed js-recipe-button" >
+                            <img src="../data/recipes/com-tam-long-xuyen/images/image1.jpg" alt="Recipe 4" class="recipe-image-medium" />
                             <div class="recipe-info">
                                 <span class="recipe-name">Công thức 4</span>
                                 <span class="recipe-price">$ price / servings</span>
@@ -234,6 +234,12 @@
                 <a href="" class="about-us-button">ABOUT US</a>
             </div>
         </main>
+        <script>
+            const recipe = document.querySelector('.js-recipe-button');
+            recipe.addEventListener('click', () => {
+                window.location.href='../Recipe-page/recipe.html';
+            })
+        </script>
         <footer></footer>
     </body>
 </html>

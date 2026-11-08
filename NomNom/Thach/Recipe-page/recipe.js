@@ -130,11 +130,31 @@ function renderBindings(recipe, recipeId) {
 
 function renderGallery(recipe, recipeId) {
     const container = document.getElementById("gallery-thumbs");
-    if (!container) return;
+    const mainImage = document.querySelector(".gallery-main");
+    const cardImage = document.querySelector(".card-image");
+    if (!container || !mainImage || !cardImage) return;
 
     container.innerHTML = recipe.gallery
         .map((image, i) => `<img src="${imageUrl(recipeId, image)}" alt="Ảnh ${i + 1}" class="gallery-thumb" />`)
         .join("");
+
+    const showImage = thumb => {
+        mainImage.src = thumb.src;
+        mainImage.alt = thumb.alt;
+    };
+
+    // Một listener trên khung chứa vẫn bắt được click của các thumbnail được tạo sau.
+    container.addEventListener("click", event => {
+        const thumb = event.target.closest(".gallery-thumb");
+        if (thumb) showImage(thumb);
+    });
+
+    const firstThumb = container.querySelector(".gallery-thumb");
+    if (firstThumb) {
+        showImage(firstThumb);
+        cardImage.src = firstThumb.src;
+        cardImage.alt = firstThumb.alt;
+    };
 }
 
 // Một dòng nguyên liệu có thể có: số lượng (qty), khoảng (qtyMax),
