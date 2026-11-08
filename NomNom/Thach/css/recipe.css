@@ -16,6 +16,11 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: #e1af19;
+    color: white;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -759,6 +764,7 @@ a {
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    background-color: white;
 }
 
 .share-icons a:hover img {

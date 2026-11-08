@@ -158,5 +158,42 @@
     "dimension": "count",
     "units": ["trái", "quả"],
     "defaultUnit": "trái"
+  },
+  {
+    "id": "banh-mi",
+    "name": "Bánh mì",
+    "aliases": ["bánh mì", "banh mi"],
+    "dimension": "count",
+    "units": ["ổ"],
+    "defaultUnit": "ổ"
+  },
+  {
+    "id": "dua-leo",
+    "name": "Dưa leo",
+    "aliases": ["dưa chuột", "dua leo"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "rau-thom",
+    "name": "Rau thơm",
+    "aliases": ["ngò", "rau mùi", "rau thom"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "pa-te",
+    "name": "Pa-tê",
+    "aliases": ["pate", "pa te"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "tuong-ot",
+    "name": "Tương ớt",
+    "aliases": ["tuong ot"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
   }
 ]

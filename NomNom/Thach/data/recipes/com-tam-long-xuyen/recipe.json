@@ -12,7 +12,7 @@
 
   "prepTime": 20,
   "cookTime": 30,
-  "baseServings": 6,
+  "baseServings": 3,
   "costTotal": "60.000đ",
   "costPerServing": "20.000đ",
 
@@ -139,7 +139,7 @@
   ],
 
   "similar": [
-    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
+    { "id": "banh-mi-thit-nuong", "name": "Bánh mì thịt nướng", "price": "80.000đ / phần", "time": "45 phút", "image": "images/image1.jpg" },
     { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
     { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
     { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" }
