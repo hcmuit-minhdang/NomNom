@@ -76,6 +76,7 @@ button {
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 600;
+  box-sizing: border-box;
 }
 
 .slide-1 {
@@ -95,24 +96,25 @@ button {
 }
 
 .controls {
-    position: absolute;
-    align-items: center;
+    position: relative;
+    align-items: space-between;
     justify-content: center;
     inset: 0%;
     display: flex;
     flex-direction: column;
-    gap: 280px;
 }
 
 .controls button {
-  cursor: pointer;
-  padding: 5px 10px;
-  border: none;
-  background: transparent;
-  border-radius: 4px;
-  width: fit-content;
-  opacity: 0.5;
-  transition: all 0.3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    width: 100%;
+    height: fit-content;
+    opacity: 0.5;
+    transition: all 0.3s ease;
 }
 
 .controls #upBtn:hover, .controls #downBtn:hover {
@@ -1282,6 +1284,7 @@ a.recipe-card {
         gap: 0;
         padding: 0.5rem 0;
     }
+
 }
 
 /* ---------- ≤ 768px : tablet portrait ---------- */

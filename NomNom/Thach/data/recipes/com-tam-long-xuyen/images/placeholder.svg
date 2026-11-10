@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="802" height="470" viewBox="0 0 802 470" role="img" aria-label="Ảnh minh họa">
+  <rect width="802" height="470" fill="#f3efe4" />
+  <rect x="32" y="32" width="738" height="406" rx="16" fill="none" stroke="#c9bfa6" stroke-width="4" stroke-dasharray="12 10" />
+  <text x="401" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" fill="#8a8069">Ảnh minh họa</text>
+  <text x="401" y="262" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#a49a82">Thay bằng ảnh thật trong images/</text>
+</svg>

@@ -1,0 +1,199 @@
+[
+  {
+    "id": "gao-tam",
+    "name": "Gạo tấm",
+    "aliases": ["gạo", "tấm", "gao tam"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "thit-heo",
+    "name": "Thịt heo",
+    "aliases": ["sườn", "cốt lết", "ba rọi", "thit heo"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-cot-dua",
+    "name": "Nước cốt dừa",
+    "aliases": ["cốt dừa", "nuoc cot dua"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "nuoc-cot-chanh",
+    "name": "Nước cốt chanh",
+    "aliases": ["chanh", "nuoc cot chanh"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "la-dua",
+    "name": "Lá dứa",
+    "aliases": ["la dua"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "trung-vit",
+    "name": "Trứng vịt",
+    "aliases": ["trứng", "trung vit"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "toi-bam",
+    "name": "Tỏi băm",
+    "aliases": ["tỏi", "toi bam"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "hanh-tim",
+    "name": "Hành tím",
+    "aliases": ["hành", "hanh tim"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "hanh-la",
+    "name": "Hành lá",
+    "aliases": ["hanh la"],
+    "dimension": "count",
+    "units": ["bó", "nhánh"],
+    "defaultUnit": "bó"
+  },
+  {
+    "id": "dua-chua",
+    "name": "Dưa chua",
+    "aliases": ["đồ chua", "dua chua"],
+    "dimension": "count",
+    "units": ["món"],
+    "defaultUnit": "món"
+  },
+  {
+    "id": "hoa-hoi",
+    "name": "Hoa hồi",
+    "aliases": ["hồi", "hoa hoi"],
+    "dimension": "count",
+    "units": ["nhánh"],
+    "defaultUnit": "nhánh"
+  },
+  {
+    "id": "dau-hao",
+    "name": "Dầu hào",
+    "aliases": ["dau hao"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "dau-an",
+    "name": "Dầu ăn",
+    "aliases": ["dau an"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "muoi",
+    "name": "Muối",
+    "aliases": ["muoi"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-mam",
+    "name": "Nước mắm",
+    "aliases": ["mắm", "nuoc mam"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "nuoc-tuong",
+    "name": "Nước tương",
+    "aliases": ["tương", "nuoc tuong"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "bot-ngot",
+    "name": "Bột ngọt",
+    "aliases": ["mì chính", "bot ngot"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "duong-cat",
+    "name": "Đường cát",
+    "aliases": ["đường", "duong cat"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "mat-ong",
+    "name": "Mật ong",
+    "aliases": ["mat ong"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "ngu-vi-huong",
+    "name": "Ngũ vị hương",
+    "aliases": ["ngu vi huong"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-dua",
+    "name": "Nước dừa",
+    "aliases": ["nuoc dua"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "ot",
+    "name": "Ớt",
+    "aliases": ["ớt", "ot"],
+    "dimension": "count",
+    "units": ["trái", "quả"],
+    "defaultUnit": "trái"
+  },
+  {
+    "id": "banh-mi",
+    "name": "Bánh mì",
+    "aliases": ["bánh mì", "banh mi"],
+    "dimension": "count",
+    "units": ["ổ"],
+    "defaultUnit": "ổ"
+  },
+  {
+    "id": "dua-leo",
+    "name": "Dưa leo",
+    "aliases": ["dưa chuột", "dua leo"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "rau-thom",
+    "name": "Rau thơm",
+    "aliases": ["ngò", "rau mùi", "rau thom"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "pa-te",
+    "name": "Pa-tê",
+    "aliases": ["pate", "pa te"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "tuong-ot",
+    "name": "Tương ớt",
+    "aliases": ["tuong ot"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  }
+]
