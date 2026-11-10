@@ -1,4 +1,5 @@
 # NomNom — Phần của Thịnh
+Chưa làm xong con mẹ gì hết
 
 HTML, CSS và JavaScript thuần. Bốn phần bạn phụ trách nằm trong bốn thư mục riêng.
 
