@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Công thức theo nguyên liệu tủ lạnh - NomNom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css">
+  <body>
+    <main class="fridge-page">
+
+      <section class="intro">
+        <div class="intro-box">
+          <h1>CÔNG THỨC THEO NGUYÊN LIỆU TỦ LẠNH</h1>
+        </div>
+        <p class="intro-text">
+          Chọn các nguyên liệu bạn đang có sẵn để khám phá món ăn có thể nấu
+          ngay
+        </p>
+      </section>
+
+      <div class="fridge-content">
+        <!-- ===== BỘ LỌC ===== -->
+        <section class="filter-sidebar">
+          <form action="cong-thuc-phu-hop.html" method="get">
+            <div class="search-box">
+              <input type="text" name="keyword" placeholder="Tìm kiếm" />
+              <button type="submit">
+                <!-- TODO: bỏ icon kính lúp vào images/icons/ -->
+                <img src="image/icon/kinh-lup.png" alt="Tìm kiếm" />
+              </button>
+            </div>
+
+            <h2 class="filter-heading">BỘ LỌC</h2>
+
+            <ul class="filter-list">
+              <li>
+                <details class="filter-item">
+                  <summary>ĐẠM <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="dam" value="thit-bo" /> Thịt bò</label>
+                    <label><input type="checkbox" name="dam" value="thit-heo" /> Thịt heo</label>
+                    <label><input type="checkbox" name="dam" value="thit-ga" /> Thịt gà</label>
+                    <label><input type="checkbox" name="dam" value="trung" /> Trứng</label>
+                    <label><input type="checkbox" name="dam" value="dau-hu" /> Đậu hũ</label>
+                    <label><input type="checkbox" name="dam" value="khac" /> Khác</label>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="filter-item">
+                  <summary>TINH BỘT <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="tinh-bot" value="gao" /> Gạo</label>
+                    <label><input type="checkbox" name="tinh-bot" value="bun" /> Bún</label>
+                    <label><input type="checkbox" name="tinh-bot" value="pho" /> Phở</label>
+                    <label><input type="checkbox" name="tinh-bot" value="banh-mi" /> Bánh mì</label>
+                    <label><input type="checkbox" name="tinh-bot" value="mi" /> Mì</label>
+                    <label><input type="checkbox" name="tinh-bot" value="khac" /> Khác</label>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="filter-item">
+                  <summary>RAU CỦ &amp; NẤM <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="rau-cu" value="bi-do" /> Bí đỏ</label>
+                    <label><input type="checkbox" name="rau-cu" value="du-du" /> Đu đủ</label>
+                    <label><input type="checkbox" name="rau-cu" value="cai-thia" /> Cải thìa</label>
+                    <label><input type="checkbox" name="rau-cu" value="bi-dao" /> Bí đao</label>
+                    <label><input type="checkbox" name="rau-cu" value="rau-muong" /> Rau muống</label>
+                    <label><input type="checkbox" name="rau-cu" value="khac" /> Khác</label>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="filter-item">
+                  <summary>TRÁI CÂY <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="trai-cay" value="xoai-xanh" /> Xoài xanh</label>
+                    <label><input type="checkbox" name="trai-cay" value="khe" /> Khế</label>
+                    <label><input type="checkbox" name="trai-cay" value="chuoi" /> Chuối</label>
+                    <label><input type="checkbox" name="trai-cay" value="le" /> Lê</label>
+                    <label><input type="checkbox" name="trai-cay" value="tao" /> Táo</label>
+                    <label><input type="checkbox" name="trai-cay" value="khac" /> Khác</label>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="filter-item">
+                  <summary>CHẾ ĐỘ ĂN <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="che-do-an" value="an-chay" /> Ăn chay</label>
+                    <label><input type="checkbox" name="che-do-an" value="eat-clean" /> Eat clean</label>
+                    <label><input type="checkbox" name="che-do-an" value="com-gia-dinh" /> Cơm gia đình</label>
+                    <label><input type="checkbox" name="che-do-an" value="it-tinh-bot" /> Ít tinh bột</label>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="filter-item">
+                  <summary>VÙNG MIỀN <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="vung-mien" value="mien-trung" /> Miền Trung</label>
+                    <label><input type="checkbox" name="vung-mien" value="mien-nam" /> Miền Nam</label>
+                    <label><input type="checkbox" name="vung-mien" value="mien-tay" /> Miền Tây</label>
+                    <label><input type="checkbox" name="vung-mien" value="tay-nguyen" /> Tây Nguyên</label>
+                    <label><input type="checkbox" name="vung-mien" value="khac" /> Khác</label>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="filter-item">
+                  <summary>NGÂN SÁCH <span>▼</span></summary>
+                  <div class="filter-options">
+                    <label><input type="checkbox" name="ngan-sach" value="duoi-50k" /> Dưới 50k</label>
+                    <label><input type="checkbox" name="ngan-sach" value="duoi-100k" /> Dưới 100k</label>
+                    <label><input type="checkbox" name="ngan-sach" value="duoi-200k" /> Dưới 200k</label>
+                    <label><input type="checkbox" name="ngan-sach" value="duoi-500k" /> Dưới 500k</label>
+                    <label><input type="checkbox" name="ngan-sach" value="tren-500k" /> Trên 500k</label>
+                    <label><input type="checkbox" name="ngan-sach" value="khac" /> Khác</label>
+                  </div>
+                </details>
+              </li>
+            </ul>
+          </form>
+        </section>
+
+        <!-- ===== DANH SÁCH MÓN ĂN ===== -->
+        <section class="food-section">
+          <div class="food-heading">
+            <h2>CÔNG THỨC NẤU ĂN MỚI NHẤT</h2>
+            <div class="food-heading-line"></div>
+          </div>
+
+          <div class="food-list">
+            <article class="food-card">
+              <a href="#">
+                <img src="image/bo-kho-sot-vang.jpg" alt="Bò kho sốt vang" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Bò kho sốt vang</a>
+              <p class="food-price">$ Giá: 180.000đ - 200.000đ <br/> Khẩu phần: 4 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 60 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/goi-xoai-xanh.jpg" alt="Gỏi xoài xanh" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Gỏi xoài xanh</a>
+              <p class="food-price">$ Giá: 45.000đ - 65.000đ <br/> Khẩu phần: 2 - 3 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 20 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/dau-hu-sot-ca-chua.webp" alt="Đậu hũ sốt cà chua" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Đậu hũ sốt cà chua</a>
+              <p class="food-price">$ Giá: 25.000đ - 35.000đ <br/> Khẩu phần: 2 - 3 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 35 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/Canh-bau-nau-tom.jpg" alt="Canh bầu nấu tôm" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Canh bầu nấu tôm</a>
+              <p class="food-price">$ Giá: 50.000đ - 70.000đ <br/> Khẩu phần: 3 - 4 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 20 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/ga-kho-sa.jpg" alt="Gà kho sả" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Gà kho sả</a>
+              <p class="food-price">$ Giá: 100.000đ - 150.000đ <br/> Khẩu phần: 3 - 4 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 45 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/com-chien-trung.jpg" alt="Cơm chiên trứng" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Cơm chiên trứng</a>
+              <p class="food-price">$ Giá: 20.000đ - 30.000đ <br/> Khẩu phần: 1 - 2 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 15 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/ca-nuong-muoi-ot.jpg" alt="Cá nướng muối ớt" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Cá nướng muối ớt</a>
+              <p class="food-price">$ Giá: 130.000đ - 160.000đ <br/> Khẩu phần: 3 - 4 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 30 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/bun-thit-nuong.jpg" alt="Bún thịt nướng" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Bún thịt nướng</a>
+              <p class="food-price">$ Giá: 90.000đ - 120.000đ <br/> Khẩu phần: 2 - 3 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 30 phút
+              </p>
+            </article>
+
+            <article class="food-card">
+              <a href="#">
+                <img src="image/ca-sot-ca.jpg" alt="Cá sốt cà" class="food-image" />
+              </a>
+              <a href="#" class="food-name">Cá sốt cà</a>
+              <p class="food-price">$ Giá: 60.000đ - 80.000đ <br/> Khẩu phần: 2 - 3 người</p>
+              <p class="food-time">
+                <img src="image/icon/clock.png" alt="" /> Thời gian nấu: 30 phút
+              </p>
+            </article>
+          </div>
+           <!-- ========== [E] PHÂN TRANG ========== -->
+            <nav class="pagination">
+                <a href="#" class="page-active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <span>...</span>
+                <a href="#">77</a>
+                <a href="#" class="page-next">Trang sau ▸</a>
+            </nav>
+        </section>
+      </div>
+
+    </main>
+  </body>
+</html>
