@@ -178,6 +178,48 @@ cursor: pointer;
 .three-button details > ul >li:hover {
 background-color: #E2B119;
 }
+/* Link và nút phủ cả dòng menu, giữ cách trình bày hiện tại. */
+[data-nomnom-header] [hidden] {
+    display: none !important;
+}
+.three-button details > ul > li {
+    padding: 0;
+}
+.three-button details > ul > li > a,
+.three-button details > ul > li > button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+[data-nomnom-header] :is(a, button, summary):focus-visible {
+    outline: 2px solid #373636;
+    outline-offset: -2px;
+}
+.search-field:focus-within {
+    outline: 2px solid #373636;
+    outline-offset: 3px;
+}
+.header-status {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 30;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 12px 20px;
+    background: white;
+    border-bottom: 2px solid #fbc41c;
+    font-size: 16px;
+    text-align: center;
+}
 .two-three-button summary {
     display: flex;
     align-items: center;
