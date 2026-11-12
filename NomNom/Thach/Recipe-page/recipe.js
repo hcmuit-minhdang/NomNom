@@ -1,8 +1,6 @@
 const DEFAULT_RECIPE_ID = "com-tam-long-xuyen";
 const DATA_PATH = "../data/";
 const RECIPE_BASE = `${DATA_PATH}recipes/`;
-
-// Mục lục sẽ coi một section là "đang xem" khi đỉnh của nó đã chạm tới vạch này (px tính từ đỉnh màn hình)
 const SCROLLSPY_OFFSET = 140;
 
 const NUTRITION_LABELS = {
@@ -19,8 +17,6 @@ const NUTRITION_LABELS = {
 /* Tiện ích                                                            */
 /* ------------------------------------------------------------------ */
 
-// Nội dung công thức sau này do người dùng nhập, nên mọi chuỗi phải escape
-// trước khi ghép vào innerHTML. Đây là hàng rào chống XSS (stored XSS).
 function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>"']/g, char => ({
         "&": "&amp;",
@@ -71,6 +67,11 @@ function roundQty(qty, unit, units) {
 function formatAmount(qty, unit, units) {
     const value = roundQty(qty, unit, units);
     return units[unit]?.compact ? `${value}${unit}` : `${value} ${unit}`;
+}
+
+// JSON lưu costTotal dạng số; dấu chấm và "đ" chỉ là định dạng hiển thị.
+function formatPrice(value) {
+    return `${new Intl.NumberFormat("vi-VN").format(Math.round(value))}đ`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -169,10 +170,19 @@ function ingredientSpan(item, name, units) {
 
     const unit = item.unit;
     if (item.qtyMax != null) {
-        return `<span${ingredientAttr} data-min="${item.qty}" data-max="${item.qtyMax}" data-unit="${escapeHtml(unit)}" data-name="${escapeHtml(displayName)}">${escapeHtml(`${item.qty} - ${item.qtyMax} ${unit} ${displayName}`)}</span>`;
+        return `<span${ingredientAttr} 
+            data-min="${item.qty}" 
+            data-max="${item.qtyMax}" 
+            data-unit="${escapeHtml(unit)}" 
+            data-name="${escapeHtml(displayName)}">${escapeHtml(`${item.qty} - ${item.qtyMax} ${unit} ${displayName}`)}
+        </span>`;
     }
 
-    return `<span${ingredientAttr} data-qty="${item.qty}" data-unit="${escapeHtml(unit)}" data-name="${escapeHtml(displayName)}">${escapeHtml(`${formatAmount(item.qty, unit, units)} ${displayName}`)}</span>`;
+    return `<span${ingredientAttr} 
+        data-qty="${item.qty}" 
+        data-unit="${escapeHtml(unit)}" 
+        data-name="${escapeHtml(displayName)}">${escapeHtml(`${formatAmount(item.qty, unit, units)} ${displayName}`)}
+    </span>`;
 }
 
 function renderIngredients(recipe, catalog, units) {
@@ -439,14 +449,17 @@ async function init() {
     }
 
     // Giá trị hiển thị được tính từ dữ liệu gốc, không lưu tay trong JSON.
+    const costTotal = Number(rawRecipe.costTotal) || 0;
+    const baseServings = rawRecipe.baseServings || 1;
+
     const recipe = {
         ...rawRecipe,
-        baseServings: rawRecipe.baseServings || 1,
+        baseServings,
         totalTime: rawRecipe.prepTime + rawRecipe.cookTime,
         ratingText: `${rawRecipe.ratingScore} | ${rawRecipe.reviewCount} Reviews`,
-        costText: [rawRecipe.costTotal, rawRecipe.costPerServing && `${rawRecipe.costPerServing} / phần`]
-            .filter(Boolean)
-            .join(" | ")
+        costText: costTotal
+            ? `${formatPrice(costTotal)} | ${formatPrice(costTotal / baseServings)} / phần`
+            : ""
     };
 
     document.title = `${recipe.title} | NomNom`;

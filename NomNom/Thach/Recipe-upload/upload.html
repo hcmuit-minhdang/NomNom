@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+        <title>Đăng tải công thức | NomNom</title>
+        <link rel="stylesheet" href="../css/upload.css" />
+        <link rel="stylesheet" href="../css/ingredient-picker.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <script type="module" src="./upload.js" defer></script>
+    </head>
+    <body>
+        <header></header>
+        <main class="recipe-page">
+            <div class="recipe-layout">
+
+                <!-- ================= NỘI DUNG CHÍNH ================= -->
+                <form class="upload-form">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <a href="">Recipes</a>
+                        <span>&gt;</span>
+                        <a href="">Upload</a>
+                    </nav>
+                
+                    <!-- ---------- Thông tin chung ---------- -->
+                    <section class="recipe-intro" id="thong-tin-chung">
+                        <h1 id="upload-title">UPLOAD RECIPE</h1>
+                        <div class="line divider"></div>
+
+                        <div class="title main-info">
+                          <h2 class="main-info-tag">THÔNG TIN CHÍNH</h2>
+                          <!--<div class="line"></div>-->
+                        </div>
+
+                        <div id="main-info-section">
+                            <div id="main-info">
+                                <h3 id="time">THÔNG TIN CHUNG</h3>
+                                <div class="input-field">
+                                    <label for="name-input">Tên công thức</label>
+                                    <input id="name-input" type="text" name="title" placeholder="Xôi gà, cơm tấm,...">
+                                </div>
+                                <div class="input-field">
+                                    <label for="price-input">Chi phí</label>
+                                    <input id="price-input" type="text" inputmode="numeric" placeholder="25.000" name="costTotal">
+                                </div>
+                                <div class="input-field">
+                                    <div class="servings-control">
+                                        <label for="servings-input" class="small-input-label">Khẩu phần</label>
+                                        <div class="small-input-wrapper">
+                                            <input type="number" id="servings-input" class="small-input" value="3" min="1" data-bind-value="baseServings" />
+                                            <div class="small-input-buttons">
+                                                <button type="button" class="Btn upBtn" aria-label="Tăng khẩu phần"></button>
+                                                <button type="button" class="Btn downBtn" aria-label="Giảm khẩu phần"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="time-input">
+                                <h3 id="time">THỜI GIAN</h3>
+                                <div class="input-field">
+                                    <label for="prepTime-input" class="small-input-label">Chuẩn bị</label>
+                                    <div class="small-input-wrapper">
+                                        <input id="prepTime-input" class="small-input" type="number" min="1" name="prepTime" placeholder="30">
+                                        <div class="small-input-buttons">
+                                            <button type="button" class="Btn upBtn" aria-label="Tăng thời gian chuẩn bị"></button>
+                                            <button type="button" class="Btn downBtn" aria-label="Giảm thời gian chuẩn bị"></button>
+                                        </div>
+                                    </div>
+                                    <span class="unit-note note">Đơn vị: phút</span>
+                                </div>
+                                <div class="input-field">
+                                    <label for="cookTime-input" class="small-input-label">Nấu</label>
+                                    <div class="small-input-wrapper">
+                                        <input id="cookTime-input" class="small-input" type="number" min="1" name="prepTime" placeholder="30">
+                                        <div class="small-input-buttons">
+                                            <button type="button" class="Btn upBtn" aria-label="Tăng thời gian nấu"></button>
+                                            <button type="button" class="Btn downBtn" aria-label="Giảm thời gian nấu"></button>
+                                        </div>
+                                    </div>
+                                    <span class="unit-note note">Đơn vị: phút</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ---------- Mô tả ---------- -->
+                    <section class="recipe-description-section" id="mo-ta">
+                        <div class="title recipe-description">
+                            <h3 id="description-title">MÔ TẢ</h3>
+                            <div class="line"></div>
+                        </div>
+                        <div class="description-text">
+                            <span class="note" id="description-note">Mô tả món ăn của bạn càng thật hấp dẫn nhé!</span>
+                            <textarea class="textarea-input" id="description-input" name="description" placeholder="Mô tả món ăn tại đây"></textarea>
+                        </div>
+                        <div class=""></div>
+                            <h4>Hình ảnh</h4>
+                            <span class="note" id="image-note">Thêm từ 1 đến 5 hình ảnh món ăn</span>
+                            <label for="images" class="image-upload">
+                                <img src="../assets/imageFile.svg" alt="" class="image-upload-icon">
+                                <span class="image-upload-text">Nhấn vào đây để đăng tải hình ảnh</span>
+                            </label>
+                            <input type="file" id="images" name="gallery" accept="image/*" multiple required >
+                    </section>
+
+
+                    <!-- ---------- Thẻ công thức ---------- -->
+                    <section class="recipe-card-full" id="cong-thuc">
+                        <h2 class="card-title-tag">CHUẨN BỊ</h2>
+
+                        <div class="card-body">
+                        <!-- ---------- Nhập nguyên liệu ---------- -->
+                        <section class="recipe-description-section" id="nguyen-lieu-input">
+                            <div class="title recipe-description">
+                                <h3 id="ingredients-input-title">NGUYÊN LIỆU</h3>
+                                <div class="line"></div>
+                            </div>
+                            <div id="ingredient-picker"></div>
+                            <ul class="ingredient-list" id="ingredient-list"></ul>
+                        </section>
+
+                            <!-- Hướng dẫn ngắn gọn -->
+                            <section class="card-section" id="huong-dan-ngan-gon">
+                                <div class="title recipe-description">
+                                    <h3 id="ingredients-input-title">HƯỚNG DẪN NGẮN GỌN</h3>
+                                    <div class="line"></div>
+                                </div>
+                                <button type="button" id="add-step-btn">THÊM BƯỚC</button>
+                                <ol class="quick-step-list" id="quick-step-list"></ol>
+                            </section>
+
+                            <!-- Dinh dưỡng -->
+                            <section class="card-section" id="dinh-duong">
+                                <div class="title recipe-description">
+                                    <h3 id="ingredients-input-title">DINH DƯỠNG</h3>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="nutrition-container" id="nutrition-container"></div>
+                                <p class="nutrition-note">Thông tin dinh dưỡng trên chỉ mang tính chất <u>tham khảo</u>, mọi định lượng đều có thể thay đổi tùy vào gia vị và cách chế biến</p>
+                            </section>
+                        </div>
+                    </section>
+
+                    <!-- ---------- Hướng dẫn cụ thể ---------- -->
+                    <section class="detailed-guide" id="huong-dan-cu-the">
+                        <div class="title detailed-guide-title">
+                            <h2 id="detailed-guide-label">HƯỚNG DẪN CỤ THỂ</h2>
+                            <div class="line"></div>
+                        </div>
+
+                        <div id="steps-container"></div>
+                    </section>
+                </form>
+
+                <!-- ================= SIDEBAR TỔNG QUAN ================= -->
+                <aside class="recipe-sidebar">
+                    <nav class="toc" aria-label="Tổng quan">
+                        <p id="toc-label">TỔNG QUAN</p>
+
+                        <details class="toc-group toc-active" open>
+                            <summary>Thông tin chính</summary>
+                            <ul class="toc-sublist">
+                                <li class="toc-current"><a href="#thong-tin-chung">Thông tin chung</a></li>
+                                <li><a href="#mo-ta">Mô tả</a></li>
+                            </ul>
+                        </details>
+
+                        <details class="toc-group" open>
+                            <summary>Chuẩn bị</summary>
+                            <ul class="toc-sublist">
+                                <li><a href="#nguyen-lieu" class="toc-current">Nguyên liệu</a></li>
+                                <li><a href="#huong-dan-ngan-gon">Hướng dẫn ngắn gọn</a></li>
+                                <li><a href="#dinh-duong">Dinh dưỡng</a></li>
+                            </ul>
+                        </details>
+
+                        <details class="toc-group" open>
+                            <summary>Hướng dẫn cụ thể</summary>
+                            <ul class="toc-sublist" id="toc-steps"></ul>
+                        </details>
+
+                        <a href="#binh-luan" class="toc-single">Bình luận</a>
+                    </nav>
+                </aside>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>
