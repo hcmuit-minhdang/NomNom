@@ -1,6 +1,6 @@
 {
   "id": "com-tam-long-xuyen",
-  "title": "CƠM TẤM LONG XUYÊN",
+  "title": "Cơm tấm long xuyên",
   "category": "Món ăn truyền thống",
   "subcategory": "Cơm tấm",
 
@@ -13,8 +13,7 @@
   "prepTime": 20,
   "cookTime": 30,
   "baseServings": 3,
-  "costTotal": "60.000đ",
-  "costPerServing": "20.000đ",
+  "costTotal": 60000,
 
   "description": "Cơm tấm Long Xuyên hay còn được người dân ở đây gọi bằng một cái tên thân thuộc là cơm tấm nhuyễn, bởi vì cơm được nấu từ những hạt tấm chính hiệu, còn nguyên vẹn những dưỡng chất. Khác với cơm tấm Sài Gòn, dĩa cơm tấm Long Xuyên đúng điệu sẽ có những miếng thịt sườn, trứng kho và bì được cắt thành những sợi nhỏ rất vừa miệng, đồ chua thường là củ cải cà rốt hoặc rau muống chua ngọt, tất cả cùng có hình dáng sợi, rưới thêm ít mỡ hành và nước mắm tỏi ớt kẹo lên trên, nghe thôi đã thấy thèm rồi đúng không?",
   "summary": "This easy and comforting black bean chili is rich, full of warm chili spices, and fast enough to pull together on a busy weeknight.",

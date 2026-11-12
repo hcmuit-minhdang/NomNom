@@ -132,7 +132,6 @@
     cursor: pointer;
 }
 
-.ip .ip-option.is-active,
 .ip .ip-option:hover {
     background: var(--ip-yellow);
 }
@@ -145,10 +144,6 @@
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--ip-muted);
-}
-
-.ip .ip-option.is-active .ip-option-unit {
-    color: var(--ip-ink);
 }
 
 /* ---------- Bảng nguyên liệu đã chọn ---------- */
