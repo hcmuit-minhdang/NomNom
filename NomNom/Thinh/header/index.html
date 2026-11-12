@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <link rel="stylesheet" href="style.css">
+    <script src="header.js" defer></script>
 </head>
 
 <body>
-    <header>
+    <header data-nomnom-header>
         <div class="container">
             <div class="Logo-box">
-                <a href="#"><img class="logo" src="../assets/images/logo.png" alt="Logo Web"></a>
+                <a href="../../Thach/Home-page/index.html" data-header-route="home" aria-label="NomNom — Trang chủ"><img class="logo" src="../assets/images/logo.png" alt="NomNom"></a>
             </div>
             <div class="Control">
                 <div class="three-button">
@@ -24,10 +25,10 @@
                             </summary>
 
                             <ul>
-                                <li>Tìm công thức</li>
-                                <li>Danh mục nguyên liệu</li>
-                                <li>Gợi ý bất ngờ</li>
-                                <li>Tuyển tập công thức</li>
+                                <li><a href="../../Phat/index.html" data-header-route="search">Tìm công thức</a></li>
+                                <li><button type="button" data-header-action="ingredients">Danh mục nguyên liệu</button></li>
+                                <li><button type="button" data-header-action="random">Gợi ý bất ngờ</button></li>
+                                <li><button type="button" data-header-action="collections">Tuyển tập công thức</button></li>
                             </ul>
                         </details>
                     </div>
@@ -39,40 +40,54 @@
                             </summary>
 
                             <ul>
-                                <li>Về NomNom</li>
-                                <li><b>Hướng dẫn</b></li>
-                                <li><b>Câu hỏi thường gặp</b></li>
-                                <li><a href="#contact"></a>Liên hệ</li>
+                                <li><a href="../../Minh/aboutus/index.html" data-header-route="about">Về NomNom</a></li>
+                                <li><button type="button" data-header-action="guide"><b>Hướng dẫn</b></button></li>
+                                <li><button type="button" data-header-action="faq"><b>Câu hỏi thường gặp</b></button></li>
+                                <li><button type="button" data-header-action="contact">Liên hệ</button></li>
                             </ul>
                         </details>
                     </div>
-                    <div class="box-button" id="DanhMuc"> <a href="#">Danh mục</a></div>
+                    <div class="box-button" id="DanhMuc"><a href="../../Phat/index.html" data-header-route="categories">Danh mục</a></div>
+                    <div class="box-button" data-header-member hidden>
+                        <details>
+                            <summary>Góc của tôi<img class="arrow-list" src="../assets/SVG/keyboard_arrow_up.svg" alt=""></summary>
+                            <ul>
+                                <li><a href="../../Minh/user/overview.html" data-header-route="overview">Tổng quan</a></li>
+                                <li><a href="../../Minh/user/uploaded.html" data-header-route="uploaded">Công thức đã đăng tải</a></li>
+                                <li><a href="../../Minh/user/saved.html" data-header-route="saved">Công thức đã lưu</a></li>
+                                <li><a href="../../Minh/user/history.html" data-header-route="history">Lịch sử</a></li>
+                                <li><a href="../../Minh/user/index.html" data-header-route="account">Tài khoản của tôi</a></li>
+                                <li><button type="button" data-auth-action="logout"><b>Đăng xuất</b></button></li>
+                            </ul>
+                        </details>
+                    </div>
                 </div>
                 <div class="two-three-button">
-                    <div class="two-button">
-                        <a href="#"><button id="sign-butt" type="button">Đăng ký</button></a>
-                        <a href="#"><button id="log-butt" type="button">Đăng nhập</button></a>
+                    <div class="two-button" data-header-guest>
+                        <button id="sign-butt" type="button" data-auth-action="signup">Đăng ký</button>
+                        <button id="log-butt" type="button" data-auth-action="login">Đăng nhập</button>
                     </div>
                     <details class="search-bar-butt">
-                        <summary aria-controls="search-bar">
+                        <summary aria-controls="search-bar" aria-label="Mở tìm kiếm">
                             <img class="Search-icon search-open-icon" src="../assets/SVG/Search_Com.svg"
                                 alt="Mở thanh tìm kiếm">
                             <img class="search-close-icon" src="../assets/SVG/X.svg" alt="Đóng thanh tìm kiếm">
                         </summary>
 
                         <div id="search-bar">
-                            <div class="search-field" role="search" aria-label="Tìm công thức">
-                                <input type="search" name="q" placeholder="Tìm kiếm ..."
+                            <form class="search-field" role="search" aria-label="Tìm công thức" action="../../Phat/index.html" method="get">
+                                <input type="search" name="q" placeholder="Tìm kiếm ..." required
                                     aria-label="Từ khóa tìm kiếm">
-                                <button class="search-submit" type="button" aria-label="Tìm kiếm">
+                                <button class="search-submit" type="submit" aria-label="Tìm kiếm">
                                     <img src="../assets/SVG/Search_input.svg" alt="">
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </details>
                 </div>
             </div>
         </div>
+        <p class="header-status" role="status" aria-live="polite" hidden></p>
     </header>
 </body>
 
