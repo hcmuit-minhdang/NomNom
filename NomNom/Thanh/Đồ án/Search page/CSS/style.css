@@ -6,10 +6,12 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  color: #000000;
+  color: black;
   background-image:
     url("../image/bg/bg.png");
-  background-repeat: repeat; 
+  background-color: white; /*fallback khi ko load được ảnh*/
+  background-repeat: repeat;
+} /*Thiếu }*/
 
 .fridge-page {
   max-width: 1275px;
