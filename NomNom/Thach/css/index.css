@@ -25,14 +25,14 @@ main::before {
     background-image: url(../assets/bg-pattern-transparent.png);
     display: block;
     height: 100%;
-    filter: opacity(0.5);
+    filter: opacity(0.4);
 }
 
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
     
-    background-color: beige;
+    background-color: rgb(242, 242, 228);
 }
 
 input,
