@@ -22,10 +22,10 @@
     };
 
     const panels = [...header.querySelectorAll("details")];
-    const search = header.querySelector(".search-bar-butt");
+    const search = header.querySelector(".site-header_search");
     const form = search.querySelector("form");
     const input = form.elements.q;
-    const status = header.querySelector(".header-status");
+    const status = header.querySelector(".site-header_status");
 
     header.querySelectorAll("[data-header-route]").forEach(link => {
         link.href = new URL(routes[link.dataset.headerRoute], siteRoot).href;
@@ -69,7 +69,7 @@
                 closePanels(summary.parentElement);
             }
             const control = event.target.closest("a, button");
-            if (control?.closest(".three-button")) {
+            if (control?.closest(".site-header_navigation")) {
                 const owner = control.closest("details");
                 closePanels();
                 // Nút trong menu sắp ẩn cần trả focus trước khi phần khác mở popup.
