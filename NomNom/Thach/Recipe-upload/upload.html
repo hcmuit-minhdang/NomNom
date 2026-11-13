@@ -100,11 +100,11 @@
                         <div class=""></div>
                             <h4>Hình ảnh</h4>
                             <span class="note" id="image-note">Thêm từ 1 đến 5 hình ảnh món ăn</span>
-                            <label for="images" class="image-upload">
+                            <label for="gallery-images" class="image-upload">
                                 <img src="../assets/imageFile.svg" alt="" class="image-upload-icon">
                                 <span class="image-upload-text">Nhấn vào đây để đăng tải hình ảnh</span>
                             </label>
-                            <input type="file" id="images" name="gallery" accept="image/*" multiple required >
+                            <input type="file" id="gallery-images" name="gallery" accept="image/*" multiple required >
                     </section>
 
 
@@ -114,7 +114,7 @@
 
                         <div class="card-body">
                         <!-- ---------- Nhập nguyên liệu ---------- -->
-                        <section class="recipe-description-section" id="nguyen-lieu-input">
+                        <section class="recipe-description-section" id="nguyen-lieu">
                             <div class="title recipe-description">
                                 <h3 id="ingredients-input-title">NGUYÊN LIỆU</h3>
                                 <div class="line"></div>
@@ -139,21 +139,55 @@
                                     <h3 id="ingredients-input-title">DINH DƯỠNG</h3>
                                     <div class="line"></div>
                                 </div>
-                                <div class="nutrition-container" id="nutrition-container"></div>
-                                <p class="nutrition-note">Thông tin dinh dưỡng trên chỉ mang tính chất <u>tham khảo</u>, mọi định lượng đều có thể thay đổi tùy vào gia vị và cách chế biến</p>
+                                <p class="nutrition-note note">Thêm thông tin dinh dưỡng nếu có, tìm hiểu thêm chi tiết về thành phần dinh dưỡng món ăn <b><a href="https://www.webmd.com/diet/healthtool-food-calorie-counter">tại đây</a></b></p>
+                                
+                                <div class="nutrition-container" id="nutrition-container">
+                                    <div class="left nutrients">
+                                        <div>
+                                            <label for="calories" class="nutrient-label">Calories<span class="nutrient-input-note">(kcal)</span></label>
+                                            <input class="nutrient-input" id="calories" name="calories" type="number" min="0" placeholder="930"> 
+                                        </div>
+                                        <div>
+                                            <label for="carbs">Carbohydrates<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="carbs" name="carbs" type="number" min="0" placeholder="93">
+                                        </div>
+                                        <div>
+                                            <label for="protein">Protein<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="protein" name="protein" type="number" min="0" placeholder="44">
+                                        </div>
+                                    </div>
+                                    <div class="right nutrients">
+                                        <div>
+                                            <label for="fat">Fat<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="fat" name="fat" type="number" min="0" placeholder="47">
+                                        </div>
+                                        <div>
+                                            <label for="sodium">Sodium<span class="nutrient-input-note">(mg)</span></label>
+                                            <input class="nutrient-input" id="sodium" name="sodium" type="number" min="0" placeholder="2500">
+                                        </div>
+                                        <div>
+                                            <label for="fiber">Fiber<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="fiber" name="fiber" type="number" min="0" placeholder="3">
+                                        </div>
+                                    </div>
+                                </div>
                             </section>
                         </div>
                     </section>
 
                     <!-- ---------- Hướng dẫn cụ thể ---------- -->
                     <section class="detailed-guide" id="huong-dan-cu-the">
-                        <div class="title detailed-guide-title">
-                            <h2 id="detailed-guide-label">HƯỚNG DẪN CỤ THỂ</h2>
+                        <div class="title detailed-guide-title" id="huong-dan-cu-the">
+                            <h2 id="detailed-guide-label" class="detailed-guide-tag">HƯỚNG DẪN CỤ THỂ</h2>
                             <div class="line"></div>
                         </div>
-
-                        <div id="steps-container"></div>
+                        <button id="add-step-btn" class="add-detailed-step-btn">THÊM BƯỚC</button>
+                        <ul id="detailed-steps-container"></ul>
                     </section>
+
+                    <div class="line bottom-divider"></div>
+                    <input type="submit" class="upload-btn" value="ĐĂNG TẢI CÔNG THỨC">
+                    <input type="submit" class="draft-btn" value="LƯU BẢN NHÁP">
                 </form>
 
                 <!-- ================= SIDEBAR TỔNG QUAN ================= -->
@@ -178,12 +212,7 @@
                             </ul>
                         </details>
 
-                        <details class="toc-group" open>
-                            <summary>Hướng dẫn cụ thể</summary>
-                            <ul class="toc-sublist" id="toc-steps"></ul>
-                        </details>
-
-                        <a href="#binh-luan" class="toc-single">Bình luận</a>
+                        <a href="#huong-dan-cu-the" class="toc-single">Hướng dẫn cụ thể</a>
                     </nav>
                 </aside>
             </div>
