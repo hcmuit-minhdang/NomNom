@@ -1,7 +1,7 @@
 # Ghép header NomNom
 
 Hai file HTML là bản xem thử khách và thành viên. Cả hai dùng `style.css` và
-`header.js`. Chỉ ghép khối `<header data-nomnom-header>`, nối CSS và JS với `defer`;
+`header.js`. Chỉ ghép khối `<header class="site-header" data-nomnom-header>`, nối CSS và JS với `defer`;
 không cần tạo thêm trang. Các đường dẫn JS được tính từ vị trí `header.js`.
 
 ## Menu và tìm kiếm
@@ -61,3 +61,24 @@ nút bằng thẻ `<a href="...">` ngay trong header.
 
 Nếu chưa có module nhận sự kiện, header hiển thị thông báo chờ tích hợp;
 không điều hướng đến trang giả hoặc giả lập đăng xuất thành công.
+
+## Quy ước class và id
+
+Đặt tên tương tự footer: khối chính là `site-header`, phần con dùng một dấu
+`_`, ví dụ `site-header_logo`, `site-header_navigation`, `site-header_search`.
+Khung nội dung dùng `header-container`, tương ứng `footer-container`.
+
+| Thành phần | Class hoặc id |
+| --- | --- |
+| Khung nội dung | `.header-container` |
+| Logo | `.site-header_logo-box`, `.site-header_logo` |
+| Nhóm điều hướng, từng mục | `.site-header_navigation`, `.site-header_nav-item` |
+| Nhóm hành động, nút tài khoản | `.site-header_actions`, `.site-header_auth` |
+| Nút đăng ký, đăng nhập | `#site-header_signup`, `#site-header_login` |
+| Mục danh mục | `#site-header_categories` |
+| Khối tìm kiếm | `.site-header_search`, `#site-header_search-bar` |
+| Form, nút gửi tìm kiếm | `.site-header_search-field`, `.site-header_search-submit` |
+| Thông báo | `.site-header_status` |
+
+Thuộc tính `data-*`, tên sự kiện và API tài khoản vẫn dùng như phần hướng dẫn
+ở trên. Khi đổi id vùng tìm kiếm, cập nhật cả `aria-controls` của nút mở.

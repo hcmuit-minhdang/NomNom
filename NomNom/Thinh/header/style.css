@@ -2,10 +2,8 @@
     font-family: 'inter' ;
     src: url(../assets/fonts/Inter-Variable.ttf);
 }
-body {
-    margin: 0;
-}
-header {
+
+.site-header {
     background-color: white;
     box-shadow: 0 4px 4px 0 hsl(0, 0%, 50%);
     display: flex;
@@ -20,12 +18,12 @@ header {
     color: black;
     position: relative;
 }
-header a {
+.site-header a {
     color: black;
     text-decoration: none;
     font-weight: bold;
 }
-.container {
+.header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,24 +34,24 @@ header a {
     padding: 0 24px;
     box-sizing: border-box;
 }
-.Logo-box {
+.site-header_logo-box {
     display: flex;
     align-items: center;
     height: 106px;
     width: 239px; 
     
 }
-.logo {
+.site-header_logo {
     height: 59.47px;
     width: fit-content;
     transform: rotate(-3.48deg);
 }
-.Search-icon {
+.site-header_search-icon {
     height: 30px;
     width: 30px;
 }
 
-.Control {
+.site-header_controls {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,50 +61,50 @@ header a {
     gap: 5px;
     flex-shrink: 0;
 }
-.two-button {
+.site-header_auth {
     display: flex;
     flex-direction: row;
     gap: 10px;
     align-items: center;
     justify-content: flex-start;
 }
-.two-button button {
+.site-header_auth button {
     height: 37.44px;
     width: 108px;
     font-weight: bold;
     cursor: pointer;
 }
-#sign-butt {
+#site-header_signup {
     background-color: #fbc41c;
     box-shadow: 3.2px 3.2px 3.2px 0 hsl(0, 0%, 50%);
     border: 0.1px solid black;
     transition: background-color 0.2s ease-in-out,
             box-shadow 0.2s ease;
 }
-#sign-butt:hover {
+#site-header_signup:hover {
     background-color: white;
     box-shadow: none;
     border: 0.08px solid black;
 }
-#log-butt {
+#site-header_login {
     background-color: white;
     box-shadow: 3.2px 3.2px 3.2px 0 #fbc41c; 
     border: none;
     transition: background-color 0.2s ease-in-out,
         box-shadow 0.2s ease;
 }
-#log-butt:hover {
+#site-header_login:hover {
     background-color: #fbc41c;
     box-shadow: none;
     border:0.08px solid black;
 }
-.three-button {
+.site-header_navigation {
     display: flex;
     flex-direction: row;
     align-items: center;
 
 }
-.two-three-button {
+.site-header_actions {
     height: 50px;
     width: auto;
     display: flex;
@@ -115,7 +113,7 @@ header a {
     justify-content: center;
     gap: 21px;
 }
-.box-button {
+.site-header_nav-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,22 +125,22 @@ header a {
     flex-shrink: 0;
     border-right: 2.31px solid transparent;
 }
-.box-button#DanhMuc a{
+.site-header_nav-item#site-header_categories a{
     width: 135px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.three-button details[open] > summary > .arrow-list {
+.site-header_navigation details[open] > summary > .site-header_arrow {
     filter: brightness(0);
 }
-.three-button .box-button{
+.site-header_navigation .site-header_nav-item{
     position: relative;
 }
-.box-button:not(:has(> details[open])):hover {
+.site-header_nav-item:not(:has(> details[open])):hover {
     box-shadow: inset 0 -3.85px 0 hsl(0, 0%, 80%);
 }
-.three-button summary {
+.site-header_navigation summary {
     height: 30.48px;
     display: flex;
     align-items: center;
@@ -150,12 +148,12 @@ header a {
     cursor: pointer;
     font-weight: bold;
 }
-.box-button:has(> details[open]) {
+.site-header_nav-item:has(> details[open]) {
     background-color: #fbc41c;
     border-right: 2.31px solid black;
     box-sizing: border-box;
 }
-.three-button details > ul {
+.site-header_navigation details > ul {
     position: absolute;
     top: 100%;
     right: -2px;
@@ -170,23 +168,23 @@ header a {
     list-style:none;
     background-color: #fbc41c;
 }
-.three-button details > ul >li {
+.site-header_navigation details > ul >li {
 padding: 5px 5px;
 cursor: pointer;
 
 }
-.three-button details > ul >li:hover {
+.site-header_navigation details > ul >li:hover {
 background-color: #E2B119;
 }
 /* Link và nút phủ cả dòng menu, giữ cách trình bày hiện tại. */
 [data-nomnom-header] [hidden] {
     display: none !important;
 }
-.three-button details > ul > li {
+.site-header_navigation details > ul > li {
     padding: 0;
 }
-.three-button details > ul > li > a,
-.three-button details > ul > li > button {
+.site-header_navigation details > ul > li > a,
+.site-header_navigation details > ul > li > button {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -202,11 +200,11 @@ background-color: #E2B119;
     outline: 2px solid #373636;
     outline-offset: -2px;
 }
-.search-field:focus-within {
+.site-header_search-field:focus-within {
     outline: 2px solid #373636;
     outline-offset: 3px;
 }
-.header-status {
+.site-header_status {
     position: absolute;
     top: 100%;
     left: 0;
@@ -220,36 +218,36 @@ background-color: #E2B119;
     font-size: 16px;
     text-align: center;
 }
-.two-three-button summary {
+.site-header_actions summary {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
-.search-bar-butt {
+.site-header_search {
     flex-shrink: 0;
 }
-.search-bar-butt > summary {
+.site-header_search > summary {
     width: 52px;
     height: 52px;
     cursor: pointer;
     list-style: none;
 }
-.search-bar-butt > summary::-webkit-details-marker {
+.site-header_search > summary::-webkit-details-marker {
     display: none;
 }
-.search-bar-butt > summary > .search-close-icon {
+.site-header_search > summary > .site-header_search-close-icon {
     display: none;
 }
-.search-bar-butt[open] > summary > .search-open-icon {
+.site-header_search[open] > summary > .site-header_search-open-icon {
     display: none;
 }
-.search-bar-butt[open] > summary > .search-close-icon {
+.site-header_search[open] > summary > .site-header_search-close-icon {
     display: block;
 }
 
-#search-bar {
+#site-header_search-bar {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -266,7 +264,7 @@ background-color: #E2B119;
     justify-content: center;
     padding: 0 20px;
 }
-.search-field {
+.site-header_search-field {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -279,11 +277,11 @@ background-color: #E2B119;
     background-color: white;
     box-shadow: 6px 4px 4px 0 #fbc41c;
 }
-.search-close-icon {
+.site-header_search-close-icon {
     height: 32px;
     width: auto;
 }
-.search-field input {
+.site-header_search-field input {
     flex: 1;
     min-width: 0;
     padding: 0;
@@ -295,15 +293,15 @@ background-color: #E2B119;
     line-height: 39px;
     color: black;
 }
-.search-field input:focus {
+.site-header_search-field input:focus {
     outline: none;
 }
-.search-field input::placeholder {
+.site-header_search-field input::placeholder {
     color: rgba(0, 0, 0, 0.35);
     font-style: italic;
     opacity: 1;
 }
-.search-submit {
+.site-header_search-submit {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -313,43 +311,43 @@ background-color: #E2B119;
     background: transparent;
     cursor: pointer;
 }
-.search-submit img {
+.site-header_search-submit img {
     display: block;
 }
 
 /* Cửa sổ vừa: giảm khoảng cách và kích thước logo. */
 @media (max-width: 1200px) {
-    .container {
+    .header-container {
         gap: 24px;
         padding: 0 16px;
     }
 
-    .Logo-box {
+    .site-header_logo-box {
         width: auto;
     }
 
-    .logo {
+    .site-header_logo {
         height: 45px;
     }
 }
 
 /* Cửa sổ hẹp: logo ở trên, các nhóm nút tự xuống hàng. */
 @media (max-width: 1000px) {
-    header {
+    .site-header {
         height: auto;
         min-height: 106px;
     }
 
-    .container {
+    .header-container {
         flex-direction: column;
         gap: 0;
     }
 
-    .Logo-box {
+    .site-header_logo-box {
         height: 72px;
     }
 
-    .Control {
+    .site-header_controls {
         width: 100%;
         min-width: 0;
         height: auto;
@@ -359,7 +357,7 @@ background-color: #E2B119;
         padding-bottom: 16px;
     }
 
-    .three-button {
+    .site-header_navigation {
         position: relative;
         min-width: 0;
         max-width: 100%;
@@ -367,16 +365,16 @@ background-color: #E2B119;
         justify-content: center;
     }
 
-    .box-button {
+    .site-header_nav-item {
         height: 60px;
     }
 
-    .three-button .box-button {
+    .site-header_navigation .site-header_nav-item {
         position: static;
     }
 
     /* Căn dropdown theo cả nhóm menu để không tràn mép trái. */
-    .three-button details > ul {
+    .site-header_navigation details > ul {
         left: 50%;
         right: auto;
         transform: translateX(-50%);
@@ -384,7 +382,7 @@ background-color: #E2B119;
         border-left: 2.31px solid black;
     }
 
-    .two-three-button {
+    .site-header_actions {
         max-width: 100%;
         height: auto;
         min-height: 52px;
