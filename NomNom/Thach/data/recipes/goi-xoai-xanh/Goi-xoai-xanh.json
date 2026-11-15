@@ -1,0 +1,128 @@
+{
+  "id": "goi-xoai-xanh",
+  "title": "Gỏi xoài xanh",
+  "category": "Món ăn truyền thống",
+  "subcategory": "Gỏi",
+
+  "author": "",
+  "uploaded": "15/11/2026",
+
+  "ratingScore": 0,
+  "reviewCount": 0,
+
+  "prepTime": 25,
+  "cookTime": 20,
+  "baseServings": 4,
+  "costTotal": 90000,
+
+  "description": "Gỏi xoài xanh là món khai vị thanh mát với những sợi xoài giòn, chua nhẹ trộn cùng tôm luộc, thịt ba rọi thái mỏng và cà rốt bào sợi. Nước trộn chua ngọt từ nước mắm, đường, chanh, tỏi và ớt giúp món gỏi đậm đà mà không ngấy. Rắc thêm hành phi, đậu phộng rang và rau thơm là đã có một dĩa gỏi đủ vị chua, cay, mặn, ngọt, rất hợp cho những ngày nóng hoặc các bữa tiệc gia đình.",
+  "summary": "A refreshing Vietnamese green mango salad with poached shrimp, thinly sliced pork belly and carrots, tossed in a sweet, sour and spicy fish sauce dressing. Topped with fried shallots, roasted peanuts and fresh herbs.",
+
+  "gallery": [
+    "images/placeholder.svg",
+    "images/placeholder.svg",
+    "images/placeholder.svg",
+    "images/placeholder.svg"
+  ],
+
+  "featuredReview": {
+    "rating": 0,
+    "text": "",
+    "author": ""
+  },
+
+  "ingredients": [
+    { "ingredientId": "xoai-xanh", "qty": 2, "unit": "quả", "note": "chọn xoài keo hoặc xoài tượng còn xanh, cứng" },
+    { "ingredientId": "tom-tuoi", "qty": 200, "unit": "g" },
+    { "ingredientId": "thit-heo", "qty": 200, "unit": "g", "note": "nên chọn ba rọi" },
+    { "ingredientId": "ca-rot", "qty": 1, "unit": "củ" },
+    { "ingredientId": "hanh-tim", "qty": 3, "unit": "củ" },
+    { "ingredientId": "rau-thom", "qty": 30, "unit": "g", "note": "rau răm, húng quế hoặc ngò" },
+    { "ingredientId": "dau-phong", "qty": 30, "unit": "g", "note": "loại đã rang chín, giã dập" },
+    { "ingredientId": "toi-bam", "qty": 10, "unit": "g" },
+    { "ingredientId": "ot", "qty": 2, "unit": "trái" },
+    { "ingredientId": "nuoc-mam", "qty": 30, "unit": "ml" },
+    { "ingredientId": "duong-cat", "qty": 30, "unit": "g" },
+    { "ingredientId": "nuoc-cot-chanh", "qty": 20, "unit": "ml" },
+    { "ingredientId": "dau-an", "qty": 15, "unit": "ml" },
+    { "ingredientId": "muoi", "qty": 5, "unit": "g" }
+  ],
+
+  "quickSteps": [
+    "Sơ chế: Gọt vỏ xoài và cà rốt rồi bào sợi. Thái mỏng hành tím, rửa sạch rau thơm và cắt khúc.",
+    "Luộc thịt và tôm: Luộc thịt ba rọi với muối khoảng 15 phút rồi thái lát mỏng. Luộc tôm khoảng 3 phút, bóc vỏ và chẻ đôi.",
+    "Phi hành: Phi vàng 2 củ hành tím thái mỏng với 15ml dầu ăn, vớt ra để ráo.",
+    "Pha nước trộn: Giã tỏi ớt, khuấy với nước mắm, đường và nước cốt chanh cho tan.",
+    "Trộn gỏi: Trộn xoài, cà rốt, hành tím, thịt và tôm với nước trộn, để thấm 5 phút rồi thêm rau thơm, rắc hành phi và đậu phộng."
+  ],
+
+  "nutrition": {
+    "servings": 1,
+    "calories": "520 kcal",
+    "carbs": "34g",
+    "protein": "18g",
+    "fat": "33g",
+    "sodium": "800 - 1,000 mg",
+    "fiber": "3 - 4g"
+  },
+
+  "steps": [
+    {
+      "text": [
+        "Xoài xanh gọt vỏ, rửa sạch rồi bào thành sợi. Cà rốt gọt vỏ, bào sợi. Ngâm xoài và cà rốt vào tô nước lạnh khoảng 5 phút cho giòn rồi vớt ra để thật ráo.",
+        "Hành tím bóc vỏ, thái lát mỏng. Rau thơm nhặt sạch, rửa và cắt khúc ngắn."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Cho thịt ba rọi vào nồi nước, thêm 5g muối, đun sôi rồi luộc khoảng 15 phút đến khi thịt chín. Vớt thịt ra để nguội rồi thái thành lát mỏng.",
+        "Dùng tiếp nồi nước luộc thịt, thả tôm vào luộc khoảng 3 phút đến khi tôm đỏ đều. Vớt ra, bóc vỏ, bỏ chỉ lưng và chẻ đôi theo chiều dọc."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Đun nóng 15ml dầu ăn trong chảo nhỏ, cho 2 củ hành tím thái mỏng vào phi trên lửa vừa khoảng 3 phút.",
+        "Khi hành chuyển vàng thì vớt ra ngay, để lên giấy thấm dầu cho hành giòn."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Giã nhuyễn 10g tỏi và 2 trái ớt.",
+        "Cho vào chén 30ml nước mắm, 30g đường và 20ml nước cốt chanh, thêm tỏi ớt giã vào rồi khuấy đến khi đường tan hết."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Cho xoài, cà rốt, 1 củ hành tím thái lát còn lại, thịt và tôm vào tô lớn. Rưới nước trộn vào, trộn nhẹ tay và để khoảng 5 phút cho thấm.",
+        "Thêm rau thơm, trộn đều rồi bày ra dĩa. Rắc hành phi và đậu phộng lên trên, ăn ngay để xoài còn giòn."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    }
+  ],
+
+  "similar": [
+    { "id": "ca-nuong-muoi-ot", "name": "Cá nướng muối ớt", "price": "35.000đ / phần", "time": "70 phút", "image": "images/placeholder.svg" },
+    { "id": "canh-bau-nau-tom", "name": "Canh bầu nấu tôm", "price": "12.500đ / phần", "time": "30 phút", "image": "images/placeholder.svg" },
+    { "id": "banh-mi-thit-nuong", "name": "Bánh mì thịt nướng", "price": "80.000đ / phần", "time": "45 phút", "image": "images/image1.jpg" },
+    { "id": "com-chien-trung", "name": "Cơm chiên trứng", "price": "17.500đ / phần", "time": "30 phút", "image": "images/placeholder.svg" }
+  ]
+}

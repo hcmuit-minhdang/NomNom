@@ -1,0 +1,128 @@
+{
+  "id": "com-chien-trung",
+  "title": "Cơm chiên trứng",
+  "category": "Món ăn truyền thống",
+  "subcategory": "Cơm chiên",
+
+  "author": "",
+  "uploaded": "15/11/2026",
+
+  "ratingScore": 0,
+  "reviewCount": 0,
+
+  "prepTime": 15,
+  "cookTime": 15,
+  "baseServings": 2,
+  "costTotal": 35000,
+
+  "description": "Cơm chiên trứng là món ăn quen thuộc trong bữa cơm gia đình Việt, cách làm đơn giản mà lại tận dụng được cơm nguội còn dư. Hạt cơm được chiên trên lửa lớn cho săn và tơi, quyện cùng trứng béo bùi, thơm mùi tỏi phi và hành lá. Thêm chút cà rốt cho màu sắc bắt mắt, ăn kèm dưa leo, cà chua là đã có một bữa ăn nhanh gọn, no bụng mà không tốn nhiều chi phí.",
+  "summary": "A simple Vietnamese egg fried rice made with day-old rice, eggs, garlic and green onions. Ready in about 30 minutes, budget-friendly, and a great way to use up leftover rice.",
+
+  "gallery": [
+    "images/placeholder.svg",
+    "images/placeholder.svg",
+    "images/placeholder.svg",
+    "images/placeholder.svg"
+  ],
+
+  "featuredReview": {
+    "rating": 0,
+    "text": "",
+    "author": ""
+  },
+
+  "ingredients": [
+    { "ingredientId": "gao-tam", "qty": 400, "unit": "g", "note": "dùng cơm đã nấu chín và để nguội, khoảng 2 chén lớn" },
+    { "ingredientId": "trung-vit", "qty": 3, "unit": "quả", "note": "có thể thay bằng trứng gà" },
+    { "ingredientId": "toi-bam", "qty": 10, "unit": "g" },
+    { "ingredientId": "hanh-tim", "qty": 2, "unit": "củ" },
+    { "ingredientId": "hanh-la", "qty": 3, "unit": "nhánh" },
+    { "ingredientId": "ca-rot", "qty": 1, "unit": "củ", "note": "loại nhỏ, tùy chọn" },
+    { "ingredientId": "dau-an", "qty": 30, "unit": "ml" },
+    { "ingredientId": "nuoc-mam", "qty": 10, "unit": "ml" },
+    { "ingredientId": "nuoc-tuong", "qty": 10, "unit": "ml" },
+    { "ingredientId": "hat-nem", "qty": 5, "unit": "g" },
+    { "ingredientId": "dua-leo", "qty": 1, "unit": "quả", "note": "ăn kèm" },
+    { "ingredientId": "ca-chua", "qty": 1, "unit": "quả", "note": "ăn kèm" },
+    { "ingredientId": "tieu", "qty": null, "unit": "g", "group": "Gia vị" }
+  ],
+
+  "quickSteps": [
+    "Sơ chế: Bóp tơi cơm nguội. Băm tỏi và hành tím, cắt nhỏ hành lá (tách riêng phần gốc trắng), cắt cà rốt hạt lựu. Đánh tan trứng với một nửa lượng nước mắm.",
+    "Phi thơm: Làm nóng 20ml dầu ăn, phi vàng tỏi, hành tím và phần gốc hành lá rồi cho cà rốt vào xào khoảng 2-3 phút.",
+    "Chiên cơm: Cho cơm vào đảo đều trên lửa lớn khoảng 5-7 phút cho hạt cơm săn lại, nêm phần nước mắm còn lại, nước tương và hạt nêm.",
+    "Cho trứng: Đẩy cơm sang một bên, thêm 10ml dầu ăn, đổ trứng vào, khi trứng hơi se mặt thì đảo đều với cơm khoảng 3-4 phút.",
+    "Hoàn thiện: Rắc hành lá và tiêu, đảo nhanh rồi tắt bếp. Dọn ra dĩa, ăn kèm dưa leo và cà chua cắt lát."
+  ],
+
+  "nutrition": {
+    "servings": 1,
+    "calories": "600 kcal",
+    "carbs": "60g",
+    "protein": "19g",
+    "fat": "28g",
+    "sodium": "1,100 - 1,400 mg",
+    "fiber": "2 - 3g"
+  },
+
+  "steps": [
+    {
+      "text": [
+        "Cơm nguội dùng tay bóp nhẹ cho các hạt cơm tơi ra, không bị dính thành cục. Cơm để qua đêm trong tủ lạnh sẽ khô hơn và chiên ngon hơn cơm mới nấu.",
+        "Tỏi và hành tím bóc vỏ, băm nhỏ. Hành lá rửa sạch, cắt nhỏ, để riêng phần gốc trắng và phần lá xanh. Cà rốt gọt vỏ, cắt hạt lựu nhỏ.",
+        "Đập 3 quả trứng vào tô, thêm 5ml nước mắm rồi dùng đũa đánh tan."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Đặt chảo lên bếp, cho vào 20ml dầu ăn và đun nóng. Cho tỏi băm, hành tím và phần gốc hành lá vào phi đến khi vàng thơm.",
+        "Thêm cà rốt vào xào khoảng 2-3 phút cho cà rốt chín mềm."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Cho cơm vào chảo, vặn lửa lớn và đảo đều tay khoảng 5-7 phút đến khi hạt cơm săn lại, hơi khô và thơm.",
+        "Nêm vào 5ml nước mắm còn lại, 10ml nước tương và 5g hạt nêm, đảo đều cho gia vị thấm vào từng hạt cơm."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Đẩy cơm sang một bên chảo, cho thêm 10ml dầu ăn rồi đổ trứng đã đánh vào phần chảo trống.",
+        "Đợi trứng hơi se mặt thì đảo đều trứng với cơm khoảng 3-4 phút cho trứng chín và bám quanh hạt cơm."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Rắc phần hành lá xanh và một ít tiêu lên cơm, đảo nhanh thêm khoảng 30 giây rồi tắt bếp.",
+        "Dưa leo và cà chua rửa sạch, cắt lát. Múc cơm ra dĩa, bày dưa leo và cà chua bên cạnh. Cơm chiên trứng ngon nhất khi ăn ngay lúc còn nóng."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    }
+  ],
+
+  "similar": [
+    { "id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "60.000đ / phần", "time": "50 phút", "image": "images/image1.jpg" },
+    { "id": "banh-mi-thit-nuong", "name": "Bánh mì thịt nướng", "price": "80.000đ / phần", "time": "45 phút", "image": "images/image1.jpg" },
+    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
+    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" }
+  ]
+}
