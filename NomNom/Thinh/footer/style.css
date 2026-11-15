@@ -2,43 +2,125 @@
     font-family: 'inter' ;
     src: url(../assets/fonts/Inter-Variable.ttf);
 }
+
 .site-footer {
     font-family: 'inter', Arial, Helvetica, sans-serif;
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
     max-width: 1600px;
-    height: 418px;
+    height: auto;
+    min-height: 418px;
+    padding: 67px 24px 24px;
     display: flex;
-    flex-direction: row;
-    justify-content:center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    gap: 32px;
+    position: relative;
+}
+/* Figma: Divider / Top — 1252 x 1px, màu #DEDEDE, cách đỉnh footer 30px. */
+.site-footer_divider {
+    display: block;
+    position: absolute;
+    top: 30px;             /* Khoảng cách từ đỉnh footer */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1252px;        /* Chiều dài đường xám */
+    max-width: calc(100% - 48px);
+    height: 1px;          /* Độ dày đường xám */
+    color: #DEDEDE;       /* Màu đường xám */
+    pointer-events: none;
+}
+
+/* Figma: Accent / Egg yellow — 32 x 3px, cách chữ phía trên 12px. */
+.site-footer_heading-line {
+    display: block;
+    width: 32px;          /* Chiều dài nét vàng */
+    height: 3px;          /* Độ dày nét vàng */
+    margin-top: 12px;     /* Khoảng cách từ chữ tới nét vàng */
+    color: #FBC41C;       /* Màu nét vàng */
+    pointer-events: none;
+}
+
+.site-footer a {
+    color: black;
+    text-decoration: none;
 }
 .footer-container {
-    width: 1252px;
-    height: 284px;
+    width: 100%;
+    max-width: 1252px;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    gap: 32px;
+}
+.footer-container > div {
+    min-width: 0;
 }
 .site-footer_brand {
-    width: 492px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: -20px;
 }
 .site-footer_links {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+.site-footer_links img{
+    margin-right: 5px;
 }
 .site-footer_logo-box {
     display: flex;
     align-items: center;
     height: 106px;
     width: 239px;
+    max-width: 100%;
 
 }
 .site-footer_logo {
     height: 59.47px;
     width: fit-content;
     transform: rotate(-3.48deg);
+}
+.site-footer_legal {
+    /* Nằm sau nội dung, tự đẩy chiều cao footer khi các link xuống hàng. */
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    font-size: 14px;
+    color: gray;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+}
+.site-footer_copyright {
+    margin: 0;
+}
+.site-footer_legal a{
+    font-size: inherit;
+    color: inherit;
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+
+    .footer-container > div {
+        flex: 0 1 auto;
+        width: 100%;
+    }
+
+    .site-footer_legal {
+        gap: 12px 20px;
+    }
 }
