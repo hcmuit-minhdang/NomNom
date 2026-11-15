@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0" />
-        <title>NomNom</title>
-        <link rel="stylesheet" href="../css/index.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../Thinh/header/style.css">
-        <link rel="stylesheet" href="../../Thinh/footer/style.css">
-        <script src="index.js" defer></script>
-        <script src="../../Thinh/header/header.js" defer></script>
-    </head>
-    <body>
-        <header class="site-header" data-nomnom-header>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NomNom</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../Thinh/header/style.css">
+    <link rel="stylesheet" href="../../Thinh/footer/style.css">
+    <script src="index.js" defer></script>
+    <script src="../../Thinh/header/header.js" defer></script>
+    <link rel="stylesheet" href="../../Thinh/login/login.css">
+    <link rel="stylesheet" href="../../Thinh/signup/signup.css">
+    <script src="../../Thinh/auth.js" defer></script>
+    <script src="../../Thinh/login/login.js" defer></script>
+    <script src="../../Thinh/signup/signup.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header" data-nomnom-header>
         <div class="header-container">
             <div class="site-header_logo-box">
-                <a href="../../Thach/Home-page/index.html" data-header-route="home" aria-label="NomNom — Trang chủ"><img class="site-header_logo" src="../../Thinh/assets/images/logo.png" alt="NomNom"></a>
+                <a href="../../Thach/Home-page/index.html" data-header-route="home" aria-label="NomNom — Trang chủ"><img
+                        class="site-header_logo" src="../../Thinh/assets/images/logo.png" alt="NomNom"></a>
             </div>
             <button class="site-header_menu-toggle" type="button" data-header-menu-toggle
                 aria-controls="site-header_controls" aria-expanded="false" aria-label="Mở menu">
@@ -31,43 +39,52 @@
                     <div class="site-header_nav-item">
                         <details>
 
-                            <summary>Công thức <img class="site-header_arrow" src="../../Thinh/assets/SVG/keyboard_arrow_up.svg"
-                                    alt="Arrow List">
+                            <summary>Công thức <img class="site-header_arrow"
+                                    src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt="Arrow List">
                             </summary>
 
                             <ul>
                                 <li><a href="../../Phat/index.html" data-header-route="search">Tìm công thức</a></li>
-                                <li><button type="button" data-header-action="ingredients">Danh mục nguyên liệu</button></li>
+                                <li><button type="button" data-header-action="ingredients">Danh mục nguyên liệu</button>
+                                </li>
                                 <li><button type="button" data-header-action="random">Gợi ý bất ngờ</button></li>
-                                <li><button type="button" data-header-action="collections">Tuyển tập công thức</button></li>
+                                <li><button type="button" data-header-action="collections">Tuyển tập công thức</button>
+                                </li>
                             </ul>
                         </details>
                     </div>
                     <div class="site-header_nav-item">
                         <details>
 
-                            <summary>Về chúng tôi <img class="site-header_arrow" src="../../Thinh/assets/SVG/keyboard_arrow_up.svg"
-                                    alt="Arrow List">
+                            <summary>Về chúng tôi <img class="site-header_arrow"
+                                    src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt="Arrow List">
                             </summary>
 
                             <ul>
                                 <li><a href="../../Minh/aboutus/index.html" data-header-route="about">Về NomNom</a></li>
                                 <li><button type="button" data-header-action="guide"><b>Hướng dẫn</b></button></li>
-                                <li><button type="button" data-header-action="faq"><b>Câu hỏi thường gặp</b></button></li>
+                                <li><button type="button" data-header-action="faq"><b>Câu hỏi thường gặp</b></button>
+                                </li>
                                 <li><button type="button" data-header-action="contact">Liên hệ</button></li>
                             </ul>
                         </details>
                     </div>
-                    <div class="site-header_nav-item" id="site-header_categories"><a href="../../Phat/index.html" data-header-route="categories">Danh mục</a></div>
+                    <div class="site-header_nav-item" id="site-header_categories"><a href="../../Phat/index.html"
+                            data-header-route="categories">Danh mục</a></div>
                     <div class="site-header_nav-item" data-header-member hidden>
                         <details>
-                            <summary>Góc của tôi<img class="site-header_arrow" src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt=""></summary>
+                            <summary>Góc của tôi<img class="site-header_arrow"
+                                    src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt=""></summary>
                             <ul>
-                                <li><a href="../../Minh/user/overview.html" data-header-route="overview">Tổng quan</a></li>
-                                <li><a href="../../Minh/user/uploaded.html" data-header-route="uploaded">Công thức đã đăng tải</a></li>
-                                <li><a href="../../Minh/user/saved.html" data-header-route="saved">Công thức đã lưu</a></li>
+                                <li><a href="../../Minh/user/overview.html" data-header-route="overview">Tổng quan</a>
+                                </li>
+                                <li><a href="../../Minh/user/uploaded.html" data-header-route="uploaded">Công thức đã
+                                        đăng tải</a></li>
+                                <li><a href="../../Minh/user/saved.html" data-header-route="saved">Công thức đã lưu</a>
+                                </li>
                                 <li><a href="../../Minh/user/history.html" data-header-route="history">Lịch sử</a></li>
-                                <li><a href="../../Minh/user/index.html" data-header-route="account">Tài khoản của tôi</a></li>
+                                <li><a href="../../Minh/user/index.html" data-header-route="account">Tài khoản của
+                                        tôi</a></li>
                                 <li><button type="button" data-auth-action="logout"><b>Đăng xuất</b></button></li>
                             </ul>
                         </details>
@@ -80,14 +97,16 @@
                     </div>
                     <details class="site-header_search">
                         <summary aria-controls="site-header_search-bar" aria-label="Mở tìm kiếm">
-                            <img class="site-header_search-icon site-header_search-open-icon" src="../../Thinh/assets/SVG/Search_Com.svg"
-                                alt="Mở thanh tìm kiếm">
-                            <img class="site-header_search-close-icon" src="../../Thinh/assets/SVG/X.svg" alt="Đóng thanh tìm kiếm">
+                            <img class="site-header_search-icon site-header_search-open-icon"
+                                src="../../Thinh/assets/SVG/Search_Com.svg" alt="Mở thanh tìm kiếm">
+                            <img class="site-header_search-close-icon" src="../../Thinh/assets/SVG/X.svg"
+                                alt="Đóng thanh tìm kiếm">
                             <span class="site-header_search-label">Tìm công thức</span>
                         </summary>
 
                         <div id="site-header_search-bar">
-                            <form class="site-header_search-field" role="search" aria-label="Tìm công thức" action="../../Phat/index.html" method="get">
+                            <form class="site-header_search-field" role="search" aria-label="Tìm công thức"
+                                action="../../Phat/index.html" method="get">
                                 <input type="search" name="q" placeholder="Tìm kiếm ..." required
                                     aria-label="Từ khóa tìm kiếm">
                                 <button class="site-header_search-submit" type="submit" aria-label="Tìm kiếm">
@@ -101,149 +120,159 @@
         </div>
         <p class="site-header_status" role="status" aria-live="polite" hidden></p>
     </header>
-        <main>
-            <section class="hero-section">
-                <div class="fridge-filter-container">
-                    <p id="fridge-filter-description">CÔNG THỨC THEO NGUYÊN LIỆU TỪ TỦ LẠNH CỦA BẠN</p>
-                    <a href="" class="fridge-filter-link">BỘ LỌC NGUYÊN LIỆU</a>
-                </div>
-                <div class="banner-container">
-                    <div class="banner-track" id="track">
-                        <div class="slide slide-1"></div>
-                        <div class="slide slide-2"></div>
-                        <div class="slide slide-3"></div>
-                    </div>
-                    
-                    <div class="controls">
-                        <button id="upBtn"><img src="../assets/up-arrow-white.svg"></button>
-                        <button id="downBtn"><img src="../assets/down-arrow-white.svg"></button>
-                    </div>
-                </div>
-            </section>
-            <div class="search-container">
-                <p id="search-label">TÌM KIẾM</p>
-                <form id="search-form">
-                    <input type="text" placeholder="Tìm kiếm công thức..." />
-                    <button type="submit"><img src="../assets/search-icon-thick.svg" alt="Search"></button>
-                </form>
+    <main>
+        <section class="hero-section">
+            <div class="fridge-filter-container">
+                <p id="fridge-filter-description">CÔNG THỨC THEO NGUYÊN LIỆU TỪ TỦ LẠNH CỦA BẠN</p>
+                <a href="" class="fridge-filter-link">BỘ LỌC NGUYÊN LIỆU</a>
             </div>
-            <section class="category-section">
-                <p id="category-label">PHÂN LOẠI PHỔ BIẾN</p>
-                <div class="category-container">
-                    <a href="" class="category-card category-nau-nhanh">
-                        <img src="../assets/food.png" alt="Nấu nhanh" class="category-image" />
-                        <span class="category-name">Nấu nhanh</span>
+            <div class="banner-container">
+                <div class="banner-track" id="track">
+                    <div class="slide slide-1"></div>
+                    <div class="slide slide-2"></div>
+                    <div class="slide slide-3"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="upBtn"><img src="../assets/up-arrow-white.svg"></button>
+                    <button id="downBtn"><img src="../assets/down-arrow-white.svg"></button>
+                </div>
+            </div>
+        </section>
+        <div class="search-container">
+            <p id="search-label">TÌM KIẾM</p>
+            <form id="search-form">
+                <input type="text" placeholder="Tìm kiếm công thức..." />
+                <button type="submit"><img src="../assets/search-icon-thick.svg" alt="Search"></button>
+            </form>
+        </div>
+        <section class="category-section">
+            <p id="category-label">PHÂN LOẠI PHỔ BIẾN</p>
+            <div class="category-container">
+                <a href="" class="category-card category-nau-nhanh">
+                    <img src="../assets/food.png" alt="Nấu nhanh" class="category-image" />
+                    <span class="category-name">Nấu nhanh</span>
+                </a>
+                <a href="" class="category-card category-mon-ga">
+                    <img src="../assets/food.png" alt="Món gà" class="category-image" />
+                    <span class="category-name">Món gà</span>
+                </a>
+                <a href="" class="category-card category-mon-xao">
+                    <img src="../assets/food.png" alt="Món xào" class="category-image" />
+                    <span class="category-name">Món xào</span>
+                </a>
+                <a href="" class="category-card category-mon-nuoc">
+                    <img src="../assets/food.png" alt="Món nước" class="category-image" />
+                    <span class="category-name">Món nước</span>
+                </a>
+                <a href="" class="category-card category-trang-mieng">
+                    <img src="../assets/food.png" alt="Tráng miệng" class="category-image" />
+                    <span class="category-name">Tráng miệng</span>
+                </a>
+                <a href="" class="category-card category-tiet-kiem">
+                    <img src="../assets/food.png" alt="Tiết kiệm" class="category-image" />
+                    <span class="category-name">Tiết kiệm</span>
+                </a>
+                <a href="" class="category-card category-mon-chay">
+                    <img src="../assets/food.png" alt="Món chay" class="category-image" />
+                    <span class="category-name">Món chay</span>
+                </a>
+                <a href="" class="category-card category-more">
+                    <img src="../assets/right-arrow-black.svg" alt="Xem Thêm" class="category-image-more" />
+                    <span class="category-name">Xem Thêm</span>
+                </a>
+            </div>
+        </section>
+        <section class="combinator">
+            <div class="popular-recipes-section">
+                <div class="title popular-recipes-title">
+                    <p id="popular-recipes-label">CÔNG THỨC THỊNH HÀNH</p>
+                    <div class="line popular-recipes-line"></div>
+                </div>
+                <div class="popular-recipes-container">
+                    <a href="" class="recipe-card-compressed">
+                        <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 1"
+                            class="recipe-image-medium" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">BLACK BEAN CHILI</span>
+                            <span class="recipe-price">$ price / servings</span>
+                            <span class="recipe-time">Cook Time: 30 mins</span>
+                        </div>
                     </a>
-                    <a href="" class="category-card category-mon-ga">
-                        <img src="../assets/food.png" alt="Món gà" class="category-image" />
-                        <span class="category-name">Món gà</span>
+                    <a href="../Recipe-page/recipe.html?id=banh-mi-thit-nuong" class="recipe-card-compressed">
+                        <img src="../data/recipes/banh-mi-thit-nuong/images/image1.jpg" alt="Bánh mì thịt nướng"
+                            class="recipe-image-medium" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">BÁNH MÌ THỊT NƯỚNG</span>
+                            <span class="recipe-price">80.000đ / phần</span>
+                            <span class="recipe-time">Cook Time: 45 phút</span>
+                        </div>
                     </a>
-                    <a href="" class="category-card category-mon-xao">
-                        <img src="../assets/food.png" alt="Món xào" class="category-image" />
-                        <span class="category-name">Món xào</span>
+                    <a href="" class="recipe-card-compressed">
+                        <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 3"
+                            class="recipe-image-medium" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">Công thức 3</span>
+                            <span class="recipe-price">$ price / servings</span>
+                            <span class="recipe-time">Cook Time: 60 mins</span>
+                        </div>
                     </a>
-                    <a href="" class="category-card category-mon-nuoc">
-                        <img src="../assets/food.png" alt="Món nước" class="category-image" />
-                        <span class="category-name">Món nước</span>
-                    </a>
-                    <a href="" class="category-card category-trang-mieng">
-                        <img src="../assets/food.png" alt="Tráng miệng" class="category-image" />
-                        <span class="category-name">Tráng miệng</span>
-                    </a>
-                    <a href="" class="category-card category-tiet-kiem">
-                        <img src="../assets/food.png" alt="Tiết kiệm" class="category-image" />
-                        <span class="category-name">Tiết kiệm</span>
-                    </a>
-                    <a href="" class="category-card category-mon-chay">
-                        <img src="../assets/food.png" alt="Món chay" class="category-image" />
-                        <span class="category-name">Món chay</span>
-                    </a>
-                    <a href="" class="category-card category-more">
-                        <img src="../assets/right-arrow-black.svg" alt="Xem Thêm" class="category-image-more" />
-                        <span class="category-name">Xem Thêm</span>
+                    <a href="../Recipe-page/recipe.html?id=com-tam-long-xuyen" class="recipe-card-compressed">
+                        <img src="../data/recipes/com-tam-long-xuyen/images/image1.jpg" alt="Cơm tấm Long Xuyên"
+                            class="recipe-image-medium" />
+                        <div class="recipe-info">
+                            <span class="recipe-name">CƠM TẤM LONG XUYÊN</span>
+                            <span class="recipe-price">60.000đ / phần</span>
+                            <span class="recipe-time">Cook Time: 50 phút</span>
+                        </div>
                     </a>
                 </div>
-            </section>
-            <section class="combinator">
-                <div class="popular-recipes-section">
-                    <div class="title popular-recipes-title">
-                        <p id="popular-recipes-label">CÔNG THỨC THỊNH HÀNH</p>
-                        <div class="line popular-recipes-line"></div>
-                    </div>
-                    <div class="popular-recipes-container">
-                        <a href="" class="recipe-card-compressed">
-                            <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 1" class="recipe-image-medium" />
-                            <div class="recipe-info">
-                                <span class="recipe-name">BLACK BEAN CHILI</span>
-                                <span class="recipe-price">$ price / servings</span>
-                                <span class="recipe-time">Cook Time: 30 mins</span>
-                            </div>
-                        </a>
-                        <a href="../Recipe-page/recipe.html?id=banh-mi-thit-nuong" class="recipe-card-compressed">
-                            <img src="../data/recipes/banh-mi-thit-nuong/images/image1.jpg" alt="Bánh mì thịt nướng" class="recipe-image-medium" />
-                            <div class="recipe-info">
-                                <span class="recipe-name">BÁNH MÌ THỊT NƯỚNG</span>
-                                <span class="recipe-price">80.000đ / phần</span>
-                                <span class="recipe-time">Cook Time: 45 phút</span>
-                            </div>
-                        </a>
-                        <a href="" class="recipe-card-compressed">
-                            <img src="../assets/Homemade-Mac-and-Cheese-Overhead-Macro.jpg" alt="Recipe 3" class="recipe-image-medium" />
-                            <div class="recipe-info">
-                                <span class="recipe-name">Công thức 3</span>
-                                <span class="recipe-price">$ price / servings</span>
-                                <span class="recipe-time">Cook Time: 60 mins</span>
-                            </div>
-                        </a>
-                        <a href="../Recipe-page/recipe.html?id=com-tam-long-xuyen" class="recipe-card-compressed">
-                            <img src="../data/recipes/com-tam-long-xuyen/images/image1.jpg" alt="Cơm tấm Long Xuyên" class="recipe-image-medium" />
-                            <div class="recipe-info">
-                                <span class="recipe-name">CƠM TẤM LONG XUYÊN</span>
-                                <span class="recipe-price">60.000đ / phần</span>
-                                <span class="recipe-time">Cook Time: 50 phút</span>
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-                <a href="" class="view-more-button popular-more-button">XEM THÊM</a>
-                <div class="section-divider"></div>
-                <div class="side-column">
+
+            </div>
+            <a href="" class="view-more-button popular-more-button">XEM THÊM</a>
+            <div class="section-divider"></div>
+            <div class="side-column">
                 <aside class="side-bar">
                     <section class="leaderboard-section">
                         <p id="leaderboard-label">BẢNG VINH DANH</p>
                         <div class="leaderboard-container">
                             <div class="leaderboard-card most-recipes">
                                 <img src="../assets/avatar.jpg" alt="User 1" class="user-image-leaderboard" />
-                                
+
                                 <div class="word-container">
                                     <a href="" class="user-name">Người dùng 1</a>
-                                    <div class="lower-card"><div class="image-container">
-                                        <img src="../assets/cookbook-white.png" alt="Cookbook-bg" class="cookbook-icon-bg" />
-                                        <img src="../assets/cookbook.png" alt="Cookbook" class="cookbook-icon" /></div>
-                                        <span class="most-recipes-description">#1 Đóng góp nhiều công thức nhất (<a href="">53 recipes</a>)</span>
+                                    <div class="lower-card">
+                                        <div class="image-container">
+                                            <img src="../assets/cookbook-white.png" alt="Cookbook-bg"
+                                                class="cookbook-icon-bg" />
+                                            <img src="../assets/cookbook.png" alt="Cookbook" class="cookbook-icon" />
+                                        </div>
+                                        <span class="most-recipes-description">#1 Đóng góp nhiều công thức nhất (<a
+                                                href="">53 recipes</a>)</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="leaderboard-card most-reviews">
                                 <img src="../assets/avatar.jpg" alt="User 2" class="user-image-leaderboard" />
-                                
+
                                 <div class="word-container">
                                     <a href="" class="user-name">Người dùng 2</a>
                                     <div class="lower-card">
                                         <img src="../assets/star-white.png" alt="Star" class="star-icon" />
-                                        <span class="most-reviews-description">#1 Đóng góp nhiều đánh giá nhất (<a href="">42 reviews</a>)</span>
+                                        <span class="most-reviews-description">#1 Đóng góp nhiều đánh giá nhất (<a
+                                                href="">42 reviews</a>)</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="leaderboard-card most-liked-recipe">
                                 <img src="../assets/avatar.jpg" alt="User 3" class="user-image-leaderboard" />
-                                
+
                                 <div class="word-container">
                                     <a href="" class="user-name">Người dùng 3</a>
                                     <div class="lower-card">
                                         <img src="../assets/heart-yellowbg.png" alt="Heart" class="heart-icon" />
-                                        <span class="most-liked-recipe-description">#1 Công thức được yêu thích nhất (<a href="">Spaghetti Carbonara</a>)</span>
+                                        <span class="most-liked-recipe-description">#1 Công thức được yêu thích nhất (<a
+                                                href="">Spaghetti Carbonara</a>)</span>
                                     </div>
                                 </div>
                             </div>
@@ -256,72 +285,74 @@
                         <p class="support-log-in-text">Đã có tài khoản? <a href="">Đăng nhập ngay!</a></p>
                     </section>
                 </aside>
-                </div>
-            </section>
-            <section class="price-comparison-section">
-                <p id="price-comparison-label">SO SÁNH GIÁ CẢ</p>
-                <div class="price-comparison-banner">
-                    <div class="price-comparison-banner-left">
-                        <p id="pcb-question">THIẾU NGUYÊN LIỆU?</p>
-                        <p id="pcb-text">So sánh giá cả ngay giữa các đại lý, cửa hàng quen thuộc như Co.op Food, Bách Hóa Xanh,.. tại đây</p>
-                    </div>
-                    <div class="price-comparison-banner-right">
-                        <div class="pcb-description-container">
-                            <p id="pcb-description-large">TIẾT KIỆM HƠN NGAY VỚI TỪNG NGUYÊN LIỆU</p>
-                            <p id="pcb-description-small">ĐỐI TÁC UY TÍN, SIÊU THỊ THÂN QUEN</p>
-                            <div id="pcb-line-break"></div>
-                        </div>
-                        <a href="../Ingredients-Comparison/ingredients-comparison.html" class="price-comparison-link">TIẾT KIỆM NGAY</a>
-                    </div>
-                </div>
-            </section>
-            <section class="new-community-recipe">
-                <div class="title new-community-recipe-title">
-                    <p id="new-community-recipe-label">CÔNG THỨC MỚI TỪ CỘNG ĐỒNG!</p>
-                    <div class="line class new-community-recipe-line"></div>
-                </div>
-                <div class="new-community-recipe-container">
-                    <a href="" class="recipe-card">
-                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
-                        <div class="recipe-info">
-                            <span class="recipe-name">Công thức 1</span>
-                            <span class="recipe-price">$ price / servings</span>
-                            <span class="recipe-time">Cook Time: 30 mins</span>
-                        </div>
-                    </a>
-                    <a href="" class="recipe-card">
-                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
-                        <div class="recipe-info">
-                            <span class="recipe-name">Công thức 1</span>
-                            <span class="recipe-price">$ price / servings</span>
-                            <span class="recipe-time">Cook Time: 30 mins</span>
-                        </div>
-                    </a>
-                    <a href="" class="recipe-card">
-                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
-                        <div class="recipe-info">
-                            <span class="recipe-name">Công thức 1</span>
-                            <span class="recipe-price">$ price / servings</span>
-                            <span class="recipe-time">Cook Time: 30 mins</span>
-                        </div>
-                    </a>
-                    <a href="" class="recipe-card">
-                        <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
-                        <div class="recipe-info">
-                            <span class="recipe-name">Công thức 1</span>
-                            <span class="recipe-price">$ price / servings</span>
-                            <span class="recipe-time">Cook Time: 30 mins</span>
-                        </div>
-                    </a>
-                </div>
-                <a href="" class="recipe-more-button view-more-button">Xem Thêm</a>
-            </section>
-            <div class="about-us-banner">
-                <p class="about-us-description">BẠN MỚI ĐẾN? TÌM HIỂU VỀ BỌN MÌNH TẠI ĐÂY!</p>
-                <a href="" class="about-us-button">ABOUT US</a>
             </div>
-        </main>
-            <footer class="site-footer">
+        </section>
+        <section class="price-comparison-section">
+            <p id="price-comparison-label">SO SÁNH GIÁ CẢ</p>
+            <div class="price-comparison-banner">
+                <div class="price-comparison-banner-left">
+                    <p id="pcb-question">THIẾU NGUYÊN LIỆU?</p>
+                    <p id="pcb-text">So sánh giá cả ngay giữa các đại lý, cửa hàng quen thuộc như Co.op Food, Bách Hóa
+                        Xanh,.. tại đây</p>
+                </div>
+                <div class="price-comparison-banner-right">
+                    <div class="pcb-description-container">
+                        <p id="pcb-description-large">TIẾT KIỆM HƠN NGAY VỚI TỪNG NGUYÊN LIỆU</p>
+                        <p id="pcb-description-small">ĐỐI TÁC UY TÍN, SIÊU THỊ THÂN QUEN</p>
+                        <div id="pcb-line-break"></div>
+                    </div>
+                    <a href="../Ingredients-Comparison/ingredients-comparison.html" class="price-comparison-link">TIẾT
+                        KIỆM NGAY</a>
+                </div>
+            </div>
+        </section>
+        <section class="new-community-recipe">
+            <div class="title new-community-recipe-title">
+                <p id="new-community-recipe-label">CÔNG THỨC MỚI TỪ CỘNG ĐỒNG!</p>
+                <div class="line class new-community-recipe-line"></div>
+            </div>
+            <div class="new-community-recipe-container">
+                <a href="" class="recipe-card">
+                    <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                    <div class="recipe-info">
+                        <span class="recipe-name">Công thức 1</span>
+                        <span class="recipe-price">$ price / servings</span>
+                        <span class="recipe-time">Cook Time: 30 mins</span>
+                    </div>
+                </a>
+                <a href="" class="recipe-card">
+                    <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                    <div class="recipe-info">
+                        <span class="recipe-name">Công thức 1</span>
+                        <span class="recipe-price">$ price / servings</span>
+                        <span class="recipe-time">Cook Time: 30 mins</span>
+                    </div>
+                </a>
+                <a href="" class="recipe-card">
+                    <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                    <div class="recipe-info">
+                        <span class="recipe-name">Công thức 1</span>
+                        <span class="recipe-price">$ price / servings</span>
+                        <span class="recipe-time">Cook Time: 30 mins</span>
+                    </div>
+                </a>
+                <a href="" class="recipe-card">
+                    <img src="../assets/food.png" alt="Recipe 1" class="recipe-image" />
+                    <div class="recipe-info">
+                        <span class="recipe-name">Công thức 1</span>
+                        <span class="recipe-price">$ price / servings</span>
+                        <span class="recipe-time">Cook Time: 30 mins</span>
+                    </div>
+                </a>
+            </div>
+            <a href="" class="recipe-more-button view-more-button">Xem Thêm</a>
+        </section>
+        <div class="about-us-banner">
+            <p class="about-us-description">BẠN MỚI ĐẾN? TÌM HIỂU VỀ BỌN MÌNH TẠI ĐÂY!</p>
+            <a href="" class="about-us-button">ABOUT US</a>
+        </div>
+    </main>
+    <footer class="site-footer">
         <!-- Đường phân cách phía trên footer: màu và kích thước chỉnh trong CSS. -->
         <svg class="site-footer_divider" width="1252" height="1" aria-hidden="true" focusable="false">
             <rect width="100%" height="100%" fill="currentColor" />
@@ -330,8 +361,8 @@
             <div class="site-footer_brand">
                 <div class="site-footer_logo-box">
                     <a href="../../Thach/Home-page/index.html" data-header-route="home"
-                        aria-label="NomNom — Trang chủ"><img class="site-footer_logo" src="../../Thinh/assets/images/logo.png"
-                            alt="NomNom"></a>
+                        aria-label="NomNom — Trang chủ"><img class="site-footer_logo"
+                            src="../../Thinh/assets/images/logo.png" alt="NomNom"></a>
                 </div>
                 <h2 class="site-footer_tagline">Ăn ngon trọn vị, chi tiêu hợp lý.</h2>
                 <p class="site-footer_description">Bữa ngon bắt đầu từ những nguyên liệu bạn có. Cùng NomNom khám phá
@@ -373,7 +404,8 @@
                 </h2>
                 <nav class="site-footer_links">
                     <a href="#"><img src="../../Thinh/assets/SVG/footer-facebook.svg" alt="Logo-Facebook">Facebook</a>
-                    <a href="#"><img src="../../Thinh/assets/SVG/footer-instagram.svg" alt="Logo-Instagram">Instagram</a>
+                    <a href="#"><img src="../../Thinh/assets/SVG/footer-instagram.svg"
+                            alt="Logo-Instagram">Instagram</a>
                     <a href="#"><img src="../../Thinh/assets/SVG/footer-youtube.svg" alt="Logo-Youtube">Youtube</a>
                     <a href="#"><img src="../../Thinh/assets/SVG/footer-tiktok.svg" alt="Logo-Tiktok">Tiktok</a>
                 </nav>
@@ -386,5 +418,148 @@
             <a class="site-footer_legal-link site-footer_accessibility" href="#">Hỗ trợ tiếp cận</a>
         </div>
     </footer>
-    </body>
+    <!-- NOMNOM AUTH START -->
+    <dialog class="site-auth site-login" id="site-login_dialog" data-nomnom-login aria-labelledby="site-login_title"
+        lang="vi">
+        <div class="site-auth_content">
+            <button class="site-auth_close" type="button" data-auth-close aria-label="Đóng đăng nhập">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth_logo" src="../../Thinh/assets/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth_title" id="site-login_title">Đăng nhập</h2>
+            <form class="site-auth_form site-login_form" novalidate>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-login_email">Địa chỉ Email</label>
+                    <input class="site-auth_input" id="site-login_email" name="email" type="email"
+                        autocomplete="username" inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-login_email-error">
+                    <p class="site-auth_error" id="site-login_email-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-login_password">Mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-login_password" name="password" type="password"
+                            autocomplete="current-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu." aria-describedby="site-login_password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-login_password" aria-pressed="false" aria-label="Hiện mật khẩu"
+                            data-show-label="Hiện mật khẩu" data-hide-label="Ẩn mật khẩu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-login_password-error" hidden></p>
+                </div>
+                <div class="site-auth_options">
+                    <label class="site-auth_check"><input name="remember" type="checkbox"><span>Ghi nhớ
+                            tôi</span></label>
+                    <button class="site-auth_link" type="button"
+                        data-auth-pending="Chức năng quên mật khẩu đang chờ tích hợp.">Quên mật khẩu?</button>
+                </div>
+                <button class="site-auth_submit" type="submit">Đăng Nhập</button>
+                <p class="site-auth_status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="site-auth_switch">Chưa có tài khoản?
+                <button class="site-auth_link" type="button" data-auth-switch="signup">Đăng ký ngay!</button>
+            </p>
+        </div>
+    </dialog>
+
+    <dialog class="site-auth site-signup" id="site-signup_dialog" data-nomnom-signup aria-labelledby="site-signup_title"
+        lang="vi">
+        <div class="site-auth_content">
+            <button class="site-auth_close" type="button" data-auth-close aria-label="Đóng đăng ký">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth_logo" src="../../Thinh/assets/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth_title" id="site-signup_title">Đăng ký</h2>
+            <form class="site-auth_form site-signup_form" novalidate>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_username">Tên tài khoản</label>
+                    <input class="site-auth_input" id="site-signup_username" name="username" type="text"
+                        autocomplete="username" required data-required-message="Bạn hãy nhập tên tài khoản."
+                        aria-describedby="site-signup_username-error">
+                    <p class="site-auth_error" id="site-signup_username-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_email">Địa chỉ Email</label>
+                    <input class="site-auth_input" id="site-signup_email" name="email" type="email" autocomplete="email"
+                        inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-signup_email-error">
+                    <p class="site-auth_error" id="site-signup_email-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_password">Mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-signup_password" name="password" type="password"
+                            autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu."
+                            aria-describedby="site-signup_password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup_password" aria-pressed="false" aria-label="Hiện mật khẩu đăng ký"
+                            data-show-label="Hiện mật khẩu đăng ký" data-hide-label="Ẩn mật khẩu đăng ký">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_password-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_confirm-password">Xác nhận mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-signup_confirm-password" name="confirmPassword"
+                            type="password" autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy xác nhận mật khẩu."
+                            aria-describedby="site-signup_confirm-password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup_confirm-password" aria-pressed="false"
+                            aria-label="Hiện mật khẩu xác nhận" data-show-label="Hiện mật khẩu xác nhận"
+                            data-hide-label="Ẩn mật khẩu xác nhận">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_confirm-password-error" hidden></p>
+                </div>
+                <div class="site-auth_field site-signup_terms">
+                    <div class="site-auth_check">
+                        <input id="site-signup_terms" name="terms" type="checkbox" required
+                            aria-label="Tôi đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư"
+                            data-required-message="Bạn cần đồng ý với điều khoản và chính sách để tiếp tục."
+                            aria-describedby="site-signup_terms-error">
+                        <span><label for="site-signup_terms">Tôi đồng ý với</label>
+                            <button class="site-auth_link" type="button"
+                                data-auth-pending="Điều khoản sử dụng đang chờ tích hợp.">Điều khoản sử dụng</button>
+                            <label for="site-signup_terms">và</label>
+                            <button class="site-auth_link" type="button"
+                                data-auth-pending="Chính sách quyền riêng tư đang chờ tích hợp.">Chính sách quyền riêng
+                                tư.</button>
+                        </span>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_terms-error" hidden></p>
+                </div>
+                <button class="site-auth_submit" type="submit">Đăng Ký</button>
+                <p class="site-auth_status" role="status" aria-live="polite" hidden></p>
+            </form>
+        </div>
+    </dialog>
+    <!-- NOMNOM AUTH END -->
+</body>
+
 </html>

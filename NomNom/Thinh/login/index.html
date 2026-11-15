@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NomNom — Xem thử đăng nhập</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../signup/signup.css">
+    <script src="../auth.js" defer></script>
+    <script src="login.js" defer></script>
+    <script src="../signup/signup.js" defer></script>
+</head>
+<body class="auth-preview" data-auth-preview="login">
+    <main class="auth-preview_main">
+        <h1>Xem thử popup tài khoản NomNom</h1>
+        <p>Thử mở form, kiểm tra dữ liệu và chuyển từ đăng nhập sang đăng ký.</p>
+        <div class="auth-preview_actions">
+            <button class="auth-preview_button" type="button" data-auth-open="login">Đăng nhập</button>
+            <button class="auth-preview_button" type="button" data-auth-open="signup">Đăng ký</button>
+            <a href="../../Thach/Home-page/index.html">Mở trang chủ đã ghép</a>
+        </div>
+    </main>
+
+    <!-- NOMNOM AUTH START -->
+    <dialog class="site-auth site-login" id="site-login_dialog" data-nomnom-login
+        aria-labelledby="site-login_title" lang="vi">
+        <div class="site-auth_content">
+            <button class="site-auth_close" type="button" data-auth-close aria-label="Đóng đăng nhập">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth_logo" src="../assets/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth_title" id="site-login_title">Đăng nhập</h2>
+            <form class="site-auth_form site-login_form" novalidate>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-login_email">Địa chỉ Email</label>
+                    <input class="site-auth_input" id="site-login_email" name="email" type="email"
+                        autocomplete="username" inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-login_email-error">
+                    <p class="site-auth_error" id="site-login_email-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-login_password">Mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-login_password" name="password" type="password"
+                            autocomplete="current-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu." aria-describedby="site-login_password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-login_password" aria-pressed="false" aria-label="Hiện mật khẩu"
+                            data-show-label="Hiện mật khẩu" data-hide-label="Ẩn mật khẩu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-login_password-error" hidden></p>
+                </div>
+                <div class="site-auth_options">
+                    <label class="site-auth_check"><input name="remember" type="checkbox"><span>Ghi nhớ tôi</span></label>
+                    <button class="site-auth_link" type="button" data-auth-pending="Chức năng quên mật khẩu đang chờ tích hợp.">Quên mật khẩu?</button>
+                </div>
+                <button class="site-auth_submit" type="submit">Đăng Nhập</button>
+                <p class="site-auth_status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="site-auth_switch">Chưa có tài khoản?
+                <button class="site-auth_link" type="button" data-auth-switch="signup">Đăng ký ngay!</button>
+            </p>
+        </div>
+    </dialog>
+
+    <dialog class="site-auth site-signup" id="site-signup_dialog" data-nomnom-signup
+        aria-labelledby="site-signup_title" lang="vi">
+        <div class="site-auth_content">
+            <button class="site-auth_close" type="button" data-auth-close aria-label="Đóng đăng ký">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth_logo" src="../assets/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth_title" id="site-signup_title">Đăng ký</h2>
+            <form class="site-auth_form site-signup_form" novalidate>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_username">Tên tài khoản</label>
+                    <input class="site-auth_input" id="site-signup_username" name="username" type="text"
+                        autocomplete="username" required data-required-message="Bạn hãy nhập tên tài khoản."
+                        aria-describedby="site-signup_username-error">
+                    <p class="site-auth_error" id="site-signup_username-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_email">Địa chỉ Email</label>
+                    <input class="site-auth_input" id="site-signup_email" name="email" type="email"
+                        autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-signup_email-error">
+                    <p class="site-auth_error" id="site-signup_email-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_password">Mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-signup_password" name="password" type="password"
+                            autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu." aria-describedby="site-signup_password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup_password" aria-pressed="false" aria-label="Hiện mật khẩu đăng ký"
+                            data-show-label="Hiện mật khẩu đăng ký" data-hide-label="Ẩn mật khẩu đăng ký">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_password-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_confirm-password">Xác nhận mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-signup_confirm-password" name="confirmPassword" type="password"
+                            autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy xác nhận mật khẩu." aria-describedby="site-signup_confirm-password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup_confirm-password" aria-pressed="false" aria-label="Hiện mật khẩu xác nhận"
+                            data-show-label="Hiện mật khẩu xác nhận" data-hide-label="Ẩn mật khẩu xác nhận">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_confirm-password-error" hidden></p>
+                </div>
+                <div class="site-auth_field site-signup_terms">
+                    <div class="site-auth_check">
+                        <input id="site-signup_terms" name="terms" type="checkbox" required
+                            aria-label="Tôi đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư"
+                            data-required-message="Bạn cần đồng ý với điều khoản và chính sách để tiếp tục."
+                            aria-describedby="site-signup_terms-error">
+                        <span><label for="site-signup_terms">Tôi đồng ý với</label>
+                            <button class="site-auth_link" type="button" data-auth-pending="Điều khoản sử dụng đang chờ tích hợp.">Điều khoản sử dụng</button>
+                            <label for="site-signup_terms">và</label>
+                            <button class="site-auth_link" type="button" data-auth-pending="Chính sách quyền riêng tư đang chờ tích hợp.">Chính sách quyền riêng tư.</button>
+                        </span>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_terms-error" hidden></p>
+                </div>
+                <button class="site-auth_submit" type="submit">Đăng Ký</button>
+                <p class="site-auth_status" role="status" aria-live="polite" hidden></p>
+            </form>
+        </div>
+    </dialog>
+    <!-- NOMNOM AUTH END -->
+</body>
+</html>

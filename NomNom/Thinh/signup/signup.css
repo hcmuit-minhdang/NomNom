@@ -1,0 +1,21 @@
+/* Dùng cùng kiểu form trong login.css, giữ kích thước riêng của Sign_PopUp. */
+.site-signup {
+    width: 411px;
+}
+.site-signup .site-auth_content {
+    min-height: 549px;
+    padding-bottom: 16px;
+}
+.site-signup .site-auth_form {
+    gap: 8px;
+}
+.site-signup .site-auth_field {
+    gap: 2px;
+}
+.site-signup_terms {
+    font-size: 12px;
+    line-height: 1.5;
+}
+.site-signup_terms .site-auth_check {
+    padding: 2px 0;
+}
