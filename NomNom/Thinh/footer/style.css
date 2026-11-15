@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'inter' ;
+    src: url(../assets/fonts/Inter-Variable.ttf);
+}
+.site-footer {
+    font-family: 'inter', Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1600px;
+    height: 418px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    border: 1px solid black;
+}
+.footer-container {
+    width: 1252px;
+    height: 284px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-footer_brand {
+    width: 492px;
+}
+.site-footer_links {
+    display: flex;
+    flex-direction: column;
+}
+.site-footer_logo-box {
+    display: flex;
+    align-items: center;
+    height: 106px;
+    width: 239px;
+
+}
+.site-footer_logo {
+    height: 59.47px;
+    width: fit-content;
+    transform: rotate(-3.48deg);
+}

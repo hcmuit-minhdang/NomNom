@@ -1,0 +1,326 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+main::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url(../assets/bg-pattern-transparent.png);
+    display: block;
+    height: 100%;
+    filter: opacity(0.4);
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: rgb(242, 242, 228);
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+/* ---------- Collage banner ---------- */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.banner > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: blur(5px) brightness(0.8);
+}
+ 
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* ---------- Search ---------- */
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    padding: 18px 5vw;
+    z-index: 1;
+}
+
+#search-label {
+    flex: 0 0 auto;
+    background-color: #FBC41B;
+    color: #111;
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 12px 40px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#search-form {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 1000px;
+}
+
+#search-form > input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    color: #1e293b;
+    padding: 8px 6px 8px 15px;
+    margin: 0;
+}
+
+#search-form > input::placeholder {
+    color: #94a3b8;
+}
+
+#search-form button {
+    background-color: #FBC41B;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#search-form button:active {
+    img {transform: scale(0.9);};
+}
+
+/* ---------- Comparison ---------- */
+
+.comparison-section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px clamp(20px, 12vw, 180px);
+}
+
+.comparison-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2vw;
+    margin-bottom: 3vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#comparison-label {
+    margin: 0;
+    padding: 0.4em 1.4em;
+    width: fit-content;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    background-color: #FBC41B;
+    color: white;
+    white-space: nowrap;
+    -webkit-text-stroke: 0.1em #000000;
+    paint-order: stroke fill;
+    text-shadow: 0.08em 0.06em 0 #292929;
+    border: 3px solid black;
+    box-shadow: 10px 8px 0 #292929;
+}
+
+.line {
+    display: inline;
+    background-color: #FBC41B;
+    width: 100%;
+}
+
+.comparison-line {
+    height: 6px;
+}
+
+.store-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 50px;
+    gap: 40px clamp(20px, 2vw, 60px);
+}
+
+.store-card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(200px, 40vw, 350px);
+    height: fit-content;
+    padding-bottom: 15px;
+    background-color: rgba(255,255,255,0.4);
+    box-shadow: -2px 6px 8px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.store-card-link {
+    text-decoration: none;
+    color: transparent;
+}
+
+.store-card:hover {
+    background-color: white;
+    transform: scale(1.02);
+}
+
+.store-card:active {
+    transform: scale(0.98);
+}
+
+.store-name {
+    margin: 0 0 10px 0;
+    padding: 20px;
+    color: white;
+    font-size: clamp(0.95rem, 1.4vw, 1.4rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.store-bach-hoa-xanh { background-color: #2E9E43; }
+.store-coop-food { background-color: #1E2A78; }
+.store-winmart { background-color: #B01E24; }
+.store-sunmart { background-color: #D9A800; }
+.store-gs25 { background-color: #1E2A78; }
+.store-circle-k { background-color: #B01E24; }
+
+.ingredient-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: fill;
+    display: block;
+    transform: scale(90%);
+}
+
+.ingredient-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 1em;
+}
+
+.ingredient-name {
+    padding: 0 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ingredient-name:visited {
+    color: black;
+}
+
+.ingredient-price {
+    display: flex;
+    flex-direction: row;
+    place-items: center center;
+}
+
+.ingredient-price p{
+    margin: 0;
+    padding: 0 5px 0 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.ingredient-price span {
+    color: #666;
+}
+
+.ingredient-old-price {
+    display: flex;
+    place-items: center center;
+}
+
+.ingredient-old-price p{
+    display: inline;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 1.1em;
+    color: #bf676af6;
+    text-decoration: line-through;
+}
+
+.discount {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: white;
+    padding: 3px 8px;
+    background-color: rgb(41, 138, 41);
+    border-radius: 5px;
+}
+
+.buy-button {
+    padding: 25px;
+    margin-top: 10px;
+    border: none;
+    background-color: #ededed;
+    color: #555;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #FBC41B;
+    color: black;
+}
+
+.buy-button:active {
+    transform: scale(0.97);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-label {
+        text-align: center;
+    }
+
+    #search-form {
+        max-width: none;
+    }
+
+    .store-card {
+        width: min(100%, 300px);
+    }
+}

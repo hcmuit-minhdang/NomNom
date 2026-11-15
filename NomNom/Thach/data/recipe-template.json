@@ -1,0 +1,25 @@
+{
+  "title": "",
+  "category": "",
+  "subcategory": "",
+  "author": "",
+  "prepTime": 0,
+  "cookTime": 0,
+  "baseServings": 1,
+  "costTotal": 0,
+  "description": "",
+  "summary": "",
+  "gallery": [],
+  "ingredients": [],
+  "quickSteps": [],
+  "nutrition": {
+    "servings": 1,
+    "calories": "",
+    "carbs": "",
+    "protein": "",
+    "fat": "",
+    "sodium": "",
+    "fiber": ""
+  },
+  "steps": []
+}

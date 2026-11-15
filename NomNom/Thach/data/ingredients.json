@@ -1,0 +1,421 @@
+[
+  {
+    "id": "gao-tam",
+    "name": "Gạo tấm",
+    "aliases": ["gạo", "tấm", "gao tam"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "thit-heo",
+    "name": "Thịt heo",
+    "aliases": ["sườn", "cốt lết", "ba rọi", "thit heo"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-cot-dua",
+    "name": "Nước cốt dừa",
+    "aliases": ["cốt dừa", "nuoc cot dua"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "nuoc-cot-chanh",
+    "name": "Nước cốt chanh",
+    "aliases": ["chanh", "nuoc cot chanh"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "la-dua",
+    "name": "Lá dứa",
+    "aliases": ["la dua"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "trung-vit",
+    "name": "Trứng vịt",
+    "aliases": ["trứng", "trung vit"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "toi-bam",
+    "name": "Tỏi băm",
+    "aliases": ["tỏi", "toi bam"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "hanh-tim",
+    "name": "Hành tím",
+    "aliases": ["hành", "hanh tim"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "hanh-la",
+    "name": "Hành lá",
+    "aliases": ["hanh la"],
+    "dimension": "count",
+    "units": ["bó", "nhánh"],
+    "defaultUnit": "bó"
+  },
+  {
+    "id": "dua-chua",
+    "name": "Dưa chua",
+    "aliases": ["đồ chua", "dua chua"],
+    "dimension": "count",
+    "units": ["món"],
+    "defaultUnit": "món"
+  },
+  {
+    "id": "hoa-hoi",
+    "name": "Hoa hồi",
+    "aliases": ["hồi", "hoa hoi"],
+    "dimension": "count",
+    "units": ["nhánh"],
+    "defaultUnit": "nhánh"
+  },
+  {
+    "id": "dau-hao",
+    "name": "Dầu hào",
+    "aliases": ["dau hao"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "dau-an",
+    "name": "Dầu ăn",
+    "aliases": ["dau an"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "muoi",
+    "name": "Muối",
+    "aliases": ["muoi"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-mam",
+    "name": "Nước mắm",
+    "aliases": ["mắm", "nuoc mam"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "nuoc-tuong",
+    "name": "Nước tương",
+    "aliases": ["tương", "nuoc tuong"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "bot-ngot",
+    "name": "Bột ngọt",
+    "aliases": ["mì chính", "bot ngot"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "duong-cat",
+    "name": "Đường cát",
+    "aliases": ["đường", "duong cat"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "mat-ong",
+    "name": "Mật ong",
+    "aliases": ["mat ong"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "ngu-vi-huong",
+    "name": "Ngũ vị hương",
+    "aliases": ["ngu vi huong"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-dua",
+    "name": "Nước dừa",
+    "aliases": ["nuoc dua"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "ot",
+    "name": "Ớt",
+    "aliases": ["ớt", "ot"],
+    "dimension": "count",
+    "units": ["trái", "quả"],
+    "defaultUnit": "trái"
+  },
+  {
+    "id": "banh-mi",
+    "name": "Bánh mì",
+    "aliases": ["bánh mì", "banh mi"],
+    "dimension": "count",
+    "units": ["ổ"],
+    "defaultUnit": "ổ"
+  },
+  {
+    "id": "dua-leo",
+    "name": "Dưa leo",
+    "aliases": ["dưa chuột", "dua leo"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "rau-thom",
+    "name": "Rau thơm",
+    "aliases": ["ngò", "rau mùi", "rau thom"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "pa-te",
+    "name": "Pa-tê",
+    "aliases": ["pate", "pa te"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "tuong-ot",
+    "name": "Tương ớt",
+    "aliases": ["tuong ot"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "bun-tuoi",
+    "name": "Bún tươi",
+    "aliases": ["bún", "bun tuoi"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "banh-pho",
+    "name": "Bánh phở",
+    "aliases": ["phở", "banh pho"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "thit-bo",
+    "name": "Thịt bò",
+    "aliases": ["bò", "thit bo"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "thit-ga",
+    "name": "Thịt gà",
+    "aliases": ["gà", "thit ga"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "xuong-ong",
+    "name": "Xương ống",
+    "aliases": ["xương", "xuong ong"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "tom-kho",
+    "name": "Tôm khô",
+    "aliases": ["tom kho"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "tom-tuoi",
+    "name": "Tôm tươi",
+    "aliases": ["tôm", "tom tuoi"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "ca-chua",
+    "name": "Cà chua",
+    "aliases": ["ca chua"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "sa",
+    "name": "Sả",
+    "aliases": ["sả cây", "sa"],
+    "dimension": "count",
+    "units": ["nhánh"],
+    "defaultUnit": "nhánh"
+  },
+  {
+    "id": "gung",
+    "name": "Gừng",
+    "aliases": ["gung"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "rieng",
+    "name": "Riềng",
+    "aliases": ["củ riềng", "rieng"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "mam-tom",
+    "name": "Mắm tôm",
+    "aliases": ["mam tom"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "que",
+    "name": "Quế",
+    "aliases": ["quế thanh", "que"],
+    "dimension": "count",
+    "units": ["nhánh"],
+    "defaultUnit": "nhánh"
+  },
+  {
+    "id": "thao-qua",
+    "name": "Thảo quả",
+    "aliases": ["thao qua"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "tieu",
+    "name": "Tiêu",
+    "aliases": ["hạt tiêu", "tiêu sọ", "tieu"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "chanh",
+    "name": "Chanh",
+    "aliases": ["chanh tươi", "chanh"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "nam-rom",
+    "name": "Nấm rơm",
+    "aliases": ["nam rom"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nam-huong",
+    "name": "Nấm hương",
+    "aliases": ["nấm đông cô", "nam huong"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "hanh-tay",
+    "name": "Hành tây",
+    "aliases": ["hanh tay"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "khoai-tay",
+    "name": "Khoai tây",
+    "aliases": ["khoai tay"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "ca-rot",
+    "name": "Cà rốt",
+    "aliases": ["ca rot"],
+    "dimension": "count",
+    "units": ["củ"],
+    "defaultUnit": "củ"
+  },
+  {
+    "id": "dau-hu",
+    "name": "Đậu hũ",
+    "aliases": ["đậu phụ", "dau hu"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "nuoc-dung",
+    "name": "Nước dùng",
+    "aliases": ["nước lèo", "nuoc dung"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "ruou-trang",
+    "name": "Rượu trắng",
+    "aliases": ["rượu", "ruou trang"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "hat-nem",
+    "name": "Hạt nêm",
+    "aliases": ["bột nêm", "hat nem"],
+    "dimension": "mass",
+    "defaultUnit": "g"
+  },
+  {
+    "id": "rau-muong",
+    "name": "Rau muống",
+    "aliases": ["rau muong"],
+    "dimension": "count",
+    "units": ["bó"],
+    "defaultUnit": "bó"
+  },
+  {
+    "id": "ca-tim",
+    "name": "Cà tím",
+    "aliases": ["ca tim"],
+    "dimension": "count",
+    "units": ["quả", "trái"],
+    "defaultUnit": "quả"
+  },
+  {
+    "id": "sua-dac",
+    "name": "Sữa đặc",
+    "aliases": ["sua dac"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "giam",
+    "name": "Giấm",
+    "aliases": ["dấm", "giam"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  },
+  {
+    "id": "tuong-den",
+    "name": "Tương đen",
+    "aliases": ["tương ăn phở", "tuong den"],
+    "dimension": "volume",
+    "defaultUnit": "ml"
+  }
+]
