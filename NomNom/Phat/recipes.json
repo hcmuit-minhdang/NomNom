@@ -1,0 +1,1209 @@
+{
+    "featuredTall": {
+        "id": "rec-001",
+        "name": "Cơm bò gyudon trứng lòng đào",
+        "price": "45.000đ / phần",
+        "time": "Cook Time: 20 minutes",
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/024_Gyudon_beef_bowl_%E7%89%9B%E4%B8%BC_in_Japan_-_food_in_Yoshinoya_restaurant_in_Osaka,_Japan.jpg?width=800",
+        "link": "#",
+        "tags": ["Thịt bò", "Cơm", "Món Á", "Dưới 50k"]
+    },
+    "favoriteRecipes": [
+        {
+            "id": "rec-002",
+            "name": "Phở bò tái lăn truyền thống",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pho-Beef-Noodles-2008.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-003",
+            "name": "Cơm tấm sườn bì chả trứng",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_t%E1%BA%A5m_s%C6%B0%E1%BB%9Dn_ch%E1%BA%A3_(ch%E1%BA%A3_tr%E1%BB%A9ng)_t%E1%BA%A1i_qu%C3%A1n_c%C6%A1m_b%C3%ACnh_d%C3%A2n_%C4%91%C6%B0%E1%BB%9Dng_NS_ng25th9n2022_(d%C4%A9a_c%C6%A1m_t%C3%B3p_m%E1%BB%A1)_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-004",
+            "name": "Bún chả thịt nướng than hoa",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_ch%E1%BA%A3_H%C3%A0ng_M%C3%A0nh.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bún / Phở", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-005",
+            "name": "Bánh mì chảo bò né trứng ốp",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A1nh_m%C3%AC_%C4%83n_c%C3%B9ng_b%C3%B2_n%C3%A9.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bánh mì", "Miền Nam", "Dưới 50k"]
+        }
+    ],
+    "beefRecipes": [
+        {
+            "id": "rec-006",
+            "name": "Bò lúc lắc khoai tây chiên",
+            "price": "65.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnamese_Beef_Cube_Red_Rice.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Củ quả", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-007",
+            "name": "Bún bò giò heo cay nồng",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 60 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_(20201109).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-008",
+            "name": "Bò kho bánh mì nóng giòn",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 50 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B2_kho_n%E1%BA%A5u_ti%C3%AAu_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n_ng%C3%A0y_08_th%C3%A1ng_3_n%C4%83m_2020_(6).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bánh mì", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-009",
+            "name": "Salad bò nướng sốt mè rang",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Eat Clean", "50k - 100k"]
+        },
+        {
+            "id": "rec-010",
+            "name": "Mì ý bò bằm sốt cà chua",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Spaghetti_bolognese.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Dưới 50k"]
+        },
+        {
+            "id": "rec-011",
+            "name": "Bò xào bông thiên lý tỏi phi",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Qu%C3%A1n_Safia,_T%E1%BA%BFt_2022_(m%C3%B3n_b%C3%B2_l%C3%BAc_l%E1%BA%AFc)_(5).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Miền Nam", "Dưới 50k"]
+        }
+    ],
+    "chickenRecipes": [
+        {
+            "id": "rec-012",
+            "name": "Gà nướng mật ong lá chanh",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-013",
+            "name": "Cơm gà xối mỡ giòn rụm",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_g%C3%A0_Tam_K%E1%BB%B3,_Qu%E1%BA%A3ng_Nam.JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-014",
+            "name": "Phở khô gà xé phố núi",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ph%E1%BB%9F_kh%C3%B4_Gia_Lai_%E1%BB%9F_T%C3%A2n_Ph%C3%BA,_ph%E1%BA%A7n_n%E1%BA%A1m_b%C3%B2_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Bún / Phở", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-015",
+            "name": "Gà kho gừng sả đậm đà",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C5%A9i_N%C3%A9_th7n2023,_Khu_ND_(b%E1%BB%AFa_s%C3%A1ng_v%E1%BB%9Bi_m%C3%B3n_g%C3%A0_kho)_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-016",
+            "name": "Cánh gà chiên nước mắm tỏi",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1nh_g%C3%A0_chi%C3%AAn_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm,_th%C3%A1ng_8_n%C4%83m_2018_(2).JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-017",
+            "name": "Miến gà măng khô nóng hổi",
+            "price": "38.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mi%E1%BA%BFn_g%C3%A0.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Bún / Phở", "Miền Bắc", "Dưới 50k"]
+        }
+    ],
+    "lightRecipes": [
+        {
+            "id": "rec-018",
+            "name": "Đậu hũ non sốt nấm đông cô",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%E1%BB%AFa_c%C6%A1m_gia_%C4%91%C3%ACnh_ng6th4n2021_(t%C3%B4_%C4%91%E1%BA%ADu_h%C5%A9_s%E1%BB%91t_c%C3%A0)_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Nấm", "Thanh đạm", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-019",
+            "name": "Canh rong biển đậu hũ non",
+            "price": "28.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Japche,_miso_soup_with_tofu_and_komatsuna_greens,_kimchi,_and_brown_rice_%E3%83%81%E3%83%A3%E3%83%97%E3%83%81%E3%82%A7%E3%80%81%E8%B1%86%E8%85%90%E3%81%A8%E5%B0%8F%E6%9D%BE%E8%8F%9C%E3%81%AE%E5%91%B3%E5%99%8C%E6%B1%81%E3%80%81%E7%99%BD%E8%8F%9C%E3%82%AD%E3%83%A0%E3%83%81%E3%80%81%E7%8E%84%E7%B1%B3.jpg?width=600",
+            "link": "#",
+            "tags": ["Rau xanh", "Thanh đạm", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-020",
+            "name": "Gỏi cuốn tôm thịt rau tươi",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/G%E1%BB%8Fi_cu%E1%BB%91n.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Rau xanh", "Thanh đạm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-021",
+            "name": "Salad ức gà áp chảo bơ tươi",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Rau xanh", "Eat Clean", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-022",
+            "name": "Rau củ luộc chấm kho quẹt",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_ch%C3%A1y_kho_qu%E1%BA%B9t.jpg?width=600",
+            "link": "#",
+            "tags": ["Rau xanh", "Củ quả", "Thanh đạm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-023",
+            "name": "Súp bí đỏ kem tươi hạt điều",
+            "price": "32.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Củ quả", "Thanh đạm", "Ăn chay", "Dưới 50k"]
+        }
+    ],
+    "searchResults": [
+        {
+            "id": "rec-001",
+            "name": "Cơm bò gyudon trứng lòng đào",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/024_Gyudon_beef_bowl_%E7%89%9B%E4%B8%BC_in_Japan_-_food_in_Yoshinoya_restaurant_in_Osaka,_Japan.jpg?width=800",
+            "link": "#",
+            "tags": ["Thịt bò", "Cơm", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-002",
+            "name": "Phở bò tái lăn truyền thống",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pho-Beef-Noodles-2008.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-003",
+            "name": "Cơm tấm sườn bì chả trứng",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_t%E1%BA%A5m_s%C6%B0%E1%BB%9Dn_ch%E1%BA%A3_(ch%E1%BA%A3_tr%E1%BB%A9ng)_t%E1%BA%A1i_qu%C3%A1n_c%C6%A1m_b%C3%ACnh_d%C3%A2n_%C4%91%C6%B0%E1%BB%9Dng_NS_ng25th9n2022_(d%C4%A9a_c%C6%A1m_t%C3%B3p_m%E1%BB%A1)_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-004",
+            "name": "Bún chả thịt nướng than hoa",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_ch%E1%BA%A3_H%C3%A0ng_M%C3%A0nh.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bún / Phở", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-005",
+            "name": "Bánh mì chảo bò né trứng ốp",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A1nh_m%C3%AC_%C4%83n_c%C3%B9ng_b%C3%B2_n%C3%A9.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bánh mì", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-006",
+            "name": "Bò lúc lắc khoai tây chiên",
+            "price": "65.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnamese_Beef_Cube_Red_Rice.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Củ quả", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-007",
+            "name": "Bún bò giò heo cay nồng",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 60 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_(20201109).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-008",
+            "name": "Bò kho bánh mì nóng giòn",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 50 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B2_kho_n%E1%BA%A5u_ti%C3%AAu_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n_ng%C3%A0y_08_th%C3%A1ng_3_n%C4%83m_2020_(6).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bánh mì", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-009",
+            "name": "Salad bò nướng sốt mè rang",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Eat Clean", "50k - 100k"]
+        },
+        {
+            "id": "rec-010",
+            "name": "Mì ý bò bằm sốt cà chua",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Spaghetti_bolognese.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Dưới 50k"]
+        },
+        {
+            "id": "rec-011",
+            "name": "Bò xào bông thiên lý tỏi phi",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Qu%C3%A1n_Safia,_T%E1%BA%BFt_2022_(m%C3%B3n_b%C3%B2_l%C3%BAc_l%E1%BA%AFc)_(5).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-012",
+            "name": "Gà nướng mật ong lá chanh",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-013",
+            "name": "Cơm gà xối mỡ giòn rụm",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_g%C3%A0_Tam_K%E1%BB%B3,_Qu%E1%BA%A3ng_Nam.JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-014",
+            "name": "Phở khô gà xé phố núi",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ph%E1%BB%9F_kh%C3%B4_Gia_Lai_%E1%BB%9F_T%C3%A2n_Ph%C3%BA,_ph%E1%BA%A7n_n%E1%BA%A1m_b%C3%B2_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Bún / Phở", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-015",
+            "name": "Gà kho gừng sả đậm đà",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C5%A9i_N%C3%A9_th7n2023,_Khu_ND_(b%E1%BB%AFa_s%C3%A1ng_v%E1%BB%9Bi_m%C3%B3n_g%C3%A0_kho)_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-016",
+            "name": "Cánh gà chiên nước mắm tỏi",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1nh_g%C3%A0_chi%C3%AAn_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm,_th%C3%A1ng_8_n%C4%83m_2018_(2).JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-017",
+            "name": "Miến gà măng khô nóng hổi",
+            "price": "38.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mi%E1%BA%BFn_g%C3%A0.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Bún / Phở", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-018",
+            "name": "Đậu hũ non sốt nấm đông cô",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%E1%BB%AFa_c%C6%A1m_gia_%C4%91%C3%ACnh_ng6th4n2021_(t%C3%B4_%C4%91%E1%BA%ADu_h%C5%A9_s%E1%BB%91t_c%C3%A0)_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Nấm", "Thanh đạm", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-019",
+            "name": "Canh rong biển đậu hũ non",
+            "price": "28.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Japche,_miso_soup_with_tofu_and_komatsuna_greens,_kimchi,_and_brown_rice_%E3%83%81%E3%83%A3%E3%83%97%E3%83%81%E3%82%A7%E3%80%81%E8%B1%86%E8%85%90%E3%81%A8%E5%B0%8F%E6%9D%BE%E8%8F%9C%E3%81%AE%E5%91%B3%E5%99%8C%E6%B1%81%E3%80%81%E7%99%BD%E8%8F%9C%E3%82%AD%E3%83%A0%E3%83%81%E3%80%81%E7%8E%84%E7%B1%B3.jpg?width=600",
+            "link": "#",
+            "tags": ["Rau xanh", "Thanh đạm", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-020",
+            "name": "Gỏi cuốn tôm thịt rau tươi",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/G%E1%BB%8Fi_cu%E1%BB%91n.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Rau xanh", "Thanh đạm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-021",
+            "name": "Salad ức gà áp chảo bơ tươi",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Rau xanh", "Eat Clean", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-022",
+            "name": "Rau củ luộc chấm kho quẹt",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_ch%C3%A1y_kho_qu%E1%BA%B9t.jpg?width=600",
+            "link": "#",
+            "tags": ["Rau xanh", "Củ quả", "Thanh đạm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-023",
+            "name": "Súp bí đỏ kem tươi hạt điều",
+            "price": "32.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Củ quả", "Thanh đạm", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-024",
+            "name": "Bò nhúng dấm cuốn bánh tráng",
+            "price": "85.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng_b%C3%B2_in_Xizhimen_(20141226135500).JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-025",
+            "name": "Bò cuộn nấm kim châm nướng",
+            "price": "60.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt bò", "Nấm", "Món Á", "50k - 100k"]
+        },
+        {
+            "id": "rec-026",
+            "name": "Bò xào cần tây hành tây",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sachko_lok_lak_-_beef_lok_lak_th%E1%BB%8Bt_b%C3%B2_l%C3%BAc_l%E1%BA%AFc_Khmer_food.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-027",
+            "name": "Bò bít tết sốt tiêu đen",
+            "price": "120.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B2_b%C3%ADt_t%E1%BA%BFt_%E1%BB%9F_SG_th4n2024_(b%C3%B2_n%C3%A9_ch%E1%BA%A3o_gang)_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Củ quả", "Trên 100k"]
+        },
+        {
+            "id": "rec-028",
+            "name": "Cơm chiên bò dưa cải chua",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnamese_Beef_Cube_Red_Rice.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Cơm", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-029",
+            "name": "Phở bò chín nạm gầu giòn",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 50 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_pho.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-030",
+            "name": "Bún bò trộn nam bộ rau thơm",
+            "price": "48.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng_b%C3%B2_in_Xizhimen_(20141226135500).JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Rau xanh", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-031",
+            "name": "Bò hầm cà rốt khoai tây",
+            "price": "70.000đ / phần",
+            "time": "Cook Time: 55 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B2_kho_n%E1%BA%A5u_ti%C3%AAu_s%E1%BB%A3i_m%C3%B9_g%C3%B3i_%E1%BB%9F_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n_ng%C3%A0y_08_th%C3%A1ng_3_n%C4%83m_2020_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Củ quả", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-032",
+            "name": "Bắp bò ngâm mắm chua ngọt",
+            "price": "95.000đ / phần",
+            "time": "Cook Time: 60 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B2_n%C3%A9_(b%C3%B2_Gia_Lai)_ng26th11n2020_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-033",
+            "name": "Gỏi bò bóp thấu chuối chát",
+            "price": "65.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-034",
+            "name": "Cháo bò bằm hạt sen bổ dưỡng",
+            "price": "38.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A1o_g%C3%A0_nh%C3%A0_l%C3%A0m,_th%C3%A1ng_5_n%C4%83m_2020_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-035",
+            "name": "Bò xào ớt chuông ba màu",
+            "price": "48.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Qu%C3%A1n_Safia,_T%E1%BA%BFt_2022_(m%C3%B3n_b%C3%B2_l%C3%BAc_l%E1%BA%AFc)_(5).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Củ quả", "Dưới 50k"]
+        },
+        {
+            "id": "rec-036",
+            "name": "Lẩu bò nhúng ớt hiểm cay",
+            "price": "150.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/H%E1%BB%A7_ti%E1%BA%BFu_b%C3%B2_kho.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Nấm", "Miền Trung", "Trên 100k"]
+        },
+        {
+            "id": "rec-037",
+            "name": "Bò nướng lá lốt mỡ chài",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_ch%E1%BA%A3_H%C3%A0ng_M%C3%A0nh_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Rau xanh", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-038",
+            "name": "Miến xào bò giá hẹ giòn ngon",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_cuisine-Japchae-03.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt bò", "Bún / Phở", "Rau xanh", "Dưới 50k"]
+        },
+        {
+            "id": "rec-039",
+            "name": "Gà luộc lá chanh chấm muối tiêu",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/G%C3%A0_lu%E1%BB%99c_c%C3%BAng_%C3%B4ng_b%C3%A0.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Thanh đạm", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-040",
+            "name": "Gà xào sả ớt cay nồng",
+            "price": "38.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/G%C3%A0_kho_ng%C5%A9_v%E1%BB%8B_h%C6%B0%C6%A1ng_trong_m%C3%A2m_c%C3%BAng_%C4%91%C6%B0a_T%E1%BA%BFt_%C4%90inh_D%E1%BA%ADu_2017_t%E1%BA%A1i_%C4%90%C3%B4ng_H%C3%A0_(5).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-041",
+            "name": "Gà hầm hạt sen táo đỏ",
+            "price": "75.000đ / phần",
+            "time": "Cook Time: 50 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mi%E1%BA%BFn_g%C3%A0.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Củ quả", "Thanh đạm", "50k - 100k"]
+        },
+        {
+            "id": "rec-042",
+            "name": "Cơm gà hội an nghệ vàng",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/AE_li%C3%AAn_hoan,_C%C6%A1m_g%C3%A0_Tr%C3%BAc_My_%C6%A1i,_ng1th9n2019_(g%C3%A0_lu%E1%BB%99c)_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-043",
+            "name": "Bún thang gà xé trứng thái chỉ",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_thang.JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Bún / Phở", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-044",
+            "name": "Gà chiên giòn sốt chua ngọt",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1nh_g%C3%A0_chi%C3%AAn_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm,_th%C3%A1ng_8_n%C4%83m_2018_(2).JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-045",
+            "name": "Gỏi gà xé phay bắp cải rau răm",
+            "price": "48.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/AE_li%C3%AAn_hoan,_C%C6%A1m_g%C3%A0_Tr%C3%BAc_My_%C6%A1i,_ng1th9n2019_(g%C3%A0_lu%E1%BB%99c)_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Rau xanh", "Thanh đạm", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-046",
+            "name": "Ức gà cuộn rong biển áp chảo",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Eat Clean", "Thanh đạm", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-047",
+            "name": "Cà ri gà nấu khoai lang nước cốt dừa",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Indian_Curry_Chicken.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Củ quả", "Bánh mì", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-048",
+            "name": "Cháo gà ác đậu xanh nấm hương",
+            "price": "60.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A1o_g%C3%A0_nh%C3%A0_l%C3%A0m,_th%C3%A1ng_5_n%C4%83m_2020_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Nấm", "Thanh đạm", "50k - 100k"]
+        },
+        {
+            "id": "rec-049",
+            "name": "Gà nướng muối ớt da giòn",
+            "price": "65.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1nh_g%C3%A0_n%C6%B0%E1%BB%9Bng_BBQ_%E1%BB%9F_Pizza_compani_Phan_X%C3%ADch_Long_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt gà", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-050",
+            "name": "Lẩu gà lá é măng tươi",
+            "price": "130.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Rau xanh", "Nấm", "Miền Trung", "Trên 100k"]
+        },
+        {
+            "id": "rec-051",
+            "name": "Cơm gà teriyaki kiểu nhật",
+            "price": "48.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-052",
+            "name": "Bánh mì kẹp gà xé sốt bơ trứng",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 10 minutes",
+            "image": "https://images.unsplash.com/photo-1599719455360-ff0be7c4dd06?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Bánh mì", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-053",
+            "name": "Súp gà ngô non nấm tuyết",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Củ quả", "Nấm", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-054",
+            "name": "Thịt kho tàu trứng vịt nước dừa",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 50 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%E1%BB%8Bt_kho_T%C3%A0u.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-055",
+            "name": "Sườn xào chua ngọt đậm vị",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Suon_xao_chua_ngot_bac_ninh.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Cơm", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-056",
+            "name": "Bún thịt nướng chả giò",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bun_thit_nuong.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bún / Phở", "Rau xanh", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-057",
+            "name": "Thịt ba chỉ quay giòn bì",
+            "price": "60.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A1nh_h%E1%BB%8Fi_th%E1%BB%8Bt_quay.JPG?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-058",
+            "name": "Canh sườn non hầm củ sen",
+            "price": "48.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_m%E1%BB%8Dc_s%C6%B0%E1%BB%9Dn_non_t%E1%BA%A1i_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n,_T%C3%A2n_Ph%C3%BA_(th%C3%A1ng_8_n%C4%83m_2018)_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Củ quả", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-059",
+            "name": "Bánh mì thịt nguội chả lụa",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 10 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A1nh_m%C3%AC_v%C3%A0_ly_s%E1%BB%AFa_b%E1%BB%AFa_s%C3%A1ng_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bánh mì", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-060",
+            "name": "Bánh mì xíu mại trứng muối",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A1nh_m%C3%AC_x%C3%ADu_m%E1%BA%A1i-meatball-sandwich.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bánh mì", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-061",
+            "name": "Cơm chiên dương châu lạp xưởng",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Com_chien_duong_chau.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Cơm", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-062",
+            "name": "Chả lá lốt thịt heo chiên thơm",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_ch%E1%BA%A3_H%C3%A0ng_M%C3%A0nh_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Rau xanh", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-063",
+            "name": "Thịt heo luộc cuốn bánh tráng rau rừng",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_m%E1%BA%AFm_th%E1%BB%8Bt_heo_lu%E1%BB%99c_%E1%BB%9F_%C4%90%C3%A0_N%E1%BA%B5ng.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Rau xanh", "Thanh đạm", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-064",
+            "name": "Bún mọc sườn non dọc mùng",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_m%E1%BB%8Dc_s%C6%B0%E1%BB%9Dn_non_t%E1%BA%A1i_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n,_T%C3%A2n_Ph%C3%BA_(th%C3%A1ng_8_n%C4%83m_2018)_(2).jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bún / Phở", "Rau xanh", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-065",
+            "name": "Mì quảng tôm thịt trứng cút",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mi_Quang_1A_Danang.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Hải sản", "Bún / Phở", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-066",
+            "name": "Cao lầu thịt xá xíu giòn dai",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cao_l%E1%BA%A7u_H%E1%BB%99i_An.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Bún / Phở", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-067",
+            "name": "Hủ tiếu nam vang tôm thịt",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Hải sản", "Bún / Phở", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-068",
+            "name": "Nem nướng cuốn rau sống đồ chua",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nem_n%C6%B0%E1%BB%9Bng_by_Baoothersks.jpg?width=600",
+            "link": "#",
+            "tags": ["Thịt heo", "Rau xanh", "Miền Trung", "50k - 100k"]
+        },
+        {
+            "id": "rec-069",
+            "name": "Tôm rim mặn ngọt hao cơm",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/N%E1%BA%A5u_t%C3%B4m_rim_(r%C3%A3_%C4%91%C3%B4ng_v%C3%A0_s%C6%A1_ch%E1%BA%BF_t%C3%B4m)._T4_n%C4%83m_2018_(6).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Cơm", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-070",
+            "name": "Mực xào dứa cần tỏi chua ngọt",
+            "price": "65.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B3n_m%E1%BB%B1c_x%C3%A0o,_th%C3%A1ng_4_n%C4%83m_2018_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Rau xanh", "Trái cây nhiệt đới", "50k - 100k"]
+        },
+        {
+            "id": "rec-071",
+            "name": "Cá hồi áp chảo sốt chanh dây",
+            "price": "135.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Hải sản", "Eat Clean", "Trái cây nhiệt đới", "Trên 100k"]
+        },
+        {
+            "id": "rec-072",
+            "name": "Bún cá rô đồng rau cải xanh",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_C%C3%A1_H%C3%A0_N%E1%BB%99i.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Bún / Phở", "Rau xanh", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-073",
+            "name": "Canh chua cá lóc bông điên điển",
+            "price": "50.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canh_chua_c%C3%A1_l%C3%B3c_%E1%BB%9F_Th%E1%BB%A7y_Tr%C3%BAc_Qu%C3%A1n,_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_Nh%E1%BB%AF_L%C3%A3m_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Rau xanh", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-074",
+            "name": "Cá kho tộ tiêu xanh đậm đà",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1_kho_t%E1%BB%99,_c%C3%A1_h%C3%BA.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Cơm", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-075",
+            "name": "Tôm hấp nước dừa tươi ngọt thịt",
+            "price": "110.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Hải sản", "Thanh đạm", "Miền Nam", "Trên 100k"]
+        },
+        {
+            "id": "rec-076",
+            "name": "Chả cá thác lác thì là chiên dai",
+            "price": "60.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%E1%BA%A3_c%C3%A1_L%C3%A3_V%E1%BB%8Dng.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Rau xanh", "Miền Bắc", "50k - 100k"]
+        },
+        {
+            "id": "rec-077",
+            "name": "Bún riêu cua đồng đậu hũ",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/T%C3%B4_b%C3%BAn_ri%C3%AAu_(canh_b%C3%BAn)_ng12th8n2022_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Bún / Phở", "Rau xanh", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-078",
+            "name": "Bún mắm miền tây hải sản",
+            "price": "65.000đ / phần",
+            "time": "Cook Time: 45 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_m%E1%BA%AFm_b%C3%BAn_ri%C3%AAu_x%C3%B3m_%C4%91%C3%ACnh.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Bún / Phở", "Rau xanh", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-079",
+            "name": "Cơm chiên hải sản trứng muối",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Com_chien_duong_chau.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Cơm", "Món Á", "50k - 100k"]
+        },
+        {
+            "id": "rec-080",
+            "name": "Miến xào cua bể nấm hương",
+            "price": "125.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_cuisine-Japchae-03.jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Bún / Phở", "Nấm", "Trên 100k"]
+        },
+        {
+            "id": "rec-081",
+            "name": "Nghêu hấp sả ớt nóng hổi",
+            "price": "45.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngh%C3%AAu_t%E1%BA%A1i_qu%C3%A1n_Saigon_New,_Qu%E1%BA%ADn_G%C3%B2_V%E1%BA%A5p_n%C4%83m_2017_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Thanh đạm", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-082",
+            "name": "Mực nhồi thịt hấp gừng",
+            "price": "75.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B3n_m%E1%BB%B1c_x%C3%A0o,_th%C3%A1ng_4_n%C4%83m_2018_(3).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Thịt heo", "Thanh đạm", "50k - 100k"]
+        },
+        {
+            "id": "rec-083",
+            "name": "Salad tôm bơ xoài chín nhiệt đới",
+            "price": "60.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Hải sản", "Rau xanh", "Trái cây nhiệt đới", "Eat Clean", "50k - 100k"]
+        },
+        {
+            "id": "rec-084",
+            "name": "Đậu hũ chiên sả ớt giòn rụm",
+            "price": "22.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%E1%BB%AFa_c%C6%A1m_gia_%C4%91%C3%ACnh_ng6th4n2021_(t%C3%B4_%C4%91%E1%BA%ADu_h%C5%A9_s%E1%BB%91t_c%C3%A0)_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Ăn chay", "Cơm", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-085",
+            "name": "Nấm đùi gà kho tiêu xanh chay",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_ch%C3%A1y_kho_qu%E1%BA%B9t.jpg?width=600",
+            "link": "#",
+            "tags": ["Nấm", "Ăn chay", "Cơm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-086",
+            "name": "Bún huế chay nấm hương đậu hũ",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%BAn_b%C3%B2_Hu%E1%BA%BF_(20201109).jpg?width=600",
+            "link": "#",
+            "tags": ["Nấm", "Bún / Phở", "Ăn chay", "Miền Trung", "Dưới 50k"]
+        },
+        {
+            "id": "rec-087",
+            "name": "Cơm gạo lứt muối mè ức gà",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Thịt gà", "Cơm", "Eat Clean", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-088",
+            "name": "Cơm gạo lứt rau củ luộc đậu hũ",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Cơm", "Rau xanh", "Củ quả", "Eat Clean", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-089",
+            "name": "Cải thìa xào nấm đông cô dầu hào",
+            "price": "28.000đ / phần",
+            "time": "Cook Time: 12 minutes",
+            "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Rau xanh", "Nấm", "Thanh đạm", "Ăn chay", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-090",
+            "name": "Canh nấm kim châm đậu hũ cà chua",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 15 minutes",
+            "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Nấm", "Củ quả", "Thanh đạm", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-091",
+            "name": "Bông cải xanh xào tỏi dầu ô liu",
+            "price": "28.000đ / phần",
+            "time": "Cook Time: 10 minutes",
+            "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Rau xanh", "Eat Clean", "Thanh đạm", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-092",
+            "name": "Gỏi ngó sen tôm thịt giòn sần sật",
+            "price": "55.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/G%E1%BB%8Fi_cu%E1%BB%91n_(49358210697).jpg?width=600",
+            "link": "#",
+            "tags": ["Hải sản", "Thịt heo", "Củ quả", "Miền Nam", "50k - 100k"]
+        },
+        {
+            "id": "rec-093",
+            "name": "Nấm bào ngư chiên giòn cuốn rau",
+            "price": "32.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnamese_fried_spring_rolls_in_Ho_Chi_Minh_City,_Vietnam.jpg?width=600",
+            "link": "#",
+            "tags": ["Nấm", "Rau xanh", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-094",
+            "name": "Chả giò chay khoai môn nấm mèo",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnamese_fried_spring_rolls_in_Ho_Chi_Minh_City,_Vietnam.jpg?width=600",
+            "link": "#",
+            "tags": ["Củ quả", "Nấm", "Ăn chay", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-095",
+            "name": "Canh khổ qua nhồi đậu hũ nấm",
+            "price": "30.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canh_kh%E1%BB%95_qua.JPG?width=600",
+            "link": "#",
+            "tags": ["Củ quả", "Nấm", "Thanh đạm", "Ăn chay", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-096",
+            "name": "Miến trộn hàn quốc japchae rau nấm",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_cuisine-Japchae-03.jpg?width=600",
+            "link": "#",
+            "tags": ["Bún / Phở", "Rau xanh", "Nấm", "Món Á", "Ăn chay", "Dưới 50k"]
+        },
+        {
+            "id": "rec-097",
+            "name": "Phở cuốn chay đậu hũ nấm xào",
+            "price": "32.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/East-asian-food-spring-rolls-3.jpg?width=600",
+            "link": "#",
+            "tags": ["Bún / Phở", "Rau xanh", "Nấm", "Ăn chay", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-098",
+            "name": "Cà tím nướng mỡ hành đậu phộng",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 20 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C6%A1m_ch%C3%A1y_kho_qu%E1%BA%B9t.jpg?width=600",
+            "link": "#",
+            "tags": ["Củ quả", "Ăn chay", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-099",
+            "name": "Sữa chua hy lạp trái cây nhiệt đới",
+            "price": "38.000đ / phần",
+            "time": "Cook Time: 10 minutes",
+            "image": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Eat Clean", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-100",
+            "name": "Chè khúc bạch nhãn lồng hạnh nhân",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B3n_ti%E1%BB%87c_c%C6%B0%E1%BB%9Bi_%E1%BB%9F_T%C3%A2n_B%C3%ACnh_ng6th8n2023_(m%C3%B3n_tr%C3%A1ng_mi%E1%BB%87ng,_ch%C3%A8_kh%C3%BAc_b%E1%BA%A1ch_long_nh%C3%A3n)_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-101",
+            "name": "Xôi xoài cốt dừa kiểu thái",
+            "price": "42.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mango_Sticky_Rice_(9152382652).jpg?width=600",
+            "link": "#",
+            "tags": ["Cơm", "Trái cây nhiệt đới", "Tráng miệng", "Món Á", "Dưới 50k"]
+        },
+        {
+            "id": "rec-102",
+            "name": "Sinh tố bơ chuối hạt chia",
+            "price": "32.000đ / phần",
+            "time": "Cook Time: 10 minutes",
+            "image": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Eat Clean", "Dưới 50k"]
+        },
+        {
+            "id": "rec-103",
+            "name": "Salad trái cây nhiệt đới sốt sữa chua",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 10 minutes",
+            "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Eat Clean", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-104",
+            "name": "Chè bưởi cốt dừa đậu xanh",
+            "price": "28.000đ / phần",
+            "time": "Cook Time: 35 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mango_sticy_rice_(3859549574).jpg?width=600",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-105",
+            "name": "Bánh flan trứng sữa caramel mềm mịn",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ly_b%C3%A1nh_l%C4%83ng_(flan)_Vi%E1%BB%87t_Nam.jpg?width=600",
+            "link": "#",
+            "tags": ["Tráng miệng", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-106",
+            "name": "Tàu hũ trân châu đường đen gừng ấm",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ly_b%C3%A1nh_l%C4%83ng_(flan)_Vi%E1%BB%87t_Nam.jpg?width=600",
+            "link": "#",
+            "tags": ["Tráng miệng", "Ăn chay", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-107",
+            "name": "Chè hạt sen long nhãn thanh mát",
+            "price": "35.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B3n_ti%E1%BB%87c_c%C6%B0%E1%BB%9Bi_%E1%BB%9F_T%C3%A2n_B%C3%ACnh_ng6th8n2023_(m%C3%B3n_tr%C3%A1ng_mi%E1%BB%87ng,_ch%C3%A8_kh%C3%BAc_b%E1%BA%A1ch_long_nh%C3%A3n)_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Thanh đạm", "Miền Bắc", "Dưới 50k"]
+        },
+        {
+            "id": "rec-108",
+            "name": "Chuối nếp nướng nước cốt dừa",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 30 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mango_sticky_rice_with_mango_pudding_and_mango_ice_cream.jpg?width=600",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Miền Nam", "Dưới 50k"]
+        },
+        {
+            "id": "rec-109",
+            "name": "Rau câu dừa tươi lá dứa mát lạnh",
+            "price": "25.000đ / phần",
+            "time": "Cook Time: 25 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B3n_ti%E1%BB%87c_c%C6%B0%E1%BB%9Bi_%E1%BB%9F_T%C3%A2n_B%C3%ACnh_ng6th8n2023_%28m%C3%B3n_tr%C3%A1ng_mi%E1%BB%87ng,_ch%C3%A8_kh%C3%BAc_b%E1%BA%A1ch_long_nh%C3%A3n%29_%283%29.jpg?width=600",
+            "link": "#",
+            "tags": ["Trái cây nhiệt đới", "Tráng miệng", "Thanh đạm", "Dưới 50k"]
+        },
+        {
+            "id": "rec-110",
+            "name": "Chè dưỡng nhan tuyết yến táo đỏ",
+            "price": "40.000đ / phần",
+            "time": "Cook Time: 40 minutes",
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B3n_ti%E1%BB%87c_c%C6%B0%E1%BB%9Bi_%E1%BB%9F_T%C3%A2n_B%C3%ACnh_ng6th8n2023_(m%C3%B3n_tr%C3%A1ng_mi%E1%BB%87ng,_ch%C3%A8_kh%C3%BAc_b%E1%BA%A1ch_long_nh%C3%A3n)_(1).jpg?width=600",
+            "link": "#",
+            "tags": ["Tráng miệng", "Thanh đạm", "Món Á", "Dưới 50k"]
+        }
+    ]
+}
