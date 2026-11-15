@@ -15,7 +15,16 @@ không cần tạo thêm trang. Các đường dẫn JS được tính từ vị
 - Khi ghép tay, chép cả nút `[data-header-menu-toggle]` và
   `id="site-header_controls"`. Mỗi trang chỉ có một header.
 
-Nhật ký thay đổi và bài hướng dẫn: [AI thao tác — Header](AI-THAO-TAC-header.md).
+Nhật ký thay đổi và bài hướng dẫn: [AI thao tác — Header](HISTORY.md).
+
+## Popup Login / Signup
+
+Trang chủ đã nạp hai popup và các file xử lý form. `auth.js` nghe sự kiện
+`nomnom:auth-request` bên dưới để mở popup; hiện mới kiểm tra dữ liệu nhập.
+Header chưa tự chuyển thành thành viên khi form hợp lệ.
+
+Cách ghép vào trang khác và giải thích HTML/CSS/JS:
+[AI thao tác — Login / Signup](../AUTH-HISTORY.md).
 
 ## Menu và tìm kiếm
 

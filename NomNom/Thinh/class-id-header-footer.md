@@ -198,7 +198,7 @@ Các selector trạng thái thường gặp trong CSS:
 
 `inert` được JS bật trên `#site-header_controls` khi Menu nhỏ đóng: các mục bên
 trong không nhận click hoặc Tab. Đọc cách chỉnh thời gian, media và hiệu ứng tại
-[AI thao tác — Header](header/AI-THAO-TAC-header.md).
+[AI thao tác — Header](header/HISTORY.md).
 
 ## 3. Footer
 

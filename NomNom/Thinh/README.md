@@ -5,33 +5,35 @@ HTML, CSS và JavaScript thuần. Bốn phần bạn phụ trách nằm trong b�
 
 ## Mở xem
 
-Mở [index.html](index.html) bằng Live Server để chọn Header khách, Header thành viên hoặc Footer.
+Mở bằng Live Server: [Header khách](header/index.html),
+[Header thành viên](<header/ed - index.html>), [Footer](footer/index.html),
+[Login](login/index.html), [Signup](signup/index.html).
 
-Login và Sign up hiện là file rỗng, chưa có giao diện hay xác thực thật.
+Login và Signup đã có popup và kiểm tra form. Chức năng tài khoản thật và chế độ
+demo sẽ làm sau. Hướng dẫn và nhật ký: [AI thao tác — Auth](AUTH-HISTORY.md).
 
 ## Cây thư mục
 
 ```text
 Thinh/
-├── index.html          # Trang chọn phần để mở thử
 ├── README.md
-├── common.css          # Font, màu, logo, nút và kiểu dáng xem thử dùng chung
-├── common.js           # Hộp thông báo cho link/chức năng chưa tích hợp
+├── auth.js             # Điều phối hai popup và thao tác UI chung
+├── AUTH-HISTORY.md     # Hướng dẫn, class/id và nhật ký AI thao tác
 ├── assets/             # Ảnh, icon, font có sẵn
 ├── header/
 │   ├── index.html      # Xem thử Header khách
-│   ├── member.html     # Xem thử Header thành viên
-│   ├── header.css
+│   ├── ed - index.html # Xem thử Header thành viên
+│   ├── style.css
 │   └── header.js
 ├── footer/
 │   ├── index.html      # Xem thử Footer
-│   └── footer.css
+│   └── style.css
 ├── login/
-│   ├── index.html      # File rỗng để làm popup Login
+│   ├── index.html      # Xem thử mở sẵn Login, chứa hai popup
 │   ├── login.css
 │   └── login.js
 └── signup/
-    ├── index.html      # File rỗng để làm popup Sign up
+    ├── index.html      # Xem thử mở sẵn Signup, chứa hai popup
     ├── signup.css
     └── signup.js
 ```
@@ -42,49 +44,45 @@ Chưa cần tạo `footer.js`: Footer hiện chỉ có liên kết. Khi có hàn
 
 | Phần | File HTML | Kiểu dáng | Tương tác |
 | --- | --- | --- | --- |
-| Header khách | `header/index.html` | `header/header.css` | `header/header.js` |
-| Header thành viên | `header/member.html` | Cùng `header/header.css` | Cùng `header/header.js` |
-| Footer | `footer/index.html` | `footer/footer.css` | Chưa cần JS riêng |
+| Header khách | `header/index.html` | `header/style.css` | `header/header.js` |
+| Header thành viên | `header/ed - index.html` | Cùng `header/style.css` | Cùng `header/header.js` |
+| Footer | `footer/index.html` | `footer/style.css` | Chưa cần JS riêng |
 | Login | `login/index.html` | `login/login.css` | `login/login.js` |
 | Sign up | `signup/index.html` | `signup/signup.css` | `signup/signup.js` |
 
-`common.css` chỉ giữ phần dùng chung. Các class `.template-demo...` trong đó trang trí vùng xem thử; khi ghép vào trang thật không cần chép nội dung demo.
-
-`common.js` mở dialog tạm cho `data-pending`. Khi nối link/chức năng thật phải bỏ thuộc tính này; chỉ đổi `href` thì JS vẫn chặn.
-
-Header/Footer được tách từ bộ khung đã có; không phải giao diện mới dựng lại từ Figma. Menu hiện tại vẫn cần đối chiếu thiết kế. Các file Login/Sign up chưa có code; yêu cầu thiết kế vẫn là popup, không bắt buộc trở thành trang đăng nhập riêng trong sản phẩm.
+Hai popup cùng nạp `auth.js`, `login/login.css`, `signup/signup.css`,
+`login/login.js` và `signup/signup.js`. Kiểu form chung nằm trong `login.css`;
+`signup.css` điều chỉnh bố cục riêng của Signup. Class `.auth-preview...` chỉ dùng
+trên trang xem thử. Khi ghép, chỉ copy hai khối `<dialog>`.
 
 ## Ghép vào trang của nhóm
 
 HTML nằm trực tiếp trong từng trang. Các file `index.html` trên là trang xem thử đầy đủ, không phải file được tự động chèn vào trang khác.
 
 1. Chép khối `<header>...</header>` và `<footer>...</footer>` vào trang cần ghép, giữ nội dung riêng trong `main`.
-2. Nối CSS chung trước CSS Header/Footer, rồi CSS riêng của trang.
-3. Nối `header.js` nếu có Header. Nối `common.js` và giữ dialog tạm nếu vẫn còn `data-pending`; chỉ dùng một dialog có id `pending-dialog` trên mỗi trang.
-4. Giữ skip link và `id="main-content"` nếu dùng chúng. Sửa đường dẫn logo/icon trong HTML theo vị trí trang đích.
-5. Khi Login/Sign up hoàn thành, chép HTML popup và nối CSS/JS tương ứng. Chưa triển khai cơ chế này trong bộ khung hiện tại.
+2. Nối CSS của trang rồi CSS Header/Footer; nạp `header.js` với `defer`.
+3. Chép hai dialog sau footer và nạp hai CSS, ba JS của Auth theo [hướng dẫn ghép](AUTH-HISTORY.md#4-ghép-tay-vào-trang-khác).
+4. Đổi đường dẫn logo/icon trong HTML theo trang đích. Mỗi trang có một header và một bộ hai dialog.
+5. Hai popup nối với sự kiện header sẵn có; form hợp lệ hiện chỉ thông báo trạng thái.
 
-Ví dụ từ `NomNom/Thach/index.html`:
+Ví dụ Header/Footer từ `NomNom/Thach/Home-page/index.html`:
 
 ```html
-<link rel="stylesheet" href="../Thinh/common.css">
-<link rel="stylesheet" href="../Thinh/header/header.css">
-<link rel="stylesheet" href="../Thinh/footer/footer.css">
-<link rel="stylesheet" href="css/styles.css">
-<script src="../Thinh/header/header.js" defer></script>
-<script src="../Thinh/common.js" defer></script>
+<link rel="stylesheet" href="../../Thinh/header/style.css">
+<link rel="stylesheet" href="../../Thinh/footer/style.css">
+<script src="../../Thinh/header/header.js" defer></script>
 ```
 
-Từ `NomNom/Minh/aboutus/index.html`, thay tiền tố `../Thinh/` bằng `../../Thinh/`. URL ảnh/font trong CSS tính từ file CSS nên không đổi khi chép khối HTML.
+Từ `NomNom/Minh/aboutus/index.html`, cũng dùng tiền tố `../../Thinh/`.
+URL ảnh/font trong CSS tính từ file CSS nên không đổi khi chép khối HTML.
 
 Khi chỉnh mẫu, các trang đã chép không tự cập nhật. Nhóm cần đồng bộ và thử lại sau khi ghép.
 
 ## Những gì còn phải làm
 
 - Đối chiếu nội dung và màu dropdown với Figma.
-- Dựng hai popup, kiểm tra form, ẩn/hiện mật khẩu và hỗ trợ bàn phím.
-- Chốt chức năng tài khoản thật hay chỉ frontend với nhóm/giảng viên.
+- Bổ sung demo hoặc xác thực tài khoản khi đến giai đoạn tiếp theo.
 - Nối link thật, thử desktop/mobile và kiểm tra lỗi console.
 
-Chi tiết phân công và Figma: [tài liệu ở gốc repo](../../phan-cong-header-footer-auth.md). Ghi chú Git: [github-co-ban.md](../../docs/github-co-ban.md).
+Nguồn Figma và kết quả kiểm tra popup được ghi trong [AUTH-HISTORY.md](AUTH-HISTORY.md).
 
