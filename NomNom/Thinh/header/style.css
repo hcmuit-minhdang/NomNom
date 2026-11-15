@@ -4,6 +4,7 @@
 }
 
 .site-header {
+    --site-header-height: 106px;
     background-color: white;
     box-shadow: 0 4px 4px 0 hsl(0, 0%, 50%);
     display: flex;
@@ -11,12 +12,34 @@
     align-items: center;
     justify-content: center;
     gap:20px;
-    height: 106px;
-    width: auto;
+    min-height: var(--site-header-height);
+    height: auto;
+    width: 100%;
     font-size: 20px;
     font-family: 'inter', Arial, Helvetica, sans-serif;
+    line-height: 1.5;
     color: black;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    transform: translateY(0);
+    transition: transform 0.25s ease;
+}
+/* JavaScript chỉ đổi class; CSS đảm nhận chuyển động. */
+.site-header.site-header_hidden {
+    transform: translateY(calc(-100% - 8px));
+}
+.site-header.site-header_hidden .site-header_status {
+    visibility: hidden;
+}
+.site-header *,
+.site-header *::before,
+.site-header *::after {
+    box-sizing: border-box;
+}
+.site-header button {
+    font-family: inherit;
 }
 .site-header a {
     color: black;
@@ -37,11 +60,12 @@
 .site-header_logo-box {
     display: flex;
     align-items: center;
-    height: 106px;
+    height: var(--site-header-height);
     width: 239px; 
     
 }
 .site-header_logo {
+    display: block;
     height: 59.47px;
     width: fit-content;
     transform: rotate(-3.48deg);
@@ -56,7 +80,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 106px;
+    height: var(--site-header-height);
     width: auto;
     gap: 5px;
     flex-shrink: 0;
@@ -69,8 +93,10 @@
     justify-content: flex-start;
 }
 .site-header_auth button {
-    height: 37.44px;
+    min-height: 44px;
     width: 108px;
+    padding: 8px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -118,7 +144,7 @@
     align-items: center;
     justify-content: center;
     width: fit-content;
-    height: 106px;
+    height: var(--site-header-height);
     padding: 10px 0;
     gap: 10px;
     box-sizing: border-box;
@@ -237,6 +263,37 @@ background-color: #E2B119;
 .site-header_search > summary::-webkit-details-marker {
     display: none;
 }
+.site-header_search-label,
+.site-header_menu-toggle {
+    display: none;
+}
+
+.site-header_menu-icon {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 18px;
+}
+.site-header_menu-icon > span {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.site-header_menu-icon > span:nth-child(1) { top: 0; }
+.site-header_menu-icon > span:nth-child(2) { top: 8px; }
+.site-header_menu-icon > span:nth-child(3) { top: 16px; }
+.site-header_menu-open .site-header_menu-icon > span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.site-header_menu-open .site-header_menu-icon > span:nth-child(2) {
+    opacity: 0;
+}
+.site-header_menu-open .site-header_menu-icon > span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 .site-header_search > summary > .site-header_search-close-icon {
     display: none;
 }
@@ -317,6 +374,9 @@ background-color: #E2B119;
 
 /* Cửa sổ vừa: giảm khoảng cách và kích thước logo. */
 @media (max-width: 1200px) {
+    .site-header {
+        font-size: 18px;
+    }
     .header-container {
         gap: 24px;
         padding: 0 16px;
@@ -331,62 +391,189 @@ background-color: #E2B119;
     }
 }
 
-/* Cửa sổ hẹp: logo ở trên, các nhóm nút tự xuống hàng. */
+/* Tablet / điện thoại: logo và nút Menu ở một hàng. */
 @media (max-width: 1000px) {
     .site-header {
-        height: auto;
-        min-height: 106px;
+        --site-header-height: 72px;
+        font-size: 16px;
     }
 
     .header-container {
-        flex-direction: column;
-        gap: 0;
+        flex-wrap: wrap;
+        gap: 0 16px;
     }
 
     .site-header_logo-box {
-        height: 72px;
+        flex-shrink: 0;
+        height: var(--site-header-height);
+    }
+
+    .site-header[data-initialized="true"] .site-header_menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 44px;
+        margin-left: auto;
+        padding: 8px 12px;
+        border: 1px solid #373636;
+        border-radius: 4px;
+        background: white;
+        color: #292929;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .site-header_menu-toggle:hover {
+        background: #fff8dc;
     }
 
     .site-header_controls {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
         width: 100%;
         min-width: 0;
         height: auto;
-        flex-shrink: 1;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding-bottom: 16px;
+        gap: 16px;
+        padding: 12px 16px 20px;
+        background: white;
+    }
+
+    /* Không có JS thì các mục vẫn hiện trong luồng trang để sử dụng được. */
+    .site-header[data-initialized="true"] .site-header_controls {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        max-height: calc(100vh - var(--site-header-height) - 16px);
+        max-height: calc(100dvh - var(--site-header-height) - 16px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        border-top: 1px solid #dedede;
+        box-shadow: 0 6px 10px rgb(0 0 0 / 12%);
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    }
+
+    .site-header[data-initialized="true"].site-header_menu-open .site-header_controls {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
     .site-header_navigation {
-        position: relative;
+        flex-direction: column;
+        align-items: stretch;
+        flex-shrink: 0;
         min-width: 0;
-        max-width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 4px;
     }
 
     .site-header_nav-item {
-        height: 60px;
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 44px;
+        padding: 0;
+        border-right: 0;
     }
 
-    .site-header_navigation .site-header_nav-item {
-        position: static;
+    .site-header_nav-item:has(> details[open]) {
+        border-right: 0;
     }
 
-    /* Căn dropdown theo cả nhóm menu để không tràn mép trái. */
+    .site-header_navigation summary,
+    .site-header_nav-item#site-header_categories a {
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        min-height: 44px;
+        padding: 10px 12px;
+    }
+
+    /* Menu con trở thành accordion, không nổi ra ngoài màn hình. */
     .site-header_navigation details > ul {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        max-width: 100%;
-        border-left: 2.31px solid black;
+        position: static;
+        width: 100%;
+        border: 0;
+        background: #fff8dc;
+    }
+
+    .site-header_navigation details > ul > li > a,
+    .site-header_navigation details > ul > li > button {
+        min-height: 44px;
+        padding: 10px 16px;
     }
 
     .site-header_actions {
-        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        flex-shrink: 0;
         height: auto;
-        min-height: 52px;
-        flex-wrap: wrap;
         gap: 12px;
+    }
+
+    .site-header_auth button {
+        flex: 1;
+        width: auto;
+    }
+
+    .site-header_search > summary {
+        justify-content: flex-start;
+        gap: 10px;
+        width: 100%;
+        height: auto;
+        min-height: 44px;
+        padding: 8px 12px;
+        border: 1px solid #dedede;
+    }
+
+    .site-header_search-label {
+        display: inline;
+    }
+
+    .site-header_search-icon,
+    .site-header_search-close-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    #site-header_search-bar {
+        position: static;
+        height: auto;
+        padding: 12px 4px 8px 0;
+        transform: none;
+    }
+
+    .site-header_search-field {
+        width: 100%;
+        gap: 8px;
+        padding: 0 10px;
+        border-width: 2px;
+        box-shadow: 4px 3px 0 #fbc41c;
+    }
+
+    .site-header_search-field input {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .site-header_search-submit {
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
+
+/* Tôn trọng thiết lập giảm chuyển động của hệ điều hành. */
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .site-header[data-initialized="true"] .site-header_controls,
+    .site-header .site-header_menu-icon > span {
+        transition: none;
     }
 }

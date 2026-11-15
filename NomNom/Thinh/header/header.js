@@ -26,6 +26,13 @@
     const form = search.querySelector("form");
     const input = form.elements.q;
     const status = header.querySelector(".site-header_status");
+    const menuButton = header.querySelector("[data-header-menu-toggle]");
+    const controls = header.querySelector(".site-header_controls");
+    // Giữ mốc này giống @media (max-width: 1000px) trong style.css.
+    const mobileScreen = window.matchMedia("(max-width: 1000px)");
+    const IDLE_DELAY = 4000; // Mili giây: 4000 ms = 4 giây.
+    const REVEAL_EDGE = 24; // Rê chuột vào 24px trên cùng để gọi header lại.
+    let idleTimer;
 
     header.querySelectorAll("[data-header-route]").forEach(link => {
         link.href = new URL(routes[link.dataset.headerRoute], siteRoot).href;
@@ -36,6 +43,94 @@
         panels.forEach(panel => {
             if (panel !== except) panel.open = false;
         });
+    }
+
+    function isMobileMenuOpen() {
+        return header.classList.contains("site-header_menu-open");
+    }
+
+    function isUsingHeader() {
+        const focused = document.activeElement;
+        const usingKeyboard = header.contains(focused) && focused.matches(":focus-visible");
+        const editing = header.contains(focused) && focused.matches("input, textarea, select, [contenteditable]");
+        return isMobileMenuOpen() || panels.some(panel => panel.open) || usingKeyboard || editing;
+    }
+
+    function restartIdleTimer() {
+        // Hủy lịch cũ để không có nhiều bộ đếm chạy cùng lúc.
+        window.clearTimeout(idleTimer);
+        if (document.hidden || isUsingHeader()) return;
+        idleTimer = window.setTimeout(() => {
+            if (!isUsingHeader()) header.classList.add("site-header_hidden");
+        }, IDLE_DELAY);
+    }
+
+    function showHeader() {
+        header.classList.remove("site-header_hidden");
+        restartIdleTimer();
+    }
+
+    function setMobileMenu(open, restoreFocus = false) {
+        if (!menuButton) return;
+        const expanded = mobileScreen.matches && open;
+        if (expanded) status.hidden = true;
+        header.classList.toggle("site-header_menu-open", expanded);
+        menuButton.setAttribute("aria-expanded", String(expanded));
+        menuButton.setAttribute("aria-label", expanded ? "Đóng menu" : "Mở menu");
+        // Menu đã đóng không được nhận Tab hoặc click trong lúc đang chuyển động.
+        controls.inert = mobileScreen.matches && !expanded;
+        if (!expanded) closePanels();
+        if (restoreFocus) menuButton.focus({ preventScroll: true });
+        showHeader();
+    }
+
+    function initResponsiveMenu() {
+        if (!menuButton) return;
+        menuButton.addEventListener("click", () => {
+            setMobileMenu(!isMobileMenuOpen());
+        });
+
+        mobileScreen.addEventListener("change", () => {
+            const focused = document.activeElement;
+            const focusInControls = controls.contains(focused);
+            setMobileMenu(false, mobileScreen.matches && focusInControls);
+            if (!mobileScreen.matches && focused === menuButton) {
+                header.querySelector(".site-header_logo-box a").focus({ preventScroll: true });
+            }
+        });
+        setMobileMenu(false);
+    }
+
+    function initHeaderAutoHide() {
+        // Chỉ tương tác với header mới tính lại thời gian, không theo mọi click trên trang.
+        header.addEventListener("pointermove", showHeader);
+        header.addEventListener("pointerdown", showHeader);
+        header.addEventListener("click", showHeader);
+        header.addEventListener("input", showHeader);
+        header.addEventListener("focusin", showHeader);
+        header.addEventListener("focusout", () => {
+            // Đợi focus chuyển xong rồi mới kiểm tra người dùng còn ở header không.
+            window.setTimeout(restartIdleTimer, 0);
+        });
+
+        document.addEventListener("pointermove", event => {
+            if (event.pointerType === "mouse" && event.clientY <= REVEAL_EDGE) showHeader();
+        }, { passive: true });
+        document.addEventListener("keydown", event => {
+            if (event.key === "Tab") showHeader();
+        });
+
+        let lastScrollY = Math.max(0, window.scrollY);
+        window.addEventListener("scroll", () => {
+            const currentScrollY = Math.max(0, window.scrollY);
+            if (currentScrollY < lastScrollY) showHeader();
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) window.clearTimeout(idleTimer);
+            else showHeader();
+        });
+        restartIdleTimer();
     }
 
     function showStatus(message) {
@@ -56,6 +151,7 @@
             syncPanel(panel);
             panel.addEventListener("toggle", () => {
                 syncPanel(panel);
+                showHeader();
                 if (!panel.open) return;
                 closePanels(panel);
                 status.hidden = true;
@@ -71,22 +167,33 @@
             const control = event.target.closest("a, button");
             if (control?.closest(".site-header_navigation")) {
                 const owner = control.closest("details");
-                closePanels();
-                // Nút trong menu sắp ẩn cần trả focus trước khi phần khác mở popup.
-                if (owner) owner.querySelector("summary").focus();
+                if (isMobileMenuOpen()) {
+                    setMobileMenu(false, true);
+                } else {
+                    closePanels();
+                    // Trả focus trước khi phần phụ trách mở popup.
+                    if (owner) owner.querySelector("summary").focus();
+                }
             }
         });
 
         document.addEventListener("click", event => {
             if (header.contains(event.target)) return;
+            const wasOpen = isMobileMenuOpen() || panels.some(panel => panel.open);
             closePanels();
+            if (isMobileMenuOpen()) setMobileMenu(false);
             status.hidden = true;
+            if (wasOpen) restartIdleTimer();
         });
 
         document.addEventListener("keydown", event => {
             if (event.key !== "Escape") return;
             const opened = panels.find(panel => panel.open);
             if (!opened) {
+                if (isMobileMenuOpen()) {
+                    event.preventDefault();
+                    setMobileMenu(false, true);
+                }
                 status.hidden = true;
                 return;
             }
@@ -118,16 +225,26 @@
         status.hidden = true;
 
         if (header.contains(focused) && focused.closest("[hidden]")) {
-            const target = isMember
+            const target = mobileScreen.matches && !isMobileMenuOpen() && menuButton
+                ? menuButton
+                : isMember
                 ? header.querySelector("[data-header-member] summary")
                 : header.querySelector('[data-auth-action="login"]');
             target.focus();
         }
+        showHeader();
     }
+
+    // Gắn xử lý đóng menu trước listener chuyển giao cho phần tài khoản.
+    initResponsiveMenu();
+    initHeaderDropdowns();
+    initHeaderSearch();
+    initHeaderAutoHide();
 
     header.addEventListener("click", event => {
         const control = event.target.closest("[data-auth-action], [data-header-action]");
         if (!control) return;
+        if (isMobileMenuOpen()) setMobileMenu(false, true);
         const authAction = control.dataset.authAction;
         const request = new CustomEvent(authAction ? "nomnom:auth-request" : "nomnom:navigation-request", {
             cancelable: true,
@@ -146,8 +263,6 @@
         }
     });
 
-    initHeaderDropdowns();
-    initHeaderSearch();
     window.NomNomHeader = { updateHeaderAuth };
 
     // Không có dữ liệu tài khoản thì giữ trạng thái xem thử của từng bản HTML.
