@@ -4,6 +4,19 @@ Hai file HTML là bản xem thử khách và thành viên. Cả hai dùng `style
 `header.js`. Chỉ ghép khối `<header class="site-header" data-nomnom-header>`, nối CSS và JS với `defer`;
 không cần tạo thêm trang. Các đường dẫn JS được tính từ vị trí `header.js`.
 
+## Responsive và tự ẩn
+
+- Trên 1000px: menu ngang; từ 1000px trở xuống: logo và nút Menu.
+- Sau 4 giây không tương tác với header, thanh này trượt lên và ẩn.
+- Rê chuột vào 24px sát mép trên, cuộn ngược lên hoặc nhấn Tab để hiện lại.
+- Header giữ hiện khi menu / tìm kiếm đang mở hoặc đang dùng bàn phím trong header.
+- Menu nhỏ đóng khi chọn mục, bấm ngoài, bấm lại Menu hoặc Escape.
+  Nếu đang mở menu con, Escape đóng menu con trước; nhấn tiếp để đóng Menu.
+- Khi ghép tay, chép cả nút `[data-header-menu-toggle]` và
+  `id="site-header_controls"`. Mỗi trang chỉ có một header.
+
+Nhật ký thay đổi và bài hướng dẫn: [AI thao tác — Header](AI-THAO-TAC-header.md).
+
 ## Menu và tìm kiếm
 
 - Menu tự đóng khi mở menu khác, chọn mục, bấm bên ngoài hoặc nhấn Escape.

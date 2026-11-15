@@ -1,8 +1,8 @@
 # Tra cứu class và id — Header & Footer
 
-Tổng hợp theo code hiện tại: **17 class và 4 id của header**, **20 class của footer**.
-Footer hiện chưa có id. Các tên dưới đây đã có trong HTML; không phải danh sách
-các thành phần cần tạo thêm.
+Tổng hợp theo code hiện tại: **20 class trong HTML, 2 class trạng thái do JS thêm
+và 5 id của header**, **20 class của footer**. Footer hiện chưa có id.
+Các tên dưới đây là thành phần đang dùng, không phải danh sách cần tạo thêm.
 
 ## 1. Cách đọc
 
@@ -106,7 +106,9 @@ header.site-header
 ├── div.header-container
 │   ├── div.site-header_logo-box
 │   │   └── a → img.site-header_logo
-│   └── div.site-header_controls
+│   ├── button.site-header_menu-toggle[data-header-menu-toggle]
+│   │   └── span.site-header_menu-icon → ba nét của nút Menu
+│   └── div.site-header_controls#site-header_controls
 │       ├── div.site-header_navigation
 │       │   ├── div.site-header_nav-item → Công thức
 │       │   ├── div.site-header_nav-item → Về chúng tôi
@@ -117,7 +119,7 @@ header.site-header
 │           │   ├── button#site-header_signup
 │           │   └── button#site-header_login
 │           └── details.site-header_search
-│               ├── summary → Icon mở / đóng tìm kiếm
+│               ├── summary → Icon mở / đóng + span.site-header_search-label
 │               └── div#site-header_search-bar
 │                   └── form.site-header_search-field
 │                       ├── input[name="q"]
@@ -134,6 +136,8 @@ header.site-header
 | `.site-header_logo-box` | `div` | Khung chứa link và ảnh logo. |
 | `.site-header_logo` | `img` | Ảnh logo: kích thước và góc xoay. |
 | `.site-header_controls` | `div` | Nhóm bên phải logo, chứa điều hướng và các hành động tài khoản / tìm kiếm. |
+| `.site-header_menu-toggle` | `button` | Nút mở / đóng Menu trên màn hình từ 1000px trở xuống. |
+| `.site-header_menu-icon` | `span` | Ba nét CSS chuyển thành dấu X khi Menu mở. |
 | `.site-header_navigation` | `div` | Nhóm Công thức, Về chúng tôi, Danh mục và Góc của tôi. |
 | `.site-header_nav-item` | `div` | Một mục trong nhóm điều hướng; dùng lặp lại cho cả bốn mục. |
 | `.site-header_arrow` | `img` | Mũi tên cạnh tên menu; CSS đổi màu khi dropdown mở. |
@@ -143,9 +147,12 @@ header.site-header
 | `.site-header_search-icon` | `img` | Đặt kích thước cho hình kính lúp dùng để mở tìm kiếm. |
 | `.site-header_search-open-icon` | `img` | Đánh dấu hình kính lúp để CSS ẩn nó khi tìm kiếm mở. Cùng nằm trên ảnh có class `site-header_search-icon`. |
 | `.site-header_search-close-icon` | `img` | Hình dấu X; hiện khi khối tìm kiếm mở. |
+| `.site-header_search-label` | `span` | Nhãn Tìm công thức, hiện trong Menu trên màn hình nhỏ. |
 | `.site-header_search-field` | `form` | Khung nhập tìm kiếm: chiều rộng, border, bóng và bố trí input / nút gửi. |
 | `.site-header_search-submit` | `button` | Nút kính lúp bên trong form để gửi tìm kiếm. |
 | `.site-header_status` | `p` | Vùng thông báo chờ tích hợp, mặc định ẩn; JavaScript cập nhật nội dung và trạng thái hiển thị. |
+| `.site-header_menu-open` | `header`, JS thêm / xóa | Trạng thái Menu nhỏ đang mở; điều khiển panel và hình dấu X. |
+| `.site-header_hidden` | `header`, JS thêm / xóa | Trạng thái tự ẩn sau 4 giây không tương tác. |
 
 ### Toàn bộ id của header
 
@@ -155,6 +162,7 @@ header.site-header
 | `#site-header_signup` | `button` | Nút Đăng ký, có màu nền và bóng riêng. |
 | `#site-header_login` | `button` | Nút Đăng nhập, có màu nền và bóng riêng. |
 | `#site-header_search-bar` | `div` | Vùng mở rộng phía dưới header, chứa form tìm kiếm. |
+| `#site-header_controls` | `div` | Vùng điều khiển được nút Menu tham chiếu bằng `aria-controls`. |
 
 `aria-controls="site-header_search-bar"` trên `summary` trỏ đến id vùng tìm kiếm.
 Nếu đổi id này, phải đổi cả giá trị `aria-controls`.
@@ -164,6 +172,7 @@ Nếu đổi id này, phải đổi cả giá trị `aria-controls`.
 | Thuộc tính / selector | Nằm ở đâu | Vai trò |
 | --- | --- | --- |
 | `[data-nomnom-header]` | `header.site-header` | Điểm bắt đầu để `header.js` tìm và khởi tạo header. |
+| `[data-header-menu-toggle]` | `button.site-header_menu-toggle` | Điểm để JS tìm nút Menu. |
 | `[data-header-guest]` | `div.site-header_auth` | Đánh dấu nhóm dành cho khách. |
 | `[data-header-member]` | `div.site-header_nav-item` | Đánh dấu nhóm Góc của tôi dành cho thành viên. |
 | `[data-header-route]` | Các link điều hướng | Chứa khóa đường dẫn như `home`, `search`, `about`, `saved` để JavaScript cập nhật `href`. |
@@ -184,6 +193,12 @@ Các selector trạng thái thường gặp trong CSS:
 | `[data-nomnom-header] [hidden]` | Phần tử có thuộc tính `hidden` nằm bên trong header. |
 | `#site-header_login:hover` | Nút đăng nhập khi con trỏ chuột đặt lên nó. |
 | `.site-header_search-field:focus-within` | Form tìm kiếm khi một phần tử bên trong đang nhận focus. |
+| `.site-header.site-header_menu-open` | Header đang mở Menu trên màn hình nhỏ. |
+| `.site-header.site-header_hidden` | Header đang trượt lên để ẩn. |
+
+`inert` được JS bật trên `#site-header_controls` khi Menu nhỏ đóng: các mục bên
+trong không nhận click hoặc Tab. Đọc cách chỉnh thời gian, media và hiệu ứng tại
+[AI thao tác — Header](header/AI-THAO-TAC-header.md).
 
 ## 3. Footer
 

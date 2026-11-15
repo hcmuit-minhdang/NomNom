@@ -1109,7 +1109,7 @@ a.recipe-card {
 .about-us-banner {
     display: flex;
     background-color: black;
-    margin: 4em 0;
+    margin: 4em 0 0;
     padding: 3.2em 10vw;
     justify-content: space-between;
     align-items: center;
@@ -1379,7 +1379,7 @@ a.recipe-card {
     .about-us-banner {
         flex-direction: column;
         text-align: center;
-        margin: 2.5rem 0;
+        margin: 2.5rem 0 0;
     }
     .about-us-description {
         font-size: clamp(1.25rem, 5vw, 2.2rem);
