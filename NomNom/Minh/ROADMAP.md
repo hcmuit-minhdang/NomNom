@@ -10,11 +10,13 @@ Tự dựng hai phần được giao — **About Us** và **User** — bằng HT
 - Mỗi phần đi theo vòng: **mô tả ý định → tự phác cấu trúc → viết một phần nhỏ → tự kiểm tra → t review và hỏi vì sao**.
 - Khi bí, t sẽ gợi ý theo từng nấc: câu hỏi định hướng trước, gợi ý cụ thể sau, đoạn mẫu ngắn cuối cùng nếu cần.
 - Khi review, t giải thích lỗi và cho m cơ hội tự sửa trước khi đưa cách sửa.
-- Chỉ dùng HTML, CSS, JavaScript thuần; chưa dựng header/footer dùng chung. Sau khi nhóm merge mới nối trang và giải quyết phần giao diện chung.
+- Chỉ dùng HTML, CSS, JavaScript thuần. Header/footer dùng chung nằm ở phần Thinh; khi tích hợp thì nối trang và kiểm tra giao diện chung theo thống nhất của nhóm.
 
 ## Trạng thái thư mục hiện tại
 
-Trong `NomNom` hiện chỉ có file `ROADMAP.md` này. Các thư mục và file được nhắc ở những phần dưới **chưa tồn tại**; đó là cấu trúc dự kiến để mình tạo dần từ đầu. Không có code, assets hay file cũ nào được giữ lại bên trong `NomNom`.
+Tài liệu này dành cho phần `NomNom/Minh/`. Hiện đã có hai thư mục `aboutus/`
+và `user/` với các file HTML/CSS/JS, phần lớn còn rỗng. Cây thư mục bên dưới là
+cấu trúc tham khảo cho lộ trình học; đối chiếu với file có sẵn trước khi tạo thêm.
 
 ## Lộ trình
 
@@ -22,10 +24,11 @@ Trong `NomNom` hiện chỉ có file `ROADMAP.md` này. Các thư mục và file
 
 **Mục tiêu:** biết mỗi trang, kiểu dáng, hành vi và tài nguyên nằm ở đâu.
 
-Khi đến bước này, m sẽ **tạo mới** cấu trúc sau trong `NomNom/`; hiện giờ các mục dưới đây chưa có:
+Ở bước này, m **rà soát và bổ sung** phần `NomNom/Minh/`. Cây dưới đây là gợi ý
+tổ chức, không phải danh sách file đã có:
 
 ```text
-NomNom/
+Minh/
 ├── aboutus/
 │   ├── index.html
 │   └── aboutus.css
@@ -44,7 +47,8 @@ NomNom/
 
 Tên trang User có thể chỉnh sau khi đối chiếu chính xác với Figma và cách nhóm chia việc. Không tạo file chỉ để lấp chỗ trống.
 
-**M tự làm:** tạo các thư mục trước, rồi các file cần dùng. Kiểm tra Explorer để chắc file nằm trong `NomNom`, không nằm nhầm ở thư mục repo cha.
+**M tự làm:** kiểm tra các thư mục trước, rồi bổ sung file thực sự cần dùng.
+Kiểm tra Explorer để chắc file nằm trong `NomNom/Minh/`, không tạo nhầm ở gốc repo.
 
 **T sẽ hỏi:** Đường dẫn ảnh từ `aboutus/index.html` khác đường dẫn ảnh từ `user/index.html` thế nào? Vì sao mỗi trang có thể có CSS riêng?
 
@@ -159,8 +163,8 @@ M gửi một trong các dạng sau:
 
 ## Tiến độ hiện tại
 
-- [x] Xoá các mục cũ bên trong `NomNom`; hiện chỉ còn `ROADMAP.md` này.
-- [ ] Tạo mới cấu trúc thư mục và các file cần thiết theo Bước 0.
+- [x] Có các thư mục `aboutus/`, `user/` và những file HTML/CSS/JS ban đầu.
+- [ ] Rà soát cấu trúc và bổ sung những file cần thiết theo Bước 0.
 - [ ] Viết khung HTML About Us.
 
 

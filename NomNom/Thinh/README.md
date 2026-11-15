@@ -1,88 +1,65 @@
 # NomNom — Phần của Thịnh
-Chưa làm xong con mẹ gì hết
 
-HTML, CSS và JavaScript thuần. Bốn phần bạn phụ trách nằm trong bốn thư mục riêng.
+Header, Footer và hai popup Login/Signup dùng HTML, CSS và JavaScript thuần.
+Bắt đầu từ file này; mỗi tài liệu bên dưới có một mục đích riêng.
 
 ## Mở xem
 
-Mở bằng Live Server: [Header khách](header/index.html),
-[Header thành viên](<header/ed - index.html>), [Footer](footer/index.html),
-[Login](login/index.html), [Signup](signup/index.html).
+Mở bằng Live Server: [Header khách](header/index.html) ·
+[Header thành viên](<header/ed - index.html>) · [Footer](footer/index.html) ·
+[Login](login/index.html) · [Signup](signup/index.html).
 
-Login và Signup đã có popup và kiểm tra form. Chức năng tài khoản thật và chế độ
-demo sẽ làm sau. Hướng dẫn và nhật ký: [AI thao tác — Auth](AUTH-HISTORY.md).
+[Trang chủ đã ghép](../Thach/Home-page/index.html) dùng header, footer và cả hai popup.
+Hiện popup kiểm tra dữ liệu nhập; demo, xác thực thật, ghi nhớ phiên và quên mật khẩu
+sẽ làm ở giai đoạn sau. Các liên kết chưa có trang đích vẫn chờ nhóm tích hợp.
 
-## Cây thư mục
+## Tài liệu
 
-```text
-Thinh/
-├── README.md
-├── auth.js             # Điều phối hai popup và thao tác UI chung
-├── AUTH-HISTORY.md     # Hướng dẫn, class/id và nhật ký AI thao tác
-├── assets/             # Ảnh, icon, font có sẵn
-├── header/
-│   ├── index.html      # Xem thử Header khách
-│   ├── ed - index.html # Xem thử Header thành viên
-│   ├── style.css
-│   └── header.js
-├── footer/
-│   ├── index.html      # Xem thử Footer
-│   └── style.css
-├── login/
-│   ├── index.html      # Xem thử mở sẵn Login, chứa hai popup
-│   ├── login.css
-│   └── login.js
-└── signup/
-    ├── index.html      # Xem thử mở sẵn Signup, chứa hai popup
-    ├── signup.css
-    └── signup.js
-```
+| Cần làm gì? | Mở tài liệu |
+| --- | --- |
+| Review thư mục Header: cấu trúc, class/id, responsive và tự ẩn | [Header](docs/header.md) |
+| Review thư mục Footer: bố cục, class, responsive và SVG | [Footer](docs/footer.md) |
+| Review thư mục Login: form và điều phối popup dùng chung | [Login](docs/login.md) |
+| Review thư mục Signup: xác nhận mật khẩu và điều khoản | [Signup](docs/signup.md) |
+| Xem quy ước đặt tên và class/thuộc tính dùng chung | [Quy ước chung](docs/class-id.md) |
+| Xem AI đã sửa gì và các kết quả kiểm tra trước đây | [Nhật ký AI thao tác](docs/lich-su-ai.md) |
 
-Chưa cần tạo `footer.js`: Footer hiện chỉ có liên kết. Khi có hành vi riêng cần JS mới thêm file đó.
+## Mở file nào để sửa?
 
-## Muốn sửa phần nào thì mở đâu?
-
-| Phần | File HTML | Kiểu dáng | Tương tác |
+| Phần | HTML | CSS | JavaScript |
 | --- | --- | --- | --- |
-| Header khách | `header/index.html` | `header/style.css` | `header/header.js` |
-| Header thành viên | `header/ed - index.html` | Cùng `header/style.css` | Cùng `header/header.js` |
-| Footer | `footer/index.html` | `footer/style.css` | Chưa cần JS riêng |
-| Login | `login/index.html` | `login/login.css` | `login/login.js` |
-| Sign up | `signup/index.html` | `signup/signup.css` | `signup/signup.js` |
+| Header | [Khách](header/index.html), [thành viên](<header/ed - index.html>) | [style.css](header/style.css) | [header.js](header/header.js) |
+| Footer | [index.html](footer/index.html) | [style.css](footer/style.css) | Chưa có hành vi cần file JS riêng |
+| Login | [index.html](login/index.html) | [login.css](login/login.css) | [login.js](login/login.js) |
+| Signup | [index.html](signup/index.html) | [signup.css](signup/signup.css) | [signup.js](signup/signup.js) |
 
-Hai popup cùng nạp `auth.js`, `login/login.css`, `signup/signup.css`,
-`login/login.js` và `signup/signup.js`. Kiểu form chung nằm trong `login.css`;
-`signup.css` điều chỉnh bố cục riêng của Signup. Class `.auth-preview...` chỉ dùng
-trên trang xem thử. Khi ghép, chỉ copy hai khối `<dialog>`.
+Hai popup cùng dùng [auth.js](auth.js). Kiểu form chung nằm trong `login.css`;
+`signup.css` bổ sung bố cục riêng. `assets/` chứa ảnh, icon và font. `docs/` chứa tài liệu.
+Các thư mục `P-header/` và `P-footer/` là bản mẫu cũ; trang chủ hiện dùng các thư mục trong bảng trên.
 
-## Ghép vào trang của nhóm
+## Ghép thủ công
 
-HTML nằm trực tiếp trong từng trang. Các file `index.html` trên là trang xem thử đầy đủ, không phải file được tự động chèn vào trang khác.
+1. Copy một khối `<header>` và một khối `<footer>` vào trang đích, giữ nội dung riêng của `main`.
+2. Copy cả hai `<dialog>` giữa `NOMNOM AUTH START` / `NOMNOM AUTH END`, đặt sau footer.
+3. Nạp CSS/JS theo mẫu dưới; đổi đường dẫn ảnh trong các khối HTML theo trang đích.
+4. Thử menu, tìm kiếm, hai popup và màn hình nhỏ. Mỗi trang chỉ có một bộ các khối này.
 
-1. Chép khối `<header>...</header>` và `<footer>...</footer>` vào trang cần ghép, giữ nội dung riêng trong `main`.
-2. Nối CSS của trang rồi CSS Header/Footer; nạp `header.js` với `defer`.
-3. Chép hai dialog sau footer và nạp hai CSS, ba JS của Auth theo [hướng dẫn ghép](AUTH-HISTORY.md#4-ghép-tay-vào-trang-khác).
-4. Đổi đường dẫn logo/icon trong HTML theo trang đích. Mỗi trang có một header và một bộ hai dialog.
-5. Hai popup nối với sự kiện header sẵn có; form hợp lệ hiện chỉ thông báo trạng thái.
-
-Ví dụ Header/Footer từ `NomNom/Thach/Home-page/index.html`:
+Ví dụ đường dẫn từ `Thach/Home-page/index.html` hoặc `Minh/aboutus/index.html`:
 
 ```html
+<!-- Đặt sau CSS riêng của trang. -->
 <link rel="stylesheet" href="../../Thinh/header/style.css">
 <link rel="stylesheet" href="../../Thinh/footer/style.css">
+<link rel="stylesheet" href="../../Thinh/login/login.css">
+<link rel="stylesheet" href="../../Thinh/signup/signup.css">
 <script src="../../Thinh/header/header.js" defer></script>
+<script src="../../Thinh/auth.js" defer></script>
+<script src="../../Thinh/login/login.js" defer></script>
+<script src="../../Thinh/signup/signup.js" defer></script>
 ```
 
-Từ `NomNom/Minh/aboutus/index.html`, cũng dùng tiền tố `../../Thinh/`.
-URL ảnh/font trong CSS tính từ file CSS nên không đổi khi chép khối HTML.
+URL ảnh/font trong CSS tính từ vị trí file CSS; `src` ảnh trong HTML tính từ trang đích.
+Không copy `<head>`, `<body>` hay phần xem thử. HTML ghép tay không tự đồng bộ:
+khi sửa mẫu, cập nhật các trang đã copy và thử lại. Chi tiết ở các tài liệu review tương ứng phía trên.
 
-Khi chỉnh mẫu, các trang đã chép không tự cập nhật. Nhóm cần đồng bộ và thử lại sau khi ghép.
-
-## Những gì còn phải làm
-
-- Đối chiếu nội dung và màu dropdown với Figma.
-- Bổ sung demo hoặc xác thực tài khoản khi đến giai đoạn tiếp theo.
-- Nối link thật, thử desktop/mobile và kiểm tra lỗi console.
-
-Nguồn Figma và kết quả kiểm tra popup được ghi trong [AUTH-HISTORY.md](AUTH-HISTORY.md).
-
+Tài liệu học phần About Us/User của Minh giữ tại [Minh/ROADMAP.md](../Minh/ROADMAP.md).
