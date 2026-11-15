@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NomNom - Kết quả tìm kiếm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Thinh/header/style.css">
+    <link rel="stylesheet" href="../../Thinh/footer/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- BANNER-->
+        <section class="search-hero-banner">
+            <h1 class="search-hero-title">KẾT QUẢ TÌM KIẾM</h1>
+            <p class="search-hero-subtitle">
+                Bạn đã tìm kiếm <span id="search-keyword-text">&lt;kết quả tìm kiếm&gt;</span>
+            </p>
+        </section>
+
+        <!-- LƯỚI 15 MÓN ĂN (3 CỘT x 5 HÀNG) -->
+        <div class="search-results-main">
+            <div class="recipes-grid-3" id="searchResultsGrid"></div>
+
+            <!-- PHÂN TRANG -->
+            <nav class="pagination-nav" aria-label="Phân trang">
+                <a href="#" class="page-link is-active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <span class="page-link page-dots">...</span>
+                <a href="#" class="page-link">23</a>
+                <a href="#" class="page-link">Trang sau ▶</a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NomNom - Danh mục món ăn (Trang 1)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Thinh/header/style.css">
+    <link rel="stylesheet" href="../../Thinh/footer/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- BANNER -->
+        <section class="category-hero-pattern">
+            <h1 class="hero-stroke-title">DANH MỤC MÓN ĂN</h1>
+            <p class="hero-subtitle">Tổng hợp các món ăn</p>
+        </section>
+
+        <!-- LAYOUT 2 CỘT -->
+        <div class="category-page-layout">
+            
+            <!-- SIDEBAR BỘ LỌC -->
+            <aside class="filter-sidebar">
+                <form class="sidebar-search-form" id="sidebarSearchForm">
+                    <input type="text" id="sidebarSearchInput" placeholder="Tìm kiếm">
+                    <button type="submit" aria-label="Tìm">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+                        </svg>
+                    </button>
+                </form>
+
+                <h2 class="filter-title">BỘ LỌC</h2>
+
+                <div class="filter-group-list">
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">ĐẠM</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Thịt bò"><span>Thịt bò</span></label>
+                            <label><input type="checkbox" value="Thịt gà"><span>Thịt gà</span></label>
+                            <label><input type="checkbox" value="Thịt heo"><span>Thịt heo</span></label>
+                            <label><input type="checkbox" value="Hải sản"><span>Hải sản</span></label>
+                        </div>
+                    </div>
+
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">TINH BỘT</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Cơm"><span>Cơm</span></label>
+                            <label><input type="checkbox" value="Bún / Phở"><span>Bún / Phở</span></label>
+                            <label><input type="checkbox" value="Bánh mì"><span>Bánh mì</span></label>
+                        </div>
+                    </div>
+
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">RAU CỦ &amp; NẤM</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Rau xanh"><span>Rau xanh</span></label>
+                            <label><input type="checkbox" value="Củ quả"><span>Củ quả</span></label>
+                            <label><input type="checkbox" value="Nấm"><span>Các loại nấm</span></label>
+                        </div>
+                    </div>
+
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">TRÁI CÂY</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Trái cây nhiệt đới"><span>Trái cây nhiệt đới</span></label>
+                            <label><input type="checkbox" value="Tráng miệng"><span>Tráng miệng</span></label>
+                        </div>
+                    </div>
+
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">CHẾ ĐỘ ĂN</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Thanh đạm"><span>Thanh đạm</span></label>
+                            <label><input type="checkbox" value="Eat Clean"><span>Eat Clean</span></label>
+                            <label><input type="checkbox" value="Ăn chay"><span>Ăn chay</span></label>
+                        </div>
+                    </div>
+
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">VÙNG MIỀN</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Miền Bắc"><span>Miền Bắc</span></label>
+                            <label><input type="checkbox" value="Miền Trung"><span>Miền Trung</span></label>
+                            <label><input type="checkbox" value="Miền Nam"><span>Miền Nam</span></label>
+                            <label><input type="checkbox" value="Món Á"><span>Món Á / Nhật</span></label>
+                        </div>
+                    </div>
+
+                    <div class="filter-accordion">
+                        <button type="button" class="filter-trigger-btn">NGÂN SÁCH</button>
+                        <div class="filter-panel">
+                            <label><input type="checkbox" value="Dưới 50k"><span>Dưới 50.000đ</span></label>
+                            <label><input type="checkbox" value="50k - 100k"><span>50.000đ - 100.000đ</span></label>
+                            <label><input type="checkbox" value="Trên 100k"><span>Trên 100.000đ</span></label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG PHẢI -->
+            <div class="category-content">
+                
+                <!-- MÓN ĂN ĐƯỢC YÊU THÍCH -->
+                <section>
+                    <div class="title">
+                        <h2>MÓN ĂN ĐƯỢC YÊU THÍCH</h2>
+                        <span class="line"></span>
+                    </div>
+
+                    <div class="favorite-recipes-grid">
+                        <!-- Thẻ lớn bên trái -->
+                        <a href="#" class="recipe-card-compressed featured-tall">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Recipe Name">
+                            <div class="recipe-info">
+                                <span class="recipe-name">Recipe Name</span>
+                                <span class="recipe-price">$ price / serving</span>
+                                <span class="recipe-time">Cook Time: 30 minutes</span>
+                            </div>
+                        </a>
+
+                        <!-- 4 thẻ bên phải -->
+                        <div id="favoriteSmallCards" style="display: contents;"></div>
+                    </div>
+                </section>
+
+                <!-- CÁC MÓN BÒ -->
+                <section>
+                    <div class="title">
+                        <h2>CÁC MÓN BÒ</h2>
+                        <span class="line"></span>
+                    </div>
+
+                    <div class="recipes-grid-3" id="beefRecipesGrid"></div>
+
+                    <a href="../search-results/index.html?q=Các món bò" class="view-more-button">
+                        XEM THÊM CÁC MÓN BÒ ▶
+                    </a>
+                </section>
+
+                <!-- PHÂN TRANG -->
+                <nav class="pagination-nav" aria-label="Phân trang">
+                    <a href="../category-page-1/index.html" class="page-link is-active">1</a>
+                    <a href="../category-page-2/index.html" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <span class="page-link page-dots">...</span>
+                    <a href="#" class="page-link">23</a>
+                    <a href="../category-page-2/index.html" class="page-link">Trang sau ▶</a>
+                </nav>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html>
