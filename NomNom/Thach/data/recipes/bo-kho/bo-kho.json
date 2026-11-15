@@ -1,0 +1,133 @@
+{
+  "id": "bo-kho",
+  "title": "Bò kho",
+  "category": "Món ăn truyền thống",
+  "subcategory": "Món kho",
+
+  "author": "",
+  "uploaded": "15/11/2026",
+
+  "ratingScore": 0,
+  "reviewCount": 0,
+
+  "prepTime": 45,
+  "cookTime": 100,
+  "baseServings": 4,
+  "costTotal": 220000,
+
+  "description": "Bò kho là món ăn sáng quen thuộc của người Việt, đặc biệt phổ biến ở miền Nam. Thịt bò được ướp sả, gừng, tỏi và ngũ vị hương rồi hầm lửa nhỏ với nước dừa cùng hoa hồi, quế, thảo quả cho đến khi mềm thấm. Nước kho có màu cam đỏ đẹp mắt, thơm nức mùi gia vị, ăn kèm bánh mì giòn và rau thơm là một bữa sáng no nê, ấm bụng.",
+  "summary": "A rich and aromatic Vietnamese beef stew slowly braised with lemongrass, ginger, star anise, cinnamon and coconut water until fork-tender. Served with carrots, fresh herbs and a crusty baguette for dipping.",
+
+  "gallery": [
+    "images/placeholder.svg",
+    "images/placeholder.svg",
+    "images/placeholder.svg",
+    "images/placeholder.svg"
+  ],
+
+  "featuredReview": {
+    "rating": 0,
+    "text": "",
+    "author": ""
+  },
+
+  "ingredients": [
+    { "ingredientId": "thit-bo", "qty": 600, "unit": "g", "note": "nên chọn nạm hoặc bắp bò" },
+    { "ingredientId": "sa", "qty": 3, "unit": "nhánh" },
+    { "ingredientId": "gung", "qty": 1, "unit": "củ", "note": "loại nhỏ" },
+    { "ingredientId": "toi-bam", "qty": 15, "unit": "g" },
+    { "ingredientId": "hanh-tim", "qty": 3, "unit": "củ" },
+    { "ingredientId": "hoa-hoi", "qty": 2, "unit": "nhánh" },
+    { "ingredientId": "que", "qty": 1, "unit": "nhánh" },
+    { "ingredientId": "thao-qua", "qty": 1, "unit": "quả" },
+    { "ingredientId": "ngu-vi-huong", "qty": 3, "unit": "g" },
+    { "ingredientId": "ca-chua", "qty": 1, "unit": "quả" },
+    { "ingredientId": "ca-rot", "qty": 2, "unit": "củ" },
+    { "ingredientId": "nuoc-dua", "qty": 500, "unit": "ml" },
+    { "ingredientId": "nuoc-mam", "qty": 30, "unit": "ml" },
+    { "ingredientId": "duong-cat", "qty": 15, "unit": "g" },
+    { "ingredientId": "hat-nem", "qty": 5, "unit": "g" },
+    { "ingredientId": "dau-an", "qty": 30, "unit": "ml" },
+    { "ingredientId": "banh-mi", "qty": 4, "unit": "ổ", "note": "ăn kèm" },
+    { "ingredientId": "rau-thom", "qty": 30, "unit": "g", "note": "ăn kèm, nên dùng húng quế" }
+  ],
+
+  "quickSteps": [
+    "Sơ chế: Cắt bò thành khối khoảng 3cm. Băm 2 nhánh sả, nhánh còn lại đập dập. Băm gừng, hành tím và cà chua. Cà rốt gọt vỏ, cắt khúc.",
+    "Ướp bò: Trộn bò với sả băm, gừng băm, 10g tỏi, ngũ vị hương, 20ml nước mắm, 10g đường và hạt nêm. Ướp khoảng 30 phút.",
+    "Xào bò: Rang thơm hoa hồi, quế, thảo quả rồi cho vào túi lọc. Phi tỏi, hành tím, sả đập dập với dầu ăn, xào cà chua rồi cho bò vào xào săn.",
+    "Hầm bò: Đổ nước dừa và 500ml nước, thả túi gia vị vào, hầm lửa nhỏ khoảng 60 phút. Thêm cà rốt, phần nước mắm và đường còn lại, nấu thêm 20 phút.",
+    "Lên món: Vớt túi gia vị ra, múc bò kho ra tô, ăn kèm bánh mì và rau thơm."
+  ],
+
+  "nutrition": {
+    "servings": 1,
+    "calories": "630 kcal",
+    "carbs": "55g",
+    "protein": "38g",
+    "fat": "29g",
+    "sodium": "1,200 - 1,500 mg",
+    "fiber": "3 - 4g"
+  },
+
+  "steps": [
+    {
+      "text": [
+        "Thịt bò rửa sạch, để ráo rồi cắt thành khối vuông khoảng 3cm.",
+        "Sả bóc lớp vỏ ngoài, băm nhuyễn 2 nhánh, nhánh còn lại cắt khúc và đập dập. Gừng gọt vỏ, băm nhỏ. Hành tím bóc vỏ, băm nhỏ. Cà chua băm nhỏ. Cà rốt gọt vỏ, cắt khúc vừa ăn."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Cho thịt bò vào tô, thêm sả băm, gừng băm, 10g tỏi băm, 3g ngũ vị hương, 20ml nước mắm, 10g đường và 5g hạt nêm.",
+        "Trộn đều rồi để ướp khoảng 30 phút cho thịt bò thấm gia vị."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Cho 2 nhánh hoa hồi, 1 nhánh quế và 1 quả thảo quả vào chảo khô, rang trên lửa nhỏ khoảng 2 phút cho dậy mùi thơm rồi cho vào túi lọc gia vị.",
+        "Đặt nồi lên bếp, cho 30ml dầu ăn vào đun nóng, phi thơm 5g tỏi còn lại, hành tím và sả đập dập. Thêm cà chua băm vào xào khoảng 2 phút cho ra màu.",
+        "Cho thịt bò vào xào trên lửa lớn khoảng 5-7 phút đến khi thịt săn lại."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Đổ 500ml nước dừa và 500ml nước vào nồi, thả túi gia vị vào rồi đun sôi. Hớt bọt, hạ lửa nhỏ và hầm khoảng 60 phút đến khi thịt bò mềm.",
+        "Cho cà rốt vào, nêm 10ml nước mắm và 5g đường còn lại, nấu thêm khoảng 20 phút đến khi cà rốt chín mềm. Nếm lại cho vừa ăn rồi vớt túi gia vị ra."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    },
+    {
+      "text": [
+        "Rau thơm rửa sạch, để ráo. Bánh mì có thể nướng sơ cho giòn.",
+        "Múc bò kho ra tô, ăn nóng kèm bánh mì và rau thơm. Bạn cũng có thể ăn bò kho với bánh phở hoặc hủ tiếu."
+      ],
+      "images": [
+        "images/placeholder.svg",
+        "images/placeholder.svg"
+      ]
+    }
+  ],
+
+  "similar": [
+    { "id": "ga-kho-sa", "name": "Gà kho sả", "price": "25.000đ / phần", "time": "60 phút", "image": "images/placeholder.svg" },
+    { "id": "banh-mi-thit-nuong", "name": "Bánh mì thịt nướng", "price": "80.000đ / phần", "time": "45 phút", "image": "images/image1.jpg" },
+    { "id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "60.000đ / phần", "time": "50 phút", "image": "images/image1.jpg" },
+    { "id": "canh-bau-nau-tom", "name": "Canh bầu nấu tôm", "price": "12.500đ / phần", "time": "30 phút", "image": "images/placeholder.svg" }
+  ]
+}
