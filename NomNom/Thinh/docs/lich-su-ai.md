@@ -154,3 +154,23 @@ Các file không được tự commit hoặc push.
 - Cuộn lên khi chưa về đầu trang: header hiện lại; Menu nhỏ đang mở giữ header hiện sau hơn 4 giây.
 - Đóng Menu, quay về đầu rồi cuộn xuống 1px: bộ đếm hoạt động trở lại; về vị trí 0 thì header hiện.
 - Không ghi nhận lỗi JavaScript runtime trong các luồng đã kiểm tra; có yêu cầu `favicon.ico` trả về 404, không liên quan đến header.
+
+## Responsive footer khi thu hẹp
+
+**Ngày:** 16/11/2026. **Thực hiện:** AI (Codex).
+
+- Sửa [footer/style.css](../footer/style.css): bổ sung media 1000px để thương hiệu ở hàng đầu, ba nhóm link ở hàng dưới; media 600px chuyển thành một cột.
+- Bỏ margin âm của thương hiệu ở màn hẹp; thu khung logo còn 80px, chỉnh margin tiêu đề và khoảng cách link để bố cục gọn hơn.
+- Ở màn nhỏ, lề ngang còn 16px; đường phân cách đi theo lề. Icon mạng xã hội giữ cạnh chữ, link cao tối thiểu 32px.
+- Tách hàng bản quyền và chính sách rõ ràng theo mốc màn hình; tăng độ rõ của chữ legal từ `gray` lên `#767676`.
+- Cho chuỗi dài được xuống dòng; cập nhật bảng class, giải thích Grid/media và checklist trong [footer.md](footer.md).
+- Phần mã nguồn chỉ thay CSS của footer; không đổi HTML, JavaScript hoặc các component khác.
+
+### Kết quả kiểm tra
+
+- Playwright / Microsoft Edge: kiểm tra bản footer riêng ở 13 chiều rộng từ 320px đến 1920px; trang chủ đã ghép ở 12 chiều rộng từ 320px đến 1440px.
+- Các khối nằm trong footer; hàng legal nằm sau nội dung, không chồng lấn; trang không tràn ngang ở các chiều rộng đã kiểm tra.
+- Kiểm tra sát hai mốc 1000px và 600px; nhóm link đổi số cột đúng và vẫn đọc được.
+- Thử tiêu đề và link dài 200 ký tự trên trang chủ ở 375px: xuống dòng trong khung; dữ liệu thử được khôi phục sau kiểm tra.
+- Chạy `ui-ux/scripts/probe.mjs` với `--sweep`: sau tinh chỉnh, báo cáo không còn mục Hỏng; quét 55 chiều rộng từ 1440px xuống 375px, bước 20px, không phát hiện vỡ bố cục.
+- Đã xem ảnh desktop, tablet, điện thoại và bản ghép; console trang chủ không ghi nhận lỗi khi kiểm tra.

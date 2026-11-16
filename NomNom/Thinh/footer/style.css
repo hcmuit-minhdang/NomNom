@@ -6,6 +6,7 @@
 .site-footer {
     background-color: white;
     font-family: 'inter', Arial, Helvetica, sans-serif;
+    overflow-wrap: anywhere;
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
@@ -97,7 +98,7 @@
     width: 100%;
     max-width: 700px;
     font-size: 14px;
-    color: gray;
+    color: #767676;
     flex-wrap: wrap;
     gap: 12px 24px;
 }
@@ -109,19 +110,79 @@
     color: inherit;
 }
 
-@media (max-width: 600px) {
+/* Tablet: thương hiệu ở hàng đầu, ba nhóm liên kết ở hàng dưới. */
+@media (max-width: 1000px) {
     .footer-container {
-        flex-direction: column;
-        flex-wrap: nowrap;
+        display: grid;
+        /* Cột Giới thiệu rộng hơn để chứa các nhãn liên kết dài. */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 0.8fr);
         gap: 24px;
     }
 
-    .footer-container > div {
-        flex: 0 1 auto;
-        width: 100%;
+    .site-footer_brand {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin-top: 0;
+    }
+
+    .site-footer_logo-box {
+        height: 80px;
+    }
+
+    .site-footer_heading {
+        margin: 0 0 16px;
+    }
+
+    .site-footer_links {
+        gap: 4px;
+    }
+
+    .site-footer_links a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 32px;
+    }
+
+    .site-footer_links img {
+        flex-shrink: 0;
+        margin-right: 0;
+    }
+
+    .site-footer_legal a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+    }
+
+    .site-footer_copyright {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
+
+/* Điện thoại: một cột, lề gọn hơn để dành chỗ cho nội dung. */
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 64px 16px 24px;
+    }
+
+    .site-footer_divider {
+        top: 24px;
+        max-width: calc(100% - 32px);
+    }
+
+    .footer-container {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .site-footer_legal {
-        gap: 12px 20px;
+        gap: 8px 16px;
+        text-align: center;
+    }
+
+    .site-footer_legal > * {
+        flex-basis: 100%;
     }
 }

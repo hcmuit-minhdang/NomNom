@@ -44,8 +44,8 @@ Class chưa có rule vẫn có thể chịu định dạng mặc định, kế t
 | Class / selector | Phần tử | Vai trò | Có CSS riêng? |
 | --- | --- | --- | --- |
 | `.site-footer` | `footer` | Toàn bộ footer: font, kích thước, căn nội dung và mốc đặt đường phân cách phía trên. | Có |
-| `.footer-container` | `div` | Khung chung chứa bốn cột nội dung. | Có |
-| `.site-footer_brand` | `div` | Cột thương hiệu: logo, câu giới thiệu ngắn và đoạn mô tả; rộng tối đa 400px; từ 600px trở xuống xếp dọc cùng các khối còn lại. | Có |
+| `.footer-container` | `div` | Khung chung chứa bốn khối; dùng Flex trên desktop và Grid từ 1000px trở xuống. | Có |
+| `.site-footer_brand` | `div` | Khối thương hiệu: rộng tối đa 400px trên desktop; từ 1000px trở xuống chiếm trọn hàng, rộng tối đa 600px. | Có |
 | `.site-footer_logo-box` | `div` | Khung chứa link và ảnh logo. | Có |
 | `.site-footer_logo` | `img` | Ảnh logo: kích thước và góc xoay. | Có |
 | `.site-footer_tagline` | `h2` | Câu “Ăn ngon trọn vị, chi tiêu hợp lý.” | Chưa |
@@ -53,7 +53,7 @@ Class chưa có rule vẫn có thể chịu định dạng mặc định, kế t
 | `.site-footer_recipes` | `div` | Cột Công thức. | Chưa |
 | `.site-footer_about` | `div` | Cột Giới thiệu. | Chưa |
 | `.site-footer_contact` | `div` | Cột Liên hệ, gồm các link mạng xã hội. | Chưa |
-| `.site-footer_heading` | `h2` | Tiêu đề dùng chung cho ba cột Công thức / Giới thiệu / Liên hệ. | Chưa |
+| `.site-footer_heading` | `h2` | Tiêu đề dùng chung cho ba cột Công thức / Giới thiệu / Liên hệ; từ 1000px trở xuống bỏ margin trên và giữ 16px cách nhóm link. | Có, trong media |
 | `.site-footer_links` | `nav` | Nhóm link trong mỗi cột; hiện đang xếp theo chiều dọc. | Có |
 | `.site-footer_legal` | `div` | Khối chứa dòng bản quyền và ba link chính sách / hỗ trợ tiếp cận; nằm sau `footer-container` trong luồng bố cục và được phép xuống hàng. | Có |
 | `.site-footer_copyright` | `p` | Dòng “© 2026 NomNom. All rights reserved.”; bỏ margin mặc định để dùng khoảng cách chung của khối legal. | Có |
@@ -75,24 +75,60 @@ Khối legal đã có CSS bố trí chung. Các class con riêng vẫn để b�
 
 ## 3. CSS: layout và responsive
 
-Đối chiếu với [footer/style.css](../footer/style.css), hiện chỉ có mốc **600px**:
+Đối chiếu với [footer/style.css](../footer/style.css), hiện có hai mốc **1000px** và **600px**:
 
 | Chiều rộng vùng hiển thị | Bố cục hiện có |
 | --- | --- |
-| Trên 600px | Bốn khối nằm cùng một hàng ngang; khối thương hiệu rộng tối đa 400px. |
-| Từ 600px trở xuống | Bốn khối xếp dọc, cách nhau 24px. |
+| Trên 1000px | Bốn khối nằm cùng một hàng ngang; khối thương hiệu rộng tối đa 400px. |
+| Trên 600px đến 1000px | Khối thương hiệu chiếm hàng đầu, rộng tối đa 600px; ba nhóm link chia ba cột ở hàng dưới. |
+| Từ 600px trở xuống | Bốn khối xếp một cột, cách nhau 24px; lề ngang 16px; bản quyền và từng link chính sách nằm trên các hàng riêng. |
 
-CSS mặc định đặt trước, `@media (max-width: 600px)` đặt sau để ghi đè các thuộc
-tính tương ứng khi màn hình hẹp. Mốc tablet 1000px từng được đề xuất nhưng **chưa có
-trong CSS hiện tại**; không dùng bản đề xuất làm mô tả của code đang chạy.
+CSS mặc định dành cho màn rộng. Media **1000px đặt trước, 600px đặt sau**: ở
+600px trở xuống, cả hai media đều áp dụng; rule phía sau ghi đè thuộc tính trùng
+nhau. Đây là chiều rộng viewport, không phải cách nhận diện loại thiết bị.
 
 - Footer rộng 100%, dùng `height: auto`, `min-height: 418px`, nền trắng.
 - `.footer-container` có `max-width: 1252px`, chiều cao theo nội dung.
-- Ở mốc 600px, `flex-direction: column` chuyển các khối sang chiều dọc; `flex`
-  của từng khối được đặt lại để kích thước theo nội dung.
+- Ở mốc 1000px, `.footer-container` chuyển sang Grid; `grid-column: 1 / -1`
+  cho thương hiệu chiếm trọn hàng đầu. Cột Giới thiệu được rộng hơn để chứa nhãn dài.
+- Ở mốc 600px, Grid chỉ còn một cột; không cần đổi thứ tự HTML hay thêm khối bọc.
+- Từ 1000px trở xuống, khung logo cao 80px, nhóm link cách nhau 4px; link cao tối
+  thiểu 32px để dễ bấm. Icon mạng xã hội không co và giữ cạnh phần chữ bằng Flex.
 - `.site-footer_legal` nằm trong luồng bố cục, `max-width: 700px`, được xuống hàng
-  bằng `flex-wrap: wrap`; chiều cao footer tăng theo phần legal.
+  bằng `flex-wrap: wrap`. Từ 1000px trở xuống, bản quyền chiếm một hàng; từ 600px
+  trở xuống, mỗi link chính sách cũng chiếm một hàng. Chữ dùng màu `#767676` để rõ trên nền trắng.
+- `overflow-wrap: anywhere` cho phép ngắt một chuỗi quá dài thay vì đẩy footer tràn ngang.
 - Chỉnh khoảng cách qua `gap` / `padding`, không tăng chiều rộng quá 100% để bù bố cục.
+
+### Các rule quyết định số cột
+
+```css
+@media (max-width: 1000px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 24px;
+    }
+
+    .site-footer_brand {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+```
+
+- `fr` chia phần chiều rộng còn lại sau khi trừ khoảng cách; ba cột có tỉ lệ
+  `1 : 1.2 : 0.8`, nên cột giữa rộng hơn.
+- `minmax(0, ...)` cho phép cột co lại theo khung; nội dung dài được xuống dòng.
+- `1 / -1` đi từ đường lưới đầu đến cuối, để thương hiệu chiếm trọn hàng.
+- Khi màn nhỏ chỉ còn một cột, các khối tự xếp từ trên xuống theo thứ tự HTML.
 
 ## 4. SVG: các đường kẻ
 
@@ -115,6 +151,9 @@ Mỗi SVG chứa một `<rect width="100%" height="100%" fill="currentColor" />`
 Không cần sửa tọa độ hay `path` khi thay kích thước. Đường xám có `max-width`
 để tự thu ngắn theo footer khi khung hiển thị hẹp. Các SVG là trang trí, nên có
 `aria-hidden="true"` và không tham gia điều hướng bằng bàn phím.
+
+Từ 600px trở xuống, đường xám cách đỉnh footer 24px và dùng
+`max-width: calc(100% - 32px)` để thẳng với lề nội dung 16px mỗi bên.
 
 ## 5. Id và liên kết
 
@@ -149,7 +188,7 @@ Không cần sửa tọa độ hay `path` khi thay kích thước. Đường xá
 - Hàng `.site-footer_legal` dùng `position: static` để góp vào chiều cao bố cục,
   tránh đè lên nội dung khi chữ xuống hàng.
 - `gap` tạo khoảng cách giữa các phần tử Flex; `flex-wrap: wrap` cho phép hàng
-  bản quyền xuống dòng. Việc này khác với xếp dọc bốn khối ở media 600px.
+  bản quyền xuống dòng. Việc này khác với đổi số cột của Grid ở media 1000px / 600px.
 
 ### Có cần JavaScript không?
 
@@ -159,7 +198,7 @@ không phải trang đích đã hoàn thiện. Chỉ thêm JS khi đã xác đ�
 ## 7. Checklist tự review
 
 - [ ] So bản xem thử và bản đã ghép: logo, font, lề và khoảng cách có bị CSS trang chủ ảnh hưởng không?
-- [ ] Xem ở 1440, 768, 600 và 375px: chữ có tràn hoặc cột bị bóp quá hẹp không?
+- [ ] Xem ở 1440, 1001, 1000, 768, 601, 600, 375 và 320px: số cột có đổi đúng mốc, chữ có tràn hoặc cột bị bóp quá hẹp không?
 - [ ] Đường xám/nét vàng đúng màu, chiều dài, độ dày và vị trí chưa?
 - [ ] Hàng bản quyền nằm sau nội dung, xuống dòng được và không chồng lên các cột?
 - [ ] Link nào đã có URL thật, link nào còn `#`? Đường dẫn ảnh/icon còn đúng khi ghép?
@@ -169,3 +208,4 @@ không phải trang đích đã hoàn thiện. Chỉ thêm JS khi đã xác đ�
 
 Vì sao footer dùng `height: auto` cùng `min-height`? Khi nào nên chỉnh `padding`,
 `gap` hoặc `margin`? Vì sao đường kẻ dùng SVG có `currentColor` lại dễ sửa?
+Vì sao media 1000px đặt trước media 600px? Khi màn rộng 500px, những rule nào cùng áp dụng?
