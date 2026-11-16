@@ -56,12 +56,21 @@
         return isMobileMenuOpen() || panels.some(panel => panel.open) || usingKeyboard || editing;
     }
 
+    function isAtPageTop() {
+        // scrollY <= 0 gồm cả trường hợp kéo quá đầu trang trên điện thoại.
+        return window.scrollY <= 0;
+    }
+
     function restartIdleTimer() {
         // Hủy lịch cũ để không có nhiều bộ đếm chạy cùng lúc.
         window.clearTimeout(idleTimer);
+        if (isAtPageTop()) {
+            header.classList.remove("site-header_hidden");
+            return;
+        }
         if (document.hidden || isUsingHeader()) return;
         idleTimer = window.setTimeout(() => {
-            if (!isUsingHeader()) header.classList.add("site-header_hidden");
+            if (!isAtPageTop() && !isUsingHeader()) header.classList.add("site-header_hidden");
         }, IDLE_DELAY);
     }
 
@@ -123,7 +132,9 @@
         let lastScrollY = Math.max(0, window.scrollY);
         window.addEventListener("scroll", () => {
             const currentScrollY = Math.max(0, window.scrollY);
-            if (currentScrollY < lastScrollY) showHeader();
+            if (currentScrollY === 0 || currentScrollY < lastScrollY) showHeader();
+            // Ở đầu trang không có lịch ẩn; bắt đầu đếm khi vừa cuộn xuống.
+            else if (lastScrollY === 0) restartIdleTimer();
             lastScrollY = currentScrollY;
         }, { passive: true });
         document.addEventListener("visibilitychange", () => {

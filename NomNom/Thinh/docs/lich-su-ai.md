@@ -135,3 +135,22 @@ Các file không được tự commit hoặc push.
 - Cập nhật điều hướng và README; bỏ file `auth.md` sau khi chuyển nội dung.
 - Lượt này chỉ chỉnh Markdown, không thay code giao diện hoặc chạy lại kiểm tra UI.
 - Đã đối chiếu class/id của cả bốn thư mục và kiểm tra 137 liên kết/anchor nội bộ trong 8 file Markdown.
+
+## Giữ header hiện ở đầu trang
+
+**Ngày:** 16/11/2026. **Thực hiện:** AI (Codex).
+
+- Sửa [header.js](../header/header.js): kiểm tra `window.scrollY <= 0` trước khi đặt lịch và khi bộ đếm đến hạn; đầu trang luôn hiện header.
+- Hủy bộ đếm khi quay về đầu trang; khởi động lại khi vừa cuộn xuống để tính năng tự ẩn sau 4 giây tiếp tục hoạt động.
+- Giữ cách gọi header hiện lại khi cuộn lên và điều kiện giữ hiện lúc đang dùng Menu, tìm kiếm hoặc bàn phím.
+- Cập nhật [tài liệu review Header](header.md): bảng hành vi, ví dụ bộ đếm và checklist kiểm tra.
+
+### Kết quả kiểm tra
+
+- `node --check` xác nhận cú pháp `header.js` hợp lệ.
+- Kiểm tra bằng Playwright trên trang chủ đã ghép header, Microsoft Edge với viewport 1440 × 900px và 375 × 812px.
+- Chờ hơn 4 giây ở đầu trang: header vẫn hiện; cuộn xuống 500px rồi chờ: header ẩn.
+- Cuộn về đầu trang: header hiện lại và giữ hiện sau hơn 4 giây, kể cả trước đó đang có lịch ẩn.
+- Cuộn lên khi chưa về đầu trang: header hiện lại; Menu nhỏ đang mở giữ header hiện sau hơn 4 giây.
+- Đóng Menu, quay về đầu rồi cuộn xuống 1px: bộ đếm hoạt động trở lại; về vị trí 0 thì header hiện.
+- Không ghi nhận lỗi JavaScript runtime trong các luồng đã kiểm tra; có yêu cầu `favicon.ico` trả về 404, không liên quan đến header.

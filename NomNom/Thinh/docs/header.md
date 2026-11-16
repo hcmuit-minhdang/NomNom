@@ -63,7 +63,7 @@ header.site-header
 | `.site-header_search-submit` | `button` | Nút kính lúp bên trong form để gửi tìm kiếm. |
 | `.site-header_status` | `p` | Vùng thông báo chờ tích hợp, mặc định ẩn; JavaScript cập nhật nội dung và trạng thái hiển thị. |
 | `.site-header_menu-open` | `header`, JS thêm / xóa | Trạng thái Menu nhỏ đang mở; điều khiển panel và hình dấu X. |
-| `.site-header_hidden` | `header`, JS thêm / xóa | Trạng thái tự ẩn sau 4 giây không tương tác. |
+| `.site-header_hidden` | `header`, JS thêm / xóa | Trạng thái tự ẩn sau 4 giây không tương tác khi đã cuộn khỏi đầu trang. |
 
 ### Toàn bộ id của header
 
@@ -117,7 +117,8 @@ trong không nhận click hoặc Tab. Đọc cách chỉnh thời gian, media v�
 | --- | --- |
 | Màn hình rộng hơn 1000px | Logo và menu nằm ngang. |
 | Màn hình từ 1000px trở xuống | Một hàng logo + nút Menu; bấm để mở các mục bên dưới. |
-| Không tương tác với header 4 giây | Header trượt lên và ẩn, kể cả trang đứng yên. |
+| Đang ở đầu trang (`window.scrollY <= 0`) | Header luôn hiện, không đặt bộ đếm ẩn. |
+| Đã cuộn xuống và không tương tác với header 4 giây | Header trượt lên và ẩn, kể cả trang đứng yên. |
 | Rê chuột trong 24px sát mép trên màn hình | Header hiện lại và tính lại thời gian chờ. |
 | Cuộn ngược lên | Header hiện lại; dùng được trên điện thoại. |
 | Nhấn Tab | Header hiện lại để điều hướng bằng bàn phím. |
@@ -128,7 +129,8 @@ trong không nhận click hoặc Tab. Đọc cách chỉnh thời gian, media v�
 | Nhấn Escape khi không còn menu con | Đóng Menu và trả focus về nút Menu. |
 
 Di chuyển chuột ở phần main không tính là đang dùng header. Cuộn xuống không
-phải điều kiện ẩn: bộ đếm không tương tác mới quyết định lúc nào ẩn.
+ẩn header ngay: khi rời đầu trang, bộ đếm không tương tác mới bắt đầu chạy.
+Cuộn về đầu trang sẽ hiện header và hủy lịch ẩn.
 
 ## 3. Menu, tìm kiếm và đường dẫn
 
@@ -230,9 +232,9 @@ vẫn cần tính từ trang HTML đích, như cách đã ghép trang chủ.
 bắt đầu sau header. `top: 0` là mốc bám, không phải khoảng cách giữa header và main.
 
 Khi ẩn bằng `transform`, header vẫn giữ chỗ ban đầu trong bố cục để nội dung không
-nhảy. Nếu đang ở đúng đầu trang, chỗ ban đầu đó vẫn còn; khi đã cuộn xuống thì nó
-nằm ngoài vùng nhìn. Khi ghép vào trang khác, ancestor có `overflow` hoặc vùng bao
-header quá ngắn có thể thay đổi cách `sticky` hoạt động.
+nhảy. JavaScript giữ header luôn hiện ở đầu trang để tránh lộ vùng trống đó.
+Khi đã cuộn xuống, chỗ ban đầu nằm ngoài vùng nhìn. Khi ghép vào trang khác,
+ancestor có `overflow` hoặc vùng bao header quá ngắn có thể thay đổi cách `sticky` hoạt động.
 
 ### Cách chỉnh theo màn hình
 
@@ -303,8 +305,12 @@ let idleTimer;
 
 function restartIdleTimer() {
     clearTimeout(idleTimer);
+    if (window.scrollY <= 0) {
+        header.classList.remove("site-header_hidden");
+        return;
+    }
     idleTimer = setTimeout(() => {
-        header.classList.add("site-header_hidden");
+        if (window.scrollY > 0) header.classList.add("site-header_hidden");
     }, 4000);
 }
 ```
@@ -313,9 +319,11 @@ function restartIdleTimer() {
 
 1. `function` gom các lệnh thành một công việc có tên.
 2. `clearTimeout(idleTimer)` hủy lịch trước đó.
-3. `setTimeout(...)` đặt lịch chạy hàm sau số mili giây đã cho; không làm trang đứng chờ.
-4. `() => { ... }` là hàm mũi tên: phần trong ngoặc nhọn chạy khi đến giờ.
-5. `classList.add(...)` thêm class; CSS thấy class đó và trượt header lên.
+3. `window.scrollY <= 0` kiểm tra đang ở đầu trang; `return` kết thúc hàm để không đặt lịch ẩn.
+4. `setTimeout(...)` đặt lịch chạy hàm sau số mili giây đã cho; không làm trang đứng chờ.
+5. `() => { ... }` là hàm mũi tên: phần trong ngoặc nhọn chạy khi đến giờ.
+6. Kiểm tra lại `window.scrollY > 0` khi đến giờ để tránh ẩn nếu trang đã về đầu.
+7. `classList.add(...)` thêm class; CSS thấy class đó và trượt header lên.
 
 Khi cần hiện lại:
 
@@ -335,6 +343,10 @@ không viết `showHeader()` vì cách đó gọi hàm ngay lúc đăng ký.
 Trong bản thực tế, `isUsingHeader()` kiểm tra menu mở, tìm kiếm mở hoặc đang nhập /
 dùng bàn phím. Nếu đang dùng thì hủy lịch ẩn và chờ đến khi kết thúc thao tác.
 
+`isAtPageTop()` kiểm tra vị trí cuộn của trang bằng `window.scrollY`, khác với
+`top: 0` trong CSS là mốc bám của header. Khi vừa rời đầu trang, sự kiện `scroll`
+khởi động lại bộ đếm; khi quay về đầu, header hiện và bộ đếm được hủy.
+
 ### Mở / đóng Menu
 
 ```js
@@ -349,9 +361,9 @@ menuButton.setAttribute("aria-expanded", String(expanded));
 
 ## 8. Tự kiểm tra bằng Live Server
 
-1. Mở trang chủ, để chuột ở phần main và không thao tác header khoảng 4 giây.
-2. Rê chuột sát mép trên: header phải hiện lại.
-3. Cuộn xuống, chờ header ẩn; cuộn ngược lên để gọi lại.
+1. Mở trang chủ ở đầu trang, để chuột ở phần main và chờ hơn 4 giây: header vẫn hiện.
+2. Cuộn xuống, chờ hơn 4 giây: header ẩn; rê chuột sát mép trên để gọi lại.
+3. Cuộn ngược lên để gọi header; quay về đầu trang và chờ hơn 4 giây: header luôn hiện.
 4. Thu cửa sổ xuống 1000px hoặc nhỏ hơn: logo và nút Menu nằm cùng hàng.
 5. Mở Menu, mở tìm kiếm rồi nhập: header phải giữ hiện dù chờ hơn 4 giây.
 6. Thử Escape, bấm ngoài và bấm lại Menu.
