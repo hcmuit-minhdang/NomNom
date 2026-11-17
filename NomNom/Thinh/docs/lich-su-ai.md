@@ -174,3 +174,23 @@ Các file không được tự commit hoặc push.
 - Thử tiêu đề và link dài 200 ký tự trên trang chủ ở 375px: xuống dòng trong khung; dữ liệu thử được khôi phục sau kiểm tra.
 - Chạy `ui-ux/scripts/probe.mjs` với `--sweep`: sau tinh chỉnh, báo cáo không còn mục Hỏng; quét 55 chiều rộng từ 1440px xuống 375px, bước 20px, không phát hiện vỡ bố cục.
 - Đã xem ảnh desktop, tablet, điện thoại và bản ghép; console trang chủ không ghi nhận lỗi khi kiểm tra.
+
+## Nối đường dẫn tìm kiếm và danh mục của header
+
+**Ngày:** 16/11/2026. **Thực hiện:** AI (Codex).
+
+- Sau khi đối chiếu Figma và các trang hiện có, đổi route `search` sang `Phat/search-results/index.html`, `categories` sang `Phat/category-page-1/index.html` trong [header.js](../header/header.js).
+- Đồng bộ link Tìm công thức, link Danh mục và `action` của form GET trong hai bản HTML header khách/thành viên và khối header trên trang chủ.
+- Cập nhật [header.md](header.md) với đường dẫn thực tế, cách kiểm tra và giới hạn của các trang đích.
+- Giữ khả năng ghi đè qua `NomNomHeaderConfig.routes`. Không đổi chức năng trang Phát, dữ liệu công thức, các mục menu khác hoặc tạo trang mới; giữ nguyên CSS footer đang được sửa riêng.
+
+### Kết quả kiểm tra
+
+- Kiểm tra tĩnh xác nhận ba bản HTML chỉ thay ba URL dự kiến; đích liên kết tồn tại, form vẫn dùng GET và input vẫn có tên `q`.
+- `header.js` chỉ đổi hai giá trị route mặc định; qua `node --check`. `git diff --check` đạt đối với các file thuộc đợt chỉnh sửa này.
+- Playwright / Microsoft Edge: xác nhận route lúc chạy trên trang chủ và hai bản header; kiểm tra desktop 1440 × 900px và màn nhỏ 375 × 812px.
+- Đi từ trang chủ đến Danh mục, chuyển trang 1 → 2 → 1 và mở Tìm công thức thành công.
+- Từ khóa `bò & đậu + chanh?` được trim và giữ đúng trong `q`; từ khóa rỗng hoặc chỉ có khoảng trắng bị chặn khi JS đang chạy. Enter và nút tìm kiếm trên mobile đều hoạt động.
+- Kiểm tra cấu hình route tùy chỉnh: link và form tiếp tục dùng giá trị ghi đè.
+- Khi tắt JavaScript, ba bản HTML vẫn có link/form đúng; thử điều hướng Danh mục và gửi form tìm kiếm thành công.
+- Không ghi nhận lỗi JavaScript runtime trong các luồng kiểm tra. Đối chiếu SHA-256 xác nhận CSS footer không thay đổi so với đầu lượt.

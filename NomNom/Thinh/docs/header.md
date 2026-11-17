@@ -136,8 +136,10 @@ Cuộn về đầu trang sẽ hiện header và hủy lịch ẩn.
 
 - Menu tự đóng khi mở menu khác, chọn mục, bấm bên ngoài hoặc nhấn Escape.
 - Thanh tìm kiếm tự focus; Enter và nút tìm kiếm cùng gửi form GET với `q` đã trim.
-- Trang nhận mặc định là `NomNom/Phat/index.html`. Người phụ trách trang này cần
-  đọc `new URLSearchParams(location.search).get("q")` để lọc dữ liệu.
+- “Tìm công thức” và form tìm kiếm mặc định đến [trang kết quả của Phát](../../Phat/search-results/index.html).
+  Form dùng GET với tham số `q`; trang nhận đã đọc `new URLSearchParams(location.search).get("q")`.
+- “Danh mục” mặc định đến [trang danh mục 1](../../Phat/category-page-1/index.html).
+  Từ đó dùng phân trang có sẵn để sang [trang danh mục 2](../../Phat/category-page-2/index.html).
 - Logo, danh mục, giới thiệu và hồ sơ đã trỏ đến các file hiện có trong nhóm.
   Một số file đích còn rỗng; header không thêm nội dung cho các trang đó.
 
@@ -146,13 +148,26 @@ Nếu nhóm đổi trang đích, khai báo **trước** khi nạp `header.js`:
 ```js
 window.NomNomHeaderConfig = {
     // Đường dẫn tương đối tính từ thư mục NomNom/ chứa Thach, Phat, Minh, Thinh.
-    routes: { search: "Phat/index.html" },
+    routes: { search: "Phat/search-results/index.html" },
     user: null // null: khách; object người dùng: thành viên
 };
 ```
 
 Các khóa route: `home`, `search`, `categories`, `about`, `overview`, `uploaded`,
 `saved`, `history`, `account`. Có thể dùng URL tuyệt đối cùng website.
+
+Hai bản HTML header khách/thành viên và khối header trong trang chủ có `href` /
+`action` tương ứng để liên kết vẫn đúng khi JS không chạy. Đường dẫn trong HTML
+tính từ trang đang chứa header; các giá trị trong bảng `routes` tính từ gốc `NomNom/`.
+
+### Giới hạn của các trang đích
+
+- Trang kết quả hiện chỉ đưa món có tên khớp từ khóa lên trước, chưa loại món không khớp;
+  các thẻ món trong dữ liệu Phát vẫn trỏ `#`.
+- Các trang Phát đang ưu tiên tải bản header thành viên xem thử; đây không phải trạng thái
+  đăng nhập thật. Những trang này chưa tích hợp các popup tài khoản dùng chung.
+- Đợt nối đường dẫn chỉ cập nhật header; các chức năng trang đích, mục đang chờ tích hợp
+  và trang còn rỗng được giữ nguyên để phần phụ trách tiếp tục hoàn thiện.
 
 ## 4. Sự kiện và trạng thái tài khoản
 
@@ -369,6 +384,12 @@ menuButton.setAttribute("aria-expanded", String(expanded));
 6. Thử Escape, bấm ngoài và bấm lại Menu.
 7. Thử Tab; khi Menu đóng, Tab không đi vào các mục đang ẩn.
 8. Thử cả bản khách và thành viên, rồi kéo cửa sổ qua lại mốc 1000px.
+9. Từ trang chủ, mở Danh mục rồi chuyển trang 1 → 2 → 1 bằng phân trang có sẵn.
+10. Mở Tìm công thức và thử gửi tìm kiếm bằng Enter / nút kính lúp; kiểm tra từ khóa
+    tiếng Việt và ký tự `&`, `+`, `?` được giữ đúng trong tham số `q`. Bỏ trống hoặc
+    chỉ nhập khoảng trắng thì không điều hướng khi JS đang chạy.
+11. Tắt JavaScript rồi tải lại trang: link Danh mục / Tìm công thức và `action` của
+    form vẫn đến đúng các trang Phát; form GET vẫn gửi được từ khóa.
 
 ### Tự giải thích khi review
 

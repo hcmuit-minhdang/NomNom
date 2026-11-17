@@ -10,8 +10,8 @@
     const siteRoot = new URL("../../", document.currentScript.src);
     const routes = {
         home: "Thach/Home-page/index.html",
-        search: "Phat/index.html",
-        categories: "Phat/index.html",
+        search: "Phat/search-results/index.html",
+        categories: "Phat/category-page-1/index.html",
         about: "Minh/aboutus/index.html",
         overview: "Minh/user/overview.html",
         uploaded: "Minh/user/uploaded.html",
