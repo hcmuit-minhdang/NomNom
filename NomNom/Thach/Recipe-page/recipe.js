@@ -246,9 +246,9 @@ function renderDetailedSteps(recipe, recipeId) {
         .map((step, i) => `
             <div class="step" id="buoc-${i + 1}">
                 <span class="step-label">BƯỚC ${i + 1}</span>
-                ${step.text.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+                ${(step.text || []).map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("")}
                 <div class="step-images">
-                    ${step.images.map(image => stepImageHtml(image, i, recipeId)).join("")}
+                    ${(step.images || []).map(image => stepImageHtml(image, i, recipeId)).join("")}
                 </div>
             </div>`)
         .join("");
