@@ -1,70 +1,12 @@
 let ALL_RECIPES_POOL = [];
 
 /**
- * 1. Tự động tải Header & Footer
+ * 1. Nạp Footer; Header được header.js dùng chung tự tải
  */
-async function loadThinhHeaderFooter() {
+async function loadThinhFooter() {
     try {
-        let headerRes = await fetch("../../Thinh/header/ed%20-%20index.html");
-        if (!headerRes.ok) {
-            headerRes = await fetch("../../Thinh/header/index.html");
-        }
         const footerRes = await fetch("../../Thinh/footer/index.html");
         const parser = new DOMParser();
-
-        if (headerRes.ok) {
-            let headerHTML = await headerRes.text();
-            headerHTML = headerHTML.replace(/(\.\.\/assets\/)/g, "../../Thinh/assets/");
-
-            const headerDoc = parser.parseFromString(headerHTML, "text/html");
-            const siteHeader = headerDoc.querySelector("header.site-header, [data-nomnom-header], header");
-            const headerPlaceholder = document.getElementById("header-placeholder");
-
-            if (siteHeader && headerPlaceholder) {
-                siteHeader.removeAttribute("data-initialized");
-                headerPlaceholder.replaceWith(siteHeader);
-
-                const categoryItem = siteHeader.querySelector("#site-header_categories");
-                if (categoryItem) {
-                    categoryItem.classList.add("active");
-                    categoryItem.removeAttribute("data-pending");
-                    categoryItem.removeAttribute("data-header-route");
-                    categoryItem.removeAttribute("data-header-action");
-
-                    const categoryLink = categoryItem.querySelector("a, button");
-                    if (categoryLink) {
-                        categoryLink.removeAttribute("data-pending");
-                        categoryLink.removeAttribute("data-header-route");
-                        categoryLink.removeAttribute("data-header-action");
-                        if (categoryLink.tagName === "A") {
-                            categoryLink.setAttribute("href", "../category-page-1/index.html");
-                        }
-                    }
-
-                    categoryItem.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        window.location.href = "../category-page-1/index.html";
-                    }, true);
-                }
-
-                const headerSearchForm = siteHeader.querySelector("form.site-header_search-field");
-                if (headerSearchForm) {
-                    headerSearchForm.addEventListener("submit", (e) => {
-                        e.preventDefault();
-                        const inputQ = headerSearchForm.querySelector('input[name="q"]');
-                        const kw = inputQ ? inputQ.value.trim() : "";
-                        window.location.href = kw
-                            ? `../search-results/index.html?q=${encodeURIComponent(kw)}`
-                            : "../search-results/index.html";
-                    });
-                }
-
-                const headerScript = document.createElement("script");
-                headerScript.src = "../../Thinh/header/header.js";
-                document.body.appendChild(headerScript);
-            }
-        }
 
         if (footerRes.ok) {
             let footerHTML = await footerRes.text();
@@ -79,7 +21,7 @@ async function loadThinhHeaderFooter() {
             }
         }
     } catch (error) {
-        console.error("Không thể tải Header/Footer từ folder Thinh:", error);
+        console.error("Không thể tải Footer từ folder Thinh:", error);
     }
 }
 
@@ -320,7 +262,7 @@ function initSearchRedirect() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadThinhHeaderFooter();
+    loadThinhFooter();
     initPage1Grids();
     initFilterAccordions();
     initSearchRedirect();

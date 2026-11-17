@@ -3,6 +3,26 @@
     src: url(../assets/fonts/Inter-Variable.ttf);
 }
 
+/* Vùng giữ chỗ trước khi header.js tải mẫu HTML xong. */
+#header-placeholder {
+    --site-header-height: 106px;
+    min-height: var(--site-header-height);
+    box-sizing: border-box;
+    background: white;
+    font: 16px/1.5 'inter', Arial, sans-serif;
+}
+#header-placeholder > p {
+    margin: 0;
+    padding: 12px 24px;
+}
+#header-placeholder > button {
+    margin: 0 24px 12px;
+    min-height: 40px;
+    padding: 8px 16px;
+    font: inherit;
+    cursor: pointer;
+}
+
 .site-header {
     --site-header-height: 106px;
     background-color: white;
@@ -393,6 +413,10 @@ background-color: #E2B119;
 
 /* Tablet / điện thoại: logo và nút Menu ở một hàng. */
 @media (max-width: 1000px) {
+    #header-placeholder {
+        --site-header-height: 72px;
+    }
+
     .site-header {
         --site-header-height: 72px;
         font-size: 16px;

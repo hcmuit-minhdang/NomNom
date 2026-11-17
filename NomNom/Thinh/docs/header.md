@@ -4,11 +4,18 @@
 
 Nguồn: [HTML khách](../header/index.html), [HTML thành viên](<../header/ed - index.html>), [CSS](../header/style.css), [JavaScript](../header/header.js).
 
-Khi ghép, copy một khối `<header class="site-header" data-nomnom-header>` gồm cả nút Menu; nạp CSS/JS theo [mẫu ghép chung](../README.md#ghép-thủ-công). Mỗi trang chỉ có một header, tránh trùng id. Hai bản HTML khách/thành viên là bản xem thử.
+Khi ghép, ưu tiên [placeholder và header.js](../README.md#ghép-header-bằng-placeholder-khuyên-dùng).
+File JS tự tải khối header khách trong `header/index.html`, CSS và khởi tạo hành vi.
+Hai bản HTML khách/thành viên vẫn là bản xem thử; header đã chép tay vẫn được hỗ trợ.
+Mỗi trang chỉ có một header, tránh trùng id.
 
 Class/id riêng nằm ngay trong tài liệu này; [quy ước đặt tên chung](class-id.md) được giữ riêng; kết quả kiểm tra các lần AI sửa được lưu tại [Nhật ký AI](lich-su-ai.md#header-responsive-và-tự-ẩn).
 
 ## 1. Cấu trúc và class/id
+
+Trên trang ghép, `#header-placeholder` là vùng tạm trước main; loader thay cả vùng
+này bằng khối `header` bên dưới. Thuộc tính tùy chọn `data-header-active="categories"`
+giúp đánh dấu nhóm Danh mục đang xem, không đổi URL hay chặn thao tác mở link.
 
 ### Sơ đồ các khối chính
 
@@ -136,8 +143,10 @@ Cuộn về đầu trang sẽ hiện header và hủy lịch ẩn.
 
 - Menu tự đóng khi mở menu khác, chọn mục, bấm bên ngoài hoặc nhấn Escape.
 - Thanh tìm kiếm tự focus; Enter và nút tìm kiếm cùng gửi form GET với `q` đã trim.
-- Trang nhận mặc định là `NomNom/Phat/index.html`. Người phụ trách trang này cần
-  đọc `new URLSearchParams(location.search).get("q")` để lọc dữ liệu.
+- “Tìm công thức” và form tìm kiếm mặc định đến [trang kết quả của Phát](../../Phat/search-results/index.html).
+  Form dùng GET với tham số `q`; trang nhận đã đọc `new URLSearchParams(location.search).get("q")`.
+- “Danh mục” mặc định đến [trang danh mục 1](../../Phat/category-page-1/index.html).
+  Từ đó dùng phân trang có sẵn để sang [trang danh mục 2](../../Phat/category-page-2/index.html).
 - Logo, danh mục, giới thiệu và hồ sơ đã trỏ đến các file hiện có trong nhóm.
   Một số file đích còn rỗng; header không thêm nội dung cho các trang đó.
 
@@ -146,7 +155,7 @@ Nếu nhóm đổi trang đích, khai báo **trước** khi nạp `header.js`:
 ```js
 window.NomNomHeaderConfig = {
     // Đường dẫn tương đối tính từ thư mục NomNom/ chứa Thach, Phat, Minh, Thinh.
-    routes: { search: "Phat/index.html" },
+    routes: { search: "Phat/search-results/index.html" },
     user: null // null: khách; object người dùng: thành viên
 };
 ```
@@ -154,7 +163,50 @@ window.NomNomHeaderConfig = {
 Các khóa route: `home`, `search`, `categories`, `about`, `overview`, `uploaded`,
 `saved`, `history`, `account`. Có thể dùng URL tuyệt đối cùng website.
 
+Hai bản HTML header khách/thành viên có `href` / `action` tương ứng để vẫn dùng
+được khi JS không chạy. Trang chủ và ba trang Phát dùng placeholder nên cần JS / HTTP
+để tải header. Bản chép tay tính đường dẫn HTML từ trang đích; loader tự chuyển URL
+trong mẫu thành URL tuyệt đối. Bảng `routes` luôn tính từ gốc `NomNom/`.
+
+### Giới hạn của các trang đích
+
+- Trang kết quả hiện chỉ đưa món có tên khớp từ khóa lên trước, chưa loại món không khớp;
+  các thẻ món trong dữ liệu Phát vẫn trỏ `#`.
+- Các trang Phát hiện dùng chung loader và mặc định là khách. Những trang này chưa
+  tích hợp các popup tài khoản dùng chung; các nút tài khoản sẽ báo chờ tích hợp.
+- Đợt nối đường dẫn chỉ cập nhật header; các chức năng trang đích, mục đang chờ tích hợp
+  và trang còn rỗng được giữ nguyên để phần phụ trách tiếp tục hoàn thiện.
+
 ## 4. Sự kiện và trạng thái tài khoản
+
+### Đợi header tải xong
+
+`header.js` tự chạy khi DOM sẵn sàng, tự nạp CSS nếu chưa có, rồi fetch mẫu khi có
+placeholder. Script không gọi lại `DOMContentLoaded`; các grid/bộ lọc của trang
+đích tiếp tục khởi tạo độc lập như trước.
+
+```js
+// Đặt trong file JS riêng chạy sau thẻ script header.js (cùng dùng defer).
+window.NomNomHeader.ready.then(header => {
+    if (!header) return; // Trang không có header / placeholder.
+    // header đã có HTML, đường dẫn và các listener tương tác.
+}).catch(error => {
+    // Placeholder đã hiển thị thông báo; xử lý bổ sung nếu trang cần.
+    console.error(error);
+});
+```
+
+| API / sự kiện | Vai trò |
+| --- | --- |
+| `NomNomHeader.ready` | Promise trả về phần tử header sau khi tải và khởi tạo; reject nếu tải lỗi. |
+| `NomNomHeader.init()` | Tải / khởi tạo khi cần; dùng chung Promise nếu đang tải, không khởi tạo lặp khi đã xong. Có thể gọi lại sau lỗi để thử tải lại. |
+| `nomnom:header-ready` | Phát một lần trên document sau khi khởi tạo thành công; `event.detail.header` là phần tử header. Dùng ready nếu code đăng ký sau thời điểm sự kiện đã phát. |
+| `NomNomHeader.updateHeaderAuth(user)` | Cập nhật nhóm khách / thành viên; nếu header chưa tải xong thì giữ giá trị chờ áp dụng. |
+
+Loader chỉ lấy `header[data-nomnom-header]` từ bản mẫu; không chèn head/body hay
+nạp lại script nằm trong head của mẫu. CSS, ảnh và route được tính từ vị trí file JS,
+nên dùng được ở các thư mục nông/sâu khác nhau. Khi tải lỗi, placeholder giữ chỗ,
+hiện lời nhắc và nút Thử lại; lỗi chi tiết dành cho người phát triển nằm ở console.
 
 Trang chủ hiện đã nạp `auth.js` để nhận yêu cầu mở Login/Signup; xem [Login](login.md) và [Signup](signup.md). Các ví dụ sự kiện dưới đây dùng khi kết nối chức năng tài khoản ở giai đoạn sau. Form hợp lệ hiện chưa phát trạng thái thành viên.
 
@@ -216,8 +268,8 @@ Nút Menu nằm ngay sau khối logo và trước `.site-header_controls`:
 - Ba `span` rỗng được CSS vẽ thành ba nét; lúc mở chúng chuyển thành dấu X.
 - `aria-hidden="true"` trên hình trang trí giúp trình đọc màn hình chỉ đọc tên nút.
 
-Khi ghép tay vào trang khác, copy cả nút này và vùng điều khiển. Các đường dẫn ảnh
-vẫn cần tính từ trang HTML đích, như cách đã ghép trang chủ.
+Khi ghép tay vào trang khác, copy cả nút này và vùng điều khiển, rồi tính lại đường
+dẫn ảnh từ trang HTML đích. Nếu dùng placeholder, loader tự xử lý phần đường dẫn đó.
 
 ## 6. CSS: sticky, media và hiệu ứng
 
@@ -369,6 +421,16 @@ menuButton.setAttribute("aria-expanded", String(expanded));
 6. Thử Escape, bấm ngoài và bấm lại Menu.
 7. Thử Tab; khi Menu đóng, Tab không đi vào các mục đang ẩn.
 8. Thử cả bản khách và thành viên, rồi kéo cửa sổ qua lại mốc 1000px.
+9. Từ trang chủ, mở Danh mục rồi chuyển trang 1 → 2 → 1 bằng phân trang có sẵn.
+10. Mở Tìm công thức và thử gửi tìm kiếm bằng Enter / nút kính lúp; kiểm tra từ khóa
+    tiếng Việt và ký tự `&`, `+`, `?` được giữ đúng trong tham số `q`. Bỏ trống hoặc
+    chỉ nhập khoảng trắng thì không điều hướng khi JS đang chạy.
+11. Thử nạp header.js / gọi `NomNomHeader.init()` hai lần: trang vẫn chỉ có một header,
+    một lần xử lý tìm kiếm / menu. Làm chậm mạng rồi đổi cỡ màn hình khi đang tải.
+12. Thử URL / CSS header bị lỗi: placeholder có thông báo và Thử lại; khi tài nguyên
+    dùng được trở lại, nút này nạp đúng một header.
+13. Tắt JavaScript: hai bản xem thử / bản chép tay vẫn có header; trang dùng placeholder
+    cần bật lại JS để tải header. Đây là giới hạn của cách ghép bằng fetch.
 
 ### Tự giải thích khi review
 
