@@ -21,7 +21,7 @@
   "gallery": [
     "images/image6.jpg",
     "images/image7.webp",
-    "images/image1.jpg",
+    "images/image2.jpg",
     "images/image5.jpg"
   ],
 
@@ -117,9 +117,9 @@
   ],
 
   "similar": [
-    { "id": "canh-bau-nau-tom", "name": "Canh bầu nấu tôm", "price": "17.500đ / phần", "time": "35 phút", "image": "images/canh-bau-nau-tom/gallery1.jpg" },
-    { "id": "com-chien-trung", "name": "Cơm chiên trứng", "price": "15.000đ / phần", "time": "30 phút", "image": "images/com-chien-trung/gallery1.jpg" },
-    { "id": "ga-kho-sa", "name": "Gà kho sả", "price": "37.500đ / phần", "time": "75 phút", "image": "images/ga-kho-sa/gallery1.jpg" },
-    { "id": "goi-xoai-xanh", "name": "Gỏi xoài xanh", "price": "21.700đ / phần", "time": "45 phút", "image": "images/goi-xoai-xanh/gallery1.jpg" }
+    {"id": "ga-kho-sa", "name": "Gà kho sả", "price": "37.500đ / phần", "time": "45 phút", "image": "images/image4.jpg"},
+    {"id": "banh-mi-thit-nuong", "name": "Bánh mì thịt nướng", "price": "20.000đ / phần", "time": "45 phút", "image": "images/image1.jpg"},
+    {"id": "bo-kho-sot-vang", "name": "Bò kho sốt vang", "price": "33.300đ / phần", "time": "45 phút", "image": "images/image7.jpg"},
+    {"id": "com-chien-trung", "name": "Cơm chiên trứng", "price": "17.500đ / phần", "time": "30 phút", "image": "images/image1.jpg"}
   ]
 }
