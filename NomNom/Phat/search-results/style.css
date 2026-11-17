@@ -254,3 +254,17 @@ a {
         gap: 12px;
     }
 }
+/* Nhãn "Đủ nguyên liệu" / "Thiếu nguyên liệu" trên thẻ món (theo Figma, cùng màu với trang của Thư). */
+.recipe-status {
+    align-self: flex-start;
+    padding: 2px 8px;
+    background-color: #80df74;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+.recipe-status.is-missing {
+    background-color: #fbc41b;
+}

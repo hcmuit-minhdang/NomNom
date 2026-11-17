@@ -26,6 +26,17 @@ async function loadThinhFooter() {
 }
 
 /**
+ * Nhãn trạng thái nguyên liệu trên thẻ món (theo Figma).
+ * Dữ liệu có thể ghi enoughIngredients: false để hiện "Thiếu nguyên liệu"; mặc định là đủ.
+ */
+function buildStatusTag(item) {
+    const enough = item.enoughIngredients !== false;
+    return enough
+        ? `<span class="recipe-status">Đủ nguyên liệu</span>`
+        : `<span class="recipe-status is-missing">Thiếu nguyên liệu</span>`;
+}
+
+/**
  * 2. Tạo HTML cho thẻ món ăn
  */
 function buildRecipeCard(item) {
@@ -34,6 +45,7 @@ function buildRecipeCard(item) {
             <img src="${item.image}" alt="${item.name}" class="similar-image" loading="lazy">
             <span class="recipe-name">${item.name}</span>
             <span class="recipe-price">${item.price}</span>
+            ${buildStatusTag(item)}
             <span class="recipe-time">${item.time}</span>
         </a>
     `;
