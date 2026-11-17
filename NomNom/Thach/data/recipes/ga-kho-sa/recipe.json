@@ -93,9 +93,9 @@
   ],
 
   "similar": [
-    { "id": "bo-kho", "name": "Bò kho", "price": "55.000đ / phần", "time": "145 phút", "image": "images/bo-kho/gallery1.jpg" },
-    { "id": "canh-bau-nau-tom", "name": "Canh bầu nấu tôm", "price": "17.500đ / phần", "time": "35 phút", "image": "images/canh-bau-nau-tom/gallery1.jpg" },
-    { "id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "60.000đ / phần", "time": "50 phút", "image": "images/image1.jpg" },
-    { "id": "ca-nuong-muoi-ot", "name": "Cá nướng muối ớt", "price": "35.000đ / phần", "time": "70 phút", "image": "images/ca-nuong-muoi-ot/gallery1.jpg" }
+    {"id": "banh-mi-thit-nuong", "name": "Bánh mì thịt nướng", "price": "20.000đ / phần", "time": "45 phút", "image": "images/image1.jpg"},
+    {"id": "bo-kho-sot-vang", "name": "Bò kho sốt vang", "price": "33.300đ / phần", "time": "45 phút", "image": "images/image7.jpg"},
+    {"id": "com-chien-trung", "name": "Cơm chiên trứng", "price": "17.500đ / phần", "time": "30 phút", "image": "images/image1.jpg"},
+    {"id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "20.000đ / phần", "time": "50 phút", "image": "images/image1.jpg"}
   ]
 }

@@ -120,9 +120,9 @@
   ],
 
   "similar": [
-    { "id": "bo-kho", "name": "Bò kho", "price": "55.000đ / phần", "time": "145 phút", "image": "images/bo-kho/gallery1.jpg" },
-    { "id": "bo-xao-sa-ot", "name": "Bò xào sả ớt", "price": "40.000đ / phần", "time": "45 phút", "image": "images/bo-xao-sa-ot/gallery1.jpg" },
-    { "id": "banh-mi-bo-nuong", "name": "Bánh mì bò nướng", "price": "35.000đ / phần", "time": "55 phút", "image": "images/banh-mi-bo-nuong/gallery1.jpg" },
-    { "id": "ga-kho-sa", "name": "Gà kho sả", "price": "37.500đ / phần", "time": "75 phút", "image": "images/ga-kho-sa/gallery1.jpg" }
+    {"id": "com-chien-trung", "name": "Cơm chiên trứng", "price": "17.500đ / phần", "time": "30 phút", "image": "images/image1.jpg"},
+    {"id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "20.000đ / phần", "time": "50 phút", "image": "images/image1.jpg"},
+    {"id": "dau-hu-sot-ca", "name": "Đậu hũ sốt cà chua", "price": "11.700đ / phần", "time": "30 phút", "image": "images/image6.jpg"},
+    {"id": "ga-kho-sa", "name": "Gà kho sả", "price": "37.500đ / phần", "time": "45 phút", "image": "images/image4.jpg"}
   ]
 }
