@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NomNom</title>
     <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/fridge-filter.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="../../Thinh/header/style.css">
     <link rel="stylesheet" href="../../Thinh/footer/style.css">
     <script src="index.js" defer></script>
+    <script src="fridge-filter.js" defer></script>
     <script src="../../Thinh/header/header.js" defer></script>
     <link rel="stylesheet" href="../../Thinh/login/login.css">
     <link rel="stylesheet" href="../../Thinh/signup/signup.css">
@@ -28,7 +30,7 @@
         <section class="hero-section">
             <div class="fridge-filter-container">
                 <p id="fridge-filter-description">CÔNG THỨC THEO NGUYÊN LIỆU TỪ TỦ LẠNH CỦA BẠN</p>
-                <a href="" class="fridge-filter-link">BỘ LỌC NGUYÊN LIỆU</a>
+                <a href="../../Thanh/%C4%90%E1%BB%93%20%C3%A1n/Search%20page/html/congthuc.html" class="fridge-filter-link" aria-haspopup="dialog">BỘ LỌC NGUYÊN LIỆU</a>
             </div>
             <div class="banner-container">
                 <div class="banner-track" id="track">
@@ -322,6 +324,109 @@
             <a class="site-footer_legal-link site-footer_accessibility" href="#">Hỗ trợ tiếp cận</a>
         </div>
     </footer>
+    <!-- OVERLAY TỦ LẠNH (Figma: FILTER 1) — mở bằng nút "BỘ LỌC NGUYÊN LIỆU" -->
+    <dialog class="fridge-dialog" id="fridge-dialog" aria-labelledby="fridge-title">
+        <form class="fridge-panel" id="fridge-form" action="../../Thanh/%C4%90%E1%BB%93%20%C3%A1n/Search%20page/html/cong-thuc-phu-hop.html" method="get">
+            <h2 class="fridge-title" id="fridge-title">TỦ LẠNH</h2>
+            <button class="fridge-close" id="fridge-close" type="button" aria-label="Đóng bộ lọc">×</button>
+
+            <div class="fridge-groups">
+                <div class="fridge-col">
+                    <details class="fridge-select">
+                        <summary>ĐẠM <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="dam" value="thit-bo"> Thịt bò</label>
+                            <label><input type="checkbox" name="dam" value="thit-ga"> Thịt gà</label>
+                            <label><input type="checkbox" name="dam" value="thit-heo"> Thịt heo</label>
+                            <label><input type="checkbox" name="dam" value="hai-san"> Hải sản</label>
+                            <label><input type="checkbox" name="dam" value="trung"> Trứng</label>
+                            <label><input type="checkbox" name="dam" value="dau-hu"> Đậu hũ</label>
+                            <label><input type="checkbox" name="dam" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                    <details class="fridge-select">
+                        <summary>TINH BỘT <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="tinh-bot" value="gao"> Gạo</label>
+                            <label><input type="checkbox" name="tinh-bot" value="bun"> Bún</label>
+                            <label><input type="checkbox" name="tinh-bot" value="pho"> Phở</label>
+                            <label><input type="checkbox" name="tinh-bot" value="banh-mi"> Bánh mì</label>
+                            <label><input type="checkbox" name="tinh-bot" value="mi"> Mì</label>
+                            <label><input type="checkbox" name="tinh-bot" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                    <details class="fridge-select">
+                        <summary>RAU CỦ <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="rau-cu" value="bi-do"> Bí đỏ</label>
+                            <label><input type="checkbox" name="rau-cu" value="du-du"> Đu đủ</label>
+                            <label><input type="checkbox" name="rau-cu" value="cai-thia"> Cải thìa</label>
+                            <label><input type="checkbox" name="rau-cu" value="bi-dao"> Bí đao</label>
+                            <label><input type="checkbox" name="rau-cu" value="rau-muong"> Rau muống</label>
+                            <label><input type="checkbox" name="rau-cu" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                </div>
+                <span class="fridge-divider" aria-hidden="true"></span>
+                <div class="fridge-col">
+                    <details class="fridge-select">
+                        <summary>TRÁI CÂY <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="trai-cay" value="xoai-xanh"> Xoài xanh</label>
+                            <label><input type="checkbox" name="trai-cay" value="khe"> Khế</label>
+                            <label><input type="checkbox" name="trai-cay" value="chuoi"> Chuối</label>
+                            <label><input type="checkbox" name="trai-cay" value="le"> Lê</label>
+                            <label><input type="checkbox" name="trai-cay" value="tao"> Táo</label>
+                            <label><input type="checkbox" name="trai-cay" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                    <details class="fridge-select">
+                        <summary>CHẾ ĐỘ ĂN <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="che-do-an" value="an-chay"> Ăn chay</label>
+                            <label><input type="checkbox" name="che-do-an" value="eat-clean"> Eat clean</label>
+                            <label><input type="checkbox" name="che-do-an" value="com-gia-dinh"> Cơm gia đình</label>
+                            <label><input type="checkbox" name="che-do-an" value="it-tinh-bot"> Ít tinh bột</label>
+                        </div>
+                    </details>
+                    <details class="fridge-select">
+                        <summary>VÙNG MIỀN <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="vung-mien" value="mien-trung"> Miền Trung</label>
+                            <label><input type="checkbox" name="vung-mien" value="mien-nam"> Miền Nam</label>
+                            <label><input type="checkbox" name="vung-mien" value="mien-tay"> Miền Tây</label>
+                            <label><input type="checkbox" name="vung-mien" value="tay-nguyen"> Tây Nguyên</label>
+                            <label><input type="checkbox" name="vung-mien" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                </div>
+                <span class="fridge-divider" aria-hidden="true"></span>
+                <div class="fridge-col">
+                    <details class="fridge-select">
+                        <summary>NGÂN SÁCH <span class="fridge-count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-options">
+                            <label><input type="checkbox" name="ngan-sach" value="duoi-50k"> Dưới 50k</label>
+                            <label><input type="checkbox" name="ngan-sach" value="duoi-100k"> Dưới 100k</label>
+                            <label><input type="checkbox" name="ngan-sach" value="duoi-200k"> Dưới 200k</label>
+                            <label><input type="checkbox" name="ngan-sach" value="duoi-500k"> Dưới 500k</label>
+                            <label><input type="checkbox" name="ngan-sach" value="tren-500k"> Trên 500k</label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div class="fridge-footer">
+                <p class="fridge-error" id="fridge-error" role="alert" hidden>Hãy chọn ít nhất 1 nguyên liệu hoặc tiêu chí.</p>
+                <button class="fridge-submit" type="submit">
+                    <span class="fridge-submit-text">TÌM KIẾM</span>
+                    <span class="fridge-submit-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l5 5"/></svg>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </dialog>
+
     <!-- NOMNOM AUTH START -->
     <dialog class="site-auth site-login" id="site-login_dialog" data-nomnom-login aria-labelledby="site-login_title"
         lang="vi">

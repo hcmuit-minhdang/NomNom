@@ -1,0 +1,261 @@
+/* Overlay "TỦ LẠNH" — theo frame "FILTER 1" trong Figma IE104.
+   Mở khi bấm "BỘ LỌC NGUYÊN LIỆU" ở trang chủ; chọn nguyên liệu rồi bấm TÌM KIẾM
+   để sang trang "Công thức phù hợp" của Thư (form GET). */
+
+.fridge-dialog {
+    width: min(100% - 32px, 1073px);
+    max-height: calc(100vh - 32px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Nền tối 29% phía sau, như Figma. */
+.fridge-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.29);
+}
+
+.fridge-panel {
+    position: relative;
+    margin: 32px 0 0;
+    padding: 70px 40px 40px;
+    background: #ffffff;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+}
+
+/* Nhãn TỦ LẠNH lòi ra mép trái như Figma. */
+.fridge-title {
+    position: absolute;
+    top: -2px;
+    left: -56px;
+    margin: 0;
+    padding: 11px 66px 11px 102px;
+    background: #fbc41c;
+    border: 2px solid #000000;
+    box-shadow: 6px 6px 0 #000000;
+    font-size: clamp(1.75rem, 3.5vw, 2.875rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    text-shadow:
+        -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
+        3px 3px 0 #000;
+}
+
+.fridge-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000000;
+    background: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.fridge-close:hover {
+    background: #fbc41c;
+}
+
+/* Khung 3 cột chọn nguyên liệu, có vạch đen ngăn giữa các cột. */
+.fridge-groups {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr 2px 1fr;
+    gap: 24px;
+    margin-top: 36px;
+    padding: 25px 18px;
+    border: 2px solid #000000;
+}
+
+.fridge-divider {
+    background: #000000;
+}
+
+.fridge-col {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+/* Mỗi nhóm là một ô thả xuống (details/summary), danh sách nổi lên trên. */
+.fridge-select {
+    position: relative;
+}
+
+.fridge-select summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 17px 18px 27px;
+    border: 2px solid #000000;
+    background: #ffffff;
+    font-size: clamp(1.125rem, 2vw, 1.75rem);
+    font-weight: 700;
+    color: #292929;
+    cursor: pointer;
+    list-style: none;
+}
+
+.fridge-select summary::-webkit-details-marker {
+    display: none;
+}
+
+.fridge-select summary::after {
+    content: "▼";
+    font-size: 0.5em;
+    color: #000000;
+    transition: transform 0.15s ease;
+}
+
+.fridge-select[open] summary {
+    background: #fbc41c;
+}
+
+.fridge-select[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Đã chọn ít nhất 1 ô trong nhóm: hiện số đã chọn. */
+.fridge-count {
+    margin-left: auto;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: #292929;
+    color: #ffffff;
+    font-size: 0.55em;
+}
+
+.fridge-count:empty {
+    display: none;
+}
+
+.fridge-options {
+    position: absolute;
+    z-index: 2;
+    top: calc(100% - 2px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 14px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0 #000000;
+}
+
+.fridge-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.fridge-options input {
+    width: 18px;
+    height: 18px;
+    accent-color: #fbc41c;
+}
+
+.fridge-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 33px;
+}
+
+.fridge-error {
+    margin: 0;
+    color: #c62828;
+    font-weight: 600;
+}
+
+/* Nút TÌM KIẾM + ô vàng có kính lúp. */
+.fridge-submit {
+    display: inline-flex;
+    align-items: stretch;
+    padding: 0;
+    border: 2px solid #000000;
+    background: #ffffff;
+    box-shadow: 6px 4px 0 #000000;
+    font: inherit;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fridge-submit:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 6px 0 #000000;
+}
+
+.fridge-submit-text {
+    padding: 18px 28px;
+    font-size: clamp(1.25rem, 2.6vw, 2.375rem);
+    font-weight: 700;
+    color: #000000;
+}
+
+.fridge-submit-icon {
+    display: grid;
+    place-items: center;
+    width: 84px;
+    border-left: 2px solid #000000;
+    background: #fbc41c;
+}
+
+.fridge-submit-icon svg {
+    width: 37px;
+    height: 37px;
+}
+
+.fridge-dialog :focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 2px;
+}
+
+/* Màn hình hẹp: xếp các cột chồng lên nhau, bỏ vạch ngăn. */
+@media (max-width: 760px) {
+    .fridge-panel {
+        padding: 64px 16px 24px;
+    }
+
+    .fridge-title {
+        left: -8px;
+        padding: 8px 24px;
+    }
+
+    .fridge-groups {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 12px;
+    }
+
+    .fridge-divider {
+        display: none;
+    }
+
+    .fridge-options {
+        position: static;
+        box-shadow: none;
+        border-top: 0;
+    }
+
+    .fridge-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fridge-submit {
+        justify-content: space-between;
+    }
+}
