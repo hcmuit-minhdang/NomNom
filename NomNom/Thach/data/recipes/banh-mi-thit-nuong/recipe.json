@@ -115,9 +115,9 @@
   ],
 
   "similar": [
-    { "id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "60.000đ / phần", "time": "50 phút", "image": "images/image1.jpg" },
-    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
-    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" },
-    { "id": "", "name": "Recipe Name", "price": "$ price / serving", "time": "30 minutes", "image": "images/placeholder.svg" }
+    {"id": "bo-kho-sot-vang", "name": "Bò kho sốt vang", "price": "33.300đ / phần", "time": "45 phút", "image": "images/image7.jpg"},
+    {"id": "com-chien-trung", "name": "Cơm chiên trứng", "price": "17.500đ / phần", "time": "30 phút", "image": "images/image1.jpg"},
+    {"id": "com-tam-long-xuyen", "name": "Cơm tấm Long Xuyên", "price": "20.000đ / phần", "time": "50 phút", "image": "images/image1.jpg"},
+    {"id": "dau-hu-sot-ca", "name": "Đậu hũ sốt cà chua", "price": "11.700đ / phần", "time": "30 phút", "image": "images/image6.jpg"}
   ]
 }
