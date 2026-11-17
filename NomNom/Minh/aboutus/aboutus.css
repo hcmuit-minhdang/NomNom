@@ -1,0 +1,531 @@
+/* Trang Về chúng tôi — theo frame "About Us / Desktop" trong Figma IE104.
+   Kích thước chữ dùng rem (1rem = 16px) để khớp số đo trong Figma. */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding-block: 36px 56px;
+}
+
+.about__breadcrumb {
+    font-size: 1.1875rem;
+    color: var(--nn-dark);
+}
+
+.about__breadcrumb a {
+    font-weight: 600;
+}
+
+/* ---------- 01. Hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 438px;
+    align-items: center;
+    gap: 96px;
+    padding: 48px;
+    background: var(--nn-dark);
+}
+
+/* Trên nền tối, viền focus đổi sang vàng cho dễ thấy. */
+.hero :focus-visible {
+    outline-color: var(--nn-yellow);
+}
+
+/* Figma: nút rộng cố định 336px. */
+.hero__button {
+    min-width: min(336px, 100%);
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.hero__eyebrow {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    color: var(--nn-yellow);
+}
+
+.hero__title {
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.29;
+    color: var(--nn-white);
+}
+
+.hero__text {
+    font-size: 1.4375rem;
+    color: var(--nn-white);
+}
+
+/* Đĩa cơm: khung vàng 438x398, các hình bên trong đặt tuyệt đối theo toạ độ Figma.
+   Phần hình cao 324px nên chú thích nằm ở y = 324 như thiết kế. */
+.plate {
+    margin: 0;
+    min-height: 398px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--nn-yellow);
+    border: var(--nn-border);
+}
+
+.plate__art {
+    position: relative;
+    width: 358px;
+    max-width: 100%;
+    height: 324px;
+}
+
+.plate__rim,
+.plate__center,
+.plate__food,
+.plate__chopsticks,
+.plate__spoon {
+    position: absolute;
+    display: block;
+}
+
+.plate__rim {
+    top: 66px;
+    left: 76px;
+    width: 206px;
+    height: 206px;
+    border-radius: 50%;
+    background: var(--nn-dark);
+}
+
+.plate__center {
+    top: 93px;
+    left: 103px;
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    background: var(--nn-white);
+}
+
+.plate__food--round {
+    top: 137px;
+    left: 105px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--nn-yellow);
+}
+
+.plate__food--rect {
+    top: 164px;
+    left: 183px;
+    width: 62px;
+    height: 41px;
+    border-radius: 12px;
+    background: var(--nn-black);
+}
+
+/* Đũa: hai thanh mảnh. Muỗng: cán + đầu tròn. */
+.plate__chopsticks {
+    top: 89px;
+    left: 1px;
+    width: 26px;
+    height: 160px;
+    background:
+        linear-gradient(var(--nn-black), var(--nn-black)) left / 8px 100% no-repeat,
+        linear-gradient(var(--nn-black), var(--nn-black)) right / 8px 100% no-repeat;
+}
+
+.plate__spoon {
+    top: 89px;
+    right: 0;
+    width: 34px;
+    height: 160px;
+    background:
+        radial-gradient(ellipse at 50% 22%, var(--nn-black) 0 16px, transparent 17px),
+        linear-gradient(var(--nn-black), var(--nn-black)) center 60px / 8px 100px no-repeat;
+}
+
+.plate__caption {
+    font-size: 1.1875rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ---------- Khung section dùng chung ---------- */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.section__head {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.section__head--stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.section__line {
+    flex: 1;
+    height: 3px;
+    background: var(--nn-yellow);
+}
+
+.section__lead {
+    font-size: 1.4375rem;
+    color: var(--nn-dark);
+}
+
+/* Nhãn tiêu đề vàng viền đen có bóng đổ. */
+.tag {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--nn-yellow);
+    border: var(--nn-border);
+    box-shadow: var(--nn-shadow-black);
+    font-size: clamp(1.75rem, 3vw, 2.375rem);
+    font-weight: 700;
+    line-height: 1.32;
+}
+
+.tag--caps {
+    padding: 19px 39px 20px 25px;
+    border-width: 3px;
+    line-height: 1.47;
+    box-shadow: 8px 8px 0 var(--nn-dark);
+    font-size: clamp(1.5rem, 2.6vw, 2.0625rem);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* ---------- 02. Câu chuyện ---------- */
+.story {
+    display: grid;
+    grid-template-columns: 468px minmax(0, 1fr);
+    align-items: center;
+    gap: 56px;
+}
+
+.story__image {
+    width: 100%;
+    aspect-ratio: 468 / 318;
+    object-fit: cover;
+    border: var(--nn-border);
+    box-shadow: var(--nn-shadow);
+}
+
+.story__content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    font-size: 1.4375rem;
+    color: var(--nn-dark);
+}
+
+.story__title {
+    font-size: 1.6875rem;
+    font-weight: 700;
+    color: var(--nn-black);
+}
+
+/* ---------- 03 & 05. Thẻ ---------- */
+.cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 28px;
+}
+
+.cards--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* 5 thành viên: 3 thẻ hàng trên, 2 thẻ hàng dưới căn giữa (giống Figma). */
+.cards--team {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.cards--team > .card {
+    grid-column: span 2;
+}
+
+.cards--team > .card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px 28px;
+    background: var(--nn-white);
+    border: var(--nn-border);
+    box-shadow: var(--nn-shadow);
+}
+
+.card__title {
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.card__text {
+    font-size: 1.4375rem;
+    color: var(--nn-dark);
+}
+
+.badge {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--nn-yellow);
+    font-size: 1.3125rem;
+    font-weight: 700;
+}
+
+.badge--lg {
+    width: 68px;
+    height: 68px;
+    font-size: 1.6875rem;
+}
+
+/* ---------- 04. Các bước ---------- */
+.steps {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* Đường nối giữa ba vòng số: chạy từ tâm cột 1 tới tâm cột 3.
+   Ba cột bằng nhau nên tâm cột 1 ≈ 1/6 chiều rộng (≈16%), top 34px = nửa vòng số 68px. */
+.steps::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 16%;
+    right: 16%;
+    height: 2px;
+    background: var(--nn-dark);
+}
+
+.step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.step__title {
+    font-size: 1.6875rem;
+    font-weight: 700;
+}
+
+.step__text {
+    font-size: 1.4375rem;
+    color: var(--nn-dark);
+}
+
+/* ---------- 05. Thành viên ---------- */
+.member {
+    gap: 24px;
+    padding: 28px;
+}
+
+.member__profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Avatar: hình người đơn giản vẽ bằng CSS (đầu tròn + thân). */
+.avatar {
+    flex: none;
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--nn-yellow);
+    overflow: hidden;
+}
+
+.avatar::before,
+.avatar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--nn-dark);
+}
+
+.avatar::before {
+    top: 15px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.avatar::after {
+    top: 43px;
+    width: 46px;
+    height: 34px;
+    border-radius: 23px 23px 0 0;
+}
+
+.member__name {
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.member__role {
+    font-size: 1.1875rem;
+    color: var(--nn-dark);
+}
+
+.member__text {
+    font-size: 1.375rem;
+    color: var(--nn-dark);
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    background: var(--nn-yellow);
+    padding-block: 48px;
+}
+
+/* Figma: nút rộng cố định 410px. */
+.cta .nn-button {
+    min-width: min(410px, 100%);
+}
+
+.cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.cta__title {
+    font-size: clamp(1.75rem, 3vw, 2.375rem);
+    font-weight: 700;
+}
+
+.cta__text {
+    margin-top: 14px;
+    font-size: 1.4375rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .plate {
+        justify-self: center;
+        width: min(100%, 438px);
+        overflow: hidden;
+    }
+
+    .story {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .story__image {
+        max-width: 560px;
+    }
+
+    .cards--team {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cards--team > .card,
+    .cards--team > .card:nth-child(4) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .about {
+        gap: 40px;
+    }
+
+    .hero {
+        padding: 28px 20px;
+    }
+
+    .hero__text,
+    .section__lead,
+    .story__content,
+    .card__text,
+    .step__text {
+        font-size: 1.125rem;
+    }
+
+    /* Màn hình hẹp: bỏ xuống dòng cứng để chữ tự ngắt dòng. */
+    .hero__title br,
+    .hero__text br {
+        display: none;
+    }
+
+    .section__head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .section__line {
+        width: 100%;
+        flex: none;
+    }
+
+    .cards--3,
+    .cards--team,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .steps::before {
+        display: none;
+    }
+
+    .cta__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+}
+
+/* Màn hình hẹp: thu nhỏ hình đĩa cơm còn 72%.
+   transform không làm thay đổi chỗ chiếm trong bố cục, nên dùng margin âm
+   để bù phần thừa: ngang (358 - 258) / 2 = 50px, dọc 324 - 233 = 91px. */
+@media (max-width: 480px) {
+    .plate {
+        min-height: 0;
+        padding: 0 8px 20px;
+    }
+
+    .plate__art {
+        max-width: none;
+        transform: scale(0.72);
+        transform-origin: top center;
+        margin: 0 -50px -91px;
+    }
+}
