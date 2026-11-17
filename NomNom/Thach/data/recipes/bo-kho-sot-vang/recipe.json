@@ -1,0 +1,130 @@
+{
+  "id": "bo-kho-sot-vang",
+  "title": "Bò kho sốt vang",
+  "category": "Món ăn truyền thống",
+  "subcategory": "Món kho",
+
+  "author": "Thanh Thư",
+  "uploaded": "16/11/2026",
+
+  "ratingScore": 0,
+  "reviewCount": 0,
+
+  "prepTime": 10,
+  "cookTime": 35,
+  "baseServings": 6,
+  "costTotal": 200000,
+
+  "description": "Bò sốt vang là món hầm đậm đà, thơm nồng mùi rượu vang đỏ quyện cùng bơ và sốt cà chua. Thịt nạm bò nhiều gân được chần sơ, ướp ngũ vị hương rồi hầm trong nồi áp suất nên nhanh mềm mà vẫn giữ độ giòn sần sật của gân. Khoai tây, cà rốt bùi ngọt thấm nước sốt sánh đỏ, thêm chút rau mùi tàu thơm lừng, ăn kèm bánh mì nóng giòn hoặc cơm trắng đều rất ngon.",
+  "summary": "Tender beef brisket braised in red wine with tomatoes, butter, potatoes and carrots in a pressure cooker until rich and glossy. A warming Vietnamese-style beef stew that goes perfectly with a crusty baguette or steamed rice.",
+
+  "gallery": [
+    "images/image7.jpg",
+    "images/image3.jpg",
+    "images/image5.jpg",
+    "images/image6.jpg"
+  ],
+
+  "featuredReview": {
+    "rating": 0,
+    "text": "",
+    "author": ""
+  },
+
+  "ingredients": [
+    { "ingredientId": "thit-bo", "qty": 500, "unit": "g", "note": "nạm sườn, nên chọn phần có nhiều gân" },
+    { "ingredientId": "vang-do", "qty": 120, "unit": "ml", "note": "rượu vang đỏ loại thông dụng, có thể bỏ nếu không muốn dùng rượu" },
+    { "ingredientId": "khoai-tay", "qty": 3, "unit": "củ" },
+    { "ingredientId": "ca-rot", "qty": 1, "unit": "củ" },
+    { "ingredientId": "hanh-tay", "qty": 0.5, "unit": "củ" },
+    { "ingredientId": "ca-chua", "qty": 1, "unit": "quả" },
+    { "ingredientId": "sot-ca-chua", "qty": 30, "unit": "ml", "note": "sốt cà chua cô đặc" },
+    { "ingredientId": "bo-lat", "qty": 30, "unit": "g" },
+    { "ingredientId": "gung", "qty": 1, "unit": "củ", "note": "1 nhánh nhỏ, đập dập" },
+    { "ingredientId": "toi-bam", "qty": 15, "unit": "g" },
+    { "ingredientId": "ngu-vi-huong", "qty": 2, "unit": "g" },
+    { "ingredientId": "rau-thom", "qty": 10, "unit": "g", "note": "rau mùi tàu (ngò gai)" },
+    { "ingredientId": "hat-nem", "qty": 12, "unit": "g", "note": "nên dùng hạt nêm nấm củ quả" },
+    { "ingredientId": "duong-cat", "qty": 10, "unit": "g" },
+    { "ingredientId": "muoi", "qty": 3, "unit": "g" },
+    { "ingredientId": "tieu", "qty": 3, "unit": "g", "note": "hạt tiêu sọ" },
+    { "ingredientId": "dau-an", "qty": 30, "unit": "ml" }
+  ],
+
+  "quickSteps": [
+    "Chần và cắt bò: Chần sơ cả miếng thịt bò trong nồi nước sôi có gừng đập dập, vớt ra rồi cắt thành khối vuông khoảng 3cm.",
+    "Ướp bò: Ướp thịt bò với tỏi băm, ngũ vị hương, 4g đường, 2g hạt nêm và 60ml vang đỏ khoảng 20 phút. Trong lúc chờ, cắt khoai tây, cà rốt, cà chua, hành tây và rau mùi tàu.",
+    "Xào bò: Phi hành tây với dầu ăn, xào cà chua cùng sốt cà chua cô đặc rồi cho bơ vào. Thêm thịt bò và 60ml vang đỏ còn lại, xào đến khi thịt săn lại.",
+    "Hầm bò: Đổ 1 lít nước, đậy nồi áp suất và hầm lửa lớn khoảng 7 phút. Xả hết hơi rồi mở nắp, nêm gia vị, cho khoai tây và cà rốt vào hầm đến khi chín mềm.",
+    "Lên món: Cho rau mùi tàu vào nồi, múc ra tô và ăn nóng kèm bánh mì hoặc cơm trắng."
+  ],
+
+  "nutrition": {
+    "servings": 1,
+    "calories": "410 kcal",
+    "carbs": "23g",
+    "protein": "19g",
+    "fat": "24g",
+    "sodium": "550 - 700 mg",
+    "fiber": "2 - 3g"
+  },
+
+  "steps": [
+    {
+      "text": [
+        "Thịt bò để nguyên miếng, rửa sạch. Đun sôi một nồi nước nhỏ, cho gừng đập dập vào.",
+        "Thả cả miếng thịt bò vào chần sơ để khử mùi và giúp thịt săn lại, khi cắt sẽ giữ được hình đẹp hơn."
+      ]
+     
+    },
+    {
+      "text": [
+        "Vớt thịt bò ra thớt, cắt thành các khối vuông khoảng 3cm x 3cm.",
+        "Lưu ý không cắt thịt quá nhỏ vì khi hầm thịt bò sẽ bị co lại."
+      ]
+     
+    {
+      "text": [
+        "Cho thịt bò vào tô lớn, thêm 15g tỏi băm, 2g ngũ vị hương, 4g đường, 2g hạt nêm và 60ml rượu vang đỏ.",
+        "Trộn đều cho gia vị bám quanh từng miếng thịt rồi để ướp khoảng 20 phút."
+      ],
+      "images": [
+        "images/image3.jpg"
+      ]
+    },
+    {
+      "text": [
+        "Khoai tây và cà rốt rửa sạch, gọt vỏ, cắt thành khối vừa ăn. Cà chua cắt múi cau.",
+        "Hành tây thái hạt lựu nhỏ. Rau mùi tàu rửa sạch, cắt khúc khoảng 2cm."
+      ]
+    },
+    {
+      "text": [
+        "Đặt nồi áp suất lên bếp, cho 30ml dầu ăn vào đun nóng rồi phi thơm hành tây. Cho cà chua và 30ml sốt cà chua cô đặc vào xào đến khi cà chua chín, sau đó thêm 30g bơ lạt vào để giữ mùi thơm của bơ.",
+        "Cho thịt bò đã ướp vào nồi, thêm 60ml rượu vang đỏ còn lại và xào kỹ đến khi thịt săn lại, thấm gia vị. Đổ 1 lít nước vào, đậy nắp nồi áp suất và hầm ở lửa lớn khoảng 7 phút. Nếu dùng nồi thường, bạn hầm lửa nhỏ lâu hơn đến khi thịt mềm."
+      ]
+    },
+    {
+      "text": [
+        "Tắt bếp, xả hết hơi trong nồi áp suất rồi mới mở nắp. Nêm 10g hạt nêm, 3g muối, 6g đường và 3g hạt tiêu sọ vào nồi.",
+        "Cho khoai tây và cà rốt vào, trộn đều rồi tiếp tục hầm đến khi thịt bò, khoai tây và cà rốt đều chín mềm."
+      ]
+    },
+    {
+      "text": [
+        "Khi bò sốt vang đã chín mềm, cho rau mùi tàu vào nồi rồi tắt bếp.",
+        "Múc bò sốt vang ra tô, trang trí thêm ít rau mùi và thưởng thức khi còn nóng cùng bánh mì giòn hoặc cơm trắng."
+      ],
+      "images": [
+        "images/image7.jpg"
+      ]
+    }
+  ],
+
+  "similar": [
+    { "id": "bo-kho", "name": "Bò kho", "price": "55.000đ / phần", "time": "145 phút", "image": "images/bo-kho/gallery1.jpg" },
+    { "id": "bo-xao-sa-ot", "name": "Bò xào sả ớt", "price": "40.000đ / phần", "time": "45 phút", "image": "images/bo-xao-sa-ot/gallery1.jpg" },
+    { "id": "banh-mi-bo-nuong", "name": "Bánh mì bò nướng", "price": "35.000đ / phần", "time": "55 phút", "image": "images/banh-mi-bo-nuong/gallery1.jpg" },
+    { "id": "ga-kho-sa", "name": "Gà kho sả", "price": "37.500đ / phần", "time": "75 phút", "image": "images/ga-kho-sa/gallery1.jpg" }
+  ]
+}

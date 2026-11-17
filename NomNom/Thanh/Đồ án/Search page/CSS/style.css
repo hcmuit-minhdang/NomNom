@@ -1,4 +1,4 @@
-
+/* ===== CÀI ĐẶT CHUNG + NỀN TRANG ===== */
 * {
   box-sizing: border-box;
 }
@@ -7,54 +7,77 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: black;
-  background-image:
-    url("../image/bg/bg.png");
-  background-repeat: repeat; 
+  background-color: rgb(242, 242, 228);
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url("../image/bg/bg-pattern-transparent.png");
+  opacity: 0.4;
+}
+
+/* ===== KHUNG TRANG ===== */
 .fridge-page {
   max-width: 1275px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 50px 20px;
 }
 
+/* ===== TIÊU ĐỀ TRANG ===== */
 .intro {
   text-align: center;
 }
 
 .intro-box {
   display: inline-block;
-  width: 479px;
-  height: 98px;
+  padding: 0.8em 1.6em;
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
   background-color: #fbc41b;
-  border: 3px solid black;
-  box-shadow: 6px 6px 0 black; 
+  border: 2px solid black;
+  box-shadow: 0.24em 0.24em 0 #292929;
 }
 
 .intro-box h1 {
   margin: 0;
-  font-size: 33.14px;
-  font-weight: 800; 
-  line-height: 146.6%;
+  font-size: 1em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  white-space: nowrap;
   color: white;
-  -webkit-text-stroke: 1.5px black;
-  paint-order: stroke fill; 
-  text-shadow: 2px 2px 0 black; 
+  -webkit-text-stroke: 0.1em black;
+  paint-order: stroke fill;
+  text-shadow: 0.12em 0.08em 0 #292929;
 }
 
 .intro-text {
   margin: 30px 0 0;
-  font-size: 18px; 
+  font-size: 18px;
   font-weight: 500;
   color: #555555;
 }
 
-/*Bộ lọc | Danh sách món*/
-
+/* ===== BỘ LỌC | DANH SÁCH MÓN ===== */
 .fridge-content {
-  display: flex; 
-  align-items: flex-start; 
+  display: flex;
+  align-items: flex-start;
   margin-top: 50px;
+}
+
+.filter-sidebar {
+  width: 324px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
 }
 
 .filter-list {
@@ -63,6 +86,7 @@ body {
   margin: 0;
 }
 
+/* ===== Ô TÌM KIẾM TỪ KHOÁ ===== */
 .search-box {
   display: flex;
   width: 247px;
@@ -71,6 +95,7 @@ body {
   border: 2px solid black;
   box-shadow: 4px 4px 0 #fbc41b;
 }
+
 .search-box input {
   flex: 1;
   min-width: 0;
@@ -103,7 +128,7 @@ body {
   margin-bottom: 22px;
 }
 
-/* --- Nút lọc --- */
+/* ===== BỘ LỌC MÓN ĂN ===== */
 .filter-item summary {
   list-style: none;
   position: relative;
@@ -132,12 +157,19 @@ body {
   transform: rotate(180deg);
 }
 
+.filter-item[open] summary,
+.filter-item.dang-chon summary {
+  background-color: #fbc41b;
+  box-shadow: 4px 4px 0 #333333;
+}
+
 .filter-options {
   width: 240px;
   padding: 10px 16px;
-  background-color: white;
+  background-color: #fffbf0;
   border: 2px solid #333333;
   border-top: none;
+  box-shadow: 4px 4px 0 #333333;
 }
 
 .filter-options label {
@@ -150,11 +182,15 @@ body {
   cursor: pointer;
 }
 
-.filter-sidebar {
-  width: 324px; 
-  padding-right: 40px;
+.filter-options input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #333333;
+  cursor: pointer;
 }
 
+/* ===== DANH SÁCH MÓN ĂN ===== */
 .food-section {
   flex: 1;
   padding-left: 20px;
@@ -180,8 +216,6 @@ body {
   background-color: #fbc41b;
 }
 
-/* DANH SÁCH MÓN ĂN */
-
 .food-list {
   display: flex;
   flex-wrap: wrap;
@@ -189,9 +223,10 @@ body {
 }
 
 .food-card {
-  width: calc((100% - 80px) / 3); 
-  background-color: white; 
-  padding: 16px 16px 24px; 
+  width: calc((100% - 80px) / 3);
+  background-color: white;
+  padding: 16px 16px 24px;
+  cursor: pointer;
 }
 
 .food-image {
@@ -217,6 +252,7 @@ body {
   text-decoration: underline;
 }
 
+/* ===== GẮN NHÃN ĐỦ / THIẾU ===== */
 .food-tag {
   display: inline-block;
   margin: 0 0 8px;
@@ -246,11 +282,30 @@ body {
   height: 14px;
 }
 
+/* ===== DÒNG ĐẾM KẾT QUẢ + THÔNG BÁO KHÔNG CÓ MÓN ===== */
+.result-count {
+  margin: -8px 0 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.food-empty {
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  border: 2px dashed #333333;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ===== PHÂN TRANG ===== */
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: center; 
-  gap: 18px; 
+  align-items: center;
+  gap: 18px;
   margin-top: 60px;
   font-size: 20px;
   font-weight: 700;
@@ -258,7 +313,7 @@ body {
 
 .pagination a {
   color: black;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .pagination .page-active {
@@ -266,4 +321,13 @@ body {
   background-color: #fbc41b;
   border: 2px solid black;
   box-shadow: 3px 3px 0 black;
+}
+
+.pagination .page-prev,
+.pagination .page-next {
+  font-size: 16px;
+}
+
+.pagination .page-minh-hoa {
+  cursor: default;
 }
