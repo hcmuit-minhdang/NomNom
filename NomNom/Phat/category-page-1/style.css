@@ -33,7 +33,7 @@ main::before {
     top: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url(../../assets/bg-pattern-transparent.png);
+    background-image: url(../../Thach/assets/bg-pattern-transparent.png);
     display: block;
     height: 100%;
     filter: opacity(0.35);
@@ -541,6 +541,12 @@ a {
     color: #000000;
     border: 2px solid #292929;
     box-shadow: 0.18em 0.18em 0 #292929;
+}
+
+/* Nút "Trang trước" ở trang đầu: vẫn hiện như Figma nhưng mờ, không bấm được. */
+.page-link.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 .page-link:active:not(.page-dots) {

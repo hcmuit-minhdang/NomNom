@@ -20,9 +20,7 @@
 
   "gallery": [
     "images/image7.jpg",
-    "images/image3.jpg",
-    "images/image5.jpg",
-    "images/image6.jpg"
+    "images/image3.png"
   ],
 
   "featuredReview": {
@@ -89,7 +87,7 @@
         "Trộn đều cho gia vị bám quanh từng miếng thịt rồi để ướp khoảng 20 phút."
       ],
       "images": [
-        "images/image3.jpg"
+        "images/image3.png"
       ]
     },
     {
