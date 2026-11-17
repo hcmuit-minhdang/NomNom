@@ -1532,3 +1532,40 @@ a {
         padding: 14px 12px 6px 10px;
     }
 }
+
+/* In công thức: chỉ in khung công thức (#cong-thuc) gồm tên, ảnh, khẩu phần, thời gian,
+   nguyên liệu, hướng dẫn ngắn gọn và dinh dưỡng. Mọi phần khác của trang đều ẩn. */
+@media print {
+    @page { margin: 12mm; }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body { background: #ffffff !important; }
+
+    #header-placeholder, #footer-placeholder, .site-header, .site-footer,
+    .recipe-sidebar, dialog,
+    .recipe-article > :not(.recipe-card-full),
+    .card-buttons, .share-section, .servings-buttons { display: none !important; }
+
+    .recipe-page, .recipe-layout, .recipe-article {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Chừa lề trái/trên vì nhãn tên món lòi ra ngoài khung và ảnh nhô lên trên khung. */
+    .recipe-card-full {
+        margin: 64px 0 0 48px !important;
+        box-shadow: none !important;
+    }
+
+    /* Hàng nút đã ẩn nên chừa khoảng trước mục Nguyên liệu. */
+    .card-time-row { margin-bottom: 28px !important; }
+
+    .card-section { break-inside: avoid; }
+}

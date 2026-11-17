@@ -354,12 +354,13 @@ button {
     color: #292929;
 }
 
+/* Ảnh danh mục luôn vuông: cover lấp kín khung 1:1 và cắt phần thừa. */
 .category-card img {
     display: block;
     box-sizing: border-box;
     width: 90%;
     aspect-ratio: 1;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.4s ease;
 }
@@ -369,6 +370,7 @@ button {
 }
 
 .category-more img {
+    object-fit: contain; /* icon mũi tên: giữ nguyên, không cắt */
     background-color: #FBC41B;
     padding: 22%;
     border: 5px solid #292929;
