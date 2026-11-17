@@ -23,103 +23,7 @@
 </head>
 
 <body>
-    <header class="site-header" data-nomnom-header>
-        <div class="header-container">
-            <div class="site-header_logo-box">
-                <a href="../../Thach/Home-page/index.html" data-header-route="home" aria-label="NomNom — Trang chủ"><img
-                        class="site-header_logo" src="../../Thinh/assets/images/logo.png" alt="NomNom"></a>
-            </div>
-            <button class="site-header_menu-toggle" type="button" data-header-menu-toggle
-                aria-controls="site-header_controls" aria-expanded="false" aria-label="Mở menu">
-                <span class="site-header_menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-                <span>Menu</span>
-            </button>
-            <div class="site-header_controls" id="site-header_controls">
-                <div class="site-header_navigation">
-                    <div class="site-header_nav-item">
-                        <details>
-
-                            <summary>Công thức <img class="site-header_arrow"
-                                    src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt="Arrow List">
-                            </summary>
-
-                            <ul>
-                                <li><a href="../../Phat/search-results/index.html" data-header-route="search">Tìm công thức</a></li>
-                                <li><button type="button" data-header-action="ingredients">Danh mục nguyên liệu</button>
-                                </li>
-                                <li><button type="button" data-header-action="random">Gợi ý bất ngờ</button></li>
-                                <li><button type="button" data-header-action="collections">Tuyển tập công thức</button>
-                                </li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="site-header_nav-item">
-                        <details>
-
-                            <summary>Về chúng tôi <img class="site-header_arrow"
-                                    src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt="Arrow List">
-                            </summary>
-
-                            <ul>
-                                <li><a href="../../Minh/aboutus/index.html" data-header-route="about">Về NomNom</a></li>
-                                <li><button type="button" data-header-action="guide"><b>Hướng dẫn</b></button></li>
-                                <li><button type="button" data-header-action="faq"><b>Câu hỏi thường gặp</b></button>
-                                </li>
-                                <li><button type="button" data-header-action="contact">Liên hệ</button></li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="site-header_nav-item" id="site-header_categories"><a href="../../Phat/category-page-1/index.html"
-                            data-header-route="categories">Danh mục</a></div>
-                    <div class="site-header_nav-item" data-header-member hidden>
-                        <details>
-                            <summary>Góc của tôi<img class="site-header_arrow"
-                                    src="../../Thinh/assets/SVG/keyboard_arrow_up.svg" alt=""></summary>
-                            <ul>
-                                <li><a href="../../Minh/user/overview.html" data-header-route="overview">Tổng quan</a>
-                                </li>
-                                <li><a href="../../Minh/user/uploaded.html" data-header-route="uploaded">Công thức đã
-                                        đăng tải</a></li>
-                                <li><a href="../../Minh/user/saved.html" data-header-route="saved">Công thức đã lưu</a>
-                                </li>
-                                <li><a href="../../Minh/user/history.html" data-header-route="history">Lịch sử</a></li>
-                                <li><a href="../../Minh/user/index.html" data-header-route="account">Tài khoản của
-                                        tôi</a></li>
-                                <li><button type="button" data-auth-action="logout"><b>Đăng xuất</b></button></li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-                <div class="site-header_actions">
-                    <div class="site-header_auth" data-header-guest>
-                        <button id="site-header_signup" type="button" data-auth-action="signup">Đăng ký</button>
-                        <button id="site-header_login" type="button" data-auth-action="login">Đăng nhập</button>
-                    </div>
-                    <details class="site-header_search">
-                        <summary aria-controls="site-header_search-bar" aria-label="Mở tìm kiếm">
-                            <img class="site-header_search-icon site-header_search-open-icon"
-                                src="../../Thinh/assets/SVG/Search_Com.svg" alt="Mở thanh tìm kiếm">
-                            <img class="site-header_search-close-icon" src="../../Thinh/assets/SVG/X.svg"
-                                alt="Đóng thanh tìm kiếm">
-                            <span class="site-header_search-label">Tìm công thức</span>
-                        </summary>
-
-                        <div id="site-header_search-bar">
-                            <form class="site-header_search-field" role="search" aria-label="Tìm công thức"
-                                action="../../Phat/search-results/index.html" method="get">
-                                <input type="search" name="q" placeholder="Tìm kiếm ..." required
-                                    aria-label="Từ khóa tìm kiếm">
-                                <button class="site-header_search-submit" type="submit" aria-label="Tìm kiếm">
-                                    <img src="../../Thinh/assets/SVG/Search_input.svg" alt="">
-                                </button>
-                            </form>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </div>
-        <p class="site-header_status" role="status" aria-live="polite" hidden></p>
-    </header>
+    <div id="header-placeholder"></div>
     <main>
         <section class="hero-section">
             <div class="fridge-filter-container">
@@ -376,10 +280,10 @@
                     </svg>
                 </h2>
                 <nav class="site-footer_links">
-                    <a href="#">Tất cả công thức</a>
-                    <a href="#">Danh mục</a>
-                    <a href="#">So sánh nguyên liệu</a>
-                    <a href="#">So sánh giá</a>
+                    <a href="../../Phat/search-results/index.html">Tất cả công thức</a>
+                    <a href="../../Phat/category-page-1/index.html">Danh mục</a>
+                    <a href="../../Thach/Ingredients-Comparison/ingredients-comparison.html">So sánh nguyên liệu</a>
+                    <a href="../../Thach/Ingredients-Comparison/ingredients-comparison.html">So sánh giá</a>
                     <a href="#">Đánh giá của tôi</a>
                 </nav>
             </div>

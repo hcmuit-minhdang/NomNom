@@ -162,6 +162,32 @@ Từ 600px trở xuống, đường xám cách đỉnh footer 24px và dùng
   bên trong header. Logo footer hiện điều hướng bằng chính `href` đã viết trong HTML.
 - Các icon mạng xã hội hiện chưa có class riêng; không có tên class icon nào cần tra thêm.
 
+### Các trang đã nối
+
+| Mục footer | Trang đích tính từ gốc `NomNom/` |
+| --- | --- |
+| Logo NomNom | [Trang chủ](../../Thach/Home-page/index.html) |
+| Tất cả công thức | [Danh sách công thức hiện có](../../Phat/search-results/index.html) |
+| Danh mục | [Danh mục trang 1](../../Phat/category-page-1/index.html) |
+| So sánh nguyên liệu | [So sánh giá nguyên liệu](../../Thach/Ingredients-Comparison/ingredients-comparison.html) |
+| So sánh giá | [So sánh giá nguyên liệu](../../Thach/Ingredients-Comparison/ingredients-comparison.html) |
+
+Hai mục so sánh cùng dùng trang hiện có của Thạch; chưa có trang so sánh thành phần
+hoặc dinh dưỡng riêng. Trang “Tất cả công thức” hiện dùng danh sách kết quả của Phát
+khi không truyền từ khóa; trang này đang hiển thị tối đa 15 món từ dữ liệu mẫu,
+chưa phải danh sách đầy đủ có phân trang hoạt động.
+
+Các link trên đã đồng bộ trong footer mẫu và footer chép tay ở trang chủ. Ba trang
+Phát tải footer mẫu nên nhận các URL này tự động. Đường dẫn `../../` hiện đúng vì
+các trang này đều nằm sâu hai cấp tính từ gốc `NomNom/`; khi chép footer vào trang
+ở độ sâu khác, phải tính lại `href` cùng với đường dẫn ảnh.
+
+Các mục còn `href="#"` đang chờ nội dung hoặc URL chính thức:
+
+- Về NomNom và Đánh giá của tôi: có file trong phần Minh nhưng còn rỗng.
+- Hướng dẫn sử dụng, Câu hỏi thường gặp, Liên hệ và ba mục chính sách/hỗ trợ: chưa có trang tương ứng.
+- Facebook, Instagram, Youtube và Tiktok: chưa có URL tài khoản chính thức của dự án.
+
 
 ## 6. Các đoạn cần hiểu khi review
 

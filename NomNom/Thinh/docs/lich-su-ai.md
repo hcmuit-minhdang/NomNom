@@ -194,3 +194,48 @@ Các file không được tự commit hoặc push.
 - Kiểm tra cấu hình route tùy chỉnh: link và form tiếp tục dùng giá trị ghi đè.
 - Khi tắt JavaScript, ba bản HTML vẫn có link/form đúng; thử điều hướng Danh mục và gửi form tìm kiếm thành công.
 - Không ghi nhận lỗi JavaScript runtime trong các luồng kiểm tra. Đối chiếu SHA-256 xác nhận CSS footer không thay đổi so với đầu lượt.
+
+## Nạp header dùng chung bằng placeholder
+
+**Ngày:** 17/11/2026. **Thực hiện:** AI (Codex).
+
+- Đưa phần nạp header vào [header.js](../header/header.js): tự tải khối header khách từ `header/index.html`, nạp CSS nếu chưa có và chuyển đường dẫn ảnh/link/form theo vị trí file dùng chung.
+- Giữ các hành vi menu, tìm kiếm, chuyển giao sự kiện tài khoản và tự ẩn; hỗ trợ cả header chép tay. Thêm `NomNomHeader.ready`, `init()` và sự kiện `nomnom:header-ready` để JS riêng của trang đợi header sẵn sàng.
+- Chặn nạp/gắn listener trùng; giữ trạng thái tài khoản gửi đến trước khi tải xong. Khi tải HTML/CSS lỗi, placeholder hiện thông báo và nút Thử lại.
+- Thêm CSS giữ chỗ trong lúc tải, theo hai chiều cao desktop/mobile; không đổi thiết kế header.
+- Chuyển trang chủ và ba trang Phát sang placeholder. Bỏ phần tải header lặp trong JS Phát, các listener ghi đè tìm kiếm/danh mục và đoạn phát giả `DOMContentLoaded`; giữ riêng phần nạp footer.
+- Cập nhật [README](../README.md#ghép-header-bằng-placeholder-khuyên-dùng) và [review Header](header.md) với cách ghép, API và giới hạn. Không tạo `layout.js` hoặc trang mới.
+
+### Kết quả kiểm tra
+
+- `node --check` xác nhận cú pháp header.js và ba file JS Phát hợp lệ; `git diff --check` đạt.
+- Playwright / Microsoft Edge: trang chủ, ba trang Phát và hai bản xem thử đều có đúng một header; CSS không nạp trùng, URL đúng và trạng thái khách/thành viên phù hợp. Dữ liệu công thức mỗi trang Phát chỉ được yêu cầu một lần.
+- Trang chủ không tràn ngang ở 320, 375, 600, 768, 1000, 1001 và 1440px. Menu nhỏ, popup Login có sẵn, tìm kiếm GET với tiếng Việt/ký tự đặc biệt và chặn từ khóa trắng hoạt động.
+- Thử trang giả lập ở thư mục sâu, nạp script/gọi init nhiều lần, cấu hình route riêng, trạng thái tài khoản gửi sớm và thêm placeholder sau khi trang đã sẵn sàng: chỉ tạo một header và một lần phát sự kiện sẵn sàng.
+- Giả lập lỗi HTTP khi tải HTML hoặc CSS: hiển thị thông báo; Thử lại nạp thành công. Khi làm chậm tải rồi đổi từ desktop sang mobile, vùng giữ chỗ đổi từ 106px xuống 72px; ảnh header tải được.
+- Đầu trang vẫn hiện sau hơn 4 giây; cuộn xuống thì tự ẩn; quay về đầu trang thì hiện và giữ hiện. Không ghi nhận lỗi JavaScript runtime trong các luồng kiểm tra bình thường.
+- Đối chiếu với Git xác nhận main/footer/dialog trên trang chủ, code công thức/bộ lọc ngoài loader ở Phát và mã nguồn footer/auth/login/signup không thay đổi.
+
+Cách ghép bằng placeholder cần Live Server/HTTP và JavaScript. Loader chỉ phụ trách
+header; footer và popup Login/Signup vẫn ghép riêng. Các trang Phát chưa có popup
+tài khoản nên nút tài khoản vẫn báo chờ tích hợp. Kiểm tra bằng viewport giả lập,
+chưa thử trên điện thoại thật. Không tự commit hoặc push.
+
+## Nối các trang hiện có vào footer
+
+**Ngày:** 17/11/2026. **Thực hiện:** AI (Codex).
+
+- Nối Tất cả công thức đến `Phat/search-results/index.html`, Danh mục đến `Phat/category-page-1/index.html`; hai mục So sánh nguyên liệu / So sánh giá cùng đến trang `Thach/Ingredients-Comparison/ingredients-comparison.html` hiện có.
+- Đồng bộ bốn `href` trong [footer mẫu](../footer/index.html) và footer chép tay trên [trang chủ](../../Thach/Home-page/index.html). Ba trang Phát tiếp tục tải footer mẫu nên tự nhận các URL mới.
+- Giữ các mục còn thiếu nội dung ở trạng thái chờ: Về NomNom / Đánh giá của tôi còn file rỗng; hướng dẫn, FAQ, liên hệ, chính sách và tài khoản mạng xã hội chưa có trang hoặc URL chính thức. Không tạo trang mới hay thêm JavaScript/CSS.
+- Cập nhật bảng URL, giới hạn trang đích và lưu ý đường dẫn khi ghép trong [review Footer](footer.md#các-trang-đã-nối).
+
+### Kết quả kiểm tra
+
+- Kiểm tra tĩnh footer mẫu, trang chủ và đường dẫn khi footer được chèn vào ba trang Phát: logo và bốn mục đã nối đều trỏ đến file có nội dung; 12 link còn lại vẫn chờ URL.
+- Playwright / Microsoft Edge: bấm footer từ trang chủ sang danh sách công thức, tiếp tục sang Danh mục, rồi mở trang So sánh giá nguyên liệu thành công. Footer tải động ở Phát hiển thị URL mới.
+- Đối chiếu Git: footer mẫu chỉ thay bốn `href`; main/dialog trên trang chủ và phần header đã sửa trước đó được giữ nguyên. Liên kết file trong tài liệu footer hợp lệ; `git diff --check` đạt.
+- Có lỗi 404 sẵn ở `favicon.ico` và ảnh nền `assets/bg-pattern-transparent.png` của trang Phát trong lúc kiểm tra; không thay các tài nguyên đó trong đợt nối link footer.
+
+Mục Tất cả công thức hiện dùng danh sách tối đa 15 món của trang kết quả tìm kiếm;
+chưa thay chức năng tìm kiếm hoặc phân trang của Phát. Không tự commit hoặc push.

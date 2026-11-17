@@ -9,7 +9,8 @@ Mở bằng Live Server: [Header khách](header/index.html) ·
 [Header thành viên](<header/ed - index.html>) · [Footer](footer/index.html) ·
 [Login](login/index.html) · [Signup](signup/index.html).
 
-[Trang chủ đã ghép](../Thach/Home-page/index.html) dùng header, footer và cả hai popup.
+[Trang chủ đã ghép](../Thach/Home-page/index.html) dùng header qua placeholder, footer ghép tay và cả hai popup.
+Ba trang Phát cũng dùng chung loader header; phần nạp footer vẫn nằm trong JS của từng trang.
 Hiện popup kiểm tra dữ liệu nhập; demo, xác thực thật, ghi nhớ phiên và quên mật khẩu
 sẽ làm ở giai đoạn sau. Các liên kết chưa có trang đích vẫn chờ nhóm tích hợp.
 
@@ -35,9 +36,47 @@ sẽ làm ở giai đoạn sau. Các liên kết chưa có trang đích vẫn ch
 
 Hai popup cùng dùng [auth.js](auth.js). Kiểu form chung nằm trong `login.css`;
 `signup.css` bổ sung bố cục riêng. `assets/` chứa ảnh, icon và font. `docs/` chứa tài liệu.
-Các thư mục `P-header/` và `P-footer/` là bản mẫu cũ; trang chủ hiện dùng các thư mục trong bảng trên.
+
+## Ghép header bằng placeholder (khuyên dùng)
+
+Ví dụ từ `Thach/Home-page/index.html`, `Phat/category-page-1/index.html` hoặc
+`Minh/aboutus/index.html`:
+
+```html
+<!-- Trong head, sau CSS riêng của trang. Header tự nạp style.css nếu chưa có. -->
+<script src="../../Thinh/header/header.js" defer></script>
+
+<!-- Trong body, trước main. -->
+<div id="header-placeholder"></div>
+```
+
+- Chỉ cần chỉnh đường dẫn của thẻ `script` theo vị trí trang. Ảnh, link và form trong
+  header được tính từ file mẫu / file JS, không phải sửa bằng cách thay chuỗi `../`.
+- Loader lấy khối header khách từ `Thinh/header/index.html`; không chèn cả head/body
+  hoặc chạy script của file mẫu. Sửa mẫu này sẽ cập nhật header ở các trang dùng placeholder.
+- Mặc định là khách. Muốn hiển thị thành viên, dùng `NomNomHeaderConfig.user` hoặc API
+  `NomNomHeader.updateHeaderAuth(user)`; loader không tạo hay lưu phiên đăng nhập.
+- Header đã được chép tay vẫn dùng được; nếu cùng có placeholder thì giữ bản chép tay,
+  không tạo header thứ hai. Nạp script / gọi `init()` nhiều lần không gắn listener lặp.
+- Phải chạy bằng Live Server / HTTP. Cách nạp này cần JavaScript và `fetch`; nếu cần
+  header đầy đủ khi tắt JS, dùng cách ghép thủ công bên dưới.
+- Footer và popup Login/Signup vẫn ghép riêng. Chỉ nạp header.js chưa tự chèn hai popup;
+  nếu trang chưa có phần nhận sự kiện tài khoản, header sẽ báo đang chờ tích hợp.
+
+Trang muốn đánh dấu mục Danh mục đang được xem có thể dùng:
+
+```html
+<div id="header-placeholder" data-header-active="categories"></div>
+```
+
+JS riêng cần đợi header xuất hiện thì dùng `window.NomNomHeader.ready` (Promise),
+hoặc nghe `nomnom:header-ready`; xem [hướng dẫn Header](docs/header.md).
+Khi tải HTML/CSS thất bại, placeholder hiện thông báo và nút Thử lại.
 
 ## Ghép thủ công
+
+Cách này dành cho trang cần giữ HTML header ngay trong file; không dùng đồng thời
+với placeholder nếu không cần. Footer và các dialog hiện vẫn ghép theo các bước này.
 
 1. Copy một khối `<header>` và một khối `<footer>` vào trang đích, giữ nội dung riêng của `main`.
 2. Copy cả hai `<dialog>` giữa `NOMNOM AUTH START` / `NOMNOM AUTH END`, đặt sau footer.
@@ -60,6 +99,8 @@ Ví dụ đường dẫn từ `Thach/Home-page/index.html` hoặc `Minh/aboutus/
 
 URL ảnh/font trong CSS tính từ vị trí file CSS; `src` ảnh trong HTML tính từ trang đích.
 Không copy `<head>`, `<body>` hay phần xem thử. HTML ghép tay không tự đồng bộ:
-khi sửa mẫu, cập nhật các trang đã copy và thử lại. Chi tiết ở các tài liệu review tương ứng phía trên.
+khi sửa mẫu, cập nhật các trang đã copy và thử lại. Trang chủ hiện dùng placeholder
+cho header nên không cần chép lại khối header; footer/dialog vẫn cần đồng bộ riêng.
+Chi tiết ở các tài liệu review tương ứng phía trên.
 
 Tài liệu học phần About Us/User của Minh giữ tại [Minh/ROADMAP.md](../Minh/ROADMAP.md).
