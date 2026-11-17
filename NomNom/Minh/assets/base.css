@@ -1,0 +1,119 @@
+/* Biến và kiểu nền dùng chung cho About Us và các trang User.
+   Màu, font, viền và bóng lấy từ file Figma IE104. */
+:root {
+    --nn-yellow: #fbc41b;
+    --nn-dark: #292929;
+    --nn-black: #000000;
+    --nn-white: #ffffff;
+    --nn-ink: #050505;
+    --nn-muted: rgba(0, 0, 0, 0.7);
+    /* Figma dùng #3c87c4; nhóm làm sáng hơn để đọc được trên banner tối (độ tương phản ≥ 4.5:1). */
+    --nn-link-on-dark: #8cc4f0;
+
+    --nn-border: 2px solid var(--nn-black);
+    --nn-shadow: 7px 7px 0 var(--nn-dark);
+    --nn-shadow-black: 7px 7px 0 var(--nn-black);
+    --nn-shadow-sm: 4px 4px 0 var(--nn-black);
+
+    --nn-container: 1280px;
+    --nn-container-user: 1250px;
+    --nn-gutter: 24px;
+
+    --nn-font: "Inter", Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--nn-font);
+    color: var(--nn-black);
+    background: var(--nn-white);
+    line-height: 1.45;
+}
+
+/* height: auto để thuộc tính height trong HTML không giữ cứng chiều cao ảnh
+   (nếu thiếu, aspect-ratio trong CSS sẽ không có tác dụng). */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+/* Khung giữa trang: rộng tối đa 1280px như Figma, có lề 24px trên màn hình hẹp. */
+.nn-container {
+    width: min(100% - 2 * var(--nn-gutter), var(--nn-container));
+    margin-inline: auto;
+}
+
+/* Nút viền đen, dùng cho các nút chính. */
+.nn-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 28px;
+    border: var(--nn-border);
+    font-size: 1.4375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nn-button:hover,
+.nn-button:focus-visible {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--nn-shadow-sm);
+}
+
+.nn-button--yellow {
+    background: var(--nn-yellow);
+    color: var(--nn-black);
+}
+
+.nn-button--dark {
+    background: var(--nn-dark);
+    color: var(--nn-white);
+}
+
+/* Viền focus đen để thấy rõ trên nền trắng và vàng; nền tối thì đổi sang vàng. */
+:focus-visible {
+    outline: 3px solid var(--nn-black);
+    outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    .nn-button {
+        font-size: 1.125rem;
+        padding: 16px 20px;
+    }
+}
+
+.nn-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
