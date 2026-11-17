@@ -33,7 +33,7 @@ main::before {
     top: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url(../../assets/bg-pattern-transparent.png);
+    background-image: url(../../Thach/assets/bg-pattern-transparent.png);
     display: block;
     height: 100%;
     filter: opacity(0.35);
