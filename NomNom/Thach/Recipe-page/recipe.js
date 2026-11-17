@@ -476,3 +476,6 @@ async function init() {
 }
 
 init();
+
+// Nút "IN CÔNG THỨC": mở hộp thoại in; CSS @media print chỉ giữ lại khung công thức.
+document.querySelector(".print-recipe-button")?.addEventListener("click", () => window.print());
