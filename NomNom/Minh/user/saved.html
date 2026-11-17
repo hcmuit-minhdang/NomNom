@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đã lưu | Góc của tôi | NomNom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/base.css">
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <!-- Header dùng chung của nhóm (Thinh/header) sẽ được gắn vào đây khi tích hợp. -->
+
+    <main>
+        <section class="profile-banner" aria-label="Thông tin tài khoản">
+            <img class="profile-banner__image" src="../assets/images/banner.jpg" alt="" width="1200" height="900">
+            <div class="profile user-wrap">
+                <div class="profile__avatar">
+                    <button class="profile__avatar-edit" type="button" aria-label="Đổi ảnh đại diện">
+                        <img src="../assets/icons/camera.png" alt="" width="22" height="22">
+                    </button>
+                </div>
+                <div>
+                    <h1 class="profile__name">NomNom</h1>
+                    <a class="profile__edit" href="#">Thay đổi thông tin cá nhân</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="user-page user-page--pattern">
+            <nav class="user-tabs user-wrap" aria-label="Góc của tôi">
+                <ul class="user-tabs__list">
+                    <li><a class="user-tabs__link" href="overview.html">TỔNG QUAN</a></li>
+                    <li><a class="user-tabs__link" href="saved.html" aria-current="page">ĐÃ LƯU</a></li>
+                    <li><a class="user-tabs__link" href="uploaded.html">ĐÃ ĐĂNG TẢI</a></li>
+                    <li><a class="user-tabs__link" href="reviewed.html">ĐÁNH GIÁ</a></li>
+                    <li><a class="user-tabs__link" href="history.html">LỊCH SỬ</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-content user-wrap">
+                <section class="user-section" aria-labelledby="saved-title">
+                    <div class="user-section__head">
+                        <h2 class="user-section__title" id="saved-title">CÔNG THỨC ĐÃ LƯU</h2>
+                        <span class="user-section__line" aria-hidden="true"></span>
+                    </div>
+                    <ul class="recipe-grid">
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-kho-sot-vang.jpg" alt="Bò kho sốt vang" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò kho sốt vang</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bun-thit-nuong.jpg" alt="Bún thịt nướng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bún thịt nướng</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-luc-lac.jpg" alt="Bò lúc lắc" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò lúc lắc</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/com-chien-trung.jpg" alt="Cơm chiên trứng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Cơm chiên trứng</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/goi-xoai-xanh.jpg" alt="Gỏi xoài xanh" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Gỏi xoài xanh</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-xao-ot-chuong.jpg" alt="Bò xào ớt chuông" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò xào ớt chuông</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-bit-tet.jpg" alt="Bò bít tết" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò bít tết</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/banh-mi-bo-nuong.jpg" alt="Bánh mì bò nướng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bánh mì bò nướng</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-kho-sot-vang.jpg" alt="Bò kho sốt vang" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò kho sốt vang</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bun-thit-nuong.jpg" alt="Bún thịt nướng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bún thịt nướng</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-luc-lac.jpg" alt="Bò lúc lắc" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò lúc lắc</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/com-chien-trung.jpg" alt="Cơm chiên trứng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Cơm chiên trứng</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <nav class="pagination" aria-label="Phân trang">
+                        <ul class="pagination__list">
+                            <li><a class="pagination__link" href="#" aria-current="page">1</a></li>
+                            <li><a class="pagination__link" href="#">2</a></li>
+                            <li><a class="pagination__link" href="#">3</a></li>
+                            <li class="pagination__gap" aria-hidden="true">…</li>
+                            <li><a class="pagination__link" href="#">6</a></li>
+                            <li><a class="pagination__link pagination__link--next" href="#">Trang sau ▸</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer dùng chung của nhóm (Thinh/footer) sẽ được gắn vào đây khi tích hợp. -->
+</body>
+</html>

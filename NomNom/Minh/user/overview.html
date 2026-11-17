@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng quan | Góc của tôi | NomNom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/base.css">
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <!-- Header dùng chung của nhóm (Thinh/header) sẽ được gắn vào đây khi tích hợp. -->
+
+    <main>
+        <section class="profile-banner" aria-label="Thông tin tài khoản">
+            <img class="profile-banner__image" src="../assets/images/banner.jpg" alt="" width="1200" height="900">
+            <div class="profile user-wrap">
+                <div class="profile__avatar">
+                    <button class="profile__avatar-edit" type="button" aria-label="Đổi ảnh đại diện">
+                        <img src="../assets/icons/camera.png" alt="" width="22" height="22">
+                    </button>
+                </div>
+                <div>
+                    <h1 class="profile__name">NomNom</h1>
+                    <a class="profile__edit" href="#">Thay đổi thông tin cá nhân</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="user-page user-page--pattern">
+            <nav class="user-tabs user-wrap" aria-label="Góc của tôi">
+                <ul class="user-tabs__list">
+                    <li><a class="user-tabs__link" href="overview.html" aria-current="page">TỔNG QUAN</a></li>
+                    <li><a class="user-tabs__link" href="saved.html">ĐÃ LƯU</a></li>
+                    <li><a class="user-tabs__link" href="uploaded.html">ĐÃ ĐĂNG TẢI</a></li>
+                    <li><a class="user-tabs__link" href="reviewed.html">ĐÁNH GIÁ</a></li>
+                    <li><a class="user-tabs__link" href="history.html">LỊCH SỬ</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-content user-wrap">
+                <section class="user-section" aria-labelledby="saved-title">
+                    <div class="user-section__head">
+                        <h2 class="user-section__title" id="saved-title">CÔNG THỨC ĐÃ LƯU</h2>
+                        <span class="user-section__line" aria-hidden="true"></span>
+                    </div>
+                    <ul class="recipe-grid">
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-kho-sot-vang.jpg" alt="Bò kho sốt vang" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò kho sốt vang</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bun-thit-nuong.jpg" alt="Bún thịt nướng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bún thịt nướng</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-luc-lac.jpg" alt="Bò lúc lắc" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò lúc lắc</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/com-chien-trung.jpg" alt="Cơm chiên trứng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Cơm chiên trứng</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="user-section__more" href="saved.html">XEM TẤT CẢ</a>
+                </section>
+                <section class="user-section" aria-labelledby="uploaded-title">
+                    <div class="user-section__head">
+                        <h2 class="user-section__title" id="uploaded-title">CÔNG THỨC ĐÃ ĐĂNG TẢI</h2>
+                        <span class="user-section__line" aria-hidden="true"></span>
+                    </div>
+                    <ul class="recipe-grid">
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/goi-xoai-xanh.jpg" alt="Gỏi xoài xanh" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Gỏi xoài xanh</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-xao-ot-chuong.jpg" alt="Bò xào ớt chuông" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò xào ớt chuông</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-bit-tet.jpg" alt="Bò bít tết" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò bít tết</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/banh-mi-bo-nuong.jpg" alt="Bánh mì bò nướng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bánh mì bò nướng</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="user-section__more" href="uploaded.html">XEM TẤT CẢ</a>
+                </section>
+                <section class="user-section" aria-labelledby="reviews-title">
+                    <div class="user-section__head">
+                        <h2 class="user-section__title" id="reviews-title">LƯỢT ĐÁNH GIÁ</h2>
+                        <span class="user-section__line" aria-hidden="true"></span>
+                    </div>
+                    <ul class="review-list">
+                        <li>
+                            <article class="review">
+                                <a class="review__recipe" href="#">Bò kho sốt vang</a>
+                                <p class="review__meta">
+                                    <span><b>NomNom</b> đã trả lời <b>Tấn Phát</b></span>
+                                    <span class="review__time"><img src="../assets/icons/clock.png" alt="" width="15" height="15"><time datetime="2026-10-08T23:36">08.10.26 11:36 tối</time></span>
+                                </p>
+                                <p class="review__text">Món này cả nhà mình đều thích, thịt mềm và nước sốt rất đậm vị. Bạn có thể chia sẻ thêm cách nấu với thịt gà không?</p>
+                                <div class="review__actions">
+                                    <span class="review__likes"><img src="../assets/icons/like.png" alt="" width="32" height="32">2<span class="nn-visually-hidden"> lượt thích</span></span>
+                                    <button class="review__reply" type="button"><img src="../assets/icons/reply.png" alt="" width="21" height="21">Trả lời</button>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="review">
+                                <a class="review__recipe" href="#">Bò kho sốt vang</a>
+                                <p class="review__meta">
+                                    <span><b>NomNom</b> đã trả lời <b>Tấn Phát</b></span>
+                                    <span class="review__time"><img src="../assets/icons/clock.png" alt="" width="15" height="15"><time datetime="2026-10-08T23:36">08.10.26 11:36 tối</time></span>
+                                </p>
+                                <p class="review__text">Món này cả nhà mình đều thích, thịt mềm và nước sốt rất đậm vị. Bạn có thể chia sẻ thêm cách nấu với thịt gà không?</p>
+                                <div class="review__actions">
+                                    <span class="review__likes"><img src="../assets/icons/like.png" alt="" width="32" height="32">2<span class="nn-visually-hidden"> lượt thích</span></span>
+                                    <button class="review__reply" type="button"><img src="../assets/icons/reply.png" alt="" width="21" height="21">Trả lời</button>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                    <a class="user-section__more" href="reviewed.html">XEM TẤT CẢ</a>
+                </section>
+                <section class="user-section" aria-labelledby="history-title">
+                    <div class="user-section__head">
+                        <h2 class="user-section__title" id="history-title">LỊCH SỬ TÌM KIẾM</h2>
+                        <span class="user-section__line" aria-hidden="true"></span>
+                    </div>
+                    <ul class="recipe-grid">
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-luc-lac.jpg" alt="Bò lúc lắc" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò lúc lắc</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/com-chien-trung.jpg" alt="Cơm chiên trứng" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Cơm chiên trứng</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/goi-xoai-xanh.jpg" alt="Gỏi xoài xanh" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Gỏi xoài xanh</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="recipe-card" href="#">
+                                <img class="recipe-card__image" src="../assets/images/recipes/bo-xao-ot-chuong.jpg" alt="Bò xào ớt chuông" width="248" height="185" loading="lazy">
+                                <h3 class="recipe-card__name">Bò xào ớt chuông</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="user-section__more" href="history.html">XEM TẤT CẢ</a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer dùng chung của nhóm (Thinh/footer) sẽ được gắn vào đây khi tích hợp. -->
+</body>
+</html>
