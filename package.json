@@ -1,0 +1,9 @@
+{
+  "name": "nomnom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NomNom - website công thức nấu ăn (HTML/CSS/JavaScript thuần)",
+  "scripts": {
+    "start": "npx --yes serve public -l 3000"
+  }
+}

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+        <title>Đăng tải công thức | NomNom</title>
+        <link rel="stylesheet" href="/css/pages/upload.css" />
+        <link rel="stylesheet" href="/css/pages/ingredient-picker.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <script src="/js/store.js"></script>
+        <script src="/js/data.js" defer></script>
+        <script type="module" src="/js/pages/upload.js"></script>
+            <link rel="stylesheet" href="/css/components/header.css">
+        <link rel="stylesheet" href="/css/components/footer.css">
+        <link rel="stylesheet" href="/css/components/login.css">
+        <link rel="stylesheet" href="/css/components/signup.css">
+        <script src="/js/components/header.js" defer></script>
+        <script src="/js/components/auth.js" defer></script>
+        <script src="/js/components/login.js" defer></script>
+        <script src="/js/components/signup.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header" data-nomnom-header>
+        <div class="header-container">
+            <div class="site-header_logo-box">
+                <a href="/" data-header-route="home" aria-label="NomNom — Trang chủ"><img
+                        class="site-header_logo" src="/assets/images/logo.png" alt="NomNom"></a>
+            </div>
+            <button class="site-header_menu-toggle" type="button" data-header-menu-toggle
+                aria-controls="site-header_controls" aria-expanded="false" aria-label="Mở menu">
+                <span class="site-header_menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span>Menu</span>
+            </button>
+            <div class="site-header_controls" id="site-header_controls">
+                <div class="site-header_navigation">
+                    <div class="site-header_nav-item">
+                        <details>
+
+                            <summary>Công thức <img class="site-header_arrow"
+                                    src="/assets/icons/keyboard_arrow_up.svg" alt="Arrow List">
+                            </summary>
+
+                            <ul>
+                                <li><a href="/pages/search.html" data-header-route="search">Tìm công thức</a></li>
+                                <li><a href="/pages/fridge.html" data-header-route="ingredients">Danh mục nguyên liệu</a>
+                                </li>
+                                <li><button type="button" data-header-action="random">Gợi ý bất ngờ</button></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="site-header_nav-item">
+                        <details>
+
+                            <summary>Về chúng tôi <img class="site-header_arrow"
+                                    src="/assets/icons/keyboard_arrow_up.svg" alt="Arrow List">
+                            </summary>
+
+                            <ul>
+                                <li><a href="/pages/about.html" data-header-route="about">Về NomNom</a></li>
+                                <li><button type="button" data-header-action="guide"><b>Hướng dẫn</b></button></li>
+                                <li><button type="button" data-header-action="faq"><b>Câu hỏi thường gặp</b></button>
+                                </li>
+                                <li><button type="button" data-header-action="contact">Liên hệ</button></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="site-header_nav-item" id="site-header_categories"><a href="/pages/search.html"
+                            data-header-route="categories">Danh mục</a></div>
+                    <div class="site-header_nav-item" id="site-header_upload"><a href="/pages/upload.html"
+                            data-header-route="upload">Đăng tải công thức</a></div>
+                    <div class="site-header_nav-item" data-header-member hidden>
+                        <details>
+                            <summary>Góc của tôi<img class="site-header_arrow"
+                                    src="/assets/icons/keyboard_arrow_up.svg" alt=""></summary>
+                            <ul>
+                                <li><a href="/pages/account/overview.html" data-header-route="overview">Tổng quan</a>
+                                </li>
+                                <li><a href="/pages/account/uploaded.html" data-header-route="uploaded">Công thức đã
+                                        đăng tải</a></li>
+                                <li><a href="/pages/account/saved.html" data-header-route="saved">Công thức đã lưu</a>
+                                </li>
+                                <li><a href="/pages/account/history.html" data-header-route="history">Lịch sử</a></li>
+                                <li><a href="/pages/account/reviewed.html" data-header-route="reviewed">Đánh giá</a></li>
+                                <li><a href="/pages/account/index.html" data-header-route="account">Tài khoản của
+                                        tôi</a></li>
+                                <li><button type="button" data-auth-action="logout"><b>Đăng xuất</b></button></li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+                <div class="site-header_actions">
+                    <div class="site-header_auth" data-header-guest>
+                        <button id="site-header_signup" type="button" data-auth-action="signup">Đăng ký</button>
+                        <button id="site-header_login" type="button" data-auth-action="login">Đăng nhập</button>
+                    </div>
+                    <details class="site-header_search">
+                        <summary aria-controls="site-header_search-bar" aria-label="Mở tìm kiếm">
+                            <img class="site-header_search-icon site-header_search-open-icon"
+                                src="/assets/icons/Search_Com.svg" alt="Mở thanh tìm kiếm">
+                            <img class="site-header_search-close-icon" src="/assets/icons/X.svg"
+                                alt="Đóng thanh tìm kiếm">
+                            <span class="site-header_search-label">Tìm công thức</span>
+                        </summary>
+
+                        <div id="site-header_search-bar">
+                            <form class="site-header_search-field" role="search" aria-label="Tìm công thức"
+                                action="/pages/search.html" method="get">
+                                <input type="search" name="q" placeholder="Tìm kiếm ..." required
+                                    aria-label="Từ khóa tìm kiếm">
+                                <button class="site-header_search-submit" type="submit" aria-label="Tìm kiếm">
+                                    <img src="/assets/icons/Search_input.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <p class="site-header_status" role="status" aria-live="polite" hidden></p>
+    </header>
+        <main class="recipe-page">
+            <div class="recipe-layout">
+
+                <!-- ================= NỘI DUNG CHÍNH ================= -->
+                <form class="upload-form" id="upload-form" novalidate>
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <a href="/pages/search.html">Công thức</a>
+                        <span>&gt;</span>
+                        <a href="/pages/upload.html">Upload</a>
+                    </nav>
+                
+                    <!-- ---------- Thông tin chung ---------- -->
+                    <section class="recipe-intro" id="thong-tin-chung">
+                        <h1 id="upload-title">UPLOAD RECIPE</h1>
+                        <div class="line divider"></div>
+
+                        <div class="title main-info">
+                          <h2 class="main-info-tag">THÔNG TIN CHÍNH</h2>
+                          <!--<div class="line"></div>-->
+                        </div>
+
+                        <div id="main-info-section">
+                            <div id="main-info">
+                                <h3 id="time">THÔNG TIN CHUNG</h3>
+                                <div class="input-field">
+                                    <label for="name-input">Tên công thức</label>
+                                    <input id="name-input" type="text" name="title" maxlength="120" placeholder="Xôi gà, cơm tấm,...">
+                                </div>
+                                <div class="input-field">
+                                    <label for="category-input">Danh mục</label>
+                                    <select id="category-input" name="category" class="select-input">
+                                        <option value="">-- Chọn danh mục --</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label for="price-input">Chi phí</label>
+                                    <input id="price-input" type="text" inputmode="numeric" placeholder="25.000" name="costTotal">
+                                </div>
+                                <div class="input-field">
+                                    <div class="servings-control">
+                                        <label for="servings-input" class="small-input-label">Khẩu phần</label>
+                                        <div class="small-input-wrapper">
+                                            <input type="number" id="servings-input" class="small-input" value="3" min="1" data-bind-value="baseServings" />
+                                            <div class="small-input-buttons">
+                                                <button type="button" class="Btn upBtn" aria-label="Tăng khẩu phần"></button>
+                                                <button type="button" class="Btn downBtn" aria-label="Giảm khẩu phần"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="time-input">
+                                <h3 id="time">THỜI GIAN</h3>
+                                <div class="input-field">
+                                    <label for="prepTime-input" class="small-input-label">Chuẩn bị</label>
+                                    <div class="small-input-wrapper">
+                                        <input id="prepTime-input" class="small-input" type="number" min="1" name="prepTime" placeholder="30">
+                                        <div class="small-input-buttons">
+                                            <button type="button" class="Btn upBtn" aria-label="Tăng thời gian chuẩn bị"></button>
+                                            <button type="button" class="Btn downBtn" aria-label="Giảm thời gian chuẩn bị"></button>
+                                        </div>
+                                    </div>
+                                    <span class="unit-note note">Đơn vị: phút</span>
+                                </div>
+                                <div class="input-field">
+                                    <label for="cookTime-input" class="small-input-label">Nấu</label>
+                                    <div class="small-input-wrapper">
+                                        <input id="cookTime-input" class="small-input" type="number" min="1" name="cookTime" placeholder="30">
+                                        <div class="small-input-buttons">
+                                            <button type="button" class="Btn upBtn" aria-label="Tăng thời gian nấu"></button>
+                                            <button type="button" class="Btn downBtn" aria-label="Giảm thời gian nấu"></button>
+                                        </div>
+                                    </div>
+                                    <span class="unit-note note">Đơn vị: phút</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ---------- Mô tả ---------- -->
+                    <section class="recipe-description-section" id="mo-ta">
+                        <div class="title recipe-description">
+                            <h3 id="description-title">MÔ TẢ</h3>
+                            <div class="line"></div>
+                        </div>
+                        <div class="description-text">
+                            <span class="note" id="description-note">Mô tả món ăn của bạn càng thật hấp dẫn nhé!</span>
+                            <textarea class="textarea-input" id="description-input" name="description" placeholder="Mô tả món ăn tại đây"></textarea>
+                        </div>
+                        <h4>Hình ảnh</h4>
+                            <span class="note" id="image-note">Thêm từ 1 đến 5 hình ảnh món ăn (ảnh đầu tiên là ảnh bìa)</span>
+                            <label for="gallery-images" class="image-upload">
+                                <img src="/assets/icons/imageFile.svg" alt="" class="image-upload-icon">
+                                <span class="image-upload-text">Nhấn vào đây để đăng tải hình ảnh</span>
+                            </label>
+                            <input type="file" id="gallery-images" name="gallery" accept="image/png,image/jpeg,image/webp" multiple >
+                            <ul class="gallery-previews" id="gallery-previews"></ul>
+                    </section>
+
+
+                    <!-- ---------- Thẻ công thức ---------- -->
+                    <section class="recipe-card-full" id="cong-thuc">
+                        <h2 class="card-title-tag">CHUẨN BỊ</h2>
+
+                        <div class="card-body">
+                        <!-- ---------- Nhập nguyên liệu ---------- -->
+                        <section class="recipe-description-section" id="nguyen-lieu">
+                            <div class="title recipe-description">
+                                <h3 id="ingredients-input-title">NGUYÊN LIỆU</h3>
+                                <div class="line"></div>
+                            </div>
+                            <div id="ingredient-picker"></div>
+                            <ul class="ingredient-list" id="ingredient-list"></ul>
+                        </section>
+
+                            <!-- Hướng dẫn ngắn gọn -->
+                            <section class="card-section" id="huong-dan-ngan-gon">
+                                <div class="title recipe-description">
+                                    <h3 id="ingredients-input-title">HƯỚNG DẪN NGẮN GỌN</h3>
+                                    <div class="line"></div>
+                                </div>
+                                <button type="button" id="add-step-btn">THÊM BƯỚC</button>
+                                <ol class="quick-step-list" id="quick-step-list"></ol>
+                            </section>
+
+                            <!-- Dinh dưỡng -->
+                            <section class="card-section" id="dinh-duong">
+                                <div class="title recipe-description">
+                                    <h3 id="ingredients-input-title">DINH DƯỠNG</h3>
+                                    <div class="line"></div>
+                                </div>
+                                <p class="nutrition-note note">Thêm thông tin dinh dưỡng nếu có, tìm hiểu thêm chi tiết về thành phần dinh dưỡng món ăn <b><a href="https://www.webmd.com/diet/healthtool-food-calorie-counter">tại đây</a></b></p>
+                                
+                                <div class="nutrition-container" id="nutrition-container">
+                                    <div class="left nutrients">
+                                        <div>
+                                            <label for="calories" class="nutrient-label">Calories<span class="nutrient-input-note">(kcal)</span></label>
+                                            <input class="nutrient-input" id="calories" name="calories" type="number" min="0" placeholder="930"> 
+                                        </div>
+                                        <div>
+                                            <label for="carbs">Carbohydrates<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="carbs" name="carbs" type="number" min="0" placeholder="93">
+                                        </div>
+                                        <div>
+                                            <label for="protein">Protein<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="protein" name="protein" type="number" min="0" placeholder="44">
+                                        </div>
+                                    </div>
+                                    <div class="right nutrients">
+                                        <div>
+                                            <label for="fat">Fat<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="fat" name="fat" type="number" min="0" placeholder="47">
+                                        </div>
+                                        <div>
+                                            <label for="sodium">Sodium<span class="nutrient-input-note">(mg)</span></label>
+                                            <input class="nutrient-input" id="sodium" name="sodium" type="number" min="0" placeholder="2500">
+                                        </div>
+                                        <div>
+                                            <label for="fiber">Fiber<span class="nutrient-input-note">(g)</span></label>
+                                            <input class="nutrient-input" id="fiber" name="fiber" type="number" min="0" placeholder="3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+
+                    <!-- ---------- Hướng dẫn cụ thể ---------- -->
+                    <section class="detailed-guide" id="huong-dan-cu-the">
+                        <div class="title detailed-guide-title" id="huong-dan-cu-the">
+                            <h2 id="detailed-guide-label" class="detailed-guide-tag">HƯỚNG DẪN CỤ THỂ</h2>
+                            <div class="line"></div>
+                        </div>
+                        <button type="button" id="add-detailed-btn" class="add-detailed-step-btn">THÊM BƯỚC</button>
+                        <ul id="detailed-steps-container"></ul>
+                    </section>
+
+                    <div class="line bottom-divider"></div>
+                    <div class="upload-status" id="upload-status" role="status" aria-live="polite" hidden>
+                        <p class="upload-status-text" id="upload-status-text"></p>
+                        <div class="upload-progress" id="upload-progress-wrap" hidden><div class="upload-progress-bar" id="upload-progress"></div></div>
+                    </div>
+                    <input type="submit" class="upload-btn" id="upload-submit" value="ĐĂNG TẢI CÔNG THỨC">
+                    <input type="button" class="draft-btn" id="draft-save" value="LƯU BẢN NHÁP">
+                    <button type="button" class="draft-clear" id="draft-clear" hidden>Xóa bản nháp</button>
+                </form>
+
+                <!-- ================= SIDEBAR TỔNG QUAN ================= -->
+                <aside class="recipe-sidebar">
+                    <nav class="toc" aria-label="Tổng quan">
+                        <p id="toc-label">TỔNG QUAN</p>
+
+                        <details class="toc-group toc-active" open>
+                            <summary>Thông tin chính</summary>
+                            <ul class="toc-sublist">
+                                <li class="toc-current"><a href="#thong-tin-chung">Thông tin chung</a></li>
+                                <li><a href="#mo-ta">Mô tả</a></li>
+                            </ul>
+                        </details>
+
+                        <details class="toc-group" open>
+                            <summary>Chuẩn bị</summary>
+                            <ul class="toc-sublist">
+                                <li><a href="#nguyen-lieu" class="toc-current">Nguyên liệu</a></li>
+                                <li><a href="#huong-dan-ngan-gon">Hướng dẫn ngắn gọn</a></li>
+                                <li><a href="#dinh-duong">Dinh dưỡng</a></li>
+                            </ul>
+                        </details>
+
+                        <a href="#huong-dan-cu-the" class="toc-single">Hướng dẫn cụ thể</a>
+                    </nav>
+                </aside>
+            </div>
+        </main>
+    <footer class="site-footer">
+        <!-- Đường phân cách phía trên footer: màu và kích thước chỉnh trong CSS. -->
+        <svg class="site-footer_divider" width="1252" height="1" aria-hidden="true" focusable="false">
+            <rect width="100%" height="100%" fill="currentColor" />
+        </svg>
+        <div class="footer-container">
+            <div class="site-footer_brand">
+                <div class="site-footer_logo-box">
+                    <a href="/" data-header-route="home"
+                        aria-label="NomNom — Trang chủ"><img class="site-footer_logo"
+                            src="/assets/images/logo.png" alt="NomNom"></a>
+                </div>
+                <h2 class="site-footer_tagline">Ăn ngon trọn vị, chi tiêu hợp lý.</h2>
+                <p class="site-footer_description">Bữa ngon bắt đầu từ những nguyên liệu bạn có. Cùng NomNom khám phá
+                    công thức hấp dẫn, so sánh giá
+                    nguyên liệu và tận hưởng mỗi bữa ăn ngon trong tầm ngân sách</p>
+            </div>
+            <div class="site-footer_recipes">
+                <h2 class="site-footer_heading">CÔNG THỨC
+                    <svg class="site-footer_heading-line" width="32" height="3" aria-hidden="true" focusable="false">
+                        <rect width="100%" height="100%" fill="currentColor" />
+                    </svg>
+                </h2>
+                <nav class="site-footer_links">
+                    <a href="/pages/search.html">Tất cả công thức</a>
+                    <a href="/pages/category.html">Danh mục</a>
+                    <a href="/pages/ingredients.html">So sánh giá</a>
+                    <a href="/pages/account/reviewed.html">Đánh giá của tôi</a>
+                </nav>
+            </div>
+            <div class="site-footer_about">
+                <h2 class="site-footer_heading">GIỚI THIỆU
+                    <svg class="site-footer_heading-line" width="32" height="3" aria-hidden="true" focusable="false">
+                        <rect width="100%" height="100%" fill="currentColor" />
+                    </svg>
+                </h2>
+                <nav class="site-footer_links">
+                    <a href="/pages/about.html">Về NomNom</a>
+                    <a href="/pages/about.html">Hướng dẫn sử dụng</a>
+                    <a href="/pages/about.html">CÂU HỎI THƯỜNG GẶP</a>
+                    <a href="/pages/about.html">Liên hệ</a>
+                </nav>
+            </div>
+            <div class="site-footer_contact">
+                <h2 class="site-footer_heading">LIÊN HỆ
+                    <svg class="site-footer_heading-line" width="32" height="3" aria-hidden="true" focusable="false">
+                        <rect width="100%" height="100%" fill="currentColor" />
+                    </svg>
+                </h2>
+                <nav class="site-footer_links">
+                    <a href="#"><img src="/assets/icons/footer-facebook.svg" alt="Logo-Facebook">Facebook</a>
+                    <a href="#"><img src="/assets/icons/footer-instagram.svg"
+                            alt="Logo-Instagram">Instagram</a>
+                    <a href="#"><img src="/assets/icons/footer-youtube.svg" alt="Logo-Youtube">Youtube</a>
+                    <a href="#"><img src="/assets/icons/footer-tiktok.svg" alt="Logo-Tiktok">Tiktok</a>
+                </nav>
+            </div>
+        </div>
+        <div class="site-footer_legal">
+            <p class="site-footer_copyright">© 2026 NomNom. All rights reserved.</p>
+            <a class="site-footer_legal-link site-footer_privacy" href="/pages/policy.html#bao-mat">Chính sách bảo mật</a>
+            <a class="site-footer_legal-link site-footer_terms" href="/pages/policy.html#dieu-khoan">Điều khoản sử dụng</a>
+            <a class="site-footer_legal-link site-footer_accessibility" href="/pages/policy.html#tiep-can">Hỗ trợ tiếp cận</a>
+        </div>
+    </footer>
+<!-- NOMNOM AUTH START -->
+    <dialog class="site-auth site-login" id="site-login_dialog" data-nomnom-login aria-labelledby="site-login_title"
+        lang="vi">
+        <div class="site-auth_content">
+            <button class="site-auth_close" type="button" data-auth-close aria-label="Đóng đăng nhập">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth_logo" src="/assets/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth_title" id="site-login_title">Đăng nhập</h2>
+            <form class="site-auth_form site-login_form" novalidate>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-login_email">Địa chỉ Email</label>
+                    <input class="site-auth_input" id="site-login_email" name="email" type="text" autocomplete="username"
+                        autocomplete="username" inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-login_email-error">
+                    <p class="site-auth_error" id="site-login_email-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-login_password">Mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-login_password" name="password" type="password"
+                            autocomplete="current-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu." aria-describedby="site-login_password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-login_password" aria-pressed="false" aria-label="Hiện mật khẩu"
+                            data-show-label="Hiện mật khẩu" data-hide-label="Ẩn mật khẩu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-login_password-error" hidden></p>
+                </div>
+                <div class="site-auth_options">
+                    <label class="site-auth_check"><input name="remember" type="checkbox"><span>Ghi nhớ
+                            tôi</span></label>
+                    <button class="site-auth_link" type="button"
+                        data-auth-pending="Chức năng quên mật khẩu đang chờ tích hợp.">Quên mật khẩu?</button>
+                </div>
+                <button class="site-auth_submit" type="submit">Đăng Nhập</button>
+                <p class="site-auth_status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="site-auth_switch">Chưa có tài khoản?
+                <button class="site-auth_link" type="button" data-auth-switch="signup">Đăng ký ngay!</button>
+            </p>
+        </div>
+    </dialog>
+
+    <dialog class="site-auth site-signup" id="site-signup_dialog" data-nomnom-signup aria-labelledby="site-signup_title"
+        lang="vi">
+        <div class="site-auth_content">
+            <button class="site-auth_close" type="button" data-auth-close aria-label="Đóng đăng ký">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth_logo" src="/assets/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth_title" id="site-signup_title">Đăng ký</h2>
+            <form class="site-auth_form site-signup_form" novalidate>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_username">Tên tài khoản</label>
+                    <input class="site-auth_input" id="site-signup_username" name="username" type="text"
+                        autocomplete="username" required data-required-message="Bạn hãy nhập tên tài khoản."
+                        aria-describedby="site-signup_username-error">
+                    <p class="site-auth_error" id="site-signup_username-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_email">Địa chỉ Email</label>
+                    <input class="site-auth_input" id="site-signup_email" name="email" type="email" autocomplete="email"
+                        inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-signup_email-error">
+                    <p class="site-auth_error" id="site-signup_email-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_password">Mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-signup_password" name="password" type="password"
+                            autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu."
+                            aria-describedby="site-signup_password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup_password" aria-pressed="false" aria-label="Hiện mật khẩu đăng ký"
+                            data-show-label="Hiện mật khẩu đăng ký" data-hide-label="Ẩn mật khẩu đăng ký">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_password-error" hidden></p>
+                </div>
+                <div class="site-auth_field">
+                    <label class="site-auth_label" for="site-signup_confirm-password">Xác nhận mật khẩu</label>
+                    <div class="site-auth_password">
+                        <input class="site-auth_input" id="site-signup_confirm-password" name="confirmPassword"
+                            type="password" autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy xác nhận mật khẩu."
+                            aria-describedby="site-signup_confirm-password-error">
+                        <button class="site-auth_password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup_confirm-password" aria-pressed="false"
+                            aria-label="Hiện mật khẩu xác nhận" data-show-label="Hiện mật khẩu xác nhận"
+                            data-hide-label="Ẩn mật khẩu xác nhận">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth_eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_confirm-password-error" hidden></p>
+                </div>
+                <div class="site-auth_field site-signup_terms">
+                    <div class="site-auth_check">
+                        <input id="site-signup_terms" name="terms" type="checkbox" required
+                            aria-label="Tôi đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư"
+                            data-required-message="Bạn cần đồng ý với điều khoản và chính sách để tiếp tục."
+                            aria-describedby="site-signup_terms-error">
+                        <span><label for="site-signup_terms">Tôi đồng ý với</label>
+                            <button class="site-auth_link" type="button"
+                                data-auth-pending="Điều khoản sử dụng đang chờ tích hợp.">Điều khoản sử dụng</button>
+                            <label for="site-signup_terms">và</label>
+                            <button class="site-auth_link" type="button"
+                                data-auth-pending="Chính sách quyền riêng tư đang chờ tích hợp.">Chính sách quyền riêng
+                                tư.</button>
+                        </span>
+                    </div>
+                    <p class="site-auth_error" id="site-signup_terms-error" hidden></p>
+                </div>
+                <button class="site-auth_submit" type="submit">Đăng Ký</button>
+                <p class="site-auth_status" role="status" aria-live="polite" hidden></p>
+            </form>
+        </div>
+    </dialog>
+    <!-- NOMNOM AUTH END -->
+    </body>
+</html>

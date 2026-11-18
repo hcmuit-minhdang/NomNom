@@ -1,0 +1,1220 @@
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: #e1af19;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    /* Nền vàng; hoa văn nằm ở lớp body::before bên dưới */
+    position: relative;
+    min-height: 100vh;
+    background-color: #fbc41b;
+    color: #000000;
+}
+/* Nền hoa văn vàng: lớp riêng sau nội dung, to gấp 2,4 lần bề rộng trang (co giãn theo bề rộng), lặp dọc, cuộn cùng trang, độ mờ 0.5 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url(/assets/images/backgrounds/pattern-yellow.webp);
+    background-size: 240% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- Layout chung ---------- */
+
+.recipe-page {
+    padding: 50px clamp(16px, 4vw, 40px) 80px;
+}
+
+.recipe-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 900px) 260px;
+    justify-content: center;
+    align-items: start;
+    gap: 34px;
+}
+
+.upload-form {
+    min-width: 0;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 40px 56px 56px;
+}
+
+.upload-form section,
+.step {
+    scroll-margin-top: 130px; /* chừa chỗ cho header dính (cao ~106px) */
+}
+
+/* ---------- Dùng chung: sao, tiêu đề, nút ---------- */
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+h3 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+h4 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.line {
+    flex: 1 1 auto;
+    height: 6px;
+    background-color: #FBC41B;
+}
+
+.divider {
+  margin-bottom: 50px;
+  height: 10px;
+  background-color: #292929;
+}
+
+.main-info-tag, .detailed-guide-tag {
+    margin: 0;
+    padding: 0.6em 1em 0.5em 1em;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    background-color: #FBC41B;
+    color: white;
+    -webkit-text-stroke: 0.1em #000000;
+    paint-order: stroke fill;
+    text-shadow: 0.08em 0.06em 0 #292929;
+}
+
+.input-field label {
+    font-size: 1.4em;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.input-field > input{
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 0;
+    padding: 10px 10px 10px 15px;
+    font-size: 1em;
+}
+
+.card-title-tag {
+    position: absolute;
+    z-index: 2;
+    top: 38px;
+    left: -48px;
+    margin: 0;
+    padding: 0.6em 1em 0.5em 1em;
+    width: min(400px, 38%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    background-color: #FBC41B;
+    color: white;
+    -webkit-text-stroke: 0.1em #000000;
+    paint-order: stroke fill;
+    text-shadow: 0.08em 0.06em 0 #292929;
+}
+
+/* ---------- Breadcrumb ---------- */
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.breadcrumb a {
+    color: #64748b;
+}
+
+.breadcrumb a:hover {
+    color: #292929;
+}
+
+/* ---------- Thông tin chung ---------- */
+
+#upload-title {
+    margin: 28px 0;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+}
+
+#main-info-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5em;
+    border: 3px solid black;
+    padding: 2em;
+}
+
+#main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#time-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* ---------- Mô tả + gallery ---------- */
+
+.recipe-description {
+    margin: 20px 0;
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+.description-text {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.textarea-input {
+    width: 100%;
+    resize: vertical;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 0;
+    border: 2px solid #696969;
+}
+
+#description-input:focus {
+    border: 1px solid black;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    min-height: 200px;
+    padding: 18px 20px;
+    background-color: #fcfbf7;
+    border-radius: 10px;
+    border: 4px dashed #FBC41B;
+    text-align: center;
+}
+ 
+.image-upload-icon {
+    display: block;
+    width: auto;
+    height: 80px;
+}
+ 
+.image-upload-text {
+    font-size: 1em;
+    font-weight: 600;
+    color: #3a3a3a;
+    padding: 10px 20px;
+    border: 2px solid #494949;
+    transition: all 0.3s ease;
+}
+
+.image-upload-text:hover {
+    background-color: #FBC41B;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 black;
+    cursor: pointer;
+}
+
+/* Nút THÊM BƯỚC: dùng chung kiểu cho Hướng dẫn ngắn gọn (#add-step-btn) và Hướng dẫn cụ thể (#add-detailed-btn) */
+#add-step-btn,
+#add-detailed-btn {
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+#add-step-btn:hover,
+#add-detailed-btn:hover {
+    background-color: #FBC41B;
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 black;
+}
+
+#add-step-btn:active,
+#add-detailed-btn:active {
+    transform: scale(0.98);
+}
+
+.remove-step-btn {
+    background-color: white;
+    padding: 10px 20px;
+    width: fit-content;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.remove-step-btn:hover {
+    background-color: #FBC41B;
+    transform: translate(0px, -3px);
+    box-shadow: 0px 3px 0 black;
+}
+
+.remove-step-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ---------- Thẻ công thức ---------- */
+
+.recipe-card-full {
+    position: relative;
+    margin-top: 4em;
+    border: 3px solid #1a1a1a;
+    background-color: #ffffff;
+}
+
+.card-image {
+    position: absolute;
+    z-index: 1;
+    top: -48px;
+    right: 32px;
+    width: 294px;
+    height: 257px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 160px 42px 0;
+}
+
+.card-cost {
+    margin: 0 0 20px;
+    font-size: 1rem;
+}
+
+.card-cost em {
+    color: #555555;
+}
+
+.card-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.card-rating .stars {
+    font-size: 1.5rem;
+}
+
+.card-description {
+    max-width: 55%;
+    margin: 22px 0 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #222222;
+}
+
+.card-author {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.card-author a {
+    text-underline-offset: 3px;
+}
+
+.card-time-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 26px;
+}
+
+.small-input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.small-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.small-input {
+    width: 50px!important;
+    height: 40px;
+    padding: 0;
+    border: 1.5px solid #292929;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.small-input::-webkit-outer-spin-button,
+.small-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.small-input-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.small-input-buttons button {
+    width: 38px;
+    height: 20px;
+    padding: 0;
+    border: 1.5px solid #292929;
+    background-color: #ffffff;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-field input:focus {
+    border: 1px solid black;
+}
+
+.Btn:hover {
+    background-color: #FBC41B;
+}
+
+.upBtn {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="3"><path d="M6 15l6-6 6 6"/></svg>');
+}
+
+.downBtn {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>');
+}
+
+.note {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1em;
+    color: #393939;
+    margin-bottom: 15px;
+}
+
+.note::before {
+    content: "* "
+}
+
+.unit-note {
+    margin-top: 10px;
+}
+
+.card-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 40px 0 50px;
+}
+
+.card-button {
+    padding: 1.05em 0.5em;
+    border: 3px solid #1a1a1a;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #FBC41B;
+    transform: translate(-0.06em, -0.06em);
+    box-shadow: 0.2em 0.2em 0 #292929;
+}
+
+.card-button:active {
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+.card-section {
+    margin-bottom: 56px;
+}
+
+/* ---------- Nguyên liệu ---------- */
+
+.ingredient-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ingredient-list label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+}
+
+.ingredient-list input[type="checkbox"] {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    border: 3px solid #3a3a3a;
+    background-color: #ffffff;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ingredient-list input[type="checkbox"]:hover {
+    border-color: #FBC41B;
+}
+
+.ingredient-list input[type="checkbox"]:checked {
+    background-color: #FBC41B;
+    box-shadow: inset 0 0 0 4px #ffffff;
+}
+
+.ingredient-list input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #777777;
+}
+
+/* ---------- Hướng dẫn ngắn gọn ---------- */
+
+.quick-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quick-step-list li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.quick-step-number {
+    flex: 0 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+    background-color: #FBC41B;
+    border: 2px solid #292929;
+    box-shadow: 3px 3px 0 #292929;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.quick-step-list p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    color: #1a1a1a;
+}
+
+/* ---------- Dinh dưỡng ---------- */
+
+.nutrition-note {
+    margin-top: 0;
+    padding-bottom: 20px;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #444444;
+}
+
+.nutrition-note b {
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.nutrition-note b:hover {
+    color: black;
+    text-shadow: 2px 0px 10px #ceccc0de;
+}
+
+.nutrition-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+    border: 2px solid #292929;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.nutrients {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.nutrient-input {
+    width: 100px;
+    height: auto;
+    padding: 5px 10px;
+    border: 1.5px solid #292929;
+    background-color: #ffffff;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.nutrient-input::placeholder {
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+.nutrient-input:focus {
+    border: 1px solid black;
+}
+
+.nutrients div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nutrient label {
+    flex: 0 0 4em;
+    width: 10em;
+}
+
+.nutrient-input-note {
+    margin-left: 0.4em;
+    font-size: 1em;
+    font-weight: 300;
+    font-style: italic;
+    color: #666;
+}
+
+/* ---------- Hướng dẫn cụ thể ---------- */
+
+.detailed-guide {
+    margin-top: 44px;
+}
+
+.step {
+    margin-bottom: 36px;
+    padding: 0 16px;
+}
+
+.step-label {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.35em 1em;
+    background-color: #FBC41B;
+    border: 2px solid #292929;
+    box-shadow: 3px 3px 0 #292929;
+    color: #333333;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.step p {
+    margin: 22px 0 0;
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+#detailed-steps-container {
+    padding: 0 20px;
+    margin: 0;
+}
+
+#detailed-steps-container li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.remove-DS-Btn {
+    font-size: 1em;
+    width: 6em;
+}
+
+/*Upload Section*/
+
+.bottom-divider {
+  margin-bottom: 20px;
+  height: 8px;
+  background-color: #292929;
+}
+
+.upload-btn{
+    padding: 0.9em 1.1em;
+    margin-right: 1em;
+    background-color: #FBC41B;
+    border: 2px solid #292929;
+    box-shadow: 0.25em 0.25em 0 #292929;
+    color: #000000;
+    font-size: 1em;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    transform: translate(-2px, -2px);
+    background-color: #dfa904;
+}
+
+.upload-btn:active {
+    transform: scale(0.98);
+}
+
+.draft-btn {
+    padding: 0.9em 1.1em;
+    background-color: #ffffff;
+    border: 1.8px solid #292929;
+    color: #000000;
+    font-size: 1em;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.draft-btn:hover {
+    background-color: #FBC41B;
+}
+
+.draft-btn:active {
+    transform: scale(0.97);
+}
+/* ---------- Sidebar tổng quan ---------- */
+
+.recipe-sidebar {
+    position: sticky;
+    top: 130px; /* dưới header dính */
+}
+
+.toc {
+    padding: 16px 16px 20px;
+    background-color: #ffffff;
+    border: 2.5px solid #000000;
+    box-shadow: 8px 8px 0 #292929;
+}
+
+#toc-label {
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #FBC41B;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.toc-group {
+    margin-bottom: 14px;
+}
+
+.toc-group summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 8px 2px 12px;
+    border-left: 3px solid transparent;
+    color: #555555;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc-group summary::after {
+    content: "";
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #333333;
+    transition: transform 0.3s ease;
+}
+
+.toc-group:not([open]) summary::after {
+    transform: rotate(-90deg);
+}
+
+.toc-group summary:hover {
+    color: #000000;
+}
+
+.toc-active summary {
+    color: #000000;
+    border-left-color: #FBC41B;
+}
+
+.toc-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 10px 0 0;
+    padding: 0 0 0 38px;
+    list-style: none;
+}
+
+.toc-sublist a {
+    color: #555555;
+    font-size: 0.78rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toc-sublist a:hover {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.toc-sublist li {
+    position: relative;
+}
+
+/* Ô vuông vàng báo mục đang xem: luôn có sẵn, ẩn bằng scale(0) rồi bung ra khi .toc-current */
+.toc-sublist .toc-current::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    width: 8px;
+    height: 8px;
+    transform: translateY(-50%) scale(0);
+    background-color: #FBC41B;
+    transition: transform 0.3s ease;
+}
+
+.toc-sublist .toc-current::before {
+    transform: translateY(-50%) scale(1);
+}
+
+.toc-current a {
+    color: #000000;
+    font-weight: 700;
+}
+
+.toc-single {
+    display: block;
+    padding: 2px 8px 2px 12px;
+    border-left: 3px solid transparent;
+    color: #555555;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-single:hover {
+    color: #000000;
+}
+
+.toc-single.toc-current {
+    color: #000000;
+    border-left-color: #FBC41B;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+    .recipe-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .recipe-sidebar {
+        position: static;
+        order: -1;
+    }
+
+    .toc {
+        box-shadow: 5px 5px 0 #292929;
+    }
+
+    .upload-form {
+        padding: 32px 36px 48px;
+    }
+}
+
+@media (max-width: 700px) {
+    .recipe-page {
+        padding-top: 24px;
+    }
+
+    .upload-form {
+        padding: 24px 18px 36px;
+    }
+
+    .title h2 {
+        font-size: 1.6rem;
+        white-space: normal;
+    }
+
+    .recipe-rating-row {
+        flex-wrap: wrap;
+    }
+
+    .recipe-author-row {
+        flex-direction: column;
+    }
+
+    .recipe-meta,
+    .meta-line {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .featured-review {
+        padding: 22px 18px;
+    }
+
+    .card-title-tag {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        margin: 24px -3px 0 -24px;
+        font-size: 1.5rem;
+    }
+
+    .card-image {
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        margin-top: 20px;
+    }
+
+    .card-body {
+        padding: 20px 20px 0;
+    }
+
+    .card-description {
+        max-width: 100%;
+    }
+
+    .card-time-row {
+        flex-direction: column;
+    }
+
+    .card-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .card-button {
+        font-size: 1.15rem;
+    }
+
+    #share-label {
+        font-size: 1.6rem;
+    }
+
+    .step {
+        padding: 0;
+    }
+
+    .step p {
+        font-size: 1rem;
+    }
+
+    .step-images {
+        grid-template-columns: 1fr;
+    }
+
+    .similar-recipes {
+        margin: 56px 0 0;
+    }
+
+    .similar-title-tag {
+        position: absolute;
+        margin: 0;
+        top: -26px;
+        left: -12px;
+        font-size: 1.2rem;
+    }
+
+    .similar-recipes-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .comment-section {
+        padding: 0;
+    }
+
+    .review-form {
+        grid-template-columns: 52px minmax(0, 1fr);
+        column-gap: 12px;
+    }
+
+    .review-avatar {
+        width: 52px;
+        height: 52px;
+    }
+
+    .review-form-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .comment-list {
+        padding-left: 0;
+    }
+
+    .comment.reply {
+        padding: 14px 12px 6px 10px;
+    }
+}
+/* ================= Bổ sung: gửi thật, xem trước ảnh, lỗi ================= */
+
+[hidden] { display: none !important; }
+
+.select-input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 10px 10px 15px;
+    font-size: 1em;
+    border: 2px solid #696969;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+.select-input:focus { outline: none; border-color: #000; }
+
+.field-error {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c0261b;
+}
+.has-error { border-color: #c0261b !important; }
+#ingredient-picker.has-error, .gallery-previews.has-error { outline: 2px solid #c0261b; outline-offset: 4px; }
+
+.gallery-previews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.preview-item, .step-preview {
+    position: relative;
+    width: 140px;
+    height: 105px;
+    border: 2px solid #292929;
+    background: #fff;
+}
+.step-preview { margin: 10px 0; width: 200px; height: 150px; }
+.preview-item img, .step-preview img { width: 100%; height: 100%; object-fit: cover; }
+.preview-badge {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 2px 8px;
+    background: #FBC41B;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+.preview-remove {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 2px solid #292929;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.preview-remove:hover { background: #FBC41B; }
+/* Ô ảnh của từng bước: biểu tượng và nút chữ nằm cùng một hàng, khung tự cao theo nội dung */
+.step-image-upload {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px 20px;
+    min-height: 110px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.step-image-upload .image-upload-icon { height: 52px; }
+
+.upload-status {
+    margin: 18px 0;
+    padding: 14px 18px;
+    border: 2px solid #292929;
+    background: #fff;
+    font-weight: 600;
+}
+.upload-status[data-kind="error"] { border-color: #c0261b; color: #c0261b; }
+.upload-status[data-kind="ok"] { border-color: #2b7a33; color: #2b7a33; }
+.upload-status-text { margin: 0; }
+.upload-progress { margin-top: 10px; height: 10px; background: #eee; border: 1px solid #292929; }
+.upload-progress-bar { height: 100%; width: 0; background: #FBC41B; transition: width 0.3s ease; }
+
+.upload-btn, .draft-btn { cursor: pointer; }
+.upload-btn:disabled, .draft-btn:disabled { opacity: 0.6; cursor: wait; }
+.draft-clear {
+    margin-left: 1em;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #444;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .preview-item { width: 100px; height: 75px; }
+    .upload-btn, .draft-btn { margin: 0 0 12px; width: 100%; }
+    .draft-clear { display: block; margin: 0; }
+}
+
+@media (max-width: 700px) {
+    #main-info-section { flex-direction: column; gap: 1.5em; padding: 1.2em; }
+    #main-info, #time-input { min-width: 0; }
+}
+
+@media (max-width: 700px) {
+    .nutrition-container { flex-direction: column; gap: 14px; padding: 14px; }
+    .nutrients { min-width: 0; font-size: 1em; }
+    .nutrients div { gap: 10px; }
+    .nutrient-input { width: 90px; }
+    .title { gap: 10px; }
+    .title h3, .title h2 { white-space: normal; overflow-wrap: anywhere; }
+    .title .line { min-width: 20px; }
+    .ip, .ip * { max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .recipe-sidebar { display: none; }
+}
