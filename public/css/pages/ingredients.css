@@ -1,0 +1,436 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+main::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    /* Nền hoa văn trắng: to gấp 2,4 lần bề rộng trang (co giãn theo bề rộng), lặp theo chiều dọc, độ mờ 0.5 */
+    background-image: url(/assets/images/backgrounds/pattern-white.webp);
+    background-size: 240% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+    display: block;
+    height: 100%;
+    opacity: 0.5;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: rgb(242, 242, 228);
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+/* ---------- Collage banner ---------- */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.banner > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: blur(5px) brightness(0.8);
+}
+ 
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* ---------- Search ---------- */
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    padding: 18px 5vw;
+    z-index: 1;
+}
+
+#search-label {
+    flex: 0 0 auto;
+    background-color: #FBC41B;
+    color: #111;
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 12px 40px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#search-form {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 1000px;
+}
+
+#search-form > input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    color: #1e293b;
+    padding: 8px 6px 8px 15px;
+    margin: 0;
+}
+
+#search-form > input::placeholder {
+    color: #94a3b8;
+}
+
+#search-form button {
+    background-color: #FBC41B;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#search-form button:active {
+    img {transform: scale(0.9);};
+}
+
+/* ---------- Comparison ---------- */
+
+.comparison-section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px clamp(20px, 12vw, 180px);
+}
+
+.comparison-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 28px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#comparison-label {
+    margin: 0;
+    padding: 0.4em 1.4em;
+    width: fit-content;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    background-color: #FBC41B;
+    color: white;
+    white-space: nowrap;
+    -webkit-text-stroke: 0.1em #000000;
+    paint-order: stroke fill;
+    text-shadow: 0.08em 0.06em 0 #292929;
+    border: 3px solid black;
+    box-shadow: 10px 8px 0 #292929;
+}
+
+.line {
+    display: inline;
+    background-color: #FBC41B;
+    width: 100%;
+}
+
+.comparison-line {
+    height: 6px;
+}
+
+/* Lưới thẻ cửa hàng: 4 cột như Figma */
+.store-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    padding: 0;
+    gap: 36px 24px;
+}
+
+.store-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 0;
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.store-card-link {
+    text-decoration: none;
+    color: transparent;
+}
+
+.store-card:hover {
+    transform: translateY(-4px);
+}
+
+.store-card:active {
+    transform: scale(0.98);
+}
+
+.store-name {
+    margin: 0 0 8px 0;
+    padding: 6px 10px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+.store-bach-hoa-xanh { background-color: #2E9E43; }
+.store-coop-food { background-color: #1E2A78; }
+.store-winmart { background-color: #B01E24; }
+.store-sunmart { background-color: #D9A800; }
+.store-gs25 { background-color: #1E2A78; }
+.store-circle-k { background-color: #B01E24; }
+
+.ingredient-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.ingredient-info {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 4px;
+    gap: 6px;
+}
+
+.ingredient-name {
+    padding: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.ingredient-name:visited {
+    color: black;
+}
+
+.ingredient-price {
+    display: flex;
+    flex-direction: row;
+    place-items: center center;
+}
+
+.ingredient-price p{
+    margin: 0;
+    padding: 0 4px 0 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.ingredient-price span {
+    color: #666;
+}
+
+.ingredient-old-price {
+    display: flex;
+    place-items: center center;
+}
+
+.ingredient-old-price p{
+    display: inline;
+    padding: 0 8px 0 0;
+    margin: 0;
+    font-size: 0.8rem;
+    color: #bf676af6;
+    text-decoration: line-through;
+}
+
+.discount {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #d63c3c;
+    padding: 0;
+    background-color: transparent;
+}
+
+.buy-button {
+    padding: 8px 12px;
+    margin-top: 6px;
+    border: none;
+    background-color: #7cc86e;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #5fb350;
+    color: white;
+}
+
+.buy-button:active {
+    transform: scale(0.97);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-label {
+        text-align: center;
+    }
+
+    #search-form {
+        max-width: none;
+    }
+
+    .store-card {
+        width: 100%;
+    }
+}
+
+/* ---------- Chọn nguyên liệu (dữ liệu từ API) ---------- */
+.picker-section { padding: 28px clamp(20px, 12vw, 180px) 0; }
+.picker-hint { margin: 0 0 14px; font-weight: 600; text-align: center; }
+.picker-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.ing-chip {
+    padding: 8px 16px;
+    font: inherit;
+    font-weight: 700;
+    background: #fffdf5;
+    border: 2px solid #292929;
+    box-shadow: 0.15em 0.15em 0 #292929;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.ing-chip:hover { background: #fff3c2; }
+.ing-chip.is-selected { background: #FBC41B; }
+.ing-loading, .ing-empty { padding: 20px 0; text-align: center; font-weight: 600; }
+.ing-empty { padding: 40px 20px; }
+.ing-retry {
+    margin-left: 8px;
+    padding: 6px 14px;
+    font: inherit;
+    font-weight: 800;
+    border: 2px solid #292929;
+    background: #FBC41B;
+    cursor: pointer;
+}
+/* Tên nguyên liệu: chữ đen đậm, không có ô vàng */
+.comparison-label {
+    margin: 0;
+    width: fit-content;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #000;
+    white-space: nowrap;
+}
+/* Nút "Xem thêm / Thu gọn" danh sách nguyên liệu */
+.ing-more {
+    padding: 8px 16px;
+    font: inherit;
+    font-weight: 800;
+    background: transparent;
+    border: 2px dashed #292929;
+    cursor: pointer;
+}
+.ing-more:hover { background: #fff3c2; }
+/* Hàng nút gửi: so sánh giá và bỏ chọn, giống các trang danh mục */
+.picker-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px 24px;
+    margin-top: 22px;
+}
+.ing-submit {
+    min-width: 240px;
+    padding: 12px 24px;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    background: #FBC41B;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    cursor: pointer;
+}
+.ing-submit:hover { background: #ffd54a; }
+.ing-submit:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+.ing-reset {
+    padding: 0;
+    font: inherit;
+    font-weight: 600;
+    color: #555;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ing-reset:hover {
+    text-decoration: underline;
+}
+a.buy-button { display: block; text-align: center; text-decoration: none; }
+.store-card .ingredient-name { text-decoration: none; }
+@media (max-width: 600px) {
+    .comparison-label { font-size: 1.5rem; white-space: normal; }
+    .store-card-container { padding: 0; }
+}
+
+/* Lưới thẻ cửa hàng: 2 cột trên máy tính bảng, 1 cột trên điện thoại */
+@media (max-width: 1000px) {
+    .store-card-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+    .store-card-container { grid-template-columns: 1fr; }
+}
+
+/* Ô thay thế khi sản phẩm chưa có ảnh */
+.ingredient-image--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #f1efe6;
+}
