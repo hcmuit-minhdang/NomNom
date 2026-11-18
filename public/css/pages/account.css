@@ -1,0 +1,297 @@
+/* ==========================================================
+   NomNom - Góc của tôi (User): Tổng quan / Đã lưu / Đã đăng tải /
+   Đánh giá / Lịch sử. Thiết kế gốc: Figma 1600px.
+   Gồm: token, banner hồ sơ, tab, thẻ công thức,
+   phân trang, bình luận, thông tin tài khoản.
+   ========================================================== */
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --yellow: #fbc41c;
+  --ink: #050505;
+  --ink-2: #292929;
+  --link-blue: #3c87c4;
+  --danger: #ca2727;
+  --wrap: 1250px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+ul { margin: 0; padding: 0; list-style: none; }
+h2, p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.u-wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
+
+/* ---------- BANNER HỒ SƠ ---------- */
+.profile-banner {
+  position: relative; z-index: 1;
+  height: 350px; 
+  overflow: hidden; background: #000;
+}
+.profile-banner__bg { position: absolute; inset: 0; overflow: hidden; }
+.profile-banner__bg img {
+  position: absolute; left: -2.5%; top: -2%; width: 105%; height: 104%;
+  max-width: none; object-fit: cover; filter: blur(3.8px);
+}
+.profile-banner__bg::after {
+  content: ""; position: absolute; inset: 0;
+  box-shadow: inset 0 -113.17px 180.76px -12.58px rgba(0, 0, 0, 0.99);
+}
+.profile-banner__row {
+  position: absolute; left: 0; right: 0; top: 213px;
+  display: flex; align-items: center; gap: 22px;
+}
+.avatar { position: relative; flex: none; width: 110px; height: 96px; }
+.avatar__img { width: 100px; height: 100px; max-width: none; border-radius: 50%; }
+.avatar__badge {
+  position: absolute; left: 70px; top: 65px; width: 40px; height: 31px;
+  background: var(--ink); border-radius: 9px;
+}
+.avatar__badge img { width: 100%; height: 100%; object-fit: contain; border-radius: 9px; }
+.profile-banner__name { font-size: 36px; font-weight: 600; line-height: 1.64; color: #fff; }
+.profile-banner__edit {
+  display: block; font-size: 20px; font-weight: 500; line-height: 1.64;
+  color: var(--link-blue); text-decoration: underline;
+}
+
+/* ---------- KHUNG NỘI DUNG + NỀN HOA VĂN ---------- */
+.user-main { position: relative; padding: 56px 0 28px; isolation: isolate; }
+/* Hoa văn nền mờ 50% (không dùng ở trang Đánh giá, đúng như Figma) */
+.user-page:not(.user-page--reviewed) .user-main::before {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: -35px; bottom: 0;
+  background: url("/assets/images/account/bg-pattern.png") center top / 1600px auto repeat-y;
+  opacity: 0.5; pointer-events: none;
+}
+
+/* ---------- TAB ĐIỀU HƯỚNG ---------- */
+.user-tabs { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 31px; }
+.user-tabs__tab {
+  display: flex; align-items: center; justify-content: center;
+  padding: 10px 20px;
+  background: #fff;
+  border-right: 3px solid rgba(0, 0, 0, 0.9); border-bottom: 3px solid rgba(0, 0, 0, 0.9);
+  font-size: 24px; font-weight: 800; line-height: 1.466; color: var(--ink-2);
+  text-decoration: none; white-space: nowrap;
+  transition: transform .15s;
+}
+.user-tabs__tab:hover { transform: translateY(-2px); }
+.user-tabs__tab.is-active {
+  padding: 11.65px 23.3px;
+  background: var(--yellow); border: 1.514px solid #000;
+  box-shadow: 4.66px 3.49px 0 #000;
+  font-size: 27.95px; color: #fff; text-shadow: 1.165px 1.165px 0 #000;
+}
+.user-tabs__tab.is-active:hover { transform: none; }
+.user-tabs__deco { flex: none; width: 228.38px; height: 58px; background: var(--yellow); }
+
+/* ---------- KHỐI NỘI DUNG ---------- */
+.user-content { margin-top: 96px; }
+.u-section + .u-section { margin-top: 34px; }
+
+.u-heading { display: flex; align-items: center; gap: 22px; height: 59px; }
+.u-heading h2 { flex: none; font-size: 40px; font-weight: 800; line-height: 1.466; color: #000; white-space: nowrap; }
+.u-heading__line { flex: 1 0 0; min-width: 1px; height: 5px; background: var(--yellow); }
+
+.u-more { display: flex; justify-content: flex-end; margin-top: 22.6px; }
+.u-more__btn {
+  padding: 9.2px 18.4px; background: #fff; border: 1.8px solid #000;
+  font-size: 23px; font-weight: 800; line-height: 1.466; color: var(--ink-2);
+  text-decoration: none;
+}
+.u-more__btn:hover { background: var(--yellow); }
+
+/* ---------- THẺ CÔNG THỨC ---------- */
+.card-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  column-gap: 39.47px; row-gap: 50.22px;
+  margin-top: 23.4px; padding: 8.11px 0;
+}
+.card-grid--one { row-gap: 0; }
+.recipe-card a {
+  display: flex; flex-direction: column; gap: 11.32px; height: 100%;
+  padding: 17.68px; background: #fff; text-decoration: none; color: var(--ink);
+}
+.recipe-card__img { width: 100%; aspect-ratio: 247.54 / 185.3; object-fit: cover; }
+.recipe-card__name {
+  font-size: 22.63px; font-weight: 700; line-height: normal;
+  text-decoration: none;
+}
+.recipe-card a:hover .recipe-card__name { color: #8a6500; }
+
+/* ---------- PHÂN TRANG ---------- */
+.pager { margin-top: 26px; display: flex; justify-content: center; }
+.pager__list { display: flex; align-items: center; gap: 20px; }
+.pager__btn, .pager__next {
+  position: relative; display: grid; place-items: center; height: 55px;
+  padding: 6px 0 0; background: none; border: 0;
+  font-size: 25px; font-weight: 600; line-height: 55px; color: #000;
+}
+.pager__btn { width: 44px; }
+.pager__btn:hover:not(.is-current) { background: rgba(251, 196, 28, 0.35); height: 44px; margin-top: 6px; padding: 0; line-height: 44px; }
+.pager__btn.is-current {
+  height: 44px; margin-top: 6px; padding: 0; line-height: 44px; font-weight: 700;
+  background: var(--yellow); border: 2px solid #000; box-shadow: 4px 4px 0 #000; cursor: default;
+}
+.pager__dots { display: flex; gap: 4px; padding-top: 0; }
+.pager__dots i { width: 4px; height: 4px; background: var(--ink); }
+.pager__next { display: flex; width: auto; gap: 12px; padding: 6px 0 0; }
+.pager__next img { width: 12px; height: 12px; transform: rotate(-90deg); }
+.pager__next[disabled] { opacity: 0.35; cursor: not-allowed; }
+
+/* ---------- BÌNH LUẬN (đơn vị --u để phóng 2 cỡ: Tổng quan / Đánh giá) ---------- */
+.cmt-list { --u: 1px; display: flex; flex-direction: column; gap: calc(26 * var(--u)); margin-top: 26px; }
+.cmt-list--lg { --u: 1.0985px; gap: calc(32 * var(--u)); margin-top: 0; width: calc(997.7 * 1.0985px); }
+.cmt-card {
+  height: calc(150 * var(--u)); background: #fff; padding-inline: calc(83 * var(--u));
+  width: calc(997.7 * var(--u)); max-width: 100%;
+}
+.cmt { position: relative; width: calc(831.7 * var(--u)); max-width: 100%; height: 100%; }
+.cmt > * { position: absolute; left: 0; }
+.cmt__recipe {
+  top: 0; font-size: calc(14.017 * var(--u)); font-weight: 300; line-height: calc(17 * var(--u));
+  letter-spacing: 0.02em; color: var(--ink-2); text-decoration: none;
+}
+.cmt__meta { top: calc(35 * var(--u)); display: flex; align-items: center; gap: calc(16.656 * var(--u)); padding-block: calc(3.844 * var(--u)); }
+.cmt__who {
+  font-size: calc(15.185 * var(--u)); font-weight: 700; letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.81); white-space: nowrap;
+}
+.cmt__who a { text-decoration: underline; }
+.cmt__who span { font-weight: 300; }
+.cmt__time {
+  display: flex; align-items: center; gap: calc(10.5 * var(--u));
+  font-size: calc(12.849 * var(--u)); font-weight: 300; letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.69); white-space: nowrap;
+}
+.cmt__time img { width: calc(13.929 * var(--u)); height: calc(15.828 * var(--u)); object-fit: contain; }
+.cmt__stars { display: flex; gap: calc(4.24 * var(--u)); margin-left: calc(-1.2 * var(--u)); }
+.cmt__stars img { width: calc(20.87 * var(--u)); height: calc(20.87 * var(--u)); object-fit: contain; }
+.cmt__text {
+  top: calc(78.7 * var(--u)); width: 100%; font-size: calc(15.375 * var(--u)); font-weight: 400;
+  line-height: calc(19 * var(--u)); letter-spacing: 0.02em; color: rgba(0, 0, 0, 0.81);
+}
+.cmt__actions { top: calc(115.69 * var(--u)); display: flex; align-items: center; gap: calc(23 * var(--u)); }
+.cmt__like {
+  display: flex; align-items: center; gap: calc(10.25 * var(--u)); padding: 0;
+  background: none; border: 0; font-size: calc(17.937 * var(--u)); font-weight: 500; letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.7);
+}
+.cmt__like img { width: calc(29.468 * var(--u)); height: calc(29.468 * var(--u)); object-fit: contain; opacity: 0.65; }
+.cmt__like[aria-pressed="true"] img { opacity: 1; }
+.cmt__like[aria-pressed="true"] { color: #000; }
+.cmt__reply {
+  display: flex; align-items: center; gap: calc(10.746 * var(--u));
+  padding: calc(5.373 * var(--u)) calc(10.746 * var(--u));
+  background: var(--yellow); border: calc(1.075 * var(--u)) solid rgba(0, 0, 0, 0.69);
+  border-radius: calc(5.373 * var(--u));
+  font-size: calc(17.193 * var(--u)); font-weight: 700; letter-spacing: 0.02em; color: rgba(0, 0, 0, 0.8);
+}
+.cmt__reply img { width: calc(19.342 * var(--u)); height: calc(19.342 * var(--u)); transform: rotate(180deg); opacity: 0.8; }
+.cmt__reply:hover { filter: brightness(0.95); }
+.cmt__like:hover img { opacity: 1; }
+
+/* Vùng cuộn của trang Đánh giá, thanh cuộn tùy chỉnh theo Figma */
+.cmt-scroll {
+  position: relative; width: min(1245px, 100%); height: 765px; margin-top: 26px;
+  overflow-y: auto; overflow-x: hidden; outline-offset: 4px;
+}
+.cmt-scroll::-webkit-scrollbar { width: 15px; }
+.cmt-scroll::-webkit-scrollbar-track { background: rgba(217, 217, 217, 0.29); border-radius: 14px; }
+.cmt-scroll::-webkit-scrollbar-thumb {
+  background: var(--ink); border-radius: 14px; border: 3px solid transparent; background-clip: padding-box;
+}
+
+/* ---------- THÔNG TIN TÀI KHOẢN ---------- */
+.acc-list { display: flex; flex-direction: column; gap: 20px; margin-top: 31px; padding-left: 20px; margin-right: -14px; }
+.acc-row { display: flex; align-items: center; justify-content: space-between; font-size: 26px; line-height: 1.466; }
+.acc-row__label { font-weight: 600; }
+.acc-row__value { display: flex; align-items: center; gap: 40px; font-weight: 200; text-decoration: none; }
+.acc-row__value img { width: 17.58px; height: 24.24px; max-width: none; margin: 0 3.3px 0 -2.1px; }
+.acc-row__value:hover span { text-decoration: underline; }
+.acc-delete { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-weight: 600; color: var(--danger); text-decoration: underline; text-underline-position: from-font; }
+
+/* ---------- RESPONSIVE (tùy chọn, dưới 1600px) ---------- */
+@media (max-width: 1280px) {
+  .user-tabs__deco { display: none; }
+  .u-heading h2 { font-size: 32px; }
+}
+@media (max-width: 1100px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); column-gap: 20px; }
+  .user-tabs__tab { font-size: 18px; }
+  .user-tabs__tab.is-active { font-size: 20px; }
+  .cmt-list, .cmt-list--lg { --u: 0.8px; }
+}
+@media (max-width: 720px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .u-heading h2 { font-size: 24px; white-space: normal; }
+  .acc-row { font-size: 18px; }
+  .acc-row__value { gap: 12px; }
+}
+
+/* ---------- Bình luận: màn hình hẹp -> bố cục dòng chảy, không dùng absolute ---------- */
+@media (max-width: 1000px) {
+  .cmt-list--lg { width: 100%; }
+  .cmt-card { height: auto; padding: 16px; width: 100%; }
+  .cmt { height: auto; width: 100%; display: flex; flex-direction: column; gap: 10px; }
+  .cmt > * { position: static; }
+  .cmt__meta { flex-wrap: wrap; row-gap: 6px; }
+  .cmt__who { white-space: normal; }
+}
+
+/* ---------- DỮ LIỆU ĐỘNG ---------- */
+.u-empty { grid-column: 1 / -1; padding: 28px 0; font-size: 20px; color: #555; list-style: none; }
+.u-count { font-size: 0.6em; font-weight: 400; color: #666; }
+.recipe-card { position: relative; }
+.recipe-card__act {
+  position: absolute; top: 24px; right: 24px; width: 38px; height: 38px; border: 0; border-radius: 50%;
+  background: rgb(255 255 255 / 92%); color: var(--danger); font-size: 20px; line-height: 1; cursor: pointer;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 30%);
+}
+.recipe-card__act:hover { background: var(--yellow); color: var(--ink); }
+.recipe-card__act:disabled { opacity: .5; cursor: wait; }
+.u-toolbar { display: flex; justify-content: flex-end; margin-top: 16px; }
+.u-btn {
+  display: inline-block; padding: 9px 22px; border: 1px solid var(--ink); background: #fff; color: var(--ink);
+  font: 600 16px/1.4 inherit; font-family: inherit; text-decoration: none; cursor: pointer;
+}
+.u-btn:hover { background: var(--yellow); }
+.u-btn--primary { background: var(--yellow); }
+.u-btn--danger { border-color: var(--danger); color: var(--danger); }
+.u-btn--danger:hover { background: var(--danger); color: #fff; }
+.u-btn[hidden] { display: none; }
+.u-btn:disabled { opacity: .6; cursor: wait; }
+.cmt__stars { color: #c98f00; letter-spacing: 1px; }
+.cmt__like[aria-pressed="true"] { font-weight: 700; }
+
+.acc-dialog { width: min(440px, calc(100% - 32px)); padding: 0; border: 1px solid #ddd; box-shadow: 0 16px 48px rgb(0 0 0 / 25%); font-family: inherit; }
+.acc-dialog::backdrop { background: rgb(0 0 0 / 40%); }
+.acc-dialog__form { display: flex; flex-direction: column; gap: 14px; padding: 24px; }
+.acc-dialog__title { margin: 0; font-size: 24px; }
+.acc-dialog__fields { display: flex; flex-direction: column; gap: 12px; }
+.acc-dialog__label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 600; }
+.acc-dialog__input { padding: 10px 12px; border: 1px solid #999; font: 400 16px inherit; font-family: inherit; }
+.acc-dialog__error { margin: 0; color: var(--danger); font-size: 14px; }
+.acc-dialog__btns { display: flex; justify-content: flex-end; gap: 10px; }
+.acc-row__value { cursor: pointer; }
