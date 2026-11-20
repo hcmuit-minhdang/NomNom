@@ -1,0 +1,164 @@
+.site-footer {
+    background-color: white;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+
+    height: auto;
+    min-height: 418px;
+    padding: 67px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+}
+/* Figma: Divider / Top, 1252 x 1px, màu #DEDEDE, cách đỉnh footer 30px. */
+.site-footer__divider {
+    display: block;
+    position: absolute;
+    top: 30px;             /* Khoảng cách từ đỉnh footer */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1252px;        /* Chiều dài đường xám */
+    max-width: calc(100% - 48px);
+    height: 1px;          /* Độ dày đường xám */
+    color: #DEDEDE;       /* Màu đường xám */
+    pointer-events: none;
+}
+
+/* Figma: Accent / Egg yellow, 32 x 3px, cách chữ phía trên 12px. */
+.site-footer__heading-line {
+    display: block;
+    width: 32px;          /* Chiều dài nét vàng */
+    height: 3px;          /* Độ dày nét vàng */
+    margin-top: 12px;     /* Khoảng cách từ chữ tới nét vàng */
+    color: #FBC41C;       /* Màu nét vàng */
+    pointer-events: none;
+}
+
+.site-footer a {
+    color: black;
+    text-decoration: none;
+}
+.footer-container {
+    width: 100%;
+    max-width: 1252px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 32px;
+}
+.footer-container > div {
+    min-width: 0;
+}
+.site-footer__brand {
+    width: 100%;
+    max-width: 400px;
+    margin-top: -20px;
+}
+.site-footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.site-footer__links img{
+    margin-right: 5px;
+}
+/* Liên kết có biểu tượng (mạng xã hội): biểu tượng và tên cùng một hàng */
+.site-footer__links a:has(> img) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.site-footer__links a:has(> img) img {
+    margin-right: 0;
+    flex: none;
+}
+.site-footer__logo-box {
+    display: flex;
+    align-items: center;
+    height: 106px;
+    width: 239px;
+    max-width: 100%;
+
+}
+.site-footer__logo {
+    height: 59.47px;
+    width: fit-content;
+    transform: rotate(-3.48deg);
+}
+.site-footer__legal {
+    /* Nằm sau nội dung, tự đẩy chiều cao footer khi các link xuống hàng. */
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    font-size: 14px;
+    color: gray;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+}
+.site-footer__copyright {
+    margin: 0;
+}
+.site-footer__legal a{
+    font-size: inherit;
+    color: inherit;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+
+    .footer-container > div {
+        flex: 0 1 auto;
+        width: 100%;
+    }
+
+    .site-footer__legal {
+        gap: 12px 20px;
+    }
+}
+
+/* Cỡ chữ và màu theo Figma (Footer Full). */
+.site-footer__heading {
+    font-size: 20px;
+    line-height: 30px;
+    color: #141414;
+}
+.site-footer__tagline {
+    font-size: 21px;
+}
+.site-footer__links a {
+    font-size: 17px;
+    line-height: 1.5;
+}
+.site-footer__legal {
+    font-size: 13px;
+    color: #6b7078;
+}
+.site-footer a,
+.site-footer__tagline {
+    color: #141414;
+}
+.site-footer__description {
+    font-size: 18px;
+    color: #141414;
+}
+.site-footer__legal a {
+    color: #6b7078;
+}
+@media (min-width: 1400px) {
+    .site-footer__recipes { margin-left: 51px; }
+}

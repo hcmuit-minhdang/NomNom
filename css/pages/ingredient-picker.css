@@ -1,0 +1,245 @@
+/* ------------------------------------------------------------------ */
+/* Ingredient picker, component styles                                */
+/*   Mọi selector nằm trong .ingredient-picker để không đụng CSS của trang.            */
+/* ------------------------------------------------------------------ */
+
+.ingredient-picker {
+    --ip-ink: #1a1a1a;
+    --ip-yellow: #FBC41B;
+    --ip-soft: #fffdf5;
+    --ip-muted: #6b6558;
+    --ip-line: #d8d1c0;
+
+    font-family: "Inter", sans-serif;
+    color: var(--ip-ink);
+}
+
+.ingredient-picker *,
+.ingredient-picker *::before,
+.ingredient-picker *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Ô tìm kiếm + pills ---------- */
+
+.ingredient-picker .ingredient-picker__combobox {
+    position: relative;
+}
+
+.ingredient-picker .ingredient-picker__search {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    padding: 7px 10px;
+    background: #ffffff;
+    border: 3px solid var(--ip-ink);
+    border-radius: 6px;
+    transition: box-shadow 0.15s ease;
+}
+
+.ingredient-picker .ingredient-picker__search:focus-within {
+    box-shadow: 0 6px 0 rgba(26, 26, 26, 0.12);
+}
+
+.ingredient-picker .ingredient-picker__pills {
+    display: contents;
+}
+
+.ingredient-picker .ingredient-picker__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 5px 4px 12px;
+    background: var(--ip-yellow);
+    border: 2px solid var(--ip-ink);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.ingredient-picker .ingredient-picker__pill-remove {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--ip-ink);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.ingredient-picker .ingredient-picker__pill-remove:hover {
+    transform: scale(1.08);
+}
+
+.ingredient-picker .ingredient-picker__input {
+    flex: 1 1 200px;
+    min-width: 140px;
+    padding: 8px 4px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-size: 1rem;
+}
+
+.ingredient-picker .ingredient-picker__input::placeholder {
+    color: var(--ip-muted);
+}
+
+/* ---------- Danh sách gợi ý ---------- */
+
+.ingredient-picker .ingredient-picker__suggestions,
+.ingredient-picker .ingredient-picker__no-match {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 30;
+    margin: 0;
+    background: #ffffff;
+    border: 3px solid var(--ip-ink);
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ingredient-picker .ingredient-picker__suggestions {
+    max-height: 284px;
+    padding: 4px;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.ingredient-picker .ingredient-picker__no-match {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+}
+
+.ingredient-picker .ingredient-picker__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ingredient-picker .ingredient-picker__option:hover {
+    background: var(--ip-yellow);
+}
+
+.ingredient-picker .ingredient-picker__option-name {
+    font-weight: 600;
+}
+
+.ingredient-picker .ingredient-picker__option-unit {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ip-muted);
+}
+
+/* ---------- Bảng nguyên liệu đã chọn ---------- */
+
+.ingredient-picker .ingredient-picker__sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.ingredient-picker .ingredient-picker__sheet-empty {
+    margin: 0;
+    padding: 16px;
+    border: 2px dashed #c9bfa6;
+    border-radius: 12px;
+    color: var(--ip-muted);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.ingredient-picker .ingredient-picker__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 92px 150px 36px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #ffffff;
+    border: 2px solid var(--ip-ink);
+    border-radius: 6px;
+}
+
+.ingredient-picker .ingredient-picker__name {
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.ingredient-picker .ingredient-picker__qty,
+.ingredient-picker .ingredient-picker__unit {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid var(--ip-line);
+    border-radius: 4px;
+    background: var(--ip-soft);
+    color: inherit;
+    font-size: 0.95rem;
+}
+
+.ingredient-picker .ingredient-picker__qty:focus,
+.ingredient-picker .ingredient-picker__unit:focus {
+    outline: none;
+    border-color: var(--ip-ink);
+    box-shadow: 0 0 0 3px rgba(251, 196, 27, 0.5);
+}
+
+.ingredient-picker .ingredient-picker__remove {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 2px solid var(--ip-ink);
+    border-radius: 50%;
+    background: var(--ip-yellow);
+    color: var(--ip-ink);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.ingredient-picker .ingredient-picker__remove:hover {
+    background: var(--ip-ink);
+    color: #ffffff;
+}
+
+.ingredient-picker button:focus-visible {
+    outline: 3px solid var(--ip-ink);
+    outline-offset: 2px;
+}
+
+.ingredient-picker .ingredient-picker__error {
+    margin: 0;
+    padding: 14px 16px;
+    border: 3px solid #b3261e;
+    border-radius: 12px;
+    background: #fdecea;
+    color: #8c1d18;
+    font-weight: 600;
+}
+
+@media (max-width: 620px) {
+    .ingredient-picker .ingredient-picker__row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 36px;
+    }
+
+    .ingredient-picker .ingredient-picker__name {
+        grid-column: 1 / -1;
+    }
+}

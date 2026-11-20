@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pages/account/
+
+Sitemap: https://nomnom-taupe.vercel.app/sitemap.xml

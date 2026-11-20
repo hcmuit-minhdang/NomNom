@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NomNom | Công thức nấu ăn từ nguyên liệu trong tủ lạnh</title>
+    <meta name="description" content="NomNom - tìm công thức nấu ăn, nấu theo nguyên liệu trong tủ lạnh, so sánh giá nguyên liệu và chia sẻ món ngon của bạn." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NomNom" />
+    <meta property="og:title" content="NomNom" />
+    <meta property="og:description" content="NomNom - tìm công thức nấu ăn, nấu theo nguyên liệu trong tủ lạnh, so sánh giá nguyên liệu và chia sẻ món ngon của bạn." />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/css/pages/home.css" />
+    <link rel="stylesheet" href="/css/components/fridge-filter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <script src="/js/store.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/pages/listing.js"></script>
+    <script src="/js/pages/home.js" defer></script>
+    <script src="/js/components/fridge-filter.js" defer></script>
+    <script src="/js/components/header.js" defer></script>
+    <script src="/js/components/fit-names.js" defer></script>
+    <link rel="stylesheet" href="/css/components/login.css">
+    <link rel="stylesheet" href="/css/components/signup.css">
+    <script src="/js/components/auth.js" defer></script>
+    <script src="/js/components/login.js" defer></script>
+    <script src="/js/components/signup.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header" data-nomnom-header>
+        <div class="header-container">
+            <div class="site-header__logo-box">
+                <a href="/" data-header-route="home" aria-label="Trang chủ NomNom"><img
+                        class="site-header__logo" src="/images/logo.png" alt="NomNom"></a>
+            </div>
+            <button class="site-header__menu-toggle" type="button" data-header-menu-toggle
+                aria-controls="site-header__controls" aria-expanded="false" aria-label="Mở menu">
+                <span class="site-header__menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span>Menu</span>
+            </button>
+            <div class="site-header__controls" id="site-header__controls">
+                <div class="site-header__navigation">
+                    <div class="site-header__nav-item">
+                        <details>
+
+                            <summary>Công thức <img class="site-header__arrow"
+                                    src="/images/icons/keyboard-arrow-up.svg" alt="">
+                            </summary>
+
+                            <ul>
+                                <li><a href="/pages/search.html" data-header-route="search">Tìm công thức</a></li>
+                                <li><a href="/pages/category.html" data-header-route="categories">Danh mục món ăn</a></li>
+                                <li><a href="/pages/fridge.html" data-header-route="ingredients">Bộ lọc nguyên liệu</a></li>
+                                <li><button type="button" data-header-action="random">Gợi ý bất ngờ</button></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="site-header__nav-item">
+                        <details>
+
+                            <summary>Về chúng tôi <img class="site-header__arrow"
+                                    src="/images/icons/keyboard-arrow-up.svg" alt="">
+                            </summary>
+
+                            <ul>
+                                <li><a href="/about.html" data-header-route="about">Về NomNom</a></li>
+                                <li><button type="button" data-header-action="guide"><b>Hướng dẫn</b></button></li>
+                                <li><button type="button" data-header-action="faq"><b>Câu hỏi thường gặp</b></button>
+                                </li>
+                                <li><button type="button" data-header-action="contact">Liên hệ</button></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="site-header__nav-item" id="site-header__compare"><a href="/pages/ingredients.html"
+                            data-header-route="compare">So sánh nguyên liệu</a></div>
+                    <div class="site-header__nav-item" id="site-header__upload"><a href="/pages/upload.html"
+                            data-header-route="upload">Đăng tải công thức</a></div>
+                    <div class="site-header__nav-item" data-header-member hidden>
+                        <details>
+                            <summary>Góc của tôi<img class="site-header__arrow"
+                                    src="/images/icons/keyboard-arrow-up.svg" alt=""></summary>
+                            <ul>
+                                <li><a href="/pages/account/overview.html" data-header-route="overview">Tổng quan</a>
+                                </li>
+                                <li><a href="/pages/account/uploaded.html" data-header-route="uploaded">Công thức đã
+                                        đăng tải</a></li>
+                                <li><a href="/pages/account/saved.html" data-header-route="saved">Công thức đã lưu</a>
+                                </li>
+                                <li><a href="/pages/account/history.html" data-header-route="history">Lịch sử</a></li>
+                                <li><a href="/pages/account/reviewed.html" data-header-route="reviewed">Đánh giá</a></li>
+                                <li><a href="/pages/account/index.html" data-header-route="account">Tài khoản của
+                                        tôi</a></li>
+                                <li><button type="button" data-auth-action="logout"><b>Đăng xuất</b></button></li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+                <div class="site-header__actions">
+                    <div class="site-header__auth" data-header-guest>
+                        <button id="site-header__signup" type="button" data-auth-action="signup">Đăng ký</button>
+                        <button id="site-header__login" type="button" data-auth-action="login">Đăng nhập</button>
+                    </div>
+                    <details class="site-header__search">
+                        <summary aria-controls="site-header__search-bar" aria-label="Mở tìm kiếm">
+                            <img class="site-header__search-icon site-header__search-open-icon"
+                                src="/images/icons/search-com.svg" alt="Mở thanh tìm kiếm">
+                            <img class="site-header__search-close-icon" src="/images/icons/close.svg"
+                                alt="Đóng thanh tìm kiếm">
+                            <span class="site-header__search-label">Tìm công thức</span>
+                        </summary>
+
+                        <div id="site-header__search-bar">
+                            <form class="site-header__search-field" role="search" aria-label="Tìm công thức"
+                                action="/pages/search.html" method="get">
+                                <input type="search" name="q" placeholder="Tìm kiếm ..." required
+                                    aria-label="Từ khóa tìm kiếm">
+                                <button class="site-header__search-submit" type="submit" aria-label="Tìm kiếm">
+                                    <img src="/images/icons/search-input.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+        <p class="site-header__status" role="status" aria-live="polite" hidden></p>
+    </header>
+    <main>
+        <h1 class="sr-only">NomNom - công thức nấu ăn từ nguyên liệu trong tủ lạnh</h1>
+        <section class="hero__section">
+            <div class="fridge-filter-container">
+                <p id="fridge-filter-description">CÔNG THỨC THEO NGUYÊN LIỆU TỪ TỦ LẠNH CỦA BẠN</p>
+                <a href="/pages/fridge.html" class="fridge-filter-link" aria-haspopup="dialog">BỘ LỌC NGUYÊN LIỆU</a>
+            </div>
+            <div class="banner__container">
+                <div class="banner__track" id="track">
+                    <div class="slide slide--first"></div>
+                    <div class="slide slide--second"></div>
+                    <div class="slide slide--third"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="up-button" type="button" aria-label="Banner trước"><img src="/images/icons/up-arrow-white.svg" alt=""></button>
+                    <button id="down-button" type="button" aria-label="Banner sau"><img src="/images/icons/down-arrow-white.svg" alt=""></button>
+                </div>
+            </div>
+        </section>
+        <div class="search-container">
+            <p id="search-label">TÌM KIẾM</p>
+            <form id="search-form" action="/pages/search.html" method="get">
+                <input type="text" name="q" placeholder="Tìm kiếm công thức..." aria-label="Tìm kiếm công thức" />
+                <button type="submit" aria-label="Tìm"><img src="/images/icons/search-icon-thick.svg" alt=""></button>
+            </form>
+        </div>
+        <section class="category-section">
+            <p id="category-label">PHÂN LOẠI PHỔ BIẾN</p>
+            <div class="category-container">
+                <p class="home-loading" data-home-status>Đang tải danh mục...</p>
+            </div>
+        </section>
+        <section class="combinator">
+            <div class="popular-recipes-section">
+                <div class="title popular-recipes-title">
+                    <p id="popular-recipes-label">CÔNG THỨC THỊNH HÀNH</p>
+                    <div class="line popular-recipes-line"></div>
+                </div>
+                <div class="popular-recipes-container">
+                    <p class="home-loading">Đang tải công thức...</p>
+                </div>
+
+            </div>
+            <a href="/pages/category.html?sort=rating" class="view-more-button popular-more-button">XEM THÊM</a>
+            <div class="section-divider"></div>
+            <div class="side-column">
+                <aside class="side-bar">
+                    <section class="leaderboard-section">
+                        <p id="leaderboard-label">BẢNG VINH DANH</p>
+                        <!-- Nội dung điền bằng home.js khi tải xong (is-loading: ẩn tạm, giữ chỗ để trang không bị nhảy) -->
+                        <div class="leaderboard-container is-loading">
+                            <div class="leaderboard-card most-recipes">
+                                <img src="/images/avatar.jpg" alt="User 1" class="user-image-leaderboard" />
+
+                                <div class="word-container">
+                                    <a class="user-name"></a>
+                                    <div class="lower-card">
+                                        <div class="image-container">
+                                            <img src="/images/cookbook-white.png" alt=""
+                                                class="cookbook-backdrop" />
+                                            <img src="/images/cookbook.png" alt="" class="cookbook-icon" />
+                                        </div>
+                                        <span class="most-recipes-description">#1 Đóng góp nhiều công thức nhất (<a></a>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leaderboard-card most-reviews">
+                                <img src="/images/avatar.jpg" alt="User 2" class="user-image-leaderboard" />
+
+                                <div class="word-container">
+                                    <a class="user-name"></a>
+                                    <div class="lower-card">
+                                        <img src="/images/star-white.png" alt="" class="star-icon" />
+                                        <span class="most-reviews-description">#1 Đóng góp nhiều đánh giá nhất (<a></a>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leaderboard-card most-liked-recipe">
+                                <img src="/images/avatar.jpg" alt="User 3" class="user-image-leaderboard" />
+
+                                <div class="word-container">
+                                    <a class="user-name"></a>
+                                    <div class="lower-card">
+                                        <img src="/images/heart-yellowbg.png" alt="" class="heart-icon" />
+                                        <span class="most-liked-recipe-description">#1 Công thức được yêu thích nhất (<a href="/pages/category.html" data-top-recipe></a>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="cta__sign-up">
+                        <p>BẠN MUỐN ĐĂNG TẢI CÔNG THỨC?</p>
+                        <button class="cta__sign-up-button" type="button" data-auth-open="signup">ĐĂNG KÝ NGAY!</button>
+                        <p class="support-log-in-text">Đã có tài khoản? <a href="#" data-auth-open="login">Đăng nhập ngay!</a></p>                    </section>
+                </aside>
+            </div>
+        </section>
+        <section class="price-comparison-section">
+            <p id="price-comparison-label">SO SÁNH GIÁ CẢ</p>
+            <div class="price-comparison-banner">
+                <div class="price-comparison-banner__left">
+                    <p id="pcb-question">THIẾU NGUYÊN LIỆU?</p>
+                    <p id="pcb-text">So sánh giá cả ngay giữa các đại lý, cửa hàng quen thuộc như Co.op Food, Bách Hóa
+                        Xanh,.. tại đây</p>
+                </div>
+                <div class="price-comparison-banner__right">
+                    <div class="pcb-description-container">
+                        <p id="pcb-description-large">TIẾT KIỆM HƠN NGAY VỚI TỪNG NGUYÊN LIỆU</p>
+                        <p id="pcb-description-small">ĐỐI TÁC UY TÍN, SIÊU THỊ THÂN QUEN</p>
+                        <div id="pcb-line-break"></div>
+                    </div>
+                    <a href="/pages/ingredients.html" class="price-comparison-link">TIẾT
+                        KIỆM NGAY</a>
+                </div>
+            </div>
+        </section>
+        <section class="new-community-recipe">
+            <div class="title new-community-recipe__title">
+                <p id="new-community-recipe-label">CÔNG THỨC MỚI TỪ CỘNG ĐỒNG!</p>
+                <div class="line class new-community-recipe__line"></div>
+            </div>
+            <div class="new-community-recipe__container">
+                <p class="home-loading">Đang tải công thức...</p>
+            </div>
+            <a href="/pages/category.html?sort=new" class="recipe-more-button view-more-button">Xem Thêm</a>
+        </section>
+        <div class="about-us-banner">
+            <p class="about-us-description">BẠN MỚI ĐẾN? TÌM HIỂU VỀ BỌN MÌNH TẠI ĐÂY!</p>
+            <a href="/about.html" class="about-us-button">ABOUT US</a>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <!-- Đường phân cách phía trên footer: màu và kích thước chỉnh trong CSS. -->
+        <svg class="site-footer__divider" width="1252" height="1" aria-hidden="true" focusable="false">
+            <rect width="100%" height="100%" fill="currentColor" />
+        </svg>
+        <div class="footer-container">
+            <div class="site-footer__brand">
+                <div class="site-footer__logo-box">
+                    <a href="/" data-header-route="home"
+                        aria-label="Trang chủ NomNom"><img class="site-footer__logo"
+                            src="/images/logo.png" alt="NomNom"></a>
+                </div>
+                <h2 class="site-footer__tagline">Ăn ngon trọn vị, chi tiêu hợp lý.</h2>
+                <p class="site-footer__description">Bữa ngon bắt đầu từ những nguyên liệu bạn có. Cùng NomNom khám phá
+                    công thức hấp dẫn, so sánh giá
+                    nguyên liệu và tận hưởng mỗi bữa ăn ngon trong tầm ngân sách</p>
+            </div>
+            <div class="site-footer__recipes">
+                <h2 class="site-footer__heading">CÔNG THỨC
+                    <svg class="site-footer__heading-line" width="32" height="3" aria-hidden="true" focusable="false">
+                        <rect width="100%" height="100%" fill="currentColor" />
+                    </svg>
+                </h2>
+                <nav class="site-footer__links">
+                    <a href="/pages/search.html">Tất cả công thức</a>
+                    <a href="/pages/category.html">Danh mục</a>
+                    <a href="/pages/ingredients.html">So sánh giá</a>
+                    <a href="/pages/account/reviewed.html">Đánh giá của tôi</a>
+                </nav>
+            </div>
+            <div class="site-footer__about">
+                <h2 class="site-footer__heading">GIỚI THIỆU
+                    <svg class="site-footer__heading-line" width="32" height="3" aria-hidden="true" focusable="false">
+                        <rect width="100%" height="100%" fill="currentColor" />
+                    </svg>
+                </h2>
+                <nav class="site-footer__links">
+                    <a href="/about.html">Về NomNom</a>
+                    <a href="/about.html#huong-dan">Hướng dẫn sử dụng</a>
+                    <a href="/about.html#faq">CÂU HỎI THƯỜNG GẶP</a>
+                    <a href="/about.html#gop-y">Liên hệ</a>
+                </nav>
+            </div>
+            <div class="site-footer__contact">
+                <h2 class="site-footer__heading">LIÊN HỆ
+                    <svg class="site-footer__heading-line" width="32" height="3" aria-hidden="true" focusable="false">
+                        <rect width="100%" height="100%" fill="currentColor" />
+                    </svg>
+                </h2>
+                <nav class="site-footer__links">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="/images/icons/footer-facebook.svg" alt="">Facebook</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="/images/icons/footer-instagram.svg"
+                            alt="">Instagram</a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="/images/icons/footer-youtube.svg" alt="">Youtube</a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><img src="/images/icons/footer-tiktok.svg" alt="">Tiktok</a>
+                </nav>
+            </div>
+        </div>
+        <div class="site-footer__legal">
+            <p class="site-footer__copyright">© 2026 NomNom. All rights reserved.</p>
+            <a class="site-footer__legal-link site-footer__privacy" href="/pages/policy.html#bao-mat">Chính sách bảo mật</a>
+            <a class="site-footer__legal-link site-footer__terms" href="/pages/policy.html#dieu-khoan">Điều khoản sử dụng</a>
+            <a class="site-footer__legal-link site-footer__accessibility" href="/pages/policy.html#tiep-can">Hỗ trợ tiếp cận</a>
+        </div>
+    </footer>
+    <!-- OVERLAY TỦ LẠNH (Figma: FILTER 1) – mở bằng nút "BỘ LỌC NGUYÊN LIỆU" -->
+    <dialog class="fridge-dialog" id="fridge-dialog" aria-labelledby="fridge-title">
+        <form class="fridge-dialog__panel" id="fridge-form" action="/pages/fridge-results.html" method="get">
+            <h2 class="fridge-dialog__title" id="fridge-title">TỦ LẠNH</h2>
+            <button class="fridge-dialog__close" id="fridge-close" type="button" aria-label="Đóng bộ lọc">×</button>
+
+            <div class="fridge-dialog__groups">
+                <div class="fridge-dialog__column">
+                    <details class="fridge-dialog__select">
+                        <summary>ĐẠM <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <label><input type="checkbox" name="dam" value="thit-bo"> Thịt bò</label>
+                            <label><input type="checkbox" name="dam" value="thit-heo"> Thịt heo</label>
+                            <label><input type="checkbox" name="dam" value="thit-ga"> Thịt gà</label>
+                            <label><input type="checkbox" name="dam" value="trung"> Trứng</label>
+                            <label><input type="checkbox" name="dam" value="dau-hu"> Đậu hũ</label>
+                            <label><input type="checkbox" name="dam" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                    <details class="fridge-dialog__select">
+                        <summary>TINH BỘT <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <label><input type="checkbox" name="tinh-bot" value="gao"> Gạo</label>
+                            <label><input type="checkbox" name="tinh-bot" value="bun"> Bún</label>
+                            <label><input type="checkbox" name="tinh-bot" value="pho"> Phở</label>
+                            <label><input type="checkbox" name="tinh-bot" value="banh-mi"> Bánh mì</label>
+                            <label><input type="checkbox" name="tinh-bot" value="mien"> Miến</label>
+                            <label><input type="checkbox" name="tinh-bot" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                    <details class="fridge-dialog__select">
+                        <summary>RAU CỦ <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <label><input type="checkbox" name="rau-cu" value="ca-chua"> Cà chua</label>
+                            <label><input type="checkbox" name="rau-cu" value="nam-huong"> Nấm hương</label>
+                            <label><input type="checkbox" name="rau-cu" value="xa-lach"> Xà lách</label>
+                            <label><input type="checkbox" name="rau-cu" value="ca-rot"> Cà rốt</label>
+                            <label><input type="checkbox" name="rau-cu" value="bi-do"> Bí đỏ</label>
+                            <label><input type="checkbox" name="rau-cu" value="cai-thia"> Cải thìa</label>
+                            <label><input type="checkbox" name="rau-cu" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                </div>
+                <span class="fridge-dialog__divider" aria-hidden="true"></span>
+                <div class="fridge-dialog__column">
+                    <details class="fridge-dialog__select">
+                        <summary>TRÁI CÂY <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <label><input type="checkbox" name="trai-cay" value="xoai-xanh"> Xoài xanh</label>
+                            <label><input type="checkbox" name="trai-cay" value="xoai"> Xoài chín</label>
+                            <label><input type="checkbox" name="trai-cay" value="chuoi"> Chuối</label>
+                            <label><input type="checkbox" name="trai-cay" value="thom"> Dứa (thơm)</label>
+                            <label><input type="checkbox" name="trai-cay" value="bo-trai"> Bơ</label>
+                            <label><input type="checkbox" name="trai-cay" value="khac"> Khác</label>
+                        </div>
+                    </details>
+                    <details class="fridge-dialog__select">
+                        <summary>CHẾ ĐỘ ĂN <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <!-- 3 nhóm dưới là bộ lọc nhãn (cùng nhãn với trang Danh mục), không phải nguyên liệu -->
+                            <label><input type="checkbox" name="che-do-an" value="Thanh đạm" data-tag-filter> Thanh đạm</label>
+                            <label><input type="checkbox" name="che-do-an" value="Eat Clean" data-tag-filter> Eat Clean</label>
+                            <label><input type="checkbox" name="che-do-an" value="Ăn chay" data-tag-filter> Ăn chay</label>
+                        </div>
+                    </details>
+                    <details class="fridge-dialog__select">
+                        <summary>VÙNG MIỀN <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <label><input type="checkbox" name="vung-mien" value="Miền Bắc" data-tag-filter> Miền Bắc</label>
+                            <label><input type="checkbox" name="vung-mien" value="Miền Trung" data-tag-filter> Miền Trung</label>
+                            <label><input type="checkbox" name="vung-mien" value="Miền Nam" data-tag-filter> Miền Nam</label>
+                            <label><input type="checkbox" name="vung-mien" value="Món Á" data-tag-filter> Món Á / Nhật</label>
+                        </div>
+                    </details>
+                </div>
+                <span class="fridge-dialog__divider" aria-hidden="true"></span>
+                <div class="fridge-dialog__column">
+                    <details class="fridge-dialog__select">
+                        <summary>NGÂN SÁCH <span class="fridge-dialog__count" aria-label="số ô đã chọn"></span></summary>
+                        <div class="fridge-dialog__options">
+                            <label><input type="checkbox" name="ngan-sach" value="Dưới 50k" data-tag-filter> Dưới 50.000đ</label>
+                            <label><input type="checkbox" name="ngan-sach" value="50k - 100k" data-tag-filter> 50.000đ - 100.000đ</label>
+                            <label><input type="checkbox" name="ngan-sach" value="Trên 100k" data-tag-filter> Trên 100.000đ</label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div class="fridge-dialog__footer">
+                <p class="fridge-dialog__error" id="fridge-error" role="alert" hidden>Hãy chọn ít nhất 1 nguyên liệu hoặc tiêu chí.</p>
+                <button class="fridge-dialog__submit" type="submit">
+                    <span class="fridge-dialog__submit-text">TÌM KIẾM</span>
+                    <span class="fridge-dialog__submit-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l5 5"/></svg>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- NOMNOM AUTH START -->
+    <dialog class="site-auth site-login" id="site-login__dialog" data-nomnom-login aria-labelledby="site-login__title"
+        lang="vi">
+        <div class="site-auth__content">
+            <button class="site-auth__close" type="button" data-auth-close aria-label="Đóng đăng nhập">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth__logo" src="/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth__title" id="site-login__title">Đăng nhập</h2>
+            <form class="site-auth__form site-login__form" novalidate>
+                <div class="site-auth__field">
+                    <label class="site-auth__label" for="site-login__email">Địa chỉ Email</label>
+                    <input class="site-auth__input" id="site-login__email" name="email" type="text" autocomplete="username" inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-login__email-error">
+                    <p class="site-auth__error" id="site-login__email-error" hidden></p>
+                </div>
+                <div class="site-auth__field">
+                    <label class="site-auth__label" for="site-login__password">Mật khẩu</label>
+                    <div class="site-auth__password">
+                        <input class="site-auth__input" id="site-login__password" name="password" type="password"
+                            autocomplete="current-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu." aria-describedby="site-login__password-error">
+                        <button class="site-auth__password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-login__password" aria-pressed="false" aria-label="Hiện mật khẩu"
+                            data-show-label="Hiện mật khẩu" data-hide-label="Ẩn mật khẩu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth__eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth__error" id="site-login__password-error" hidden></p>
+                </div>
+                <div class="site-auth__options">
+                    <button class="site-auth__link" type="button"
+                        data-auth-pending="Tài khoản chỉ được lưu trên trình duyệt này nên chưa có chức năng khôi phục mật khẩu. Bạn có thể đăng ký một tài khoản mới.">Quên mật khẩu?</button>
+                </div>
+                <button class="site-auth__submit" type="submit">Đăng Nhập</button>
+                <p class="site-auth__status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="site-auth__switch">Chưa có tài khoản?
+                <button class="site-auth__link" type="button" data-auth-switch="signup">Đăng ký ngay!</button>
+            </p>
+        </div>
+    </dialog>
+
+    <dialog class="site-auth site-signup" id="site-signup__dialog" data-nomnom-signup aria-labelledby="site-signup__title"
+        lang="vi">
+        <div class="site-auth__content">
+            <button class="site-auth__close" type="button" data-auth-close aria-label="Đóng đăng ký">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19" />
+                </svg>
+            </button>
+            <img class="site-auth__logo" src="/images/logo.png" alt="NomNom" width="280" height="88">
+            <h2 class="site-auth__title" id="site-signup__title">Đăng ký</h2>
+            <form class="site-auth__form site-signup__form" novalidate>
+                <div class="site-auth__field">
+                    <label class="site-auth__label" for="site-signup__username">Tên tài khoản</label>
+                    <input class="site-auth__input" id="site-signup__username" name="username" type="text"
+                        autocomplete="username" required data-required-message="Bạn hãy nhập tên tài khoản."
+                        aria-describedby="site-signup__username-error">
+                    <p class="site-auth__error" id="site-signup__username-error" hidden></p>
+                </div>
+                <div class="site-auth__field">
+                    <label class="site-auth__label" for="site-signup__email">Địa chỉ Email</label>
+                    <input class="site-auth__input" id="site-signup__email" name="email" type="email" autocomplete="email"
+                        inputmode="email" autocapitalize="none" spellcheck="false" required
+                        data-required-message="Bạn hãy nhập địa chỉ email." aria-describedby="site-signup__email-error">
+                    <p class="site-auth__error" id="site-signup__email-error" hidden></p>
+                </div>
+                <div class="site-auth__field">
+                    <label class="site-auth__label" for="site-signup__password">Mật khẩu</label>
+                    <div class="site-auth__password">
+                        <input class="site-auth__input" id="site-signup__password" name="password" type="password"
+                            autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy nhập mật khẩu."
+                            aria-describedby="site-signup__password-error">
+                        <button class="site-auth__password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup__password" aria-pressed="false" aria-label="Hiện mật khẩu đăng ký"
+                            data-show-label="Hiện mật khẩu đăng ký" data-hide-label="Ẩn mật khẩu đăng ký">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth__eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth__error" id="site-signup__password-error" hidden></p>
+                </div>
+                <div class="site-auth__field">
+                    <label class="site-auth__label" for="site-signup__confirm-password">Xác nhận mật khẩu</label>
+                    <div class="site-auth__password">
+                        <input class="site-auth__input" id="site-signup__confirm-password" name="confirmPassword"
+                            type="password" autocomplete="new-password" required data-auth-password
+                            data-required-message="Bạn hãy xác nhận mật khẩu."
+                            aria-describedby="site-signup__confirm-password-error">
+                        <button class="site-auth__password-toggle" type="button" data-auth-password-toggle
+                            aria-controls="site-signup__confirm-password" aria-pressed="false"
+                            aria-label="Hiện mật khẩu xác nhận" data-show-label="Hiện mật khẩu xác nhận"
+                            data-hide-label="Ẩn mật khẩu xác nhận">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path class="site-auth__eye-slash" d="m3 3 18 18" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="site-auth__error" id="site-signup__confirm-password-error" hidden></p>
+                </div>
+                <div class="site-auth__field site-signup__terms">
+                    <div class="site-auth__check">
+                        <input id="site-signup__terms" name="terms" type="checkbox" required
+                            aria-label="Tôi đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư"
+                            data-required-message="Bạn cần đồng ý với điều khoản và chính sách để tiếp tục."
+                            aria-describedby="site-signup__terms-error">
+                        <span><label for="site-signup__terms">Tôi đồng ý với</label>
+                            <a class="site-auth__link" href="/pages/policy.html#dieu-khoan" target="_blank" rel="noopener">Điều khoản sử dụng</a>
+                            <label for="site-signup__terms">và</label>
+                            <a class="site-auth__link" href="/pages/policy.html#bao-mat" target="_blank" rel="noopener">Chính sách quyền riêng tư</a>.
+                        </span>
+                    </div>
+                    <p class="site-auth__error" id="site-signup__terms-error" hidden></p>
+                </div>
+                <button class="site-auth__submit" type="submit">Đăng Ký</button>
+                <p class="site-auth__status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="site-auth__switch">Đã có tài khoản?
+                <button class="site-auth__link" type="button" data-auth-switch="login">Đăng nhập ngay!</button>
+            </p>
+        </div>
+    </dialog>
+    <!-- NOMNOM AUTH END -->
+</body>
+
+</html>

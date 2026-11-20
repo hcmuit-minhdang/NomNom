@@ -1,7 +1,0 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Avatar">
-<rect width="72" height="72" rx="36" fill="#FBC41B"/>
-<path id="Head" d="M36 41C43.1797 41 49 35.1797 49 28C49 20.8203 43.1797 15 36 15C28.8203 15 23 20.8203 23 28C23 35.1797 28.8203 41 36 41Z" fill="#292929"/>
-<path id="Body" d="M13 59.5C28.3333 37.5 43.6667 37.5 59 59.5Z" fill="#292929"/>
-</g>
-</svg>
