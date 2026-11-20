@@ -71,7 +71,7 @@ Chỉ cần một web server tĩnh phục vụ thư mục gốc của dự án (
 # Cách 2: Python
 python -m http.server 3000
 # Cách 3: Node.js
-npx serve . -l 3000      # hoặc: npm start
+npx serve . -l 3000
 ```
 
 Rồi mở http://localhost:3000 (Live Server dùng cổng 5500).
@@ -96,9 +96,7 @@ NomNom/
 ├─ index.html                # Trang chủ
 ├─ about.html                # Về chúng tôi (có mục Góp ý)
 ├─ README.md, STRUCTURE.md   # tài liệu
-├─ package.json              # chỉ có script start, không có dependency
-├─ vercel.json               # cấu hình triển khai tĩnh
-├─ 404.html, robots.txt, sitemap.xml
+├─ 404.html                  # trang báo lỗi
 ├─ .gitignore
 ├─ pages/
 │  ├─ category.html          # chọn danh mục / danh sách món theo danh mục
