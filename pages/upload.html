@@ -16,15 +16,19 @@
         <link rel="stylesheet" href="/css/pages/ingredient-picker.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-        <script src="/js/store.js"></script>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap"></noscript>
+        <script src="/js/store.js" defer></script>
         <script src="/js/data.js" defer></script>
         <script type="module" src="/js/pages/upload.js"></script>
-            <link rel="stylesheet" href="/css/components/header.css">
+            <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+            <link rel="preload" as="fetch" href="/data/db.json" crossorigin>
+    <link rel="stylesheet" href="/css/components/header.css">
         <link rel="stylesheet" href="/css/components/footer.css">
         <link rel="stylesheet" href="/css/components/login.css">
         <link rel="stylesheet" href="/css/components/signup.css">
         <script src="/js/components/header.js" defer></script>
+        <script src="/js/components/back-to-top.js" defer></script>
         <script src="/js/components/auth.js" defer></script>
         <script src="/js/components/login.js" defer></script>
         <script src="/js/components/signup.js" defer></script>

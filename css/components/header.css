@@ -1,7 +1,7 @@
 /* Font Inter (biến thể 100-900) tự lưu trong dự án: khai báo một lần ở đây, mọi trang đã nạp header.css nên dùng chung. */
 @font-face {
     font-family: "Inter";
-    src: url("/fonts/inter-variable.ttf") format("truetype");
+    src: url("/fonts/inter-variable.woff2") format("woff2");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -629,3 +629,31 @@ textarea {
 /* Liên kết không gạch chân */
 a { text-decoration: none; }
 h1, h2, h3 { text-wrap: balance; }
+
+/* ---------- Nút về đầu trang (js/components/back-to-top.js) ---------- */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background: #FBC41B;
+    box-shadow: 3px 3px 0 #292929;
+    cursor: pointer;
+}
+
+.back-to-top[hidden] { display: none; }
+.back-to-top:hover { background: #ffd24d; }
+.back-to-top:focus-visible { outline: 3px solid #292929; outline-offset: 3px; }
+.back-to-top:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #292929; }
+
+@media (max-width: 700px) {
+    .back-to-top { right: 14px; bottom: 14px; width: 44px; height: 44px; }
+}

@@ -11,13 +11,16 @@
     <meta property="og:description" content="Giới thiệu NomNom: câu chuyện, giá trị, nhóm thực hiện, hướng dẫn sử dụng, góp ý và thông tin liên hệ." />
   <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="stylesheet" href="/css/pages/about.css">
-  <link rel="stylesheet" href="/css/components/header.css">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+  <link rel="preload" as="fetch" href="/data/db.json" crossorigin>
+    <link rel="stylesheet" href="/css/components/header.css">
   <link rel="stylesheet" href="/css/components/footer.css">
   <link rel="stylesheet" href="/css/components/login.css">
   <link rel="stylesheet" href="/css/components/signup.css">
-  <script src="/js/store.js"></script>
-  <script src="/js/data.js"></script>
+  <script src="/js/store.js" defer></script>
+  <script src="/js/data.js" defer></script>
   <script src="/js/components/header.js" defer></script>
+  <script src="/js/components/back-to-top.js" defer></script>
   <script src="/js/components/auth.js" defer></script>
   <script src="/js/components/login.js" defer></script>
   <script src="/js/components/signup.js" defer></script>
@@ -422,19 +425,20 @@
     <!-- NOMNOM AUTH END -->
 <script>
 (function () {
-  var f = document.getElementById("contact-form");
-  if (!f) return;
-  var st = f.querySelector(".contact-status"), btn = f.querySelector("button[type=submit]");
-  function say(t, ok) { st.textContent = t; st.hidden = false; st.className = "contact-status " + (ok ? "is-ok" : "is-err"); }
-  f.addEventListener("submit", function (e) {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+  const statusEl = form.querySelector(".contact__status");
+  const submitButton = form.querySelector("button[type=submit]");
+  function say(text, ok) { statusEl.textContent = text; statusEl.hidden = false; statusEl.className = "contact__status " + (ok ? "is-ok" : "is-err"); }
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var d = { name: f.name.value.trim(), email: f.email.value.trim(), message: f.message.value.trim() };
-    if (!d.name || !d.email || !d.message) return say("Bạn hãy điền đủ họ tên, email và nội dung.", false);
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) return say("Bạn hãy nhập địa chỉ email hợp lệ.", false);
-    btn.disabled = true;
-    NomNom.data.post("/contact", d).then(function () {
-      f.reset(); say("Cảm ơn bạn! Góp ý đã được ghi lại.", true);
-    }).catch(function (err) { say(err.message, false); }).then(function () { btn.disabled = false; });
+    const data = { name: form.name.value.trim(), email: form.email.value.trim(), message: form.message.value.trim() };
+    if (!data.name || !data.email || !data.message) return say("Bạn hãy điền đủ họ tên, email và nội dung.", false);
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) return say("Bạn hãy nhập địa chỉ email hợp lệ.", false);
+    submitButton.disabled = true;
+    NomNom.data.post("/contact", data).then(function () {
+      form.reset(); say("Cảm ơn bạn! Góp ý đã được ghi lại.", true);
+    }).catch(function (err) { say(err.message, false); }).then(function () { submitButton.disabled = false; });
   });
 })();
 </script>

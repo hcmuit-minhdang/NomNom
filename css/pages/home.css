@@ -852,7 +852,7 @@ aside {
     position: absolute;
     z-index: -2;
     content: "";
-    background-image: url(/images/market.png);
+    background-image: url(/images/market.webp);
     inset: 0;
     background-size: cover;
     background-position: center;

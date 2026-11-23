@@ -30,7 +30,7 @@ Nguồn so sánh: *Báo cáo MyTicket* (4/2025) và *Báo cáo Game Store Websit
 | 3.1 Kiểm thử JavaScript | đã thử tay mọi luồng chính (đăng nhập, lưu, đánh giá, đăng, sửa, xóa) | lập bảng kịch bản và kết quả |
 | 3.2 Tối ưu ảnh | có ảnh WebP, ảnh tải lên thu về 800px; còn nhiều PNG/JPG (khoảng 46 MB thư mục images) | nén thêm, chụp kích thước trước/sau |
 | 3.2 Tối ưu CSS/JS | không minify; phần lớn script nạp `defer` (riêng `store.js` nạp đồng bộ) | tùy chọn |
-| 3.2 Tối ưu SEO | đã thêm `meta description`, Open Graph, `lang`, `alt` đủ cho mọi ảnh, `loading="lazy"` (chỉ cho ảnh do JS tạo, ảnh tĩnh trong HTML chưa có) | đã có trang 404; chưa có canonical, sitemap.xml, robots.txt; mọi trang đều có đúng một `h1` (trang chủ, so sánh giá và Góc của tôi dùng `h1` ẩn) |
+| 3.2 Tối ưu SEO | đã thêm `meta description`, Open Graph, `lang`, `alt` đủ cho mọi ảnh, `loading="lazy"` (chỉ cho ảnh do JS tạo, ảnh tĩnh trong HTML chưa có) | đã có sitemap.xml, robots.txt và trang 404; chưa có canonical; mọi trang đều có đúng một `h1` (trang chủ, so sánh giá và Góc của tôi dùng `h1` ẩn) |
 | 3.2 Lighthouse | chưa chạy | chạy trên bản Vercel, chụp điểm |
 | 4. Tổng kết, ưu/khuyết, hướng phát triển | không có | viết (README mục Giới hạn là nguyên liệu tốt) |
 | Tài liệu tham khảo | không có | liệt kê |
@@ -44,6 +44,6 @@ Code có nhưng Figma chưa có khung riêng: **Đăng tải công thức, So s�
 ## 4. Việc nên làm trước khi nộp
 
 1. Chạy W3C validator và Lighthouse trên bản Vercel, lưu ảnh chụp kết quả.
-2. Thêm thẻ `canonical`, `og:image`, `sitemap.xml`, `robots.txt`.
+2. Thêm thẻ `canonical` và `og:image`.
 3. Nén ảnh PNG/JPG lớn sang WebP.
 4. Viết các chương theo khung mục 2; nhóm tự điền link YouTube trong README.

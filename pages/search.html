@@ -11,19 +11,23 @@
     <meta property="og:description" content="Kết quả tìm kiếm công thức trên NomNom, lọc theo thời gian nấu, mức giá và độ phù hợp." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap"></noscript>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+    <link rel="preload" as="fetch" href="/data/db.json" crossorigin>
     <link rel="stylesheet" href="/css/components/header.css">
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/pages/search.css">
     <link rel="stylesheet" href="/css/pages/listing.css">
     <link rel="stylesheet" href="/css/components/login.css">
     <link rel="stylesheet" href="/css/components/signup.css">
-    <script src="/js/store.js"></script>
-    <script src="/js/data.js"></script>
-    <script src="/js/pages/listing.js"></script>
+    <script src="/js/store.js" defer></script>
+    <script src="/js/data.js" defer></script>
+    <script src="/js/pages/listing.js" defer></script>
     <script src="/js/pages/search.js" defer></script>
     <script src="/js/components/header.js" defer></script>
+    <script src="/js/components/back-to-top.js" defer></script>
     <script src="/js/components/fit-names.js" defer></script>
     <script src="/js/components/auth.js" defer></script>
     <script src="/js/components/login.js" defer></script>

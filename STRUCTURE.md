@@ -107,6 +107,7 @@ NomNom/
 | `filter.js` | Bộ lọc dùng chung của danh mục và tủ lạnh (mở nhóm lọc, gửi lọc khi bấm Áp dụng). |
 | `fridge-filter.js` | Hộp thoại chọn nguyên liệu "TỦ LẠNH" ở trang chủ. |
 | `fit-names.js` | Thu nhỏ chữ tên món cho vừa một dòng, quá dài thì xuống hai dòng. |
+| `back-to-top.js` | Nút tròn về đầu trang, hiện khi cuộn xuống quá 400 px. Kiểu nút nằm trong `css/components/header.css`. |
 
 ### `js/pages/`: mỗi trang một file
 
@@ -142,13 +143,13 @@ NomNom/
 | `dishes/` | Ảnh món ăn dùng cho các công thức trong `data/db.json`. |
 | `recipes/` | Ảnh theo từng công thức: mỗi thư mục là một món có ảnh các bước (`step*.png`), riêng `community/` là ảnh các công thức của cộng đồng. |
 | `ingredients/` | 154 ảnh nguyên liệu cho trang so sánh giá, kèm `CREDITS.md` ghi nguồn và giấy phép từng ảnh. |
-| Các file còn lại ở gốc | Ảnh trang trí dùng ở trang chủ, tài khoản (`avatar.jpg`, `food.png`, `market.png`, `clock.png`, `cookbook.png`, `star-white.png`, `heart-yellowbg.png`...). |
+| Các file còn lại ở gốc | Ảnh trang trí dùng ở trang chủ, tài khoản (`avatar.jpg`, `food.png`, `market.webp`, `clock.png`, `cookbook.png`, `star-white.png`, `heart-yellowbg.png`...). |
 
 ## `fonts/`
 
 | File | Chức năng |
 |---|---|
-| `inter-variable.ttf` | Font Inter biến thể (độ đậm 100 đến 900), nạp bằng `@font-face` trong `css/components/header.css`. |
+| `inter-variable.woff2` | Font Inter biến thể đã cắt gọn (độ đậm 100 đến 900), nạp bằng `@font-face` trong `css/components/header.css`. |
 | `OFL.txt` | Giấy phép SIL Open Font License của font Inter. |
 
 ## `docs/`

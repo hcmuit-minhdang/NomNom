@@ -11,8 +11,12 @@
     <meta property="og:description" content="Danh mục món ăn trên NomNom: lọc theo nhóm nguyên liệu, chế độ ăn, vùng miền, ngân sách và sắp xếp theo điểm, thời gian, giá." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap"></noscript>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preload" as="image" href="/images/backgrounds/pattern-white.webp" fetchpriority="high">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+    <link rel="preload" as="fetch" href="/data/db.json" crossorigin>
     <link rel="stylesheet" href="/css/components/header.css">
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/filter.css">
@@ -21,11 +25,12 @@
     <link rel="stylesheet" href="/css/pages/listing.css">
     <link rel="stylesheet" href="/css/components/login.css">
     <link rel="stylesheet" href="/css/components/signup.css">
-    <script src="/js/store.js"></script>
-    <script src="/js/data.js"></script>
-    <script src="/js/pages/listing.js"></script>
+    <script src="/js/store.js" defer></script>
+    <script src="/js/data.js" defer></script>
+    <script src="/js/pages/listing.js" defer></script>
     <script src="/js/pages/category.js" defer></script>
     <script src="/js/components/header.js" defer></script>
+    <script src="/js/components/back-to-top.js" defer></script>
     <script src="/js/components/fit-names.js" defer></script>
     <script src="/js/components/filter.js" defer></script>
     <script src="/js/components/auth.js" defer></script>
