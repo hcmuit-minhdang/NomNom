@@ -31,7 +31,7 @@ NomNom/
 | `index.html` | Trang chủ: banner, ô tìm kiếm, danh mục phổ biến, công thức nổi bật, công thức mới của cộng đồng, bảng vinh danh, lối vào lọc theo nguyên liệu tủ lạnh và so sánh giá. |
 | `about.html` | Trang Về chúng tôi: giới thiệu, hướng dẫn sử dụng (`#huong-dan`), câu hỏi thường gặp (`#faq`), gửi góp ý (`#gop-y`) và thông tin liên hệ (`#lien-he`). Không có `contact.html` riêng. |
 | `404.html` | Trang báo lỗi khi vào địa chỉ không tồn tại (Vercel tự dùng file này). |
-| `README.md` | Giới thiệu dự án, thành viên, công nghệ, cách chạy trên máy, quy tắc đặt tên. |
+| `README.md` | Giới thiệu dự án, thành viên nhóm và các liên kết liên quan. |
 | `STRUCTURE.md` | File này: mô tả cấu trúc thư mục. |
 | `.gitignore` | Danh sách file không đưa lên git (`node_modules/`, `.vercel/`, file hệ thống). |
 
@@ -159,7 +159,7 @@ NomNom/
 
 ## Quy tắc đặt tên và làm việc nhóm
 
-Chi tiết nằm trong [README.md](README.md#-quy-tắc-đặt-tên-và-làm-việc-nhóm). Tóm tắt:
+Tóm tắt:
 
 - **CSS:** BEM kebab-case (`block__element--modifier`, trạng thái `is-*`); phần tử con của một khối luôn nối bằng `__`; tên khối viết phẳng theo từng trang là khối độc lập.
 - **ID:** kebab-case. **JavaScript:** camelCase, hằng `UPPER_SNAKE`, chỉ `const`/`let`, tên biến và hàm từ 3 ký tự trở lên.
