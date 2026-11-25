@@ -31,7 +31,7 @@ Nhóm: **11**
 | 1 | Võ Thị Thanh Thư | 23521547 | Viết mô tả chức năng chính; thiết kế Figma và code trang công thức theo nguyên liệu tủ lạnh và trang kết quả; bảng phân công, file text; slide; thuyết trình |
 | 2 | Đặng Lê Thanh Minh | 24521051 | Thiết kế Figma và code trang Về chúng tôi (About Us), trang cá nhân (lịch sử, đã lưu, đã đánh giá, đã đăng); tạo và thiết lập repository GitHub; kiểm tra và sửa lỗi website |
 | 3 | Trương Tấn Phát | 24521322 | Thiết kế Figma và code trang danh mục, trang kết quả tìm kiếm; slide; thuyết trình |
-| 4 | Lê Hải Thạch | 24521590 | Thiết kế Figma và code trang chủ, chi tiết công thức, đăng công thức, so sánh nguyên liệu |
+| 4 | Lê Hải Thạch | 24521590 | Thiết kế Figma và code trang chủ, chi tiết công thức, đăng công thức, so sánh giá nguyên liệu |
 | 5 | Nguyễn Quốc Thịnh | 24521695 | Thiết kế Figma và code header, footer, đăng nhập, đăng ký; quay video demo; viết báo cáo |
 
 ---
@@ -41,6 +41,6 @@ Nhóm: **11**
 - 🌐 **Demo trực tuyến:** https://nomnom-smoky.vercel.app
 - 💻 **Mã nguồn (GitHub, lịch sử đóng góp theo từng thành viên):** https://github.com/hcmuit-minhdang/NomNom
 - 🎨 **Thiết kế Figma:** https://www.figma.com/design/1XVDA0jnedoKuCL9rYodr7/IE104
-- 🗂️ **Quản lý công việc:** https://app.notion.com/p/IE104-NomNom-41c2218b6ea98086b85be6ce87b3a267?source=copy_link
+- 🗂️ **Quản lý công việc:** https://app.notion.com/p/IE104-NomNom-41c2218b6ea98086b85be6ce87b3a267
 - 🎬 **Video báo cáo và demo (YouTube, unlisted):** _(điền link)_
 
