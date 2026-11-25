@@ -28,10 +28,10 @@ Nhóm: **11**
 
 | STT | Họ tên | MSSV | Phần phụ trách |
 |---|---|---|---|
-| 1 | Đặng Lê Thanh Minh | 24521051 | Thiết kế Figma và code trang Về chúng tôi (About Us), trang cá nhân (lịch sử, đã lưu, đã đánh giá, đã đăng); tạo và thiết lập repository GitHub; kiểm tra và sửa lỗi website |
-| 2 | Trương Tấn Phát | 24521322 | Thiết kế Figma và code trang danh mục, trang kết quả tìm kiếm; slide; thuyết trình |
-| 3 | Lê Hải Thạch | 24521590 | Thiết kế Figma và code trang chủ, chi tiết công thức, đăng công thức, so sánh nguyên liệu |
-| 4 | Võ Thị Thanh Thư | 23521547 | Viết mô tả chức năng chính; thiết kế Figma và code trang công thức theo nguyên liệu tủ lạnh và trang kết quả; bảng phân công, file text; slide; thuyết trình |
+| 1 | Võ Thị Thanh Thư | 23521547 | Viết mô tả chức năng chính; thiết kế Figma và code trang công thức theo nguyên liệu tủ lạnh và trang kết quả; bảng phân công, file text; slide; thuyết trình |
+| 2 | Đặng Lê Thanh Minh | 24521051 | Thiết kế Figma và code trang Về chúng tôi (About Us), trang cá nhân (lịch sử, đã lưu, đã đánh giá, đã đăng); tạo và thiết lập repository GitHub; kiểm tra và sửa lỗi website |
+| 3 | Trương Tấn Phát | 24521322 | Thiết kế Figma và code trang danh mục, trang kết quả tìm kiếm; slide; thuyết trình |
+| 4 | Lê Hải Thạch | 24521590 | Thiết kế Figma và code trang chủ, chi tiết công thức, đăng công thức, so sánh nguyên liệu |
 | 5 | Nguyễn Quốc Thịnh | 24521695 | Thiết kế Figma và code header, footer, đăng nhập, đăng ký; quay video demo; viết báo cáo |
 
 ---
