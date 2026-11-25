@@ -274,6 +274,38 @@
     }
 }
 
+/* Popup xác nhận đăng xuất */
+.site-auth--confirm .site-auth__content {
+    padding-top: 32px;
+}
+.site-auth__confirm-text {
+    margin: 0 0 24px;
+    text-align: center;
+}
+.site-auth__confirm-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.site-auth__confirm-actions .site-auth__submit {
+    font-size: 18px;
+}
+.site-auth__cancel {
+    min-height: 50px;
+    padding: 8px 12px;
+    border: 1px solid var(--auth-ink);
+    border-radius: 1px;
+    background: white;
+    color: var(--auth-ink);
+    font: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.site-auth__cancel:hover {
+    background: #f3f3f3;
+}
+
 .site-auth__submit:disabled {
     opacity: 0.6;
     cursor: wait;

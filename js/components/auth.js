@@ -197,7 +197,7 @@
 
     document.addEventListener("nomnom:auth-request", event => {
         const action = event.detail?.action;
-        if (action === "logout") { event.preventDefault(); logout(); return; }
+        if (action === "logout") { event.preventDefault(); confirmLogout(); return; }
         if (!Object.hasOwn(dialogs, action)) return;
         // Nhận sự kiện đồng bộ để header không hiển thị thông báo chờ tích hợp.
         if (openPopup(action)) event.preventDefault();
@@ -276,6 +276,44 @@
             pending.push({ resolve, reject });
             if (!open("login")) reject(new Error("Không mở được cửa sổ đăng nhập."));
         });
+    }
+
+    /* Popup hỏi lại trước khi đăng xuất; tạo khi cần, dùng lại các lần sau. */
+    let logoutDialog = null;
+    function confirmLogout() {
+        if (!currentUser) return;
+        const trigger = document.activeElement;
+        if (!logoutDialog) {
+            logoutDialog = document.createElement("dialog");
+            logoutDialog.className = "site-auth site-auth--confirm";
+            logoutDialog.setAttribute("aria-labelledby", "logoutConfirmTitle");
+            logoutDialog.innerHTML =
+                '<div class="site-auth__content">' +
+                '<h2 class="site-auth__title" id="logoutConfirmTitle">Đăng xuất?</h2>' +
+                '<p class="site-auth__confirm-text">Bạn có chắc muốn đăng xuất khỏi NomNom không?</p>' +
+                '<div class="site-auth__confirm-actions">' +
+                '<button type="button" class="site-auth__cancel" data-logout-cancel>Ở lại</button>' +
+                '<button type="button" class="site-auth__submit" data-logout-confirm>Đăng xuất</button>' +
+                '</div></div>';
+            document.body.appendChild(logoutDialog);
+            logoutDialog.addEventListener("click", event => {
+                const button = event.target.closest("button");
+                if (event.target === logoutDialog || (button && button.hasAttribute("data-logout-cancel"))) {
+                    logoutDialog.close();
+                } else if (button && button.hasAttribute("data-logout-confirm")) {
+                    logoutDialog.close();
+                    logout();
+                }
+            });
+            logoutDialog.addEventListener("close", () => {
+                unlockBackground();
+                const target = trigger && trigger.isConnected ? trigger : null;
+                if (target) target.focus({ preventScroll: true });
+            });
+        }
+        lockBackground();
+        logoutDialog.showModal();
+        logoutDialog.querySelector("[data-logout-cancel]").focus();
     }
 
     function logout() {
