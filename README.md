@@ -38,7 +38,7 @@ Nhóm: **11**
 
 ## 🔗 Các thông tin liên quan
 
-- 🌐 **Demo trực tuyến:** https://nomnom-taupe.vercel.app
+- 🌐 **Demo trực tuyến:** https://nomnom-smoky.vercel.app
 - 💻 **Mã nguồn (bản hoàn chỉnh):** https://github.com/hcmuit-minhdang/ie104
 - 👥 **Repo làm việc nhóm (lịch sử đóng góp theo từng thành viên):** https://github.com/hcmuit-minhdang/NomNom
 - 🎨 **Thiết kế Figma:** https://www.figma.com/design/1XVDA0jnedoKuCL9rYodr7/IE104
