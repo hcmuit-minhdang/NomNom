@@ -9,7 +9,7 @@ Quy ước: đường dẫn trong HTML, CSS, JS dùng **đường dẫn tuyệt 
 ```text
 NomNom/
 ├─ index.html, about.html, 404.html
-├─ README.md, STRUCTURE.md, robots.txt, sitemap.xml, .gitignore
+├─ README.md, STRUCTURE.md, .gitignore
 ├─ pages/            # các trang còn lại
 │  └─ account/       # Góc của tôi
 ├─ css/
@@ -33,7 +33,6 @@ NomNom/
 | `404.html` | Trang báo lỗi khi vào địa chỉ không tồn tại (Vercel tự dùng file này). |
 | `README.md` | Giới thiệu dự án, thành viên nhóm và các liên kết liên quan. |
 | `STRUCTURE.md` | File này: mô tả cấu trúc thư mục. |
-| `robots.txt`, `sitemap.xml` | Cho công cụ tìm kiếm: cho phép thu thập trang, chặn `pages/account/`, liệt kê các trang chính. |
 | `.gitignore` | Danh sách file không đưa lên git (`node_modules/`, `.vercel/`, file hệ thống). |
 
 ## `pages/`: các trang còn lại
