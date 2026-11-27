@@ -578,7 +578,12 @@ function buildRecipe(b, userId, database) {
     ingredients, quickSteps: quickIn && quickIn.length ? quickIn : steps.map((step) => step.text.join(' ')), steps,
     nutrition: cleanNutrition(b.nutrition),
     similar: [], tags, uploaded: String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0') + '/' + now.getFullYear(),
-    authorId: userId, createdAt: now.toISOString(), seedRating: 0, seedCount: 0, main: ingredients.map((i) => i.ingredientId).slice(0, 6)
+    authorId: userId, createdAt: now.toISOString(), seedRating: 0, seedCount: 0, main: ingredients.map((i) => i.ingredientId).slice(0, 6),
+    // Công thức do người dùng đăng luôn bắt đầu là "Chưa xác thực" (trang chi tiết tự nâng lên khi đủ đánh giá)
+    status: 'unverified',
+    tested: b.tested === true,
+    // Cải tiến từ công thức nào (chỉ nhận id có thật)
+    forkOf: typeof b.forkOf === 'string' && database.recipes.some((recipe) => recipe.id === b.forkOf) ? b.forkOf : null
   });
 }
 

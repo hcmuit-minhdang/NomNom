@@ -926,6 +926,50 @@ async function init() {
     initPrintShare(recipe);
     renderSimilar(recipe);
     initReviews(recipe);
+    renderVerifyBadge(recipe);
+    renderForkInfo(recipe);
+}
+
+/* ------------------------------------------------------------------ */
+/* Nhãn xác thực, công thức gốc, nút Cải tiến                          */
+/* ------------------------------------------------------------------ */
+
+// 3 mức:
+//   - Không có status (món mẫu trong db.json do nhóm soạn) -> Đã kiểm duyệt
+//   - Người dùng đăng, từ 3 đánh giá trở lên và trung bình >= 4 sao -> Cộng đồng đã thử
+//   - Còn lại -> Chưa xác thực
+function verifyStatusOf(recipe) {
+    if (!recipe.status) return "verified";
+    if (recipe.reviewCount >= 3 && recipe.ratingScore >= 4) return "community";
+    return "unverified";
+}
+
+function renderVerifyBadge(recipe) {
+    const badge = document.getElementById("verify-badge");
+    if (!badge) return;
+    const labels = {
+        verified: { text: "ĐÃ KIỂM DUYỆT", title: "Công thức do đội ngũ NomNom biên soạn" },
+        community: { text: "CỘNG ĐỒNG ĐÃ THỬ", title: "Đã có ít nhất 3 người đánh giá, trung bình từ 4 sao" },
+        unverified: { text: "CHƯA XÁC THỰC", title: "Công thức do người dùng đăng, chưa được kiểm chứng" }
+    };
+    const status = verifyStatusOf(recipe);
+    badge.textContent = labels[status].text + (status === "unverified" && recipe.tested ? " · TÁC GIẢ ĐÃ NẤU THỬ" : "");
+    badge.title = labels[status].title;
+    badge.dataset.status = status;
+    badge.hidden = false;
+}
+
+async function renderForkInfo(recipe) {
+    const improveButton = document.getElementById("improve-button");
+    if (improveButton) improveButton.href = "/pages/upload.html?fork=" + encodeURIComponent(recipe.id);
+
+    const forkFrom = document.getElementById("fork-from");
+    if (!forkFrom || !recipe.forkOf) return;
+    try {
+        const original = await NomNom.data.get("/recipes/" + encodeURIComponent(recipe.forkOf), { history: 0 });
+        forkFrom.innerHTML = `Cải tiến từ: <a href="${escapeHtml(NomNom.recipeUrl(original.id))}">${escapeHtml(original.name || original.title)}</a>`;
+        forkFrom.hidden = false;
+    } catch (e) { /* công thức gốc đã bị xóa thì thôi không hiện */ }
 }
 
 init();

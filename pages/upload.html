@@ -147,6 +147,18 @@
                     <section class="recipe-intro" id="thong-tin-chung">
                         <h1 id="upload-title">UPLOAD RECIPE</h1>
                         <div class="line divider"></div>
+                        <!-- Bắt đầu từ mẫu có sẵn (hoặc từ công thức đang cải tiến) -->
+                        <div class="start-from" id="start-from">
+                            <h3>BẮT ĐẦU TỪ MẪU CÓ SẴN</h3>
+                            <span class="note">Chọn một món cơ bản để điền sẵn nguyên liệu và các bước, sau đó sửa lại theo cách nấu của bạn</span>
+                            <div class="start-from__row">
+                                <select id="template-select" class="select-input" aria-label="Chọn công thức mẫu">
+                                    <option value="">-- Không dùng mẫu --</option>
+                                </select>
+                                <button type="button" id="template-apply-btn" class="start-from__btn">DÙNG MẪU</button>
+                            </div>
+                            <p class="start-from__current" id="start-from-current" hidden></p>
+                        </div>
 
                         <div class="title main-info">
                           <h2 class="main-info-tag">THÔNG TIN CHÍNH</h2>
@@ -159,12 +171,25 @@
                                 <div class="input-field">
                                     <label for="name-input">Tên công thức</label>
                                     <input id="name-input" type="text" name="title" maxlength="120" placeholder="Xôi gà, cơm tấm,...">
+                                    <!-- Gợi ý món đã có trên NomNom khi gõ tên -->
+                                    <ul class="name-suggestions" id="name-suggestions" hidden></ul>
                                 </div>
                                 <div class="input-field">
                                     <label for="category-input">Danh mục</label>
                                     <select id="category-input" name="category" class="select-input">
                                         <option value="">-- Chọn danh mục --</option>
                                     </select>
+                                </div>
+                                <div class="input-field">
+                                    <label for="region-input">Vùng miền</label>
+                                    <select id="region-input" name="region" class="select-input">
+                                        <option value="">-- Chọn vùng miền --</option>
+                                        <option value="Miền Bắc">Miền Bắc</option>
+                                        <option value="Miền Trung">Miền Trung</option>
+                                        <option value="Miền Nam">Miền Nam</option>
+                                    </select>
+                                    <p class="region-hint" id="region-hint" hidden></p>
+                                    <button type="button" class="region-apply-btn" id="region-apply-btn" hidden>ÁP DỤNG GỢI Ý</button>
                                 </div>
                                 <div class="input-field">
                                     <label for="price-input">Chi phí</label>
@@ -252,6 +277,18 @@
                                     <h3>HƯỚNG DẪN NGẮN GỌN</h3>
                                     <div class="line"></div>
                                 </div>
+                                <!-- Ô nhập số bước: dùng chung cho cả Hướng dẫn ngắn gọn và Hướng dẫn cụ thể -->
+                                <div class="step-count">
+                                    <label for="quick-step-count" class="small-input__label">Số bước</label>
+                                    <div class="small-input__wrapper">
+                                        <input type="number" id="quick-step-count" class="small-input step-count__input" min="0" max="30" value="0" aria-label="Số bước">
+                                        <div class="small-input__buttons">
+                                            <button type="button" class="stepper-button stepper-button--up step-count__up" aria-label="Thêm 1 bước"></button>
+                                            <button type="button" class="stepper-button stepper-button--down step-count__down" aria-label="Bớt 1 bước"></button>
+                                        </div>
+                                    </div>
+                                    <span class="note step-count__note">Hướng dẫn ngắn gọn và Hướng dẫn cụ thể luôn có cùng số bước</span>
+                                </div>
                                 <button type="button" id="add-step-btn">THÊM BƯỚC</button>
                                 <ol class="quick-step-list" id="quick-step-list"></ol>
                             </section>
@@ -263,6 +300,11 @@
                                     <div class="line"></div>
                                 </div>
                                 <p class="nutrition-note note">Thêm thông tin dinh dưỡng nếu có, tìm hiểu thêm chi tiết về thành phần dinh dưỡng món ăn <b><a href="https://www.webmd.com/diet/healthtool-food-calorie-counter">tại đây</a></b></p>
+                                <!-- Tự tính dinh dưỡng từ nguyên liệu (dữ liệu: /data/nutrition.json) -->
+                                <div class="nutrition-auto">
+                                    <button type="button" class="nutrition-auto__btn" id="nutrition-auto-btn">TÍNH TỰ ĐỘNG</button>
+                                    <p class="nutrition-auto__note" id="nutrition-auto-note">Số liệu được tự tính cho 1 khẩu phần dựa trên nguyên liệu. Bạn vẫn có thể sửa lại.</p>
+                                </div>
                                 
                                 <div class="nutrition-container" id="nutrition-container">
                                     <div class="left nutrients">
@@ -304,11 +346,30 @@
                             <h2 id="detailed-guide-label" class="detailed-guide__tag">HƯỚNG DẪN CỤ THỂ</h2>
                             <div class="line"></div>
                         </div>
+                        <div class="step-count">
+                            <label for="detailed-step-count" class="small-input__label">Số bước</label>
+                            <div class="small-input__wrapper">
+                                <input type="number" id="detailed-step-count" class="small-input step-count__input" min="0" max="30" value="0" aria-label="Số bước">
+                                <div class="small-input__buttons">
+                                    <button type="button" class="stepper-button stepper-button--up step-count__up" aria-label="Thêm 1 bước"></button>
+                                    <button type="button" class="stepper-button stepper-button--down step-count__down" aria-label="Bớt 1 bước"></button>
+                                </div>
+                            </div>
+                            <span class="note step-count__note">Hướng dẫn ngắn gọn và Hướng dẫn cụ thể luôn có cùng số bước</span>
+                        </div>
                         <button type="button" id="add-detailed-btn" class="add-detailed-step-btn">THÊM BƯỚC</button>
                         <ul id="detailed-steps-container"></ul>
                     </section>
 
                     <div class="line bottom-divider"></div>
+                    <!-- Xác thực công thức -->
+                    <div class="verify-box">
+                        <label class="verify-box__check" for="tested-input">
+                            <input type="checkbox" id="tested-input" name="tested">
+                            <span>Tôi đã tự nấu thử công thức này</span>
+                        </label>
+                        <span class="note">Công thức mới đăng sẽ có nhãn "Chưa xác thực" cho tới khi được ít nhất 3 người đánh giá, trung bình từ 4 sao trở lên.</span>
+                    </div>
                     <div class="upload-status" id="upload-status" role="status" aria-live="polite" hidden>
                         <p class="upload-status__text" id="upload-status-text"></p>
                         <div class="upload-progress" id="upload-progress-wrap" hidden><div class="upload-progress__bar" id="upload-progress"></div></div>

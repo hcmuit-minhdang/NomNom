@@ -148,6 +148,11 @@
                     <!-- ---------- Thông tin chung ---------- -->
                     <section class="recipe-intro" id="thong-tin-chung">
                         <h1 id="recipe-title" data-bind="title"></h1>
+                        <!-- Nhãn xác thực + công thức gốc (recipe.js điền vào) -->
+                        <div class="recipe-badges">
+                            <span class="verify-badge" id="verify-badge" hidden></span>
+                            <span class="fork-from" id="fork-from" hidden></span>
+                        </div>
 
                         <div class="recipe-rating-row">
                             <span class="stars" data-stars="ratingScore"></span>
@@ -178,6 +183,7 @@
                         <div class="recipe-actions">
                             <a href="#cong-thuc" class="jump-recipe-button">CÔNG THỨC CỤ THỂ</a>
                             <button type="button" class="save-button" aria-pressed="false">LƯU</button>
+                            <a href="/pages/upload.html" class="improve-button" id="improve-button" title="Chép công thức này sang trang đăng tải để bạn cải tiến">CẢI TIẾN</a>
                         </div>
                     </section>
 

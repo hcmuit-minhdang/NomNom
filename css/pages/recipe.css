@@ -1662,3 +1662,74 @@ a {
 @media (min-width: 701px) and (max-width: 900px) {
     .card__cost, .card__rating { max-width: calc(100% - 330px); }
 }
+
+/* ================================================================== */
+/* Nhãn xác thực, công thức gốc, nút Cải tiến                          */
+/* ================================================================== */
+
+.recipe-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.verify-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 2px solid #292929;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.verify-badge[data-status="verified"] {
+    background-color: #CDEBC5;
+}
+
+.verify-badge[data-status="community"] {
+    background-color: #FBC41B;
+}
+
+.verify-badge[data-status="unverified"] {
+    background-color: #ffffff;
+    border-style: dashed;
+}
+
+.fork-from {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.fork-from a {
+    color: #000000;
+    font-weight: 700;
+}
+
+.improve-button {
+    display: flex;
+    align-items: center;
+    padding: 0.9em 1.1em;
+    background-color: #ffffff;
+    border: 1.5px solid #292929;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.improve-button:hover {
+    background-color: #FBC41B;
+    transform: translate(-0.06em, -0.06em);
+}
+
+.improve-button:active {
+    transform: scale(0.98);
+}
+
+@media print {
+    .improve-button, .recipe-badges { display: none !important; }
+}
